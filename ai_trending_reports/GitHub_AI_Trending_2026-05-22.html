@@ -1,83 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub AI Trending Report - 2026-05-22</title>
+    <title>GitHub 今日 AI 热榜简报 - 2026-05-22</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f6f8fa; }
-        h1 { color: #24292e; text-align: center; border-bottom: 2px solid #eaecef; padding-bottom: 10px; }
-        .date { text-align: center; color: #586069; margin-bottom: 30px; }
-        .project-card { background: #fff; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s; }
-        .project-card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .project-name { font-size: 1.2em; font-weight: bold; color: #0366d6; text-decoration: none; }
-        .project-desc { margin: 8px 0; color: #444; }
-        .project-meta { font-size: 0.85em; color: #6a737d; display: flex; gap: 15px; }
-        .tag { background: #eff3f6; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
+        header { background: #24292e; color: #fff; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        h1 { margin: 0; font-size: 1.8em; }
+        .date { font-size: 0.9em; opacity: 0.8; margin-top: 5px; }
+        .container { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .project-item { border-bottom: 1px solid #eee; padding: 15px 0; display: flex; align-items: flex-start; }
+        .project-item:last-child { border-bottom: none; }
+        .rank { font-size: 1.5em; font-weight: bold; color: #0366d6; margin-right: 20px; min-width: 30px; }
+        .content { flex-grow: 1; }
+        .name { font-size: 1.2em; font-weight: bold; color: #0366d6; text-decoration: none; }
+        .name:hover { text-decoration: underline; }
+        .desc { margin: 5px 0; color: #586069; }
+        .tags { display: flex; gap: 10px; margin-top: 8px; }
+        .tag { background: #e1ecf4; color: #39739d; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; font-weight: 500; }
+        footer { text-align: center; margin-top: 20px; font-size: 0.8em; color: #888; }
     </style>
 </head>
 <body>
-    <h1>🚀 GitHub AI Trending Report</h1>
-    <div class="date">Date: Friday, May 22, 2026</div>
-    
-    <div class="project-card">
-        <a href="https://github.com/multica-ai/andrej-karpathy-skills" class="project-name">multica-ai / andrej-karpathy-skills</a>
-        <p class="project-desc">A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.</p>
-        <div class="project-meta"><span class="tag">LLM Optimization</span><span class="tag">Coding Assistant</span></div>
+    <header>
+        <h1>🚀 GitHub 今日 AI 热榜简报</h1>
+        <div class="date">日期: 2026年5月22日</div>
+    </header>
+    <div class="container">
+        <div class="project-item">
+            <div class="rank">1</div>
+            <div class="content">
+                <a href="https://github.com/All-Hands-AI/OpenHands" class="name">All-Hands-AI / OpenHands</a>
+                <p class="desc">领先的开源 AI 编程代理 (Coding Agent)，能够自主执行复杂开发任务。</p>
+                <div class="tags"><span class="tag">Coding Agent</span><span class="tag">Open Source</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">2</div>
+            <div class="content">
+                <a href="https://github.com/FoundationAgents/MetaGPT" class="name">FoundationAgents / MetaGPT</a>
+                <p class="desc">基于多智能体框架的软件开发框架，模拟人类软件公司的 SOP。</p>
+                <div class="tags"><span class="tag">AI Agents</span><span class="tag">Multi-Agent</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">3</div>
+            <div class="content">
+                <a href="https://github.com/anomalyco/opencode" class="name">anomalyco / opencode</a>
+                <p class="desc">高效的 AI 编程代理，专注于提高代码编写效率与准确性。</p>
+                <div class="tags"><span class="tag">Coding Agent</span><span class="tag">Efficiency</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">4</div>
+            <div class="content">
+                <a href="https://github.com/cline/cline" class="name">cline / cline</a>
+                <p class="desc">集成于 IDE 的智能编程辅助工具，具备强大的上下文理解能力。</p>
+                <div class="tags"><span class="tag">Coding Agent</span><span class="tag">IDE Extension</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">5</div>
+            <div class="content">
+                <a href="https://github.com/microsoft/autogen" class="name">microsoft / autogen</a>
+                <p class="desc">微软推出的多智能体对话框架，支持高度可定制的 AI Agent 协作。</p>
+                <div class="tags"><span class="tag">AI Agents</span><span class="tag">Microsoft</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">6</div>
+            <div class="content">
+                <a href="https://github.com/openai/codex" class="name">openai / codex</a>
+                <p class="desc">OpenAI 开发的专门用于代码生成的深度学习模型。</p>
+                <div class="tags"><span class="tag">LLM</span><span class="tag">Code Generation</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">7</div>
+            <div class="content">
+                <a href="https://github.com/crewAIInc/crewAI" class="name">crewAIInc / crewAI</a>
+                <p class="desc">基于角色驱动的智能体协作框架，简化多智能体系统的构建过程。</p>
+                <div class="tags"><span class="tag">AI Agents</span><span class="tag">Role-based</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">8</div>
+            <div class="content">
+                <a href="https://github.com/cursor/cursor" class="name">cursor / cursor</a>
+                <p class="desc">下一代 AI 原生代码编辑器，深度集成 LLM 提升开发体验。</p>
+                <div class="tags"><span class="tag">AI Code Editor</span><span class="tag">Developer Tool</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">9</div>
+            <div class="content">
+                <a href="https://github.com/microsoft/JARVIS" class="name">microsoft / JARVIS</a>
+                <p class="desc">微软探索性的 AI 智能体项目，旨在实现高度自动化的个人助手功能。</p>
+                <div class="tags"><span class="tag">AI Agents</span><span class="tag">Automation</span></div>
+            </div>
+        </div>
+        <div class="project-item">
+            <div class="rank">10</div>
+            <div class="content">
+                <a href="https://github.com/deepset-ai/haystack" class="name">deepset-ai / haystack</a>
+                <p class="desc">构建 LLM 驱动的搜索与问答系统的模块化框架。</p>
+                <div class="tags"><span class="tag">LLM Tools</span><span class="tag">RAG</span></div>
+            </div>
+        </div>
     </div>
-
-    <div class="project-card">
-        <a href="https://github.com/dotnet/skills" class="project-name">dotnet / skills</a>
-        <p class="project-desc">Repository for skills to assist AI coding agents with .NET and C#.</p>
-        <div class="project-meta"><span class="tag">.NET</span><span class="tag">C#</span><span class="tag">AI Agent</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/obra/superpowers" class="project-name">obra / superpowers</a>
-        <p class="project-desc">An agentic skills framework & software development methodology that works.</p>
-        <div class="project-meta"><span class="tag">Framework</span><span class="tag">Agentic AI</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/msitarzewski/agency-agents" class="project-name">msitarzewski / agency-agents</a>
-        <p class="project-desc">A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas.</p>
-        <div class="project-meta"><span class="tag">AI Agency</span><span class="tag">Multi-Agent</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/can1357/oh-my-pi" class="project-name">can1357 / oh-my-pi</a>
-        <p class="project-desc">AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, and more.</p>
-        <div class="project-meta"><span class="tag">Terminal</span><span class="tag">Coding Agent</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/antoinezambelli/forge" class="project-name">antoinezambelli / forge</a>
-        <p class="project-desc">A Python framework for self-hosted LLM tool-calling and multi-step agentic workflows.</p>
-        <div class="project-meta"><span class="tag">Python</span><span class="tag">Self-Hosted</span><span class="tag">Agentic Workflow</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/multica-ai/multica" class="project-name">multica-ai / multica</a>
-        <p class="project-desc">The open-source managed agents platform. Turn coding agents into real teammates.</p>
-        <div class="project-meta"><span class="tag">Managed Agents</span><span class="tag">Teamwork</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/alireza0/s-ui" class="project-name">alireza0 / s-ui</a>
-        <p class="project-desc">AI-powered UI management and deployment tool.</p>
-        <div class="project-meta"><span class="tag">UI</span><span class="tag">AI Tools</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/openclaw/openclaw" class="project-name">OpenClaw</a>
-        <p class="project-desc">Personal AI Agent that lives on your device, providing seamless local-first intelligence.</p>
-        <div class="project-meta"><span class="tag">Local AI</span><span class="tag">Personal Agent</span></div>
-    </div>
-
-    <div class="project-card">
-        <a href="https://github.com/langgenius/dify" class="project-name">Dify</a>
-        <p class="project-desc">Production-ready platform for agentic workflow development, offering an all-in-one toolchain.</p>
-        <div class="project-meta"><span class="tag">LLMOps</span><span class="tag">Workflow Automation</span></div>
-    </div>
+    <footer>
+        Generated by TINA Assistant | GitHub AI Trending Daily Report
+    </footer>
 </body>
 </html>
