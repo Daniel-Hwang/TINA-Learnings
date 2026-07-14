@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>脑机接口热点新闻 | BCI News Dashboard</title>
+<meta name="description" content="脑机接口热点新闻看板 - 追踪脑科学、神经技术与BCI领域前沿动态">
+<title>🧠 脑机接口热点新闻 | BCI News Dashboard</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -30,6 +31,28 @@
     z-index: 0;
   }
   .hero-content { position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    font-size: 0.8125rem;
+    color: #60a5fa;
+    margin-bottom: 20px;
+  }
+  .hero-badge .pulse {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
   .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
@@ -55,16 +78,6 @@
     color: #64748b;
   }
   .hero .meta span { display: flex; align-items: center; gap: 6px; }
-  .hero .meta .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: #22c55e;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
   .container { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; }
   .filter-bar {
     background: rgba(30, 41, 59, 0.6);
@@ -152,6 +165,8 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   .news-card::before {
     content: '';
@@ -206,6 +221,7 @@
   .card-points {
     list-style: none;
     margin-bottom: 16px;
+    flex-grow: 1;
   }
   .card-points li {
     font-size: 0.8125rem;
@@ -231,7 +247,18 @@
     font-size: 0.75rem;
     color: #64748b;
   }
-  .card-footer .source { font-style: italic; }
+  .card-footer .source {
+    font-style: italic;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .card-footer .source a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+  .card-footer .source a:hover { text-decoration: underline; }
   .card-footer .date { font-variant-numeric: tabular-nums; }
   .empty-state {
     grid-column: 1 / -1;
@@ -248,6 +275,11 @@
     border-top: 1px solid rgba(148, 163, 184, 0.05);
   }
   footer a { color: #60a5fa; text-decoration: none; }
+  footer .sources-note {
+    max-width: 600px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
   @media (max-width: 768px) {
     .hero { padding: 48px 16px 40px; }
     .container { padding: 0 16px 40px; }
@@ -259,12 +291,16 @@
 <body>
   <section class="hero">
     <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        BCI · 脑科学 · 神经技术
+      </div>
       <h1>🧠 脑机接口热点新闻</h1>
-      <p class="subtitle">BCI & Neuroscience News Dashboard — 追踪脑科学与脑机接口领域最前沿动态</p>
+      <p class="subtitle">追踪脑科学、神经技术与脑机接口领域前沿动态 — 每日更新</p>
       <div class="meta">
-        <span><span class="dot"></span> 实时更新</span>
         <span>📅 数据更新：2026-07-14</span>
-        <span>📰 共 9 条热点</span>
+        <span>📰 共 10 条热点</span>
+        <span>🏷️ 9 大分类</span>
       </div>
     </div>
   </section>
@@ -290,12 +326,16 @@
   </div>
 
   <footer>
-    <p>数据来源：公开媒体资讯整理 · 仅供参考 · Powered by RINA</p>
-    <p style="margin-top: 8px;">Last updated: 2026-07-14</p>
+    <p class="sources-note">
+      数据来源：国家药监局、新华社、光明网、Nature Medicine、36氪、清科研究、金融界、企业观察报等公开报道
+      <br>每条新闻均标注来源链接，点击卡片底部来源可跳转查看原文
+    </p>
+    <p>Last updated: 2026-07-14 · Powered by RINA</p>
+    <p style="margin-top: 8px; font-size: 0.75rem;">本页面仅供信息参考，不构成任何投资或医疗建议</p>
   </footer>
 
 <script>
-const NEWS_DATA = [{"id": "1", "title": "中国脑机接口产业迈入产业化元年", "category": "产业政策", "date": "2026-07-14", "hotness": 5, "summary": "2026年上半年成为国内脑机接口产业从科研试点转向规模化商业化落地的关键拐点。依托国家战略定调、监管规则落地、医保支付打通、资本集中涌入、临床产品获批五大核心驱动力，完整产业链闭环快速成型。", "keyPoints": ["脑机接口被正式写入国务院政府工作报告与十五五规划纲要，划定为国家六大未来产业", "6月国家药监局连发两份核心文件，明确医疗用途脑机设备统一划归三类医疗器械管理", "浙江率先把非侵入式脑机适配费纳入乙类医保报销，北京推进甲类报销试点", "2026年1-6月国内脑机接口赛道共计47笔融资，披露总金额53.8亿元"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "2", "title": "Neuralink 完成全球首例无需切开硬脑膜的侵入式手术", "category": "技术突破", "date": "2026-07-01", "hotness": 5, "summary": "马斯克旗下脑机接口企业 Neuralink 对外放出手术演示视频，正式宣告全球首例无需切开硬脑膜的侵入式脑机接口人体手术完成临床验证。这项术式创新被认为是一场改写植入逻辑的外科革命。", "keyPoints": ["省去脑膜切开术，大幅降低手术风险与创伤", "视频上线两天播放量突破25万次", "标志侵入式脑机接口进入微创时代"], "source": "贤集网", "sourceUrl": "https://m.xianjichina.com/special/detail_606851.html"}, {"id": "3", "title": "江苏首例侵入式脑机接口手术：瘫痪女子用意念玩游戏", "category": "临床应用", "date": "2026-07-13", "hotness": 5, "summary": "南通大学附属医院完成江苏省首例、全国第三例侵入式脑机接口手术。26岁脊髓损伤患者笑笑术后1个月、开机训练5天后，已能用意念控制电脑光标，流畅完成\"斗地主\"等电脑游戏，康复进度超预期。", "keyPoints": ["江苏省首例、全国第三例侵入式脑机接口临床康复应用", "患者为26岁颈段脊髓损伤女性", "术后1个月即可意念控制光标玩游戏", "后续将逐步进阶到意念操控轮椅", "由施炜教授团队主导"], "source": "都市时报微博 / 南通报业", "sourceUrl": "https://m.weibo.cn/detail/5320622419739651"}, {"id": "4", "title": "博睿康 NEO-ONE SCI：全球首款商业化侵入式脑机接口产品获批", "category": "产品落地", "date": "2026-03-15", "hotness": 4, "summary": "博睿康NEO-ONE SCI获批国家药监局三类医疗器械注册证，成为全球首款商业化侵入式脑机接口产品。适应症为颈脊髓损伤四肢瘫痪患者，通过颅骨外微创植入电极，让患者用意念操控机械手完成抓握、饮水等基础动作。", "keyPoints": ["全球首款获批的侵入式脑机医疗器械", "获批仅两天就完成医保赋码", "博睿康科创板IPO申请6月获上交所受理，拟募资25亿元", "冲击国内脑机接口第一股"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "5", "title": "强脑科技完成20亿元B+轮融资，创全球行业第二大单笔融资", "category": "资本动态", "date": "2026-06-20", "hotness": 4, "summary": "杭州强脑科技完成20亿元B+轮融资，创下全球仅次于Neuralink的行业第二大单笔融资纪录。投资方包含韦尔股份、蓝思科技等硬件产业链巨头。", "keyPoints": ["20亿元B+轮融资，全球行业第二大单笔融资", "投资方含韦尔股份、蓝思科技等硬件产业链巨头", "杭州依托智能制造供应链形成非侵入式产业集群"], "source": "今日头条 / IT桔子", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "6", "title": "2026北京智源大会：脑大模型元年开启", "category": "学术前沿", "date": "2026-06-13", "hotness": 4, "summary": "2026北京智源大会 AI+Neuroscience 分论坛举办，聚焦人工智能与神经科学双向交叉赋能。南方科技大学刘泉提出\"2026年或将成为脑大模型元年\"，脑信号有望成为继文本、图像之后全新的人机交互模态。", "keyPoints": ["斯坦福 Andreas Tolias：数字孪生脑构建，将大脑\"黑盒\"转化为\"白盒\"", "复旦彭汉川：多尺度脑图谱与单细胞连接组驱动 BrainAI", "北京智源雷博：神经科学基础模型 Brainμ，支持脑电/fMRI与文本图像双向转换", "南科大刘泉：脑机接口基座大模型，十万小时睡眠数据打造垂类基座", "中科院张铁林：脑图谱启发的类脑大模型，从算法到低功耗类脑芯片全链路", "北师大柳昀哲：认知脑机接口，睡眠记忆重现、思维规划解码"], "source": "科技日报 / 北京智源大会", "sourceUrl": ""}, {"id": "7", "title": "介入式脑机接口：血管通路成为新蓝海", "category": "技术路线", "date": "2026-05-28", "hotness": 3, "summary": "微创脑科学与傲意科技达成战略合作，研发血管介入式脑机接口。无需开颅手术，通过静脉将支架电极送达脑部，平衡信号精度与手术创伤，成为现阶段最适合普惠推广的技术方案。", "keyPoints": ["介入式（血管通路）：中间路线新蓝海", "无需开颅，通过静脉送达支架电极", "平衡信号精度与手术创伤", "最适合普惠推广的技术方案"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "8", "title": "国产底层芯片自主化：中电云脑推出\"脑语者\"系列", "category": "核心器件", "date": "2026-06-05", "hotness": 3, "summary": "中国电子旗下中电云脑推出完全自研\"脑语者\"系列神经信号采集芯片，打破海外芯片垄断。同时推出消费级睡眠监测头环，标志脑机技术开始向民用健康场景下沉。", "keyPoints": ["完全自研神经信号采集芯片", "打破海外芯片垄断", "消费级睡眠监测头环同步推出", "脑机技术向民用健康场景下沉"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "9", "title": "脑虎科技建成国内首个脑机超级量产工厂", "category": "产业落地", "date": "2026-06-18", "hotness": 3, "summary": "脑虎科技在江西建成国内首个脑机超级量产工厂，6月启动硬膜下皮层植入系统GCP临床试验，目标实现万套级国产设备量产，摆脱海外定制化设备依赖。", "keyPoints": ["国内首个脑机超级量产工厂", "万套级国产设备量产目标", "摆脱海外定制化设备依赖", "硬膜下皮层植入系统GCP临床试验启动"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}];
+const NEWS_DATA = [{"id": "1", "title": "国家药监局连发两份核心文件：脑机接口分类界定与命名规范落地", "category": "产业政策", "date": "2026-06-30", "hotness": 5, "summary": "国家药监局发布2026年第24号通告，出台《脑机接口医疗器械产品分类界定指导原则》和《通用名称命名指导原则》，首次明确侵入式或植入式脑机接口产品统一按第三类医疗器械管理，结束行业无标准可依的局面。", "keyPoints": ["明确医疗用途脑机接口按第三类医疗器械管理", "国办文件明确对脑机接口设备'优先审评审批'", "2026年初已设立脑机接口测试伦理委员会（分级分类审查）", "为后续更多产品进入审批通道扫清制度障碍"], "source": "国家药监局 / 金飞鹰药械", "sourceUrl": "http://m.toutiao.com/group/7662176999711965711/"}, {"id": "2", "title": "Neuralink 完成全球首例经硬脑膜植入手术，迈向量产元年", "category": "技术突破", "date": "2026-07-07", "hotness": 5, "summary": "马斯克旗下Neuralink宣布完成全球首例经硬脑膜植入脑机接口手术。新方案由手术机器人直接将微型电极丝穿透硬脑膜植入大脑皮层，无需切开硬脑膜，术后1小时内受试者已实现意念控制电脑光标。", "keyPoints": ["全球首例无需切开硬脑膜的侵入式手术", "手术机器人全自动操作，大幅降低手术难度", "奥斯汀工厂月产数千台，进入2026'量产元年'", "VOICE试验实现ALS患者毫秒级意念语音", "视觉皮层刺激启动人工视觉临床试点"], "source": "CSDN / 量子位", "sourceUrl": "https://blog.csdn.net/vucndnrzk8iwx/article/details/156548810"}, {"id": "3", "title": "江苏首例侵入式脑机接口：26岁瘫痪女子用意念玩游戏", "category": "临床应用", "date": "2026-07-13", "hotness": 5, "summary": "南通大学附属医院完成江苏省首例、全国第三例侵入式脑机接口手术。26岁颈段脊髓损伤患者笑笑术后1个月、开机训练5天后，已能用意念控制电脑光标，流畅完成'斗地主'等电脑游戏，康复进度超预期。", "keyPoints": ["江苏省首例、全国第三例侵入式脑机接口临床康复应用", "患者为26岁颈段脊髓损伤女性（车祸致瘫）", "6月5日完成植入手术，6月29日开机训练", "术后1个月即可意念控制光标玩游戏", "后续将逐步进阶到意念操控轮椅", "由施炜教授团队主导"], "source": "都市时报 / 南通报业", "sourceUrl": "https://m.weibo.cn/detail/5320622419739651"}, {"id": "4", "title": "脑虎科技'三全'脑机接口系统启动GCP注册临床试验", "category": "产品落地", "date": "2026-07-07", "hotness": 5, "summary": "脑虎科技自主研发的'全植入、全无线、全功能'脑机接口系统在复旦大学附属华山医院正式启动GCP注册临床试验，是国内首款进入国家三类医疗器械注册临床阶段的硬膜下皮层表面植入式产品。", "keyPoints": ["国内首款进入三类医疗器械注册临床的硬膜下皮层植入产品", "由华山医院毛颖教授团队牵头，联合15家三甲医院多中心开展", "针对颈段脊髓损伤四肢瘫痪患者上肢功能代偿", "全链路延时 < 50ms，解码性能 5.2 BPS", "数据将直接用于国家药监局三类医疗器械注册申报"], "source": "新华网 / 脑虎科技", "sourceUrl": "http://sh.xinhuanet.com/20260714/ede94974ef314b2f9a956ff244862846/c.html"}, {"id": "5", "title": "资本涌入脑机接口：上半年融资72.53亿，格式塔半年融5.7亿", "category": "资本动态", "date": "2026-07-10", "hotness": 4, "summary": "2026年上半年国内脑机接口领域已发生投融资案例64起，金额共计72.53亿元，远超2025年全年（47起，23.98亿元）。格式塔科技半年累计融资5.7亿元，主攻超声波脑机接口路线。", "keyPoints": ["上半年64起融资，总金额72.53亿元，同比超3倍", "格式塔科技半年累计融资5.7亿元（超声波脑机接口）", "强脑科技完成约20亿元融资，全球第二大单笔融资", "阶梯医疗完成5亿元战略融资，阿里+腾讯双投", "博睿康冲刺科创板IPO，'脑机接口第一股'呼之欲出", "国资参投占比显著，央企从观望转向实质布局"], "source": "清科研究 / 东方财富", "sourceUrl": "https://caifuhao.eastmoney.com/news/20260710143804865599770"}, {"id": "6", "title": "Nature Medicine：渐冻症患者用脑机接口两年说出近200万字", "category": "学术前沿", "date": "2026-06-15", "hotness": 5, "summary": "美国加州大学戴维斯分校团队在《自然·医学》发表突破性研究：一名ALS患者使用皮质内脑机接口近2年，累计超过3800小时，仅凭意念实现流畅'说话'和电脑操作，全程在家中独立完成。", "keyPoints": ["累计使用3800+小时，在家独立操作，无需研究人员在场", "每分钟56个词，累计'说'了18万个句子", "超九成句子被标注为'至少基本正确'", "植入4个微电极阵列共256个电极于左侧中央前回", "标志侵入式BCI从实验室概念验证迈向实际辅助工具"], "source": "光明网 / Nature Medicine", "sourceUrl": "http://m.toutiao.com/group/7654145541126849070/"}, {"id": "7", "title": "脑机接口从'读脑'迈向'写脑'，双向交互成下一阶段核心方向", "category": "技术路线", "date": "2026-07-12", "hotness": 4, "summary": "在2026未来科学论坛上，北京脑科学与类脑研究所所长罗敏敏提出，脑机接口将从'读出'脑信号逐步迈向'写入'信息阶段，最终实现与大脑的双向信息交互。", "keyPoints": ["技术范式由'读脑'转向'读写双向交互'", "视觉假体、触觉假体需要'写脑'技术支撑", "精准神经调控影响情绪和记忆是重要方向", "神经科学基础研究将成为BCI发展的核心推动力", "对神经环路认知深入将提升解码精度和速度"], "source": "金融界 / 未来科学论坛", "sourceUrl": "http://m.toutiao.com/group/7661856847532196403/"}, {"id": "8", "title": "中电云脑发布'脑语者'芯片，国产神经采集芯片打破垄断", "category": "核心器件", "date": "2026-05-15", "hotness": 4, "summary": "中国电子旗下中电云脑与天津大学脑机海河实验室合作，研制出国内首款完全自主知识产权的神经电生理信号采集芯片'脑语者'C系列和D系列，并发布消费级睡眠脑机头环。", "keyPoints": ["国内首款完全自主知识产权神经电生理信号采集芯片", "打破海外芯片在脑电采集领域的垄断地位", "同步发布'神工—希夷'消费级睡眠脑机头环", "标志脑机技术开始向民用健康场景下沉", "央企从实验室共建转向产业链整合者角色"], "source": "企业观察报 / 中国电子", "sourceUrl": "http://m.toutiao.com/group/7661853714621252131/"}, {"id": "9", "title": "上海问鼎'脑机接口第一城'，企业数量占全国三分之一", "category": "产业落地", "date": "2026-07-14", "hotness": 4, "summary": "新华社《经济参考报》特稿报道，2026年上半年上海集聚脑机接口企业数量占全国三分之一，融资事件和披露金额分别占全国近60%和40%。'脑智天地'已汇聚50余家企业。", "keyPoints": ["企业数量占全国1/3，融资金额占全国近40%", "'脑智天地'汇聚50余家脑机接口企业", "3款侵入式产品进入国家创新医疗器械特别审查程序", "博睿康科创板IPO已受理，冲刺'脑机接口第一股'", "上海国资储备近百个脑机接口投资项目", "目标：2027年半侵入式产品率先临床应用"], "source": "新华社 / 经济参考报", "sourceUrl": "http://sh.xinhuanet.com/20260714/ede94974ef314b2f9a956ff244862846/c.html"}, {"id": "10", "title": "医保支付全面打通：多省定价，沪惠保全国首个纳入BCI", "category": "产业政策", "date": "2026-07-01", "hotness": 4, "summary": "国家医保局已为脑机接口单独立项，湖北率先定价（侵入式植入6552元/次），浙江将非侵入式适配费纳入乙类医保，北京推进甲类报销试点。2026'沪惠保'新增脑机接口手术自费材料费保障（保额15万）。", "keyPoints": ["国家医保局《神经系统类价格项目立项指南》为BCI单独立项", "湖北定价：侵入式植入6552元/次、非侵入式适配966元/次", "浙江率先将非侵入式脑机适配费纳入乙类医保", "北京试点甲类报销范围探索", "沪惠保新增BCI手术自费材料费保障（保额15万），全国首个城市普惠险纳入", "广东《2026-2030行动计划》明确纳入医保支付"], "source": "国家医保局 / 各地医保局", "sourceUrl": "http://m.toutiao.com/group/7662000723772686898/"}];
 const CATEGORIES = ["全部", "产业政策", "技术突破", "临床应用", "产品落地", "资本动态", "学术前沿", "技术路线", "核心器件", "产业落地"];
 const CATEGORY_COLORS = {"产业政策": "#f59e0b", "技术突破": "#3b82f6", "临床应用": "#10b981", "产品落地": "#8b5cf6", "资本动态": "#ec4899", "学术前沿": "#06b6d4", "技术路线": "#f97316", "核心器件": "#84cc16", "产业落地": "#14b8a6"};
 const REFERENCE_DATE = '2026-07-14';
@@ -357,6 +397,9 @@ function renderNewsGrid() {
     items = items.filter(i => i.category === selectedCategory);
   }
   
+  // 按热度降序、日期降序排序
+  items.sort((a, b) => b.hotness - a.hotness || (a.date < b.date ? 1 : -1));
+  
   const grid = document.getElementById('newsGrid');
   
   if (items.length === 0) {
@@ -364,6 +407,7 @@ function renderNewsGrid() {
       <div class="empty-state">
         <div class="icon">🔍</div>
         <p>暂无匹配的新闻</p>
+        <p style="font-size: 0.875rem; margin-top: 8px;">尝试调整筛选条件</p>
       </div>
     `;
     return;
@@ -371,12 +415,12 @@ function renderNewsGrid() {
   
   grid.innerHTML = items.map(item => {
     const color = CATEGORY_COLORS[item.category] || '#64748b';
-    const sourceLink = item.sourceUrl 
-      ? `<a href="${item.sourceUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">${item.source}</a>`
+    const sourceDisplay = item.sourceUrl 
+      ? `<a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" title="查看原文">${item.source} ↗</a>`
       : item.source;
     
     return `
-      <article class="news-card">
+      <article class="news-card" onclick="${item.sourceUrl ? `window.open('${item.sourceUrl}', '_blank')` : ''}">
         <div class="card-header">
           <span class="category-tag" style="background: ${color}20; color: ${color};">${item.category}</span>
           <div class="hotness">${renderStars(item.hotness)}</div>
@@ -387,7 +431,7 @@ function renderNewsGrid() {
           ${item.keyPoints.map(p => `<li>${p}</li>`).join('')}
         </ul>
         <div class="card-footer">
-          <span class="source">${sourceLink}</span>
+          <span class="source">${sourceDisplay}</span>
           <span class="date">${item.date}</span>
         </div>
       </article>
