@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>脑机接口热点新闻 | BCI News Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0d1b2a 100%);
+    color: #e2e8f0;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .hero {
+    position: relative;
+    padding: 80px 24px 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%);
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero .subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 24px;
+  }
+  .hero .meta {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+  .hero .meta span { display: flex; align-items: center; gap: 6px; }
+  .hero .meta .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; }
+  .filter-bar {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+  }
+  .filter-section { margin-bottom: 16px; }
+  .filter-section:last-child { margin-bottom: 0; }
+  .filter-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .category-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+    background: transparent;
+    white-space: nowrap;
+  }
+  .tab:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #cbd5e1;
+  }
+  .tab.active {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border-color: transparent;
+  }
+  .tab .count {
+    margin-left: 6px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+  .time-filter {
+    display: flex;
+    gap: 8px;
+  }
+  .time-btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+    background: transparent;
+  }
+  .time-btn:hover { border-color: rgba(96, 165, 250, 0.4); color: #cbd5e1; }
+  .time-btn.active {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .news-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .news-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.1);
+  }
+  .news-card:hover::before { opacity: 1; }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 12px;
+  }
+  .category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .hotness {
+    display: flex;
+    gap: 2px;
+    font-size: 0.875rem;
+  }
+  .hotness .star { color: #fbbf24; }
+  .hotness .star.dim { color: #475569; }
+  .card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .card-summary {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .card-points {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  .card-points li {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .card-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-weight: bold;
+  }
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    font-size: 0.75rem;
+    color: #64748b;
+  }
+  .card-footer .source { font-style: italic; }
+  .card-footer .date { font-variant-numeric: tabular-nums; }
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 24px;
+    color: #64748b;
+  }
+  .empty-state .icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.5; }
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: #475569;
+    font-size: 0.8125rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.05);
+  }
+  footer a { color: #60a5fa; text-decoration: none; }
+  @media (max-width: 768px) {
+    .hero { padding: 48px 16px 40px; }
+    .container { padding: 0 16px 40px; }
+    .news-grid { grid-template-columns: 1fr; gap: 16px; }
+    .filter-bar { padding: 16px; top: 8px; }
+  }
+</style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>🧠 脑机接口热点新闻</h1>
+      <p class="subtitle">BCI & Neuroscience News Dashboard — 追踪脑科学与脑机接口领域最前沿动态</p>
+      <div class="meta">
+        <span><span class="dot"></span> 实时更新</span>
+        <span>📅 数据更新：2026-07-14</span>
+        <span>📰 共 9 条热点</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="filter-bar">
+      <div class="filter-section">
+        <div class="filter-label">分类筛选</div>
+        <div class="category-tabs" id="categoryTabs"></div>
+      </div>
+      <div class="filter-section">
+        <div class="filter-label">时间范围</div>
+        <div class="time-filter">
+          <button class="time-btn active" data-range="all">全部</button>
+          <button class="time-btn" data-range="7d">近7天</button>
+          <button class="time-btn" data-range="30d">近30天</button>
+          <button class="time-btn" data-range="2026">2026年</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+
+  <footer>
+    <p>数据来源：公开媒体资讯整理 · 仅供参考 · Powered by RINA</p>
+    <p style="margin-top: 8px;">Last updated: 2026-07-14</p>
+  </footer>
+
+<script>
+const NEWS_DATA = [{"id": "1", "title": "中国脑机接口产业迈入产业化元年", "category": "产业政策", "date": "2026-07-14", "hotness": 5, "summary": "2026年上半年成为国内脑机接口产业从科研试点转向规模化商业化落地的关键拐点。依托国家战略定调、监管规则落地、医保支付打通、资本集中涌入、临床产品获批五大核心驱动力，完整产业链闭环快速成型。", "keyPoints": ["脑机接口被正式写入国务院政府工作报告与十五五规划纲要，划定为国家六大未来产业", "6月国家药监局连发两份核心文件，明确医疗用途脑机设备统一划归三类医疗器械管理", "浙江率先把非侵入式脑机适配费纳入乙类医保报销，北京推进甲类报销试点", "2026年1-6月国内脑机接口赛道共计47笔融资，披露总金额53.8亿元"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "2", "title": "Neuralink 完成全球首例无需切开硬脑膜的侵入式手术", "category": "技术突破", "date": "2026-07-01", "hotness": 5, "summary": "马斯克旗下脑机接口企业 Neuralink 对外放出手术演示视频，正式宣告全球首例无需切开硬脑膜的侵入式脑机接口人体手术完成临床验证。这项术式创新被认为是一场改写植入逻辑的外科革命。", "keyPoints": ["省去脑膜切开术，大幅降低手术风险与创伤", "视频上线两天播放量突破25万次", "标志侵入式脑机接口进入微创时代"], "source": "贤集网", "sourceUrl": "https://m.xianjichina.com/special/detail_606851.html"}, {"id": "3", "title": "江苏首例侵入式脑机接口手术：瘫痪女子用意念玩游戏", "category": "临床应用", "date": "2026-07-13", "hotness": 5, "summary": "南通大学附属医院完成江苏省首例、全国第三例侵入式脑机接口手术。26岁脊髓损伤患者笑笑术后1个月、开机训练5天后，已能用意念控制电脑光标，流畅完成\"斗地主\"等电脑游戏，康复进度超预期。", "keyPoints": ["江苏省首例、全国第三例侵入式脑机接口临床康复应用", "患者为26岁颈段脊髓损伤女性", "术后1个月即可意念控制光标玩游戏", "后续将逐步进阶到意念操控轮椅", "由施炜教授团队主导"], "source": "都市时报微博 / 南通报业", "sourceUrl": "https://m.weibo.cn/detail/5320622419739651"}, {"id": "4", "title": "博睿康 NEO-ONE SCI：全球首款商业化侵入式脑机接口产品获批", "category": "产品落地", "date": "2026-03-15", "hotness": 4, "summary": "博睿康NEO-ONE SCI获批国家药监局三类医疗器械注册证，成为全球首款商业化侵入式脑机接口产品。适应症为颈脊髓损伤四肢瘫痪患者，通过颅骨外微创植入电极，让患者用意念操控机械手完成抓握、饮水等基础动作。", "keyPoints": ["全球首款获批的侵入式脑机医疗器械", "获批仅两天就完成医保赋码", "博睿康科创板IPO申请6月获上交所受理，拟募资25亿元", "冲击国内脑机接口第一股"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "5", "title": "强脑科技完成20亿元B+轮融资，创全球行业第二大单笔融资", "category": "资本动态", "date": "2026-06-20", "hotness": 4, "summary": "杭州强脑科技完成20亿元B+轮融资，创下全球仅次于Neuralink的行业第二大单笔融资纪录。投资方包含韦尔股份、蓝思科技等硬件产业链巨头。", "keyPoints": ["20亿元B+轮融资，全球行业第二大单笔融资", "投资方含韦尔股份、蓝思科技等硬件产业链巨头", "杭州依托智能制造供应链形成非侵入式产业集群"], "source": "今日头条 / IT桔子", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "6", "title": "2026北京智源大会：脑大模型元年开启", "category": "学术前沿", "date": "2026-06-13", "hotness": 4, "summary": "2026北京智源大会 AI+Neuroscience 分论坛举办，聚焦人工智能与神经科学双向交叉赋能。南方科技大学刘泉提出\"2026年或将成为脑大模型元年\"，脑信号有望成为继文本、图像之后全新的人机交互模态。", "keyPoints": ["斯坦福 Andreas Tolias：数字孪生脑构建，将大脑\"黑盒\"转化为\"白盒\"", "复旦彭汉川：多尺度脑图谱与单细胞连接组驱动 BrainAI", "北京智源雷博：神经科学基础模型 Brainμ，支持脑电/fMRI与文本图像双向转换", "南科大刘泉：脑机接口基座大模型，十万小时睡眠数据打造垂类基座", "中科院张铁林：脑图谱启发的类脑大模型，从算法到低功耗类脑芯片全链路", "北师大柳昀哲：认知脑机接口，睡眠记忆重现、思维规划解码"], "source": "科技日报 / 北京智源大会", "sourceUrl": ""}, {"id": "7", "title": "介入式脑机接口：血管通路成为新蓝海", "category": "技术路线", "date": "2026-05-28", "hotness": 3, "summary": "微创脑科学与傲意科技达成战略合作，研发血管介入式脑机接口。无需开颅手术，通过静脉将支架电极送达脑部，平衡信号精度与手术创伤，成为现阶段最适合普惠推广的技术方案。", "keyPoints": ["介入式（血管通路）：中间路线新蓝海", "无需开颅，通过静脉送达支架电极", "平衡信号精度与手术创伤", "最适合普惠推广的技术方案"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "8", "title": "国产底层芯片自主化：中电云脑推出\"脑语者\"系列", "category": "核心器件", "date": "2026-06-05", "hotness": 3, "summary": "中国电子旗下中电云脑推出完全自研\"脑语者\"系列神经信号采集芯片，打破海外芯片垄断。同时推出消费级睡眠监测头环，标志脑机技术开始向民用健康场景下沉。", "keyPoints": ["完全自研神经信号采集芯片", "打破海外芯片垄断", "消费级睡眠监测头环同步推出", "脑机技术向民用健康场景下沉"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}, {"id": "9", "title": "脑虎科技建成国内首个脑机超级量产工厂", "category": "产业落地", "date": "2026-06-18", "hotness": 3, "summary": "脑虎科技在江西建成国内首个脑机超级量产工厂，6月启动硬膜下皮层植入系统GCP临床试验，目标实现万套级国产设备量产，摆脱海外定制化设备依赖。", "keyPoints": ["国内首个脑机超级量产工厂", "万套级国产设备量产目标", "摆脱海外定制化设备依赖", "硬膜下皮层植入系统GCP临床试验启动"], "source": "今日头条", "sourceUrl": "http://m.toutiao.com/group/7662124468933378575/"}];
+const CATEGORIES = ["全部", "产业政策", "技术突破", "临床应用", "产品落地", "资本动态", "学术前沿", "技术路线", "核心器件", "产业落地"];
+const CATEGORY_COLORS = {"产业政策": "#f59e0b", "技术突破": "#3b82f6", "临床应用": "#10b981", "产品落地": "#8b5cf6", "资本动态": "#ec4899", "学术前沿": "#06b6d4", "技术路线": "#f97316", "核心器件": "#84cc16", "产业落地": "#14b8a6"};
+const REFERENCE_DATE = '2026-07-14';
+
+let selectedCategory = '全部';
+let selectedTimeRange = 'all';
+
+function daysBetween(dateStr) {
+  const ref = new Date(REFERENCE_DATE);
+  const d = new Date(dateStr);
+  return Math.floor((ref - d) / (1000 * 60 * 60 * 24));
+}
+
+function filterByTimeRange(items, range) {
+  switch(range) {
+    case '7d': return items.filter(i => daysBetween(i.date) <= 7);
+    case '30d': return items.filter(i => daysBetween(i.date) <= 30);
+    case '2026': return items.filter(i => i.date.startsWith('2026'));
+    default: return items;
+  }
+}
+
+function renderStars(hotness) {
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    html += `<span class="star ${i < hotness ? '' : 'dim'}">★</span>`;
+  }
+  return html;
+}
+
+function renderCategoryTabs() {
+  const timeFiltered = filterByTimeRange(NEWS_DATA, selectedTimeRange);
+  const counts = { '全部': timeFiltered.length };
+  for (const item of timeFiltered) {
+    counts[item.category] = (counts[item.category] || 0) + 1;
+  }
+  
+  const container = document.getElementById('categoryTabs');
+  container.innerHTML = CATEGORIES.map(cat => {
+    const count = counts[cat] || 0;
+    const isActive = cat === selectedCategory;
+    return `<button class="tab ${isActive ? 'active' : ''}" data-category="${cat}">
+      ${cat}<span class="count">${count}</span>
+    </button>`;
+  }).join('');
+  
+  container.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      selectedCategory = tab.dataset.category;
+      renderCategoryTabs();
+      renderNewsGrid();
+    });
+  });
+}
+
+function renderNewsGrid() {
+  let items = filterByTimeRange(NEWS_DATA, selectedTimeRange);
+  if (selectedCategory !== '全部') {
+    items = items.filter(i => i.category === selectedCategory);
+  }
+  
+  const grid = document.getElementById('newsGrid');
+  
+  if (items.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">🔍</div>
+        <p>暂无匹配的新闻</p>
+      </div>
+    `;
+    return;
+  }
+  
+  grid.innerHTML = items.map(item => {
+    const color = CATEGORY_COLORS[item.category] || '#64748b';
+    const sourceLink = item.sourceUrl 
+      ? `<a href="${item.sourceUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">${item.source}</a>`
+      : item.source;
+    
+    return `
+      <article class="news-card">
+        <div class="card-header">
+          <span class="category-tag" style="background: ${color}20; color: ${color};">${item.category}</span>
+          <div class="hotness">${renderStars(item.hotness)}</div>
+        </div>
+        <h3 class="card-title">${item.title}</h3>
+        <p class="card-summary">${item.summary}</p>
+        <ul class="card-points">
+          ${item.keyPoints.map(p => `<li>${p}</li>`).join('')}
+        </ul>
+        <div class="card-footer">
+          <span class="source">${sourceLink}</span>
+          <span class="date">${item.date}</span>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+// 时间筛选
+document.querySelectorAll('.time-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedTimeRange = btn.dataset.range;
+    renderCategoryTabs();
+    renderNewsGrid();
+  });
+});
+
+// 初始化
+renderCategoryTabs();
+renderNewsGrid();
+</script>
+</body>
+</html>
