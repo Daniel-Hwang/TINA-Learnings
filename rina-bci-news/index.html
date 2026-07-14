@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="脑机接口热点新闻看板 - 追踪脑科学、神经技术与BCI领域前沿动态">
-<title>🧠 脑机接口热点新闻 | BCI News Dashboard</title>
+<meta name="description" content="脑机接口热点新闻时间轴 - 持续追踪脑科学、神经技术与BCI领域前沿动态">
+<title>🧠 脑机接口热点新闻时间轴 | BCI News Timeline</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -67,25 +67,41 @@
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: #94a3b8;
     max-width: 600px;
-    margin: 0 auto 24px;
+    margin: 0 auto 28px;
   }
-  .hero .meta {
+  .stats {
     display: flex;
-    gap: 24px;
+    gap: 32px;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 0.875rem;
-    color: #64748b;
   }
-  .hero .meta span { display: flex; align-items: center; gap: 6px; }
-  .container { max-width: 1280px; margin: 0 auto; padding: 0 24px 60px; }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
   .filter-bar {
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(148, 163, 184, 0.1);
     border-radius: 16px;
     padding: 20px 24px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     position: sticky;
     top: 16px;
     z-index: 10;
@@ -150,17 +166,69 @@
     color: #60a5fa;
     border-color: rgba(59, 130, 246, 0.3);
   }
-  .news-grid {
+  /* 时间轴样式 */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.3), transparent);
+  }
+  .date-group {
+    position: relative;
+    margin-bottom: 36px;
+  }
+  .date-group::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+    z-index: 1;
+  }
+  .date-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .date-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+  }
+  .date-weekday {
+    font-size: 0.8125rem;
+    color: #64748b;
+  }
+  .date-count {
+    font-size: 0.75rem;
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .day-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
   }
   .news-card {
     background: rgba(30, 41, 59, 0.5);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(148, 163, 184, 0.1);
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: 12px;
+    padding: 20px;
     transition: all 0.25s ease;
     cursor: pointer;
     position: relative;
@@ -178,57 +246,62 @@
     transition: opacity 0.25s ease;
   }
   .news-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: rgba(96, 165, 250, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25), 0 0 24px rgba(59, 130, 246, 0.08);
   }
   .news-card:hover::before { opacity: 1; }
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 14px;
-    gap: 12px;
+    margin-bottom: 12px;
+    gap: 10px;
   }
   .category-tag {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 3px 10px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.02em;
   }
   .hotness {
     display: flex;
-    gap: 2px;
-    font-size: 0.875rem;
+    gap: 1px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
   }
   .hotness .star { color: #fbbf24; }
   .hotness .star.dim { color: #475569; }
   .card-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #f1f5f9;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.4;
   }
   .card-summary {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     color: #94a3b8;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .card-points {
     list-style: none;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     flex-grow: 1;
   }
   .card-points li {
-    font-size: 0.8125rem;
+    font-size: 0.78rem;
     color: #cbd5e1;
-    padding-left: 16px;
+    padding-left: 14px;
     position: relative;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     line-height: 1.5;
   }
   .card-points li::before {
@@ -242,14 +315,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 14px;
-    border-top: 1px solid rgba(148, 163, 184, 0.1);
-    font-size: 0.75rem;
+    padding-top: 12px;
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+    font-size: 0.72rem;
     color: #64748b;
   }
   .card-footer .source {
     font-style: italic;
-    max-width: 60%;
+    max-width: 65%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -259,9 +332,7 @@
     text-decoration: none;
   }
   .card-footer .source a:hover { text-decoration: underline; }
-  .card-footer .date { font-variant-numeric: tabular-nums; }
   .empty-state {
-    grid-column: 1 / -1;
     text-align: center;
     padding: 60px 24px;
     color: #64748b;
@@ -280,11 +351,40 @@
     margin: 0 auto 12px;
     line-height: 1.6;
   }
+  footer .update-log {
+    max-width: 500px;
+    margin: 16px auto 0;
+    padding: 12px 16px;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  footer .update-log h4 {
+    color: #94a3b8;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  footer .update-log ul { list-style: none; }
+  footer .update-log li {
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .update-log li:last-child { border-bottom: none; }
   @media (max-width: 768px) {
     .hero { padding: 48px 16px 40px; }
     .container { padding: 0 16px 40px; }
-    .news-grid { grid-template-columns: 1fr; gap: 16px; }
-    .filter-bar { padding: 16px; top: 8px; }
+    .timeline { padding-left: 28px; }
+    .timeline::before { left: 8px; }
+    .date-group::before { left: -24px; width: 10px; height: 10px; }
+    .day-cards { grid-template-columns: 1fr; }
+    .filter-bar { padding: 14px; top: 8px; }
+    .stats { gap: 20px; }
+    .stat-num { font-size: 1.375rem; }
   }
 </style>
 </head>
@@ -293,14 +393,27 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="pulse"></span>
-        BCI · 脑科学 · 神经技术
+        BCI · 脑科学 · 神经技术 · 每日更新
       </div>
-      <h1>🧠 脑机接口热点新闻</h1>
-      <p class="subtitle">追踪脑科学、神经技术与脑机接口领域前沿动态 — 每日更新</p>
-      <div class="meta">
-        <span>📅 数据更新：2026-07-14</span>
-        <span>📰 共 10 条热点</span>
-        <span>🏷️ 9 大分类</span>
+      <h1>🧠 脑机接口热点时间轴</h1>
+      <p class="subtitle">持续追踪脑科学、神经技术与脑机接口领域前沿动态<br>只增不删 · 分类筛选 · 来源可追溯</p>
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-num" id="totalCount">10</div>
+          <div class="stat-label">热点总数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="dateCount">9</div>
+          <div class="stat-label">覆盖天数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="catCount">9</div>
+          <div class="stat-label">分类数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" style="font-size: 1rem; margin-top: 6px;" id="latestDate">2026-07-14</div>
+          <div class="stat-label">最新更新</div>
+        </div>
       </div>
     </div>
   </section>
@@ -322,16 +435,22 @@
       </div>
     </div>
 
-    <div class="news-grid" id="newsGrid"></div>
+    <div class="timeline" id="timeline"></div>
   </div>
 
   <footer>
     <p class="sources-note">
       数据来源：国家药监局、新华社、光明网、Nature Medicine、36氪、清科研究、金融界、企业观察报等公开报道
-      <br>每条新闻均标注来源链接，点击卡片底部来源可跳转查看原文
+      <br>每条新闻均标注来源链接，点击卡片可跳转查看原文
     </p>
-    <p>Last updated: 2026-07-14 · Powered by RINA</p>
-    <p style="margin-top: 8px; font-size: 0.75rem;">本页面仅供信息参考，不构成任何投资或医疗建议</p>
+    <p>本页面为增量积累式时间轴，每日自动追加新内容，历史数据永久保留</p>
+    <div class="update-log">
+      <h4>📝 更新记录</h4>
+      <ul>
+        <li><span>2026-07-14</span><span>页面上线 · 10条初始数据</span></li>
+      </ul>
+    </div>
+    <p style="margin-top: 16px; font-size: 0.75rem;">⚠️ 本页面仅供信息参考，不构成任何投资或医疗建议</p>
   </footer>
 
 <script>
@@ -342,6 +461,14 @@ const REFERENCE_DATE = '2026-07-14';
 
 let selectedCategory = '全部';
 let selectedTimeRange = 'all';
+
+// 中文星期
+const WEEKDAYS = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+function getWeekday(dateStr) {
+  const d = new Date(dateStr);
+  return WEEKDAYS[d.getDay()];
+}
 
 function daysBetween(dateStr) {
   const ref = new Date(REFERENCE_DATE);
@@ -386,24 +513,31 @@ function renderCategoryTabs() {
     tab.addEventListener('click', () => {
       selectedCategory = tab.dataset.category;
       renderCategoryTabs();
-      renderNewsGrid();
+      renderTimeline();
     });
   });
 }
 
-function renderNewsGrid() {
+function renderTimeline() {
   let items = filterByTimeRange(NEWS_DATA, selectedTimeRange);
   if (selectedCategory !== '全部') {
     items = items.filter(i => i.category === selectedCategory);
   }
   
-  // 按热度降序、日期降序排序
-  items.sort((a, b) => b.hotness - a.hotness || (a.date < b.date ? 1 : -1));
+  // 按日期分组
+  const groups = {};
+  for (const item of items) {
+    if (!groups[item.date]) groups[item.date] = [];
+    groups[item.date].push(item);
+  }
   
-  const grid = document.getElementById('newsGrid');
+  // 日期降序
+  const sortedDates = Object.keys(groups).sort((a, b) => b.localeCompare(a));
   
-  if (items.length === 0) {
-    grid.innerHTML = `
+  const timeline = document.getElementById('timeline');
+  
+  if (sortedDates.length === 0) {
+    timeline.innerHTML = `
       <div class="empty-state">
         <div class="icon">🔍</div>
         <p>暂无匹配的新闻</p>
@@ -413,28 +547,44 @@ function renderNewsGrid() {
     return;
   }
   
-  grid.innerHTML = items.map(item => {
-    const color = CATEGORY_COLORS[item.category] || '#64748b';
-    const sourceDisplay = item.sourceUrl 
-      ? `<a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" title="查看原文">${item.source} ↗</a>`
-      : item.source;
+  timeline.innerHTML = sortedDates.map(date => {
+    const dayItems = groups[date];
+    // 同日按热度降序
+    dayItems.sort((a, b) => b.hotness - a.hotness);
+    
+    const cardsHtml = dayItems.map(item => {
+      const color = CATEGORY_COLORS[item.category] || '#64748b';
+      const sourceDisplay = item.sourceUrl 
+        ? `<a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" title="查看原文">${item.source} ↗</a>`
+        : item.source;
+      
+      return `
+        <article class="news-card" onclick="${item.sourceUrl ? `window.open('${item.sourceUrl}', '_blank')` : ''}">
+          <div class="card-header">
+            <span class="category-tag" style="background: ${color}20; color: ${color};">${item.category}</span>
+            <div class="hotness">${renderStars(item.hotness)}</div>
+          </div>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-summary">${item.summary}</p>
+          <ul class="card-points">
+            ${item.keyPoints.map(p => `<li>${p}</li>`).join('')}
+          </ul>
+          <div class="card-footer">
+            <span class="source">${sourceDisplay}</span>
+          </div>
+        </article>
+      `;
+    }).join('');
     
     return `
-      <article class="news-card" onclick="${item.sourceUrl ? `window.open('${item.sourceUrl}', '_blank')` : ''}">
-        <div class="card-header">
-          <span class="category-tag" style="background: ${color}20; color: ${color};">${item.category}</span>
-          <div class="hotness">${renderStars(item.hotness)}</div>
+      <div class="date-group">
+        <div class="date-header">
+          <span class="date-title">${date}</span>
+          <span class="date-weekday">${getWeekday(date)}</span>
+          <span class="date-count">${dayItems.length} 条</span>
         </div>
-        <h3 class="card-title">${item.title}</h3>
-        <p class="card-summary">${item.summary}</p>
-        <ul class="card-points">
-          ${item.keyPoints.map(p => `<li>${p}</li>`).join('')}
-        </ul>
-        <div class="card-footer">
-          <span class="source">${sourceDisplay}</span>
-          <span class="date">${item.date}</span>
-        </div>
-      </article>
+        <div class="day-cards">${cardsHtml}</div>
+      </div>
     `;
   }).join('');
 }
@@ -446,13 +596,13 @@ document.querySelectorAll('.time-btn').forEach(btn => {
     btn.classList.add('active');
     selectedTimeRange = btn.dataset.range;
     renderCategoryTabs();
-    renderNewsGrid();
+    renderTimeline();
   });
 });
 
 // 初始化
 renderCategoryTabs();
-renderNewsGrid();
+renderTimeline();
 </script>
 </body>
 </html>
