@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 脑机接口 (BCI) 每日热点新闻</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        header p {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        .update-time {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.15);
+            color: #00d4ff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #00d4ff, #7b2cbf);
+        }
+        
+        .news-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .news-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .news-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00d4ff;
+            border: 3px solid #1a1a2e;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+        
+        .news-date {
+            display: inline-block;
+            background: rgba(123, 44, 191, 0.3);
+            color: #c084fc;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .news-title a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .news-title a:hover {
+            color: #00d4ff;
+        }
+        
+        .news-summary {
+            color: #b0b0b0;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+        
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .news-source a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        
+        .news-source a:hover {
+            text-decoration: underline;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-right: 5px;
+        }
+        
+        .tag-neuralink {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+        }
+        
+        .tag-china {
+            background: rgba(234, 179, 8, 0.2);
+            color: #fde047;
+        }
+        
+        .tag-research {
+            background: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+        
+        .tag-investment {
+            background: rgba(168, 85, 247, 0.2);
+            color: #d8b4fe;
+        }
+        
+        .tag-policy {
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+        }
+        
+        .date-divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .date-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .date-divider span {
+            position: relative;
+            background: #1a1a2e;
+            padding: 0 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .news-item {
+                padding: 15px;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .news-item::before {
+                left: -26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 脑机接口 (BCI) 每日热点</h1>
+            <p>追踪全球脑机接口技术、临床进展与产业动态</p>
+            <div class="update-time">📅 最后更新：2026-08-27</div>
+        </header>
+
+        <div class="timeline">
+            <!-- 2026-08-27 新闻 -->
+            <div class="date-divider"><span>📰 2026年8月27日</span></div>
+            
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://www.tsinghua.edu.cn/info/3245/127172.htm" target="_blank">清华团队30年攻关 推动脑接口技术加速"接入"现实生活</a>
+                </div>
+                <div class="news-summary">
+                    清华大学发布长文回顾脑机接口30年发展历程。2026年3月，国家药监局批准全球首款侵入式脑机接口医疗器械NEO系统上市，标志着国际首个侵入式脑机接口医疗器械进入临床应用阶段。该系统已完成32例颈段脊髓损伤患者的临床植入，帮助患者实现手部抓握、喝水、吃饭等功能。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span class="tag tag-research">🔬 科研</span>
+                    <span>来源：清华大学官网</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://openai.com/index/investing-in-merge-labs" target="_blank">OpenAI投资Merge Labs，推动脑机接口与AI融合</a>
+                </div>
+                <div class="news-summary">
+                    OpenAI宣布参与脑机接口初创公司Merge Labs的种子轮融资。Merge Labs由OpenAI CEO Sam Altman联合创立，致力于开发全新的脑机接口技术路径，通过融合生物学、设备和AI，打造更安全、更高带宽的大脑交互接口。OpenAI将与其在科学基础模型及前沿工具上展开合作。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-investment">💰 投资</span>
+                    <span class="tag tag-research">🔬 科研</span>
+                    <span>来源：OpenAI官方博客</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://www.nhsa.gov.cn/art/2026/6/16/art_109_21005.html" target="_blank">国家医保局举办全球脑机接口×医保创新场景大赛</a>
+                </div>
+                <div class="news-summary">
+                    国家医疗保障局主办的全球脑机接口×医保创新场景大赛正在进行中。大赛设置多个赛道，涵盖辅助器具交互、功能康复与智能照护、大脑健康管理等场景。决赛将于2026年9月在浙江杭州举行，旨在推动脑机接口技术在医保领域的创新应用。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-policy">📋 政策</span>
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span>来源：国家医疗保障局</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://growthhackers.tw/blog/neuralink-brain-computer-interface-2026" target="_blank">Neuralink 2026最新进展：意念控制轮椅成现实</a>
+                </div>
+                <div class="news-summary">
+                    Neuralink在临床试验中展示受试者用意念操控电动轮椅的技术突破。文章深入拆解了Neuralink的通用控制层技术，以及2026年5月在多伦多完成的首例经硬脑膜植入手术。马斯克表示2026年将开启大规模量产，并推进更精简、全自动化的外科手术流程。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-neuralink">🧠 Neuralink</span>
+                    <span class="tag tag-research">🔬 科研</span>
+                    <span>来源：Growth Hackers</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://www.chinaventure.com.cn/news/114-20260415-390944.html" target="_blank">2026：风口上的脑机接口，能飞多高？</a>
+                </div>
+                <div class="news-summary">
+                    投中网深度分析脑机接口产业现状。2026年3月中关村论坛上，宣武医院、天坛医院专家分享了最新临床进展。中国脑机接口市场预计2026年突破50亿元，2030年达150亿元。文章同时指出行业面临的挑战：硬件生物相容性、数据隐私、伦理问题等仍需突破。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span class="tag tag-investment">💰 产业</span>
+                    <span>来源：投中网</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://stcn.com/article/detail/3754239.html" target="_blank">脑机接口应用场景从医疗向工业和消费拓展</a>
+                </div>
+                <div class="news-summary">
+                    证券时报报道脑机接口技术正从医疗领域向工业和消费场景拓展。华脑安全将BCI嵌入安全帽应用于高危作业场景，疲劳识别准确率超90%；脉动舒康"美梦仓"系统通过声光电干预平均延长深睡眠时间20%。脑机接口与大模型结合也成为提效新方向。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span class="tag tag-investment">💰 产业</span>
+                    <span>来源：证券时报</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-08-27</div>
+                <div class="news-title">
+                    <a href="https://www.btch.edu.cn/ksdh/wkb/sjwk/jkjy_sjwk/c1704a6f980848b18369a0874b09b2e0.htm" target="_blank">清华大学"脑科学与脑机接口"思政实践支队开展实践活动</a>
+                </div>
+                <div class="news-summary">
+                    2026年7月，清华大学"脑科学与脑机接口"思政实践支队走访十余家企业、政府和相关机构，深度探索脑机接口技术的前沿进展与产业化路径。支队参观了博睿康科技，了解Neo系统从科研到获批全球首款硬膜外植入式脑机接口产品的发展历程。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span class="tag tag-research">🔬 教育</span>
+                    <span>来源：北京清华长庚医院</span>
+                </div>
+            </div>
+
+            <!-- 历史新闻归档 -->
+            <div class="date-divider"><span>📚 历史归档</span></div>
+            
+            <div class="news-item">
+                <div class="news-date">2026-03-27</div>
+                <div class="news-title">
+                    <a href="https://www.news.cn/tech/20260327/def9b064765549148debf3b1c9df348c/c.html" target="_blank">全球首款侵入式脑机接口医疗器械NEO系统获批上市</a>
+                </div>
+                <div class="news-summary">
+                    由清华大学团队与博睿康联合研发的NEO系统正式获批上市，国家医保局完成医保编码赋码。该系统为全球首款采用"硬脑膜外植入+全无线传输设计"的半侵入式脑机接口产品，关键核心技术和零部件全部实现国产化。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-china">🇨🇳 中国</span>
+                    <span class="tag tag-research">🔬 里程碑</span>
+                    <span>来源：新华网</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-01-15</div>
+                <div class="news-title">
+                    <a href="https://techcrunch.com/2026/01/15/openai-invests-in-sam-altmans-brain-computer-interface-startup-merge-labs" target="_blank">Merge Labs获2.52亿美元融资，OpenAI领投</a>
+                </div>
+                <div class="news-summary">
+                    脑机接口初创公司Merge Labs宣布完成2.52亿美元种子轮融资，由OpenAI领投，Bain Capital、Interface Fund和Fifty Years等参投。公司由Sam Altman等人联合创立，致力于开发非侵入式脑机接口技术，利用超声波间接解读大脑信号。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-investment">💰 融资</span>
+                    <span class="tag tag-research">🔬 技术</span>
+                    <span>来源：TechCrunch</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-date">2026-01-04</div>
+                <div class="news-title">
+                    <a href="https://cn.wicinternet.org/2026-01/04/content_38517304.htm" target="_blank">马斯克宣布：Neuralink 2026年开启大规模量产</a>
+                </div>
+                <div class="news-summary">
+                    马斯克宣布Neuralink将于2026年开始大规模量产脑机接口设备，并转向更精简、全自动化的外科手术流程。截至2025年9月，全球已有12名重度瘫痪患者植入Neuralink设备。马斯克愿景是在2028年实现"全脑脑机接口计划"。
+                </div>
+                <div class="news-source">
+                    <span class="tag tag-neuralink">🧠 Neuralink</span>
+                    <span class="tag tag-investment">💰 产业</span>
+                    <span>来源：世界互联网大会</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🤖 本页面由 TINA 自动生成 | 每日更新脑机接口热点新闻</p>
+            <p>数据来源：公开网络搜索 | 如有遗漏或错误，欢迎指正</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/rina-bci-news/rina-bci-news.github.io" target="_blank">⭐ GitHub 仓库</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
