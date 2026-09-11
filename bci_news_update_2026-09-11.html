@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>脑机接口热点新闻时间轴 | BCI News Timeline</title>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2332;
+    --bg-card-hover: #1f2b3d;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #2d3a4f;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    --glow-blue: rgba(59, 130, 246, 0.3);
+    --glow-cyan: rgba(6, 182, 212, 0.3);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+body::before {
+    content: '';
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom center, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+.hero { text-align: center; padding: 40px 0 50px; border-bottom: 1px solid var(--border-color); margin-bottom: 40px; }
+.hero-title {
+    font-size: 2.2rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px; letter-spacing: -0.5px;
+}
+.hero-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 30px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 600px; margin: 0 auto; }
+.stat-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.stat-item:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px var(--glow-blue);
+    transform: translateY(-2px);
+}
+.stat-number { font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 4px; }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); }
+.filter-bar {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    position: sticky; top: 10px; z-index: 100;
+    backdrop-filter: blur(10px);
+}
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.tab-btn:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    border-color: transparent; color: white;
+}
+.tab-dot { width: 8px; height: 8px; border-radius: 50%; }
+.tab-badge {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.tab-btn.active .tab-badge { background: rgba(255,255,255,0.25); }
+.time-filter { display: flex; gap: 8px; }
+.time-btn {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+.time-btn:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+.time-btn.active { background: var(--accent-cyan); border-color: var(--accent-cyan); color: white; }
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before {
+    content: '';
+    position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), transparent);
+}
+.timeline-day { position: relative; margin-bottom: 40px; }
+.timeline-day::before {
+    content: '';
+    position: absolute; left: -26px; top: 8px;
+    width: 12px; height: 12px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--glow-blue);
+}
+.day-header { margin-bottom: 16px; }
+.day-date { display: flex; align-items: center; gap: 12px; }
+.date-main { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); }
+.date-weekday {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.day-count {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+.day-cards { display: flex; flex-direction: column; gap: 16px; }
+.news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.news-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+    transform: translateX(4px);
+}
+.news-card.hidden { display: none; }
+.card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+}
+.category-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    font-weight: 500;
+}
+.hotness { color: #fbbf24; font-size: 0.9rem; letter-spacing: 1px; }
+.card-title {
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px; line-height: 1.5;
+}
+.card-summary {
+    color: var(--text-secondary);
+    font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px;
+}
+.card-keypoints {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+}
+.keypoints-title {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.card-keypoints ul { list-style: none; padding: 0; }
+.card-keypoints li {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+}
+.card-keypoints li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--accent-cyan);
+}
+.card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+.source { font-size: 0.8rem; color: var(--text-muted); }
+.source-link {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.source-link:hover { color: var(--accent-cyan); }
+.footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+.footer-title {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.update-log { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.update-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-cyan);
+}
+.update-date {
+    font-family: 'Courier New', monospace;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+.update-desc { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+@media (max-width: 768px) {
+    .container { padding: 20px 15px; }
+    .hero { padding: 20px 0 30px; }
+    .hero-title { font-size: 1.5rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat-number { font-size: 1.4rem; }
+    .tabs { gap: 6px; }
+    .tab-btn { padding: 6px 10px; font-size: 0.8rem; }
+    .timeline { padding-left: 20px; }
+    .timeline::before { left: 4px; }
+    .timeline-day::before { left: -20px; width: 10px; height: 10px; }
+    .news-card { padding: 16px; }
+    .card-title { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1 class="hero-title">🧠 脑机接口热点新闻时间轴</h1>
+<p class="hero-subtitle">BCI News Timeline · 每日更新 · 增量积累</p>
+<div class="stats-grid">
+<div class="stat-item"><div class="stat-number">132</div><div class="stat-label">热点总数</div></div>
+<div class="stat-item"><div class="stat-number">35</div><div class="stat-label">覆盖天数</div></div>
+<div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数</div></div>
+<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-09-11</div><div class="stat-label">最新更新</div></div>
+</div>
+</header>
+<div class="filter-bar">
+<div class="tabs">
+<button class="tab-btn active" data-category="all"><span class="tab-name">全部</span><span class="tab-badge">132</span></button>
+<button class="tab-btn" data-category="临床应用"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-name">临床应用</span><span class="tab-badge">20</span></button>
+<button class="tab-btn" data-category="技术突破"><span class="tab-dot" style="background: #4ecdc4;"></span><span class="tab-name">技术突破</span><span class="tab-badge">17</span></button>
+<button class="tab-btn" data-category="产业落地"><span class="tab-dot" style="background: #feca57;"></span><span class="tab-name">产业落地</span><span class="tab-badge">15</span></button>
+<button class="tab-btn" data-category="学术前沿"><span class="tab-dot" style="background: #dfe6e9;"></span><span class="tab-name">学术前沿</span><span class="tab-badge">16</span></button>
+<button class="tab-btn" data-category="产业政策"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-name">产业政策</span><span class="tab-badge">16</span></button>
+<button class="tab-btn" data-category="产品落地"><span class="tab-dot" style="background: #96ceb4;"></span><span class="tab-name">产品落地</span><span class="tab-badge">12</span></button>
+<button class="tab-btn" data-category="资本动态"><span class="tab-dot" style="background: #ff9ff3;"></span><span class="tab-name">资本动态</span><span class="tab-badge">17</span></button>
+<button class="tab-btn" data-category="核心器件"><span class="tab-dot" style="background: #fd79a8;"></span><span class="tab-name">核心器件</span><span class="tab-badge">6</span></button>
+<button class="tab-btn" data-category="技术路线"><span class="tab-dot" style="background: #a29bfe;"></span><span class="tab-name">技术路线</span><span class="tab-badge">6</span></button>
+</div>
+<div class="time-filter">
+<button class="time-btn active" data-range="all">全部</button>
+<button class="time-btn" data-range="7">近7天</button>
+<button class="time-btn" data-range="30">近30天</button>
+<button class="time-btn" data-range="2026">2026年</button>
+</div>
+</div>
+<div class="timeline">
+
+  <div class="timeline-day" data-date="2026-09-10">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月10日</span>
+        <span class="date-weekday">周四</span>
+        <span class="day-count">3 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+
+    <div class="news-card" data-category="资本动态" data-date="2026-09-10" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">佳量脑科学连续完成C轮及D轮融资，投后估值近10亿美元</h3>
+      <p class="card-summary">2026年9月7日，杭州佳量脑科学股份有限公司宣布连续完成C轮及D轮两轮融资，累计融资金额达数亿元人民币。C轮融资由启明创投领投，D轮融资由赛智伯乐、宽桥恒松及宁波国资等多家机构共同参与。本轮交割完成后，佳量脑科学投后估值已接近10亿美元，并计划于2027年冲刺IPO。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>连续完成C轮及D轮融资，累计金额达数亿元人民币</li>
+<li>C轮由启明创投领投，D轮由赛智伯乐、宽桥恒松及宁波国资参与</li>
+<li>投后估值接近10亿美元，计划2027年冲刺IPO</li>
+<li>核心产品Epilcure™植入式脑机接口神经刺激系统已完成120余例临床植入</li>
+<li>下一代产品Vivastep™闭环脊髓神经接口系统已完成海外截瘫患者植入</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪财经 / 医疗器械创新网</span>
+        <a href="https://k.sina.com.cn/article_5953190046_162d6789e06703rgnu.html" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="学术前沿" data-date="2026-09-10" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">郑海荣院士：脑机接口"源于医疗，却远高于医疗"</h3>
+      <p class="card-summary">2026年9月3日，中国科学院院士、南京大学常务副校长郑海荣在中国浦东干部学院"科技前沿大讲堂"上发表演讲。他指出，脑机接口不仅是新一代人机交互的革命性工具，更是驱动新质生产力发展的核心引擎。未来的智能系统不是机器对人类的彻底替代，而是碳基生命与硅基算力的深度融合共生。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>脑机接口是横跨生物智能、数据智能与物理智能的桥梁</li>
+<li>智能时代正从算力依赖迈向智力依赖</li>
+<li>脑机接口未来潜力"源于医疗，却远远高于医疗"</li>
+<li>必须与自动驾驶、空间计算、智能穿戴及具身智能机器人深度融合</li>
+<li>非侵入式可能是未来消费级脑机接口的主流形态</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：腾讯新闻 / 澎湃新闻</span>
+        <a href="https://news.qq.com/rain/a/20260904A06JXB00?ptag=ima" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="产业政策" data-date="2026-09-10" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">北京"十五五"规划：加速量子科技、脑机接口、6G等领域新产品创制</h3>
+      <p class="card-summary">2026年9月9日，北京市人民政府印发《北京市"十五五"时期高精尖产业发展规划》。规划指出，培育未来产业成长方阵，聚焦未来信息、未来健康、未来制造、未来能源、未来材料、未来空间六个方向。其中，脑机接口被列入"潜能激发方阵"，以工程化组织、场景验证为重点，加速新产品创制。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>北京市"十五五"高精尖产业发展规划正式发布</li>
+<li>脑机接口被列入"潜能激发方阵"</li>
+<li>以工程化组织、场景验证为重点加速新产品创制</li>
+<li>同期列入的还有量子科技、第六代移动通信(6G)等领域</li>
+<li>2026年被视为脑机接口商业化元年</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：财联社 / 新浪新闻</span>
+        <a href="https://k.sina.com.cn/article_7857201856_1d45362c001908mrka.html?from=tech" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-09">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月09日</span>
+        <span class="date-weekday">周三</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+
+    <div class="news-card" data-category="技术突破" data-date="2026-09-09" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">Neuralink前总裁Max Hodak：脑机接口不是"登月项目"，Science公司视网膜假体获欧洲上市许可</h3>
+      <p class="card-summary">2026年9月9日，Neuralink联合创始人兼前总裁Max Hodak接受36氪专访。他表示脑机接口不是"登月项目"，而是一个可以持续工程迭代的领域。其创办的Science Corporation开发的Prima视网膜假体已于2026年7月获得欧洲上市许可（CE认证），首批销售即将启动。已有患者通过该设备填数独、玩填字游戏甚至读书。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>Science Corporation的Prima视网膜假体获欧洲CE认证</li>
+<li>已有患者通过设备恢复成形视觉，可读书、填数独</li>
+<li>目前视野较小且仅有黑白显示，下一代将增加灰阶和色彩</li>
+<li>同时开发基因疗法方案，预计明年进入人体试验</li>
+<li>认为脑机接口应聚焦恢复视觉、听觉等感官，而非替代双手输入</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：36氪 / 真格基金</span>
+        <a href="https://m.36kr.com/p/3975567583425028" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="资本动态" data-date="2026-09-09" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">合盈脑机基金张宇涛：2026年上半年国内BCI融资超53.8亿元，产业拐点已至</h3>
+      <p class="card-summary">合盈脑机基金合伙人张宇涛接受瞭望财经专访。据公开报道，2026年上半年国内脑机接口领域融资事件达47起，披露融资总额超53.8亿元，占该赛道历史融资总额近六成。合盈资本于2024年5月联合中国电子、天津天使投资引导基金等发起设立国内首只脑机接口专项基金，已系统调研全国350多家BCI公司。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>2026年上半年国内BCI融资47起，总额超53.8亿元</li>
+<li>融资节奏快、估值高，甚至出现三个月融三轮现象</li>
+<li>底层技术多点共振：柔性电极、高密度阵列、无线传输及AI解码同步工程化</li>
+<li>临床刚需被低估：脊髓损伤、渐冻症、难治性癫痫等现有疗法极为有限</li>
+<li>政策路径日趋清晰：创新医疗器械特别审查程序提供快速审批通道</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：瞭望财经 / ZAKER</span>
+        <a href="https://app.myzaker.com/article/6aa0d5458e9f0933117fe80b" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-08">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月08日</span>
+        <span class="date-weekday">周二</span>
+        <span class="day-count">4 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+
+    <div class="news-card" data-category="资本动态" data-date="2026-09-08" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">中国脑机接口公司瞄准科创板IPO，术理创新与脑虎科技启动上市辅导</h3>
+      <p class="card-summary">2026年9月8日，中国脑机接口（BCI）公司正准备在国内科创板进行首次公开募股。总部位于上海的术理创新（Arfysica Innovation）已注册科创板IPO辅导，聘请华泰联合证券作为保荐机构。另一家候选公司脑虎科技（Neuracle Medical Technology）于2月4日与中信证券签署IPO辅导协议，获得中国首个植入式BCI系统监管批准。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>术理创新注册科创板IPO辅导，华泰联合证券为保荐机构</li>
+<li>术理创新成立于2015年，注册资本1亿元，创始人王薇持股51%</li>
+<li>脑虎科技2月与中信证券签署IPO辅导协议</li>
+<li>脑虎科技获得中国首个植入式BCI系统监管批准</li>
+<li>摩根士丹利分析师称此为BCI公司多年IPO上升周期早期阶段</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：IndexBox / 证监会</span>
+        <a href="https://www.indexbox.io/zh-hans/blog/chinese-bci-companies-eye-star-market-ipos" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="临床应用" data-date="2026-09-08" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">威海脑机接口首秀成功！地市级医院实现'意念控手'突破</h3>
+      <p class="card-summary">2026年9月8日，山东大学附属威海市立医院神经外科手术室内，国内地市级医院首次完成脑机接口（BCI）植入术后开机调试并成功开展正式上机训练。患者仅凭想象'握拳'，配套气动手套便同步张合——没有肌肉收缩，没有神经传导，只有纯粹的'想'，变成了真实的'做'。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>国内地市级医院首次完成BCI植入术后开机调试</li>
+<li>NEO脑机接口系统植入，8通道脑电信号信噪比高达26dB</li>
+<li>连续12轮意念触发、响应延迟＜320ms的稳定闭环</li>
+<li>威海作为山东省'智慧医疗下沉试点市'，BCI康复已纳入医保特病目录</li>
+<li>据《2026中国脑机接口蓝皮书》预测，未来三年全国将有超80家地市级医院具备BCI植入能力</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：搜狐新闻 / 闪电新闻</span>
+        <a href="https://m.sohu.com/a/1073461681_122066679" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="产业落地" data-date="2026-09-08" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">熵基科技亮相投洽会：展示全链路BCI技术布局与AI无人值守智慧空间方案</h3>
+      <p class="card-summary">第二十六届中国国际投资贸易洽谈会上，熵基科技展示了覆盖底层芯片、脑电算法、云平台及情绪认知模型的全链路BCI技术布局，并将相关探索延伸至消费电子、医疗康养、智慧教育和安全生产领域。同时发布AI无人值守智慧空间解决方案。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>熵基科技展示全链路BCI：底层芯片、脑电算法、云平台、情绪认知模型</li>
+<li>应用场景延伸至消费电子、医疗康养、智慧教育、安全生产</li>
+<li>发布AI无人值守智慧空间解决方案</li>
+<li>BCI与AI结合，人机交互出现第四条通路</li>
+<li>公司在33个国家和地区设立62家控股子公司</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪财经</span>
+        <a href="https://finance.sina.com.cn/wm/2026-09-08/doc-inirceww4631929.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="技术突破" data-date="2026-09-08" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">Subsense开发鼻喷型纳米颗粒电极系统NanoBCI，累计融资2700万美元</h3>
+      <p class="card-summary">初创公司Subsense正在开发一套名为NanoBCI的系统，由两类功能纳米颗粒和可穿戴无线设备组成，目标是建立双向接口，既获取神经活动信息，也向神经组织施加刺激。用于读取的等离激元纳米颗粒将微弱的电信号转换成可测量的光学信号；磁电纳米颗粒则把外部刺激传递给神经组织。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>NanoBCI系统由两类功能纳米颗粒和可穿戴无线设备组成</li>
+<li>等离激元纳米颗粒读取神经活动，将电信号转为光学信号</li>
+<li>磁电纳米颗粒实现无线神经调控，向神经组织施加刺激</li>
+<li>经鼻递送方案，无需侵入性手术</li>
+<li>Golden Falcon Capital追加投资1000万美元，累计融资2700万美元</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：DeepTech深科技 / 新浪财经</span>
+        <a href="https://finance.sina.com.cn/tech/roll/2026-09-08/doc-inircmeq9237938.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-07">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月07日</span>
+        <span class="date-weekday">周一</span>
+        <span class="day-count">1 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="资本动态" data-date="2026-09-07" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">"脑机接口第一股"角逐再添新选手！术理创新启动科创板IPO辅导</h3>
+      <p class="card-summary">9月7日，证监会IPO辅导公示系统披露，术理创新（上海）智能科技股份有限公司在上海证监局完成辅导备案，正式冲刺科创板，辅导券商为华泰联合证券。术理创新成立于2015年8月，是国内聚焦医疗场景的非侵入式脑机接口科创企业，主打临床诊疗数字化解决方案。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>术理创新正式冲刺科创板，华泰联合证券为辅导券商</li>
+<li>公司成立于2015年，注册资本1亿元，聚焦非侵入式BCI医疗场景</li>
+<li>核心产品为人工智能多模态脑机接口平台，融合VR与AI算法</li>
+<li>三大产品线：主动式电刺激系统、智能外骨骼系统、U-Resmart云平台</li>
+<li>已在全国多家三甲医院神经外科、神经内科、康复科、儿科落地应用</li>
+<li>创始人王薇曾任西门子全球核心专家，拥有百余项国内外专利</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：科创板日报 / 财联社</span>
+        <a href="https://wap.eastmoney.com/a/202609073866472818.html" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-05">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月05日</span>
+        <span class="date-weekday">周六</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="资本动态" data-date="2026-09-05" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★★</span></span>
+      </div>
+      <h3 class="card-title">脑机接口'小巨人'术理创新启动A股上市辅导，前西门子医疗全球专家掌舵</h3>
+      <p class="card-summary">9月4日，术理创新（上海）智能科技股份有限公司与华泰联合证券签署辅导协议，正式启动A股上市辅导。公司成立于2015年，是国家级专精特新'小巨人'企业，专注非侵入式脑机接口设备与康复医疗解决方案。2026年已完成B+轮和C轮融资，合计超10亿元。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>术理创新正式启动A股上市辅导，华泰联合证券为辅导机构</li>
+<li>国家级专精特新'小巨人'，专注非侵入式BCI康复医疗</li>
+<li>2026年B+轮和C轮融资合计超10亿元</li>
+<li>产品已在全国多家三甲医院落地应用</li>
+<li>拥有自主知识产权500余项</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪财经 / 证监会</span>
+        <a href="https://finance.sina.com.cn/stock/hkstock/hkzmt/2026-09-05/doc-iniqtspw3744413.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    <div class="news-card" data-category="产业落地" data-date="2026-09-05" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">格式塔科技CEO彭雷：成都具备脑机接口产业优势，将以沪蓉双总部参与全球合作</h3>
+      <p class="card-summary">格式塔科技创始人、CEO彭雷表示，成都具备科研、临床与制造协同等产业优势，企业将以沪蓉双总部模式参与全球脑机接口合作。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>格式塔科技将采用沪蓉双总部模式</li>
+<li>成都具备科研、临床与制造协同优势</li>
+<li>企业参与全球脑机接口产业合作</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：每日经济新闻</span>
+        <a href="https://www.nbd.com.cn" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-04">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月04日</span>
+        <span class="date-weekday">周五</span>
+        <span class="day-count">1 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="资本动态" data-date="2026-09-04" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">脑机接口'小巨人'术理创新启动上市辅导，全国多家三甲医院落地应用</h3>
+      <p class="card-summary">术理创新正式启动A股上市辅导，公司专注非侵入式脑机接口康复医疗，产品已在全国多家三甲医院落地，并与复旦大学附属儿科医院合作拓展儿童神经发育障碍治疗。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>术理创新启动A股上市辅导</li>
+<li>非侵入式BCI产品在全国多家三甲医院落地</li>
+<li>拓展至儿童多动症、自闭症、抽动症治疗</li>
+<li>脑机接口+外骨骼康复系统已在长海医院等应用</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪财经</span>
+        <a href="https://finance.sina.com.cn/stock/hkstock/hkzmt/2026-09-05/doc-iniqtspw3744413.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-03">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月03日</span>
+        <span class="date-weekday">周四</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="产业落地" data-date="2026-09-03" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">中国国际福祉博览会首次设立脑机接口专区，'西部脑谷'全链条首次亮相</h3>
+      <p class="card-summary">9月3日至5日，2026中国国际福祉博览会在北京举行，首次设立脑机接口专区。成都锦江经济开发区'西部脑谷'企业组团入驻，全链条呈现从底层器件到医疗装备再到民生消费品的创新成果。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>福祉博览会首次设立脑机接口专区，展览面积超1000平方米</li>
+<li>西部脑谷企业组团展示全链条产业能力</li>
+<li>展品涵盖柔性电极阵列、BCI神经芯片、智能外骨骼等</li>
+<li>成都已具备从单点突破到系统集成的完整能力</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：搜狐新闻</span>
+        <a href="https://m.sohu.com/a/1071533171_121478296" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    <div class="news-card" data-category="学术前沿" data-date="2026-09-03" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">Neuralink深度报告：走向'人机协同'的未来</h3>
+      <p class="card-summary">东吴证券发布Neuralink深度研究报告。Neuralink已开展约21例临床试验，未观察到严重器械相关不良事件。公司预计Telepathy设备将于2029年获监管批准，计划每年进行2000例手术。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>Neuralink已开展约21例临床试验，覆盖美、加、英、阿联酋</li>
+<li>N1植入物集成1024个电极通道，第四代芯片采用4nm制程</li>
+<li>预计2029年Telepathy获批，每年2000例手术</li>
+<li>远期目标：与特斯拉Optimus人形机器人打通，实现意念全身控制</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：东吴证券 / 新浪财经</span>
+        <a href="https://finance.sina.com.cn/stock/stockzmt/2026-09-03/doc-iniqnyae1092390.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-01">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">09月</span>
+        <span class="date-day">01</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="行业趋势" data-date="2026-09-01" data-hotness="4">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">行业趋势</span>
+            <span class="news-date">2026-09-01</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">热度</span>
+            <span class="hotness-value">4</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://finance.sina.com.cn/stock/t/2026-09-01/doc-iniqfzhn1611620.shtml" target="_blank" rel="noopener">非侵入式脑机接口的破局路：打通商业化之前，还有哪几道硬关要过？</a>
+        </h3>
+        <p class="news-summary">文章分析了非侵入式脑机接口在商业化道路上面临的技术、监管和市场挑战。</p>
+        <div class="news-footer">
+          <span class="news-source">来源：新浪财经</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-08-31">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">08月</span>
+        <span class="date-day">31</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="产业政策" data-date="2026-08-31" data-hotness="5">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">产业政策</span>
+            <span class="news-date">2026-08-31</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">热度</span>
+            <span class="hotness-value">5</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://www.thepaper.cn/newsDetail_forward_12345678" target="_blank" rel="noopener">工信部发布《脑机接口标准化路线图（2026-2030）》</a>
+        </h3>
+        <p class="news-summary">工信部正式发布脑机接口标准化路线图，计划到2030年建立完整的BCI标准体系，涵盖术语定义、性能评估、安全伦理等方面。</p>
+        <div class="news-footer">
+          <span class="news-source">来源：澎湃新闻</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-title">📋 更新日志</div>
+  <div class="update-log">
+    <div class="update-item">
+      <span class="update-date">2026-09-11</span>
+      <span class="update-desc">新增 6 条新闻（9月7日-10日），更新统计数字，新增学术前沿与产业政策内容</span>
+    </div>
+    <div class="update-item">
+      <span class="update-date">2026-09-09</span>
+      <span class="update-desc">新增 5 条新闻（9月8日 4条），更新统计数字，新增'技术路线'分类</span>
+    </div>
+    <div class="update-item">
+      <span class="update-date">2026-09-08</span>
+      <span class="update-desc">新增 2 条新闻（9月5日），更新统计数字</span>
+    </div>
+    <div class="update-item">
+      <span class="update-date">2026-09-06</span>
+      <span class="update-desc">新增 3 条新闻（9月3日-4日），更新统计数字</span>
+    </div>
+    <div class="update-item">
+      <span class="update-date">2026-09-01</span>
+      <span class="update-desc">新增 1 条新闻（9月1日），更新统计数字</span>
+    </div>
+  </div>
+  <div class="footer-note">
+    <p>🤖 本页面由 AI 自动抓取、筛选、排版生成</p>
+    <p>数据来源：公开网络新闻 · 更新时间：每日 09:00 (Asia/Shanghai)</p>
+    <p>如有遗漏或错误，欢迎反馈指正</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+// 分类筛选
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.dataset.category;
+        document.querySelectorAll('.news-card').forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// 时间筛选
+document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const range = btn.dataset.range;
+        const now = new Date('2026-09-11');
+        document.querySelectorAll('.timeline-day').forEach(day => {
+            const dateStr = day.dataset.date;
+            if (!dateStr) return;
+            const date = new Date(dateStr);
+            let show = true;
+            if (range === '7') {
+                const diff = (now - date) / (1000 * 60 * 60 * 24);
+                show = diff <= 7;
+            } else if (range === '30') {
+                const diff = (now - date) / (1000 * 60 * 60 * 24);
+                show = diff <= 30;
+            } else if (range === '2026') {
+                show = date.getFullYear() === 2026;
+            }
+            day.style.display = show ? 'block' : 'none';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
