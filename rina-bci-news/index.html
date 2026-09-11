@@ -1,0 +1,3463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鑴戞満鎺ュ彛鐑偣鏂伴椈鏃堕棿杞?| BCI News Timeline</title>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2332;
+    --bg-card-hover: #1f2b3d;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #2d3a4f;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    --glow-blue: rgba(59, 130, 246, 0.3);
+    --glow-cyan: rgba(6, 182, 212, 0.3);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+body::before {
+    content: '';
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom center, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+.hero { text-align: center; padding: 40px 0 50px; border-bottom: 1px solid var(--border-color); margin-bottom: 40px; }
+.hero-title {
+    font-size: 2.2rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px; letter-spacing: -0.5px;
+}
+.hero-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 30px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 600px; margin: 0 auto; }
+.stat-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.stat-item:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px var(--glow-blue);
+    transform: translateY(-2px);
+}
+.stat-number { font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 4px; }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); }
+.filter-bar {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+    position: sticky; top: 10px; z-index: 100;
+    backdrop-filter: blur(10px);
+}
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.tab-btn:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    border-color: transparent; color: white;
+}
+.tab-dot { width: 8px; height: 8px; border-radius: 50%; }
+.tab-badge {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.tab-btn.active .tab-badge { background: rgba(255,255,255,0.25); }
+.time-filter { display: flex; gap: 8px; }
+.time-btn {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+.time-btn:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+.time-btn.active { background: var(--accent-cyan); border-color: var(--accent-cyan); color: white; }
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before {
+    content: '';
+    position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), transparent);
+}
+.timeline-day { position: relative; margin-bottom: 40px; }
+.timeline-day::before {
+    content: '';
+    position: absolute; left: -26px; top: 8px;
+    width: 12px; height: 12px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--glow-blue);
+}
+.day-header { margin-bottom: 16px; }
+.day-date { display: flex; align-items: center; gap: 12px; }
+.date-main { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); }
+.date-weekday {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.day-count {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+.day-cards { display: flex; flex-direction: column; gap: 16px; }
+.news-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+.news-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+    transform: translateX(4px);
+}
+.news-card.hidden { display: none; }
+.card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+}
+.category-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid;
+    font-weight: 500;
+}
+.hotness { color: #fbbf24; font-size: 0.9rem; letter-spacing: 1px; }
+.card-title {
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px; line-height: 1.5;
+}
+.card-summary {
+    color: var(--text-secondary);
+    font-size: 0.92rem; line-height: 1.7; margin-bottom: 14px;
+}
+.card-keypoints {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+}
+.keypoints-title {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.card-keypoints ul { list-style: none; padding: 0; }
+.card-keypoints li {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+}
+.card-keypoints li::before {
+    content: '鈻?;
+    position: absolute; left: 0;
+    color: var(--accent-cyan);
+}
+.card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+.source { font-size: 0.8rem; color: var(--text-muted); }
+.source-link {
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.source-link:hover { color: var(--accent-cyan); }
+.footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+.footer-title {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.update-log { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.update-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-cyan);
+}
+.update-date {
+    font-family: 'Courier New', monospace;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+.update-desc { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+@media (max-width: 768px) {
+    .container { padding: 20px 15px; }
+    .hero { padding: 20px 0 30px; }
+    .hero-title { font-size: 1.5rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat-number { font-size: 1.4rem; }
+    .tabs { gap: 6px; }
+    .tab-btn { padding: 6px 10px; font-size: 0.8rem; }
+    .timeline { padding-left: 20px; }
+    .timeline::before { left: 4px; }
+    .timeline-day::before { left: -20px; width: 10px; height: 10px; }
+    .news-card { padding: 16px; }
+    .card-title { font-size: 1rem; }
+}</style>
+</head>
+<body>
+<div class="container">
+<header class="hero">
+<h1 class="hero-title">馃 鑴戞満鎺ュ彛鐑偣鏂伴椈鏃堕棿杞?/h1>
+<p class="hero-subtitle">BCI News Timeline 路 姣忔棩鏇存柊 路 澧為噺绉疮</p>
+<div class="stats-grid">
+<div class="stat-item"><div class="stat-number">130</div><div class="stat-label">鐑偣鎬绘暟</div></div>
+<div class="stat-item"><div class="stat-number">38</div><div class="stat-label">瑕嗙洊澶╂暟</div></div>
+<div class="stat-item"><div class="stat-number">9</div><div class="stat-label">鍒嗙被鏁?/div></div>
+<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-09-11</div><div class="stat-label">鏈€鏂版洿鏂?/div></div>
+</div>
+</header>
+<div class="filter-bar">
+<div class="tabs">
+<button class="tab-btn active" data-category="all"><span class="tab-name">鍏ㄩ儴</span><span class="tab-badge">130</span></button>
+<button class="tab-btn" data-category="涓村簥搴旂敤"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-name">涓村簥搴旂敤</span><span class="tab-badge">19</span></button>
+<button class="tab-btn" data-category="鎶€鏈獊鐮?><span class="tab-dot" style="background: #4ecdc4;"></span><span class="tab-name">鎶€鏈獊鐮?/span><span class="tab-badge">15</span></button>
+<button class="tab-btn" data-category="浜т笟钀藉湴"><span class="tab-dot" style="background: #feca57;"></span><span class="tab-name">浜т笟钀藉湴</span><span class="tab-badge">13</span></button>
+<button class="tab-btn" data-category="瀛︽湳鍓嶆部"><span class="tab-dot" style="background: #dfe6e9;"></span><span class="tab-name">瀛︽湳鍓嶆部</span><span class="tab-badge">15</span></button>
+<button class="tab-btn" data-category="浜т笟鏀跨瓥"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-name">浜т笟鏀跨瓥</span><span class="tab-badge">16</span></button>
+<button class="tab-btn" data-category="浜у搧钀藉湴"><span class="tab-dot" style="background: #96ceb4;"></span><span class="tab-name">浜у搧钀藉湴</span><span class="tab-badge">12</span></button>
+<button class="tab-btn" data-category="璧勬湰鍔ㄦ€?><span class="tab-dot" style="background: #ff9ff3;"></span><span class="tab-name">璧勬湰鍔ㄦ€?/span><span class="tab-badge">13</span></button>
+<button class="tab-btn" data-category="鏍稿績鍣ㄤ欢"><span class="tab-dot" style="background: #fd79a8;"></span><span class="tab-name">鏍稿績鍣ㄤ欢</span><span class="tab-badge">6</span></button>
+<button class="tab-btn" data-category="鎶€鏈矾绾?><span class="tab-dot" style="background: #a29bfe;"></span><span class="tab-name">鎶€鏈矾绾?/span><span class="tab-badge">5</span></button>
+</div>
+<div class="time-filter">
+<button class="time-btn active" data-range="all">鍏ㄩ儴</button>
+<button class="time-btn" data-range="7">杩?澶?/button>
+<button class="time-btn" data-range="30">杩?0澶?/button>
+<button class="time-btn" data-range="2026">2026骞?/button>
+</div>
+</div>
+<div class="timeline">
+  <div class="timeline-day" data-date="2026-09-11">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月11日</span>
+        <span class="date-weekday">周五</span>
+        <span class="day-count">1 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="技术突破" data-date="2026-09-11" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">高通亮相联通合作伙伴大会，展示脑机接口与AI融合"织梦者"体验</h3>
+      <p class="card-summary">9月9-10日，2026中国联通合作伙伴大会在上海举行。高通展示脑机接口与AI结合的"织梦者"体验，实时解析脑电波信号，将专注、放松、心流等脑部活动转化为可视化色彩、线条与图像风格，把AI交互延伸到脑电等新的感知方式。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>高通展示BCI+AI"织梦者"体验，实时解析脑电波</li>
+<li>将专注、放松、心流等脑部活动可视化</li>
+<li>AI交互从传统终端延伸至脑电感知</li>
+<li>展示跨终端AI生态：手机、眼镜、戒指、PC、机器人</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：快科技 / 高通</span>
+        <a href="https://news.mydrivers.com/1/1150/1150177.htm" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-10">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月10日</span>
+        <span class="date-weekday">周四</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="学术前沿" data-date="2026-09-10" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">脑机接口跨越"死亡之谷"：从实验室论文变成医生处方笺</h3>
+      <p class="card-summary">2026年7月，Science Corporation的视网膜芯片正式获得欧盟CE认证，首批商业植入即将在德国开展。其Prima视网膜芯片仅2×2毫米，无需电池或导线，通过智能眼镜以近红外光供能。临床数据显示，38例晚期干性黄斑变性患者中，84%恢复了阅读字母和数字的能力。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>Science Corp Prima视网膜芯片获欧盟CE认证</li>
+<li>首批商业植入即将在德国开展</li>
+<li>38例患者中84%恢复阅读字母和数字能力</li>
+<li>创始人Max Hodak为Neuralink前联合创始人</li>
+<li>中国首款植入式BCI产品博睿康NEO已获批上市</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：Leaderobot / 新英格兰医学杂志</span>
+        <a href="https://www.leaderobot.com/news/9522" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    <div class="news-card" data-category="资本动态" data-date="2026-09-10" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">佳量脑科学完成C轮及D轮融资，累计数亿元，投后估值近10亿美元</h3>
+      <p class="card-summary">9月7日，杭州佳量脑科学宣布连续完成C轮及D轮两轮融资，累计达数亿元人民币。C轮由启明创投领投，D轮由赛智伯乐、宽桥恒松及宁波国资等参与。投后估值接近10亿美元，计划2027年冲刺IPO。公司聚焦脑疾病精准诊疗、闭环神经调控与脑健康管理。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>佳量脑科学C+D轮累计融资数亿元</li>
+<li>投后估值近10亿美元，计划2027年IPO</li>
+<li>C轮启明创投领投，D轮赛智伯乐等参与</li>
+<li>聚焦脑疾病精准诊疗、闭环神经调控</li>
+<li>Epilcure已进入NMPA创新医疗器械特别审查程序</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪财经 / 医疗器械创新网</span>
+        <a href="https://k.sina.com.cn/article_5953190046_162d6789e06703rgnu.html" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-09">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月09日</span>
+        <span class="date-weekday">周三</span>
+        <span class="day-count">1 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="资本动态" data-date="2026-09-09" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">中国脑机接口公司瞄准科创板IPO，术理创新与博睿康排队上市</h3>
+      <p class="card-summary">中国BCI公司正准备在科创板IPO。术理创新（Arfysica Innovation）已注册科创板上市辅导，华泰联合证券为保荐机构。博睿康科创板IPO申请已获上交所受理，募资25亿元。Neuracle Medical Technology与中信证券签署IPO辅导协议。摩根士丹利分析师称此为多年期IPO上升周期早期阶段。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>术理创新注册科创板IPO辅导，华泰联合保荐</li>
+<li>博睿康科创板IPO已获上交所受理，募资25亿元</li>
+<li>Neuracle与中信证券签署IPO辅导协议</li>
+<li>摩根士丹利：BCI多年期IPO上升周期早期阶段</li>
+<li>2026上半年国内BCI融资总额突破70亿元</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：IndexBox / 财联社</span>
+        <a href="https://www.indexbox.io/zh-hans/blog/chinese-bci-companies-eye-star-market-ipos" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-08">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月08日</span>
+        <span class="date-weekday">周二</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="技术突破" data-date="2026-09-08" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">Subsense鼻喷型纳米颗粒脑机接口获2700万美元融资，雷·库兹韦尔加盟</h3>
+      <p class="card-summary">9月3日，Subsense宣布未来学家雷·库兹韦尔加入担任产品与愿景顾问。公司开发NanoBCI系统，通过鼻腔递送纳米颗粒，结合可穿戴设备实现双向脑机接口——读取神经活动并施加刺激。累计融资达2700万美元，目标2026年底前完成小鼠概念验证。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>Subsense鼻喷NanoBCI获2700万美元种子轮融资</li>
+<li>雷·库兹韦尔加盟任产品与愿景顾问</li>
+<li>等离激元纳米颗粒读取神经活动，磁电纳米颗粒施加刺激</li>
+<li>经鼻递送免手术植入，但仍需材料进入大脑</li>
+<li>目标2026年底前完成小鼠概念验证</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪科技 / DeepTech深科技</span>
+        <a href="https://finance.sina.com.cn/tech/roll/2026-09-08/doc-inircmeq9237938.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    <div class="news-card" data-category="产业落地" data-date="2026-09-08" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">天津脑机接口"生态军团"亮相2026中国国际福祉博览会</h3>
+      <p class="card-summary">9月3-5日，2026中国国际福祉博览会在北京举行，首次设立脑机接口专区。天津脑机接口产业集团领衔"1+2+N+X"生态矩阵首次公开亮相，六大生态企业集中展示神经康复、脑电采集、围术期监护、跌倒防护等产品，现场残障人士及家属体验踊跃。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>福祉博览会首次设立脑机接口专区</li>
+<li>天津脑机集团"1+2+N+X"生态矩阵首次亮相</li>
+<li>六大生态企业覆盖神经康复、脑电采集、围术期监护</li>
+<li>"神工-神机"时序调控闭环康复系统世界首创</li>
+<li>脑机海河实验室所有品类产品首次集中展出</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：搜狐新闻 / 津云新闻</span>
+        <a href="https://m.sohu.com/a/1072599248_121443915" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-07">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年09月07日</span>
+        <span class="date-weekday">周一</span>
+        <span class="day-count">2 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="产业落地" data-date="2026-09-07" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">成都"一带一路"脑健康会议发布三项重磅成果，国际脑器交互联盟总部落地</h3>
+      <p class="card-summary">9月4日，"一带一路"脑健康与脑器交互科技国际会议在成都启幕。开幕式上全球首发国际脑器交互联盟倡议（BACAI），国内首个脑机接口理论平台"Brain Expanse"发布，全国首款自主可控高性能脑电采集系统亮相。联盟计划总部落地成都。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>国际脑器交互联盟倡议（BACAI）全球首发，总部落地成都</li>
+<li>国内首个"Brain Expanse"脑机接口理论平台发布</li>
+<li>全国首款自主可控高性能脑电采集系统亮相</li>
+<li>100%国产化：自研干电极，30秒快速佩戴</li>
+<li>全球12国千余名专家、中外院士13人出席</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：新浪科技 / 红星新闻</span>
+        <a href="https://finance.sina.com.cn/tech/roll/2026-09-07/doc-iniqxiqq6640921.shtml" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    <div class="news-card" data-category="学术前沿" data-date="2026-09-07" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">郑海荣院士：脑机接口"源于医疗，却远高于医疗"</h3>
+      <p class="card-summary">9月3日，中国科学院院士郑海荣在中国浦东干部学院发表演讲。他指出脑机接口是新一代人机交互的革命性工具，更是驱动新质生产力发展的核心引擎。非侵入式可能是未来消费级BCI的主流形态，中国在差异化国际竞争中应抢占战略主动权。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+<li>郑海荣院士：BCI是驱动新质生产力的核心引擎</li>
+<li>非侵入式可能是未来消费级BCI主流形态</li>
+<li>前端传感需突破新型量子传感等前沿物理机制</li>
+<li>结合多模态大模型实现"心有所想，机有所应"</li>
+<li>反向"写入"与神经调控是最具挑战性的前沿方向</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：澎湃新闻</span>
+        <a href="https://m.thepaper.cn/newsDetail_forward_34007066" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-05">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?9鏈?5鏃?/span>
+        <span class="date-weekday">鍛ㄥ叚</span>
+        <span class="day-count">2 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-09-05" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鑴戞満鎺ュ彛'灏忓法浜?鏈悊鍒涙柊鍚姩A鑲′笂甯傝緟瀵硷紝鍓嶈タ闂ㄥ瓙鍖荤枟鍏ㄧ悆涓撳鎺岃埖</h3>
+      <p class="card-summary">9鏈?鏃ワ紝鏈悊鍒涙柊锛堜笂娴凤級鏅鸿兘绉戞妧鑲′唤鏈夐檺鍏徃涓庡崕娉拌仈鍚堣瘉鍒哥缃茶緟瀵煎崗璁紝姝ｅ紡鍚姩A鑲′笂甯傝緟瀵笺€傚叕鍙告垚绔嬩簬2015骞达紝鏄浗瀹剁骇涓撶簿鐗规柊'灏忓法浜?浼佷笟锛屼笓娉ㄩ潪渚靛叆寮忚剳鏈烘帴鍙ｈ澶囦笌搴峰鍖荤枟瑙ｅ喅鏂规銆?026骞村凡瀹屾垚B+杞拰C杞瀺璧勶紝鍚堣瓒?0浜垮厓銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鏈悊鍒涙柊姝ｅ紡鍚姩A鑲′笂甯傝緟瀵硷紝鍗庢嘲鑱斿悎璇佸埜涓鸿緟瀵兼満鏋?/li>
+<li>鍥藉绾т笓绮剧壒鏂?灏忓法浜?锛屼笓娉ㄩ潪渚靛叆寮廈CI搴峰鍖荤枟</li>
+<li>2026骞碆+杞拰C杞瀺璧勫悎璁¤秴10浜垮厓</li>
+<li>浜у搧宸插湪鍏ㄥ浗澶氬涓夌敳鍖婚櫌钀藉湴搴旂敤</li>
+<li>鎷ユ湁鑷富鐭ヨ瘑浜ф潈500浣欓」</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭柊娴储缁?/ 璇佺洃浼?/span>
+        <a href="https://finance.sina.com.cn/stock/hkstock/hkzmt/2026-09-05/doc-iniqtspw3744413.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-09-05" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鏍煎紡濉旂鎶€CEO褰浄锛氭垚閮藉叿澶囪剳鏈烘帴鍙ｄ骇涓氫紭鍔匡紝灏嗕互娌搲鍙屾€婚儴鍙備笌鍏ㄧ悆鍚堜綔</h3>
+      <p class="card-summary">鏍煎紡濉旂鎶€鍒涘浜恒€丆EO褰浄琛ㄧず锛屾垚閮藉叿澶囩鐮斻€佷复搴婁笌鍒堕€犲崗鍚岀瓑浜т笟浼樺娍锛屼紒涓氬皢浠ユ勃钃夊弻鎬婚儴妯″紡鍙備笌鍏ㄧ悆鑴戞満鎺ュ彛鍚堜綔銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鏍煎紡濉旂鎶€灏嗛噰鐢ㄦ勃钃夊弻鎬婚儴妯″紡</li>
+<li>鎴愰兘鍏峰绉戠爺銆佷复搴婁笌鍒堕€犲崗鍚屼紭鍔?/li>
+<li>浼佷笟鍙備笌鍏ㄧ悆鑴戞満鎺ュ彛浜т笟鍚堜綔</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭瘡鏃ョ粡娴庢柊闂?/span>
+        <a href="https://www.nbd.com.cn" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-04">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?9鏈?4鏃?/span>
+        <span class="date-weekday">鍛ㄤ簲</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-09-04" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鑴戞満鎺ュ彛'灏忓法浜?鏈悊鍒涙柊鍚姩涓婂競杈呭锛屽叏鍥藉瀹朵笁鐢插尰闄㈣惤鍦板簲鐢?/h3>
+      <p class="card-summary">鏈悊鍒涙柊姝ｅ紡鍚姩A鑲′笂甯傝緟瀵硷紝鍏徃涓撴敞闈炰镜鍏ュ紡鑴戞満鎺ュ彛搴峰鍖荤枟锛屼骇鍝佸凡鍦ㄥ叏鍥藉瀹朵笁鐢插尰闄㈣惤鍦帮紝骞朵笌澶嶆棪澶у闄勫睘鍎跨鍖婚櫌鍚堜綔鎷撳睍鍎跨绁炵粡鍙戣偛闅滅娌荤枟銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鏈悊鍒涙柊鍚姩A鑲′笂甯傝緟瀵?/li>
+<li>闈炰镜鍏ュ紡BCI浜у搧鍦ㄥ叏鍥藉瀹朵笁鐢插尰闄㈣惤鍦?/li>
+<li>鎷撳睍鑷冲効绔ュ鍔ㄧ棁銆佽嚜闂棁銆佹娊鍔ㄧ棁娌荤枟</li>
+<li>鑴戞満鎺ュ彛+澶栭楠煎悍澶嶇郴缁熷凡鍦ㄩ暱娴峰尰闄㈢瓑搴旂敤</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭柊娴储缁?/span>
+        <a href="https://finance.sina.com.cn/stock/hkstock/hkzmt/2026-09-05/doc-iniqtspw3744413.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-09-03">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?9鏈?3鏃?/span>
+        <span class="date-weekday">鍛ㄥ洓</span>
+        <span class="day-count">2 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-09-03" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">涓浗鍥介檯绂忕鍗氳浼氶娆¤绔嬭剳鏈烘帴鍙ｄ笓鍖猴紝'瑗块儴鑴戣胺'鍏ㄩ摼鏉￠娆′寒鐩?/h3>
+      <p class="card-summary">9鏈?鏃ヨ嚦5鏃ワ紝2026涓浗鍥介檯绂忕鍗氳浼氬湪鍖椾含涓捐锛岄娆¤绔嬭剳鏈烘帴鍙ｄ笓鍖恒€傛垚閮介敠姹熺粡娴庡紑鍙戝尯'瑗块儴鑴戣胺'浼佷笟缁勫洟鍏ラ┗锛屽叏閾炬潯鍛堢幇浠庡簳灞傚櫒浠跺埌鍖荤枟瑁呭鍐嶅埌姘戠敓娑堣垂鍝佺殑鍒涙柊鎴愭灉銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>绂忕鍗氳浼氶娆¤绔嬭剳鏈烘帴鍙ｄ笓鍖猴紝灞曡闈㈢Н瓒?000骞虫柟绫?/li>
+<li>瑗块儴鑴戣胺浼佷笟缁勫洟灞曠ず鍏ㄩ摼鏉′骇涓氳兘鍔?/li>
+<li>灞曞搧娑电洊鏌旀€х數鏋侀樀鍒椼€丅CI绁炵粡鑺墖銆佹櫤鑳藉楠ㄩ绛?/li>
+<li>鎴愰兘宸插叿澶囦粠鍗曠偣绐佺牬鍒扮郴缁熼泦鎴愮殑瀹屾暣鑳藉姏</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭悳鐙愭柊闂?/span>
+        <a href="https://m.sohu.com/a/1071533171_121478296" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-09-03" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">Neuralink娣卞害鎶ュ憡锛氳蛋鍚?浜烘満鍗忓悓'鐨勬湭鏉?/h3>
+      <p class="card-summary">涓滃惔璇佸埜鍙戝竷Neuralink娣卞害鐮旂┒鎶ュ憡銆侼euralink宸插紑灞曠害21渚嬩复搴婅瘯楠岋紝鏈瀵熷埌涓ラ噸鍣ㄦ鐩稿叧涓嶈壇浜嬩欢銆傚叕鍙搁璁elepathy璁惧灏嗕簬2029骞磋幏鐩戠鎵瑰噯锛岃鍒掓瘡骞磋繘琛?000渚嬫墜鏈€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>Neuralink宸插紑灞曠害21渚嬩复搴婅瘯楠岋紝瑕嗙洊缇庛€佸姞銆佽嫳銆侀樋鑱旈厠</li>
+<li>N1妞嶅叆鐗╅泦鎴?024涓數鏋侀€氶亾锛岀鍥涗唬鑺墖閲囩敤4nm鍒剁▼</li>
+<li>棰勮2029骞碩elepathy鑾锋壒锛屾瘡骞?000渚嬫墜鏈?/li>
+<li>杩滄湡鐩爣锛氫笌鐗规柉鎷塐ptimus浜哄舰鏈哄櫒浜烘墦閫氾紝瀹炵幇鎰忓康鍏ㄨ韩鎺у埗</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氫笢鍚磋瘉鍒?/ 鏂版氮璐㈢粡</span>
+        <a href="https://finance.sina.com.cn/stock/stockzmt/2026-09-03/doc-iniqnyae1092390.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-01">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">09鏈?/span>
+        <span class="date-day">01</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="琛屼笟瓒嬪娍" data-date="2026-09-01" data-hotness="4">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">琛屼笟瓒嬪娍</span>
+            <span class="news-date">2026-09-01</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">鐑害</span>
+            <span class="hotness-value">4</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://finance.sina.com.cn/stock/t/2026-09-01/doc-iniqfzhn1611620.shtml" target="_blank" rel="noopener">闈炰镜鍏ュ紡鑴戞満鎺ュ彛鐨勭牬灞€璺細鎵撻€氬晢涓氬寲涔嬪墠锛岃繕鏈夊摢鍑犻亾纭叧瑕佽繃锛?/a>
+        </h3>
+        <p class="news-summary">鏂囩珷鍒嗘瀽浜嗛潪渚靛叆寮忚剳鏈烘帴鍙ｅ湪鍟嗕笟鍖栭亾璺笂闈复鐨勬妧鏈€佺洃绠″拰甯傚満鎸戞垬銆?/p>
+        <div class="news-footer">
+          <span class="news-source">鏉ユ簮锛氭柊娴储缁?/span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-08-31">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">08鏈?/span>
+        <span class="date-day">31</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-31" data-hotness="5">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">浜т笟鏀跨瓥</span>
+            <span class="news-date">2026-08-31</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">鐑害</span>
+            <span class="hotness-value">5</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://www.163.com/dy/article/L5H4DR1L05119GLN.html" target="_blank" rel="noopener">闊╁浗灏嗚剳鏈烘帴鍙ｅ垪涓轰竷澶ф湭鏉ユ妧鏈箣涓€锛岀洰鏍?035骞翠骇鍝佸晢鐢?/a>
+        </h3>
+        <p class="news-summary">闊╁浗鏀垮簻姝ｅ紡灏咮CI鍒椾负鍥藉鎴樼暐鎶€鏈紝璁″垝鎶曞叆宸ㄨ祫鎺ㄥ姩浜т笟鍙戝睍銆?/p>
+        <div class="news-footer">
+          <span class="news-source">鏉ユ簮锛氱綉鏄?/span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-08-26">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">08鏈?/span>
+        <span class="date-day">26</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="鐩戠鍔ㄦ€? data-date="2026-08-26" data-hotness="5">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">鐩戠鍔ㄦ€?/span>
+            <span class="news-date">2026-08-26</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">鐑害</span>
+            <span class="hotness-value">5</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://timeline.sohu.com/news/AI3uoUEhxm" target="_blank" rel="noopener">FDA棣栨鎵瑰噯锛佽剳鏈烘帴鍙ｅ彲杩炴墜鏈虹瓑涓汉鐢靛瓙璁惧</a>
+        </h3>
+        <p class="news-summary">Paradromics鑾峰緱FDA鎵瑰噯锛屽厑璁稿叾Connexus BCI涓村簥璇曢獙鎺ュ叆鎮ｈ€呰嚜鏈夌數瀛愯澶囥€?/p>
+        <div class="news-footer">
+          <span class="news-source">鏉ユ簮锛氭悳鐙?/span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-09-01">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">09鏈?/span>
+        <span class="date-day">01</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-09-01" data-hotness="4">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">浜т笟鏀跨瓥</span>
+            <span class="news-date">2026-09-01</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">鐑害</span>
+            <span class="hotness-value">4</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="https://m.163.com/dy/article/L5O09TKI053469RG.html" target="_blank" rel="noopener">娣卞湷锛氭嫙鏀寔鑴戞満鎺ュ彛棰嗗啗浼佷笟缁勫缓鍒涙柊鑱斿悎浣?/a>
+        </h3>
+        <p class="news-summary">娣卞湷甯傛斂搴滃彂甯冩斂绛栵紝鏀寔鑴戞満鎺ュ彛浼佷笟寮€灞曟牳蹇冩妧鏈敾鍏冲拰骞惰喘閲嶇粍銆?/p>
+        <div class="news-footer">
+          <span class="news-source">鏉ユ簮锛氳瘉鍒告椂鎶?/span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-day" data-date="2026-08-31">
+    <div class="timeline-date">
+      <div class="date-badge">
+        <span class="date-month">08鏈?/span>
+        <span class="date-day">31</span>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-08-31" data-hotness="5">
+        <div class="news-header">
+          <div class="news-meta">
+            <span class="news-category">涓村簥搴旂敤</span>
+            <span class="news-date">2026-08-31</span>
+          </div>
+          <div class="news-hotness">
+            <span class="hotness-label">鐑害</span>
+            <span class="hotness-value">5</span>
+          </div>
+        </div>
+        <h3 class="news-title">
+          <a href="" target="_blank" rel="noopener">鐪肩悆妞嶅叆鍗婁镜鍏ュ紡瑙嗙綉鑶滆剳鏈烘帴鍙ｅ湪姝︽眽钀藉湴锛屾偅鑰呴噸瑙佸厜鏄?/a>
+        </h3>
+        <p class="news-summary">姝︽眽瀹屾垚棣栦緥鐪肩悆妞嶅叆鍗婁镜鍏ュ紡瑙嗙綉鑶滆剳鏈烘帴鍙ｆ墜鏈紝鎮ｈ€呮仮澶嶈鍔涖€?/p>
+        <div class="news-footer">
+          <span class="news-source">鏉ユ簮锛氫汉姘戞棩鎶ュ仴搴峰鎴风</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-28">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?8鏃?/span>
+        <span class="date-weekday">鍛ㄤ簲</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="琛屼笟瓒嬪娍" data-date="2026-08-28" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">琛屼笟瓒嬪娍</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鍗婁镜鍏ュ紡鑴戞満鎺ュ彛鐜囧厛璺戦€氬晢涓氶棴鐜細鍗氱澘搴?NEO 涓婂競涓変釜鏈堣繘鍖婚櫌涓旂撼鍏ュ尰淇?/h3>
+      <p class="card-summary">缃戞槗鏂囩珷娣卞害鐩樼偣鑴戞満鎺ュ彛涓夋潯鎶€鏈矾绾裤€?026骞?鏈?3鏃ュ崥锟斤拷搴?NEO-ONE 鎴愪负鍏ㄧ悆棣栨鑾锋壒涓婂競鐨勬鍏ュ紡杩愬姩鑴戞満鎺ュ彛锛堜笁绫昏瘉锛夛紝闅忓悗涓や釜鏈堟嬁鍒板尰淇濈紪鐮侊紝7鏈?3鏃ュ湪鍗庡北鍖婚櫌寮€鍑洪寮犲鏂广€傛枃绔犳寚鍑哄崐渚靛叆寮忥紙涓嶅叆鑴戙€侀€氳繃琛€绠?鐨眰琛ㄩ潰锛夋槸2026骞寸涓€鎵硅窇閫氳幏璇併€佽繘闄€佹敹璐归棴鐜殑鎶€鏈矾绾匡紝骞跺垎鏋愪簡瓒呭０鎴愬儚鍜岀鍏辨尟浣滀负&apos;澶ц剳鍙鍖栨瘝鏈?apos;鐨勮ˉ鍏呰鑹层€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍗氱澘搴?NEO 鎴愪负鍏ㄧ悆棣栨鑾锋壒涓婂競鐨勬鍏ュ紡杩愬姩 BCI</li>
+<li>鍗婁镜鍏ュ紡鐜囧厛瀹屾垚鎶€鏈?瀹℃壒-鍖婚櫌-鍖讳繚鍥涢亾鍏?/li>
+<li>闈炰镜鍏ュ紡灏嗚鐩栨洿澶氱敤鎴蜂絾绮惧害鏈夐檺</li>
+<li>瓒呭０/纾佸叡鎸綔涓哄尰闄㈢鐮斿伐鍏疯€岄潪娑堣垂浜у搧</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氱綉鏄撴柊闂?/span>
+        <a href="https://www.163.com/dy/article/L5E8O2N805119GLN.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-29">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?9鏃?/span>
+        <span class="date-weekday">鍛ㄥ叚</span>
+        <span class="day-count">3 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-08-29" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鍏ㄨ剳鑺瀹屾垚鏁板崈涓囧厓澶╀娇杞瀺璧勶紝鑱氱劍鏌旀€х鍩篊MOS鑴戞満鎺ュ彛</h3>
+      <p class="card-summary">2026骞?鏈?8鏃ユ姤閬擄紝鍏ㄨ剳鑺锛堬拷锟芥捣锛夌鎶€鏈夐檺鍏徃瀹屾垚澶╀娇杞暟鍗冧竾鍏冭瀺璧勶紝鐢卞鏃︾鍒涚嫭瀹堕鎶曘€傚叕鍙告垚绔嬩簬2026骞?鏈堬紝鐢辩憺鍑濈敓鐗〤EO娼橀渿鍗氬＋涓庡鏃﹀ぇ瀛﹀畫鎭╁悕鏁欙拷锟借仈鍚堝垱绔嬶紝鏍稿績鍒涙柊鏄互瓒呭ぇ瑙勬ā纭呭熀鏌旀€MOS鏅朵綋绠￠樀鍒楁浛浠ｄ紶缁熸棤婧愮數鏋侊紝瀹炵幇64,000閫氶亾闆嗘垚涓庢湁婧愪俊鍙锋斁澶э紙淇″櫔姣?2dB锛夛紝鐞嗚瀵垮懡瓒?0骞淬€傛妧鏈矾绾跨獊鐮村叆閫?026涓叧鏉戣鍧涜剳鏈烘帴鍙ｉ噸纾呮垚鏋溿€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍏ㄨ剳鑺瀹屾垚鏁板崈涓囧厓澶╀娇杞紝澶嶆棪绉戝垱鐙棰嗘姇</li>
+<li>64,000閫氶亾鏌旀€х鍩篊MOS闃靛垪锛屼俊鍣瘮杈?2dB</li>
+<li>鐞嗚瀵垮懡瓒?0骞达紝鍕曠墿瀹為獙楠岃瘉浣撳唴绋冲畾宸ヤ綔1骞翠互涓?/li>
+<li>浜у搧甯冨眬瑕嗙洊鏈墠/鏈腑鐥呯伓瀹氫綅銆侀鍐呭帇鍙婅剳鐢熺悊杩炵画鐩戞祴</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氱鍒涙澘鏃ユ姤锛堢綉鏄撳彿锛?/span>
+        <a href="https://www.163.com/dy/article/L5EQ8DE70550B1DU.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-29" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">宸ヤ俊閮ㄥ彂甯冭剳鏈烘帴鍙ｆ爣鍑嗕綋绯诲缓璁炬寚鍗楋紙2026鐗堬級锛岀洰鏍?030骞村缓鎴愬叏浜т笟閾炬爣鍑嗕綋绯?/h3>
+      <p class="card-summary">2026骞?鏈?4鏃ワ紝宸ヤ俊閮ㄧ鎶€鍙稿彂甯冦€婂浗瀹惰剳鏈烘帴鍙ｄ骇涓氭爣鍑嗕綋绯诲缓璁炬寚鍗楋紙2026鐗堬級銆嬪緛姹傛剰瑙佺銆傛槑纭埌2028骞村埗淇鏍囧噯40椤逛互涓娿€佺壍澶村強鍙備笌鍥介檯鏍囧噯10椤逛互涓婏紝鍒?030骞寸疮璁＄爺鍒舵爣鍑?0椤逛互涓娿€傛爣鍑嗕綋绯绘兜鐩栧熀纭€鍏辨€с€佺‖浠躲€佽蒋浠朵笌绠楁硶銆佹暟鎹笌閫氫俊銆佷骇鍝佷笌绯荤粺銆佽涓氬簲鐢ㄣ€佸畨鍏ㄥ強娌荤悊涓冨ぇ缁村害銆傚悓鏃ユ禉姹熺渷鏀垮簻鍗板彂鎺ㄨ繘鑴戞満鎺ュ彛浜у鐮旇仈鍔ㄦ帾鏂姐€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>2028骞村埗淇BCI棰嗗煙鏍囧噯40椤逛互涓婏紝鍥介檯鏍囧噯10椤逛互涓?/li>
+<li>2030骞寸疮璁＄爺鍒舵爣鍑?0椤逛互涓婏紝鏍囧噯浣撶郴鍩烘湰褰㈡垚</li>
+<li>涓冨ぇ缁村害娑电洊纭欢/杞欢/绠楁硶/鏁版嵁/瀹夊叏绛夊叏閾炬潯</li>
+<li>娴欐睙鐪佸悓姝ュ嚭鍙版帹杩涗骇瀛︾爺鑱斿姩鎺柦</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氫笢鏂硅储瀵岀綉 / 娴欐睙鐪佷汉姘戞斂搴?/span>
+        <a href="https://caifuhao.eastmoney.com/news/20260825101359998780030" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-29" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">璐㈣仈绀炬棭锟斤拷锟斤細鑴戞満鎺ュ彛杩堝叆鎶€鏈厬鐜颁笌鍟嗕笟鍖栬惤鍦扮殑鍏抽敭鍏冨勾</h3>
+      <p class="card-summary">绗簩鍗佸叓灞婁腑鍥界鍗忓勾浼氬湪鍖椾含涓惧姙&apos;鑴戞満鎺ュ彛鎶€鏈強鍏跺簲鐢?apos;涓撻璁哄潧銆傚厜澶ц瘉鍒稿彂鏂囨寚鍑猴紝鍥藉姟闄€婂浗姘戝仴搴峰崄浜斾簲瑙勫垝銆嬫槑纭姞寮鸿剳鏈烘帴鍙ｇ鎶€鏀诲叧锛涙皯鏀块儴绛?14 閮ㄩ棬鑱斿悎鍙戝竷鎵╄兘鎻愯川涓夊勾琛屽姩鏂规锛?026-2028锛夛紝鍦版柟瀵嗛泦璺熻繘銆傚箍涓滄彁鍑哄埌 2030 骞存柊澧?100 瀹惰剳鏈烘帴鍙ｄ紒涓氥€佹墦閫?200 涓剳鏈虹梾鎴匡紝鏍稿績浜т笟瑙勬ā杈剧櫨浜跨骇銆侫 鑲¤剳鏈烘帴鍙ｆ蹇垫寔缁蛋寮恒€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍥藉姟闄㈠崄浜斾簲瑙勫垝鏄庣‘鑴戞満鎺ュ彛绉戞妧鏀诲叧</li>
+<li>姘戞斂閮ㄧ瓑 14 閮ㄩ棬鍙戝竷涓夊勾琛屽姩鏂规</li>
+<li>骞夸笢瑙勫垝 2030 骞村墠寤?200 涓剳鏈虹梾鎴?/li>
+<li>A 鑲¤剳鏈烘蹇垫寔缁椿璺?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氳储鑱旂ぞ / 鍏夊ぇ璇佸埜</span>
+        <a href="https://www.cls.cn/detail/2434518" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-30">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?0鏃?/span>
+        <span class="date-weekday">鍛ㄦ棩</span>
+        <span class="day-count">4 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜у搧/鎶€鏈? data-date="2026-08-30" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">浜у搧/鎶€鏈?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">Neuvotion NeuStim鑾稦DA鎵瑰噯鈥斺€旀棤闇€寮€棰呭嵆鍙仮澶嶈繍鍔ㄥ姛鑳界殑闈炰镜鍏ュ紡AI鑴戞満鎺ュ彛</h3>
+      <p class="card-summary">2026骞?鏈?4鏃D&amp;M鎶ラ亾锛孊CI鍏堥┍Dr. Chad Bouton鍒涘姙鐨凬euvotion鍏徃锛屽叾鑾疯瘉璁惧鍒╃敤AI鎶€鏈€氳繃闈炰镜鍏ユ柟寮忓府鍔╄剨楂撴崯浼ゆ偅鑰呮仮澶嶈繍鍔ㄥ姛鑳姐€傛牳蹇冩妧鏈?apos;鐨眰闀滃儚锛坈ortical mirroring锛?apos;鍙湪涓嶆鍏ュぇ鑴戠殑鎯呭喌涓嬭鍙栧苟瑙ｈ杩愬姩鎰忓浘淇″彿銆傛涓捐瑙嗕负浠ラ潪渚靛紡璺緞瀵规爣Neuralink鐨勪镜鍏ュ紡鏂规銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>Neuvotion NeuStim鑾稦DA鎵瑰噯锛屽睘闈炰镜鍏ュ紡BCI璁惧</li>
+<li>&apos;鐨眰闀滃儚&apos;鎶€鏈鍙栬繍鍔ㄦ剰鍥句俊鍙锋棤闇€寮€棰呮墜鏈?/li>
+<li>鏃ㄥ湪涓鸿剨楂撴崯浼ゆ偅鑰呮仮澶嶆墜閮ㄥ拰鑲綋鍔熻兘</li>
+<li>浠ｈ〃BCI璧涢亾涓潪渚靛紡涓庝镜寮忎袱鏉¤矾绾跨殑绔炰簤</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歁D&amp;M Online</span>
+        <a href="https://www.mddionline.com/neurological/how-this-bci-pioneer-is-taking-on-neuralink-without-brain-surgery" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="琛屼笟瓒嬪娍" data-date="2026-08-30" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">琛屼笟瓒嬪娍</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+      </div>
+      <h3 class="card-title">鑴戞満鎺ュ彛瀹夊叏鎬у紩鍏虫敞锛氭锟斤拷锟藉紡璁惧闈复榛戝鏀诲嚮椋庨櫓</h3>
+      <p class="card-summary">2026骞?鏈?8鏃t&apos;s Science鍙戝竷绉戞櫘鍐呭锛屾寚鍑洪殢鐫€FDA鍔犻€熸帹杩涜剳鏈烘帴鍙ｈ澶囧鎵广€侀鎵瑰晢鐢ㄤ骇鍝佺瀯鍑嗙編鍥芥偅鑰咃紝BCI妞嶅叆鐗╃殑缃戠粶瀹夊叏闂浠嶆湭瑙ｅ喅銆傚凡鏈夌爺绌惰〃鏄庤剳鏈烘帴鍙ｅ彲琚共鎵帮紝浣嗙洰鍓嶇己涔忓棰呭唴缃叆鑺墖鐨勫畨鍏ㄦ爣鍑嗐€傜缁忎俊鍙锋暟鎹笌涓汉韬唤淇℃伅缁戝畾鍚庢秹鍙婃洿澶嶆潅鐨勶拷锟界椋庨櫓銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>FDA鍔犻€熷鎵笲CI妞嶅叆鐗╀絾瀹夊叏鏍囧噯缂哄け</li>
+<li>鐮旂┒鏄剧ずBCI璁惧锟斤拷锟戒互琚閮ㄥ共鎵?/li>
+<li>鎮ｈ€呯煡鎯呭悓鎰忎功鏈兜鐩栫綉缁滃畨鍏ㄩ棶棰?/li>
+<li>鑴戞満鎺ュ彛鍟嗕笟鍖栬繘绋嬩腑闅愮涓庡畨鍏ㄦ垚鍏抽敭鐡堕</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛欼t&apos;s Science (@itisascience) / Neuralink &amp; Nature</span>
+        <a href="https://www.facebook.com/ItisaScience/posts/paralyzed-patients-are-now-moving-cursors-typing-messages-and-controlling-roboti/12236308937421" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-08-30" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鍗氱澘搴種EO澶氫腑蹇冧复搴?apos;棣栨柟&apos;鍔犻€熻惤鍦帮細涓婃捣銆佸畨寰姐€佸北涓滃▉娴峰悓姝ュ畬鎴愭鍏ユ墜鏈?/h3>
+      <p class="card-summary">缁?鏈堝崕灞卞尰闄㈠紑鍑哄叏鐞冮寮燦EO澶勬柟鍚庯紝7-8鏈堝鍦伴檰缁畬鎴愭鍏ユ墜鏈€傚畨锟斤拷锟藉尰绉戝ぇ瀛︾涓€闄勫睘鍖婚櫌瀹屾垚瀹夊窘鐪侀渚婲EO妞嶅叆锛涘北涓滃ぇ瀛﹂檮灞炲▉娴峰競绔嬪尰闄㈠畬鎴愬浗鍐呭湴甯傜骇鍖婚櫌棣栦緥锛岄噰鐢ㄧ‖鑶滃鐢垫瀬锟斤拷鍒楁柟妗堬紝鏈悗瑙ｇ爜鍑嗙‘鐜囪秴90%锛屾墜閮ㄦ姄鎻″姛鑳芥湁鏁堜唬鍋裤€傜洰鍓嶅崥鐫垮悍NEO宸插叿澶?00濂?骞翠骇鑳斤紝閫傚簲鐥囨兜鐩栬剨楂撴崯浼ゃ€佽剳鍗掍腑绛夈€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>涓婃捣鍗庡北銆佸畨鍖诲ぇ涓€闄勯櫌銆佸▉娴峰競绔嬪尰闄㈠潎瀹屾垚&apos;棣栨柟&apos;</li>
+<li>纭啘澶栫數鏋佹柟妗堣В鐮佸噯纭巼&gt;90%锛屾墜閮ㄥ姛鑳芥湁鏁堜唬鍋?/li>
+<li>鍗氱澘搴種EO骞翠骇鑳借揪500濂?/li>
+<li>閫傚簲鐥囨湁鏈涗粠鑴婇珦鎹熶激鎷撳睍鑷宠剳鍗掍腑銆佺櫕鐥€佹姂閮佺棁</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氫笂娴疯瘉鍒告姤锛堣吘璁柊闂伙級</span>
+        <a href="https://news.qq.com/rain/a/20260824A07SIA00" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="涓村簥鐮旂┒" data-date="2026-08-30" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">涓村簥鐮旂┒</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">Neuralink锛氭埅鐦偅鑰?Audrey Crews 浠ユ剰蹇典綔鐢汇€佸啓瀛楋紝PRIME 璇曢獙杩涘叆澶氬浗澶氫腑蹇冮樁娈?/h3>
+      <p class="card-summary">2026骞?鏈?6-27鏃ワ紝Neuralink 鍦?X 骞冲彴鍙戝竷浜嗘埅鐦彈璇曡€咃紙Patient 9锛堿udrey Crews 浣跨敤 N1 鑺墖鍑剰蹇靛湪鐢佃剳涓婄粯鐢诲拰鍐欏瓧鐨勮棰戙€傚彈璇曡€呭洜 2005 骞磋溅绁?C4/C5 鑴婇珦鎹熶激瀵艰嚧棰堥儴浠ヤ笅鐦棯銆侾RIME 鍙鎬х爺绌跺凡绱鍦ㄥ叏鐞冨洓鍥斤紙缇庛€佽嫳銆佸姞鎷垮ぇ銆侀樋鑱旈厠锛夊畬鎴愮害 21 渚嬫鍏ワ紝浠庝釜妗堟姤鍛婅繘鍏ュ杈栧尯闃熷垪闃舵锛屼复搴婅瘯楠岃棰戞寔缁睍绀烘洿绮剧粏鐨勬父鏍囨搷浣滐紙鎵撳瓧銆佺粯鍥俱€佹帶鍒舵父鎴忚鑹茬瓑锛夈€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鎴槴鎮ｈ€?N1 鑺墖鎰忓康缁樼敾/鍐欏瓧棣栨鍏紑婕旂ず</li>
+<li>PRIME 璇曢獙鍥涘浗绾?21 渚嬫鍏ワ紝杩涘叆澶氬浗闃熷垪闃舵</li>
+<li>鍙楄瘯鑰呭彲鍑繍鍔ㄦ剰鍥剧簿鍑嗘帶鍒剁數瀛愭父鏍?/li>
+<li>Neuralink PRIME 浠庝釜妗堟姤鍛婅蛋鍚戝杈栧尯涓村簥楠岃瘉</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歂euralink (@neuralink) / India Today</span>
+        <a href="https://www.indiatoday.in/technology/news/story/watch-audrey-crews-writes-and-draws-using-only-her-thoughts-with-neuralink-2980976-2026-08-27" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-24">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?4鏃?/span>
+        <span class="date-weekday">鍛ㄤ竴</span>
+        <span class="day-count">3 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-24" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">宸ヤ俊閮ㄥ彂甯冦€婂浗瀹惰剳鏈烘帴鍙ｄ骇涓氭爣鍑嗕綋绯诲缓璁炬寚鍗?2026鐗?銆?寰佹眰鎰忚绋?</h3>
+      <p class="card-summary">宸ヤ俊閮ㄥ叕寮€寰佹眰鑴戞満鎺ュ彛浜т笟鏍囧噯浣撶郴寤鸿鎸囧崡鎰忚锛屾彁鍑哄埌2028骞村埗淇鏍囧噯40椤逛互涓婏紝鐗靛ご鍙婂弬涓庣爺鍒跺浗闄呮爣鍑?0椤逛互涓婏紱鍒?030骞寸疮璁＄爺鍒舵爣鍑?0椤逛互涓婏紝涓嶆柇鎻愬崌鎴戝浗鑴戞満鎺ュ彛鍏ㄧ悆鏍囧噯鍙備笌搴︿笌浜т笟璐＄尞搴︺€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍒?028骞村埗淇鑴戞満鎺ュ彛棰嗗煙鏍囧噯40椤逛互涓?/li>
+<li>鐗靛ご鍙婂弬涓庣爺鍒跺浗闄呮爣鍑?0椤逛互涓?/li>
+<li>鎺ㄥ姩瓒?00瀹朵紒涓氬紑灞曟爣鍑嗗璐笌瀹炴柦鎺ㄥ箍</li>
+<li>鍒?030骞寸疮璁＄爺鍒舵爣鍑?0椤逛互涓?/li>
+<li>鏍囧噯浣撶郴鍩烘湰褰㈡垚锛屾彁鍗囧叏鐞冩爣鍑嗗弬涓庡害</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氬伐淇￠儴 / 鏂版氮璐㈢粡</span>
+        <a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-24/doc-inipmnps2876232.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-08-24" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">娓呭崕鍥㈤槦30骞存敾鍏筹紝鎺ㄥ姩鑴戞帴鍙ｆ妧鏈姞閫熸帴鍏ョ幇瀹炵敓娲?/h3>
+      <p class="card-summary">娓呭崕澶у瀹樼綉鍙戞枃鍥為【鍥㈤槦30骞磋剳鏈烘帴鍙ｇ爺绌跺巻绋嬨€備粠1995骞撮珮涓婂嚡銆侀珮灏忔鍥㈤槦鐜囧厛鎺㈢储锛屽埌2026骞?鏈堟椽娉㈡暀鎺堝洟闃熸垚鏋滆幏鎵瑰叏鐞冮娆句镜鍏ュ紡鑴戞満鎺ュ彛鍖荤枟鍣ㄦ锛屾竻鍗庡湪绁炵粡宸ョ▼涓庢櫤鑳藉尰瀛﹂鍩熻坊韬浗闄呴鍏堣鍒椼€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>1995骞存竻鍗庨珮涓婂嚡銆侀珮灏忔鍥㈤槦鐜囧厛寮€灞旴CI鎺㈢储</li>
+<li>1999骞磋嚜涓荤爺鍙慡SVEP鑴戞満鎺ュ彛瀹炵幇鎰忓康鎿嶆帶鍏夋爣</li>
+<li>2026骞?鏈堟椽娉㈡暀鎺堝洟闃烴EO绯荤粺鑾種MPA鎵瑰噯涓婂競</li>
+<li>鍏ㄥ浗11瀹跺尰闄㈠畬鎴?2渚嬮娈佃剨楂撴崯浼ゆ偅鑰呬复搴婃鍏?/li>
+<li>鑴戣捣鎼忓櫒宸插湪鍥藉唴瓒?00瀹跺尰闄㈠簲鐢紝绱妞嶅叆瓒?8000浜?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭竻鍗庡ぇ瀛﹀畼缃?/span>
+        <a href="https://www.tsinghua.edu.cn/info/3245/127172.htm" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-08-24" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">銆婃鍏ュ紡鑴戞満鎺ュ彛涓村簥搴旂敤璺緞绠＄悊涓浗涓撳鍏辫瘑锛?026鐗堬級銆嬪彂甯?/h3>
+      <p class="card-summary">涓崕鍖诲浼氱缁忓绉戝鍒嗕細缁勭粐鍙戝竷妞嶅叆寮忚剳鏈烘帴鍙ｄ复搴婂簲鐢ㄨ矾寰勭鐞嗕笓瀹跺叡璇嗭紝绯荤粺闃愯堪iBCI涓村簥搴旂敤鍘熷垯銆侀€傚簲璇佸垎鍨嬪強鏍囧噯鍖栬矾寰勶紝娑电洊鏈墠璇勪及銆佹墜鏈鍏ャ€佹湳鍚庤缁冨強闀挎湡闅忚鏂规锛屾秹鍙婂叏鍥?00浣欏BCI涓村簥鍙婄浉鍏崇爺绌跺崟浣嶃€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鏄庣‘浠?apos;鑴戞湁淇″彿銆佷綋鏈夌洰鏍囥€佺幆璺彲濉?apos;涓烘牳蹇冪殑鎮ｈ€呯撼鍏ュ師鍒?/li>
+<li>閽堝鑴婇珦鎹熶激銆佽剳鍗掍腑鍙夾LS绛夊姛鑳介殰纰嶆彁鍑哄叿浣撲复搴婅矾寰?/li>
+<li>寮鸿皟澶氭ā鎬佸奖鍍忓畾浣嶃€佷釜浣撳寲鐢垫瀬閫夋嫨涓庨棴鐜悍澶嶈缁?/li>
+<li>瑙勮寖浼︾悊瀹℃煡銆佺煡鎯呭悓鎰忋€佸畨鍏ㄧ洃娴嬩笌閫€鍑烘満鍒?/li>
+<li>鍘嗘椂绾?涓湀锛屾秹鍙婂叏鍥?00浣欏BCI涓村簥鍙婄爺绌跺崟浣?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歁edtec China / 涓崕鍖诲浼?/span>
+        <a href="https://www.medteccn.com/media/newtechnology/26159.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-26">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?6鏃?/span>
+        <span class="date-weekday">鍛ㄤ笁</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-08-26" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+      </div>
+      <h3 class="card-title">鏂拌嫳鏍煎叞绁炵粡澶栫鍖荤敓鍛煎悂寤虹珛鑴戞満鎺ュ彛&quot;浜虹被淇濈湡搴?quot;鏍囧噯</h3>
+      <p class="card-summary">銆婄編鍥界簿绁炵梾瀛︽潅蹇椼€?鏈?6鏃ュ彂琛ㄦ枃绔狅紝鐢辨柊鑻辨牸鍏板湴鍖虹缁忓绉戝尰鐢熼琛旂殑鐮旂┒鍥㈤槦鎻愬嚭锛岃剳鏈烘帴鍙ｄ骇涓氶渶瑕佸缓绔嬪彲閲忓寲鐨?quot;浜虹被淇濈湡搴?quot;锛圚uman Fidelity锛夋爣鍑嗏€斺€斿嵆妞嶅叆寮忚剳璁惧涓庝娇鐢ㄨ€呫€佸尰鐤楁満鏋勩€佹敮浠樻柟鍙婄洃绠￠渶姹備箣闂寸殑鍖归厤绋嬪害銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鎻愬嚭&quot;浜虹被淇濈湡搴?quot;姒傚康锛岃　閲忚剳璁惧涓庡鏂归渶姹傜殑鍖归厤搴?/li>
+<li>娑夊強浼佷笟銆佷复搴婂尰鐢熴€佽祫鍔╂柟銆佺洃绠℃満鏋勫拰鍖荤枟绯荤粺浜旀柟</li>
+<li>褰撳墠BCI浜т笟缂轰箯缁熶竴鐨勫彲琛￠噺鏍囧噯</li>
+<li>涓烘鍏ュ紡绁炵粡璁惧鐨勮瘎浼板拰瀹℃壒鎻愪緵鏂版鏋?/li>
+<li>鏈夊姪浜庡姞閫烞CI浠庡疄楠屽璧板悜甯歌涓村簥</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歂eurotech Reports / American Journal of Psychiatry</span>
+        <a href="https://neurotechreports.com/news" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-27">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?7鏃?/span>
+        <span class="date-weekday">鍛ㄥ洓</span>
+        <span class="day-count">2 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜у搧/鎶€鏈? data-date="2026-08-27" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">浜у搧/鎶€鏈?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+      </div>
+      <h3 class="card-title">椹柉鍏?Blindsight 鐩茶鑺墖鎺ㄨ繘锛氶璁?-12涓湀鍐呭紑灞曚汉浣撴鍏ヨ瘯楠?/h3>
+      <p class="card-summary">澶氱瘒鎶ラ亾浜ゅ弶楠岃瘉锛孨euralink 鐨?Blindsight 瑙嗚鍋囦綋椤圭洰姝ｅ悜 FDA 绐佺牬鎬у櫒姊拌瀹氬悗鐨勪复搴婅瘯楠屾帹杩涖€傞┈鏂厠鏇惧叕寮€琛ㄧず鐩爣鍦?026骞村簳鍓嶅畬鎴愰娆′汉绫荤洸瑙嗘鍏ヨ瘯楠岋紝鏃ㄥ湪璁╁叏鐩叉偅鑰呴€氳繃鐨眰鍒烘縺鎭㈠閮ㄥ垎瑙嗚鎰熺煡锛岄暱杩滄柟鍚戠敋鑷冲寘鎷孩澶?绱绾跨瓑瓒呬汉绫昏瑙夎兘鍔涖€傜洰鍓嶅凡鏈夎秴杩?涓囦汉鎺掗槦绛夊緟鎵嬫湳銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>Blindsight 瑙嗚鍋囦綋椤圭洰鍚戜复搴婅瘯楠屾帹杩?/li>
+<li>鐩爣 2026骞村簳鍓嶅畬鎴愰娆′汉绫绘鍏?/li>
+<li>鎮ｈ€呯櫥璁板凡瓒?10,000 浜?/li>
+<li>闀挎湡鏂瑰悜鍖呮嫭鎰熺煡绾㈠/绱绾跨瓑鎵╁睍瑙嗚</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛欶ox News / Neuralink official / Threads</span>
+        <a href="https://www.seeingwithsound.com/BCI.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-08-27" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">Neuralink鍙楄瘯鑰匒udrey Crews鍑剰蹇靛垱浣滄暟瀛楄壓鏈?/h3>
+      <p class="card-summary">Neuralink浜?鏈?6鏃ュ彂甯冩渶鏂颁复搴婅瘯楠岃棰戯紝鍙楄瘯鑰匒udrey Crews锛堣瘯楠岀紪鍙稰atient 9锛夊湪妞嶅叆N1鑺墖鍚庯紝浠呭嚟澶ц剳杩愬姩鎰忓浘鍗冲彲鍦ㄧ數鑴戜笂涔﹀啓濮撳悕骞跺垱浣滄暟瀛楃粯鐢汇€侰rews鑷?005骞碈4/C5鑴婇珦鎹熶激瀵艰嚧鍥涜偄鐦棯锛屾娆″睍绀烘爣蹇楃潃BCI浠庡熀纭€鍏夋爣鎺у埗鍚戝垱閫犳€ц〃杈惧満鏅嫇灞曘€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍙楄瘯鑰匒udrey Crews涓篘euralink PRIME璇曢獙绗?鍙锋偅鑰?/li>
+<li>2005骞磋溅绁稿鑷碈4/C5鑴婇珦鎹熶激锛屽洓鑲㈢槴鐥?/li>
+<li>浠呭嚟鎰忓康瀹屾垚涔﹀啓銆佺粯鐢荤瓑绮剧粏鏁板瓧鍒涗綔</li>
+<li>浠庡厜鏍囨帶鍒惰繘闃跺埌鍒涢€犳€ц〃杈撅紝搴旂敤鍦烘櫙鎷撳</li>
+<li>N1妞嶅叆浣撲粛澶勪簬涓村簥鐮旂┒闃舵锛屾湭鑾蜂笂甯傛壒鍑?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛欼ndia Today / Neuralink瀹樻柟</span>
+        <a href="https://www.indiatoday.in/technology/news/story/watch-audrey-crews-creates-art-with-her-mind-using-neuralink-2980976-2026-08-27" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-15">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?5鏃?/span>
+        <span class="date-weekday">鍛ㄥ叚</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-08-15" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">420浜夸及鍊艰儗鍚庯細Neuralink瑕佺瓑澶氫箙鍏戠幇浼板€硷紵</h3>
+      <p class="card-summary">鏂囧鍩庢枃绔犲垎鏋怤euralink浼板€奸鍗囪嚦420浜跨編鍏冭儗鍚庣殑鍟嗕笟鍖栨寫鎴樸€傛枃绔犲紩鐢ㄦ渶鏂颁复搴婅瘯楠岃棰戯紝鏄剧ず妞嶅叆N1鑺墖鐨勫弬涓庤€呭彲鍑ぇ鑴戣繍鍔ㄦ剰鍥炬帶鍒剁數鍔ㄨ疆妞呭畬鎴愬墠杩涖€佸悗閫€銆佽浆寮強搴ф璋冩暣銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>Neuralink浜岀骇甯傚満浼板€兼帹楂樿嚦420浜跨編鍏?/li>
+<li>鍏徃灏氭湭瀹炵幇鍟嗕笟鍖栬惀鏀?/li>
+<li>鍙楄瘯鑰呭彲鐢ㄦ剰蹇垫帶鍒剁數鍔ㄨ疆妞呯Щ鍔?/li>
+<li>鍗氱澘搴风鍒涙澘IPO宸茶幏涓婁氦鎵€鍙楃悊</li>
+<li>寮鸿剳绉戞妧浠ヤ繚瀵嗗舰寮忓悜娓氦鎵€閫掍氦涓婂競鐢宠</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭枃瀛﹀煄</span>
+        <a href="https://www.wenxuecity.com/news/2026/08/15/126743374.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-17">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?7鏃?/span>
+        <span class="date-weekday">鍛ㄤ竴</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-08-17" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+      </div>
+      <h3 class="card-title">瀵硅瘽鏄庤鑴戞満鍒樺啺锛氳瑙夌毊灞侭CI杩涘叆涓村簥娉ㄥ唽鍐插埡闃舵</h3>
+      <p class="card-summary">鏂版氮璐㈢粡鍙戝竷鏄庤鑴戞満鍒涘浜哄垬鍐颁笓璁裤€傚叕鍙?024骞?0鏈堟垚绔嬶紝涓绘敾鍖荤枟绾т镜鍏ュ紡瑙嗚鐨眰鑴戞満鎺ュ彛锛?026骞?鏈堣繛缁畬鎴愬ぉ浣胯疆銆佸ぉ浣?杞€佸ぉ浣?+杞瀺璧勶紝鐩爣2030-2031骞磋幏寰椾笁绫诲尰鐤楀櫒姊版敞鍐岃瘉銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鏄庤鑴戞満2024骞?0鏈堟垚绔嬶紝涓撴敞瑙嗚鐨眰妞嶅叆寮廈CI</li>
+<li>2026骞?鏈堝畬鎴愬杞ぉ浣跨郴鍒楄瀺璧?/li>
+<li>900鍏夌偣瑙嗚閲嶅缓绯荤粺杩涘叆涓村簥娉ㄥ唽鍓嶅噯澶?/li>
+<li>鐩爣2030-2031骞磋幏涓夌被鍖荤枟鍣ㄦ璇?/li>
+<li>闈㈠悜鍏ㄧ悆绾?300涓囧叏鐩蹭汉缇わ紝涓浗绾?000涓?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氭柊娴储缁?/span>
+        <a href="https://finance.sina.com.cn/tech/roll/2026-08-17/doc-ininqtnu9151106.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-20">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?0鏃?/span>
+        <span class="date-weekday">鍛ㄥ洓</span>
+        <span class="day-count">2 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-20" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鏀垮簻鎴樼暐姝ｉ噸濉戝叏鐞冭剳鏈烘帴鍙ｇ珵璧涙牸灞€</h3>
+      <p class="card-summary">Neurotech Reports 8鏈?0鏃ユ繁搴﹀垎鏋愭寚鍑猴紝2026骞翠笁澶т簨浠舵眹鑱氫娇BCI浠庣爺绌跺ソ濂囧彉涓烘斂搴滄垬鐣ヨ棰橈細涓浗瀹炵幇浜у搧涓婂競骞跺缓绔嬫敮浠樹綋绯汇€佺編鍥借祫鍔╁垱濮嬩汉椹卞姩妯″紡銆佹鐩熻姹傜洃绠℃満鏋勭爺绌朵鸡鐞嗛棶棰樸€備笁绉嶆ā寮忓弽鏄犱簡鏀垮簻鍦ㄩ潰瀵瑰彲璇诲彇鐢氳嚦鏈潵鍙兘鍐欏叆浜鸿剳鐨勬妧鏈椂鐨勬牴鏈笉鍚屼俊蹇点€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>涓浗锛氫骇鍝佷笂甯?鍖讳繚鏀粯+鍥藉鏍囧噯锛屽埗搴﹂棴鐜鍏?/li>
+<li>缇庡浗锛氱浜鸿祫鏈?FDA绐佺牬鎬у櫒姊拌瀹氾紝鍒涘浜洪┍鍔?/li>
+<li>娆х洘锛欵BRAINS骞冲彴+娆ф床鑴戝浘璋憋紝璺ㄥ绉戠爺鍗忎綔</li>
+<li>涓夌妯″紡浣撶幇瀵?quot;鏀垮簻搴斿浣曚粙鍏ヨ鑴戞妧鏈?quot;鐨勪笉鍚屽洖绛?/li>
+<li>BCI姝ｄ粠鐮旂┒濂藉鍗囩骇涓烘斂搴滄垬鐣ヨ棰?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歂eurotech Reports</span>
+        <a href="https://neurotechreports.com/news" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-08-20" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鑴戞満鎺ュ彛璧板悜鎮ｈ€咃紝璧勬湰寮€濮嬩簤澶虹缁忔暟鎹叆鍙?/h3>
+      <p class="card-summary">铏庡梾APP鍙戞枃鎸囧嚭锛岃剳鏈烘帴鍙ｈ繘鍏ョ湡瀹炰复搴婂悗锛屾暟鎹棴鐜墠鍒氬垰寮€濮嬨€傛偅鑰呮暟閲忓鍔犲苟涓嶈嚜鍔ㄥ舰鎴愭暟鎹鍨掞紝閲囬泦銆佸鐞嗗拰浣跨敤瑙勫垯鏄惁娓呮櫚鎵嶆槸鏍稿績銆俉AIC 2026涓婏紝寮鸿剳绉戞妧鍙戝竷BrainCo鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝宀╂€濈被鑴戝睍绀洪潪渚靛叆寮廈CI鍦ㄦ満鍣ㄤ汉銆佹父鎴忓拰娑堣垂鐢靛瓙涓殑搴旂敤銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>BCI鍥涚幆鑺傦細淇″彿閲囬泦銆佸鐞嗚В鐮併€佹寚浠ゆ墽琛屻€佺粨鏋滃弽棣?/li>
+<li>鎮ｈ€呮暟閲忓闀夸笉绛変簬鏁版嵁澹佸瀿锛屽悎瑙勪娇鐢ㄨ鍒欐槸鍏抽敭</li>
+<li>寮鸿剳BrainCo骞冲彴鏀寔鏈烘鑷傘€佹満姊拌吙銆佹満姊扮嫍鍜屼汉褰㈡満鍣ㄤ汉</li>
+<li>宀╂€濈被鑴戝睍绀洪潪渚靛叆寮廈CI鍦ㄦ満鍣ㄤ汉涓庢秷璐圭數瀛愬満鏅?/li>
+<li>鑴戠數銆佸尰鐤楀仴搴蜂俊鎭睘鏁忔劅涓汉淇℃伅锛岄渶涓ユ牸淇濇姢</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氳檸鍡匒PP / 鑵捐鏂伴椈</span>
+        <a href="https://news.qq.com/rain/a/20260820A05ODR00" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-23">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?3鏃?/span>
+        <span class="date-weekday">鍛ㄦ棩</span>
+        <span class="day-count">1 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-08-23" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">涓編娆т笁绉嶁€滃浗瀹堕槦鎵撴硶鈥濓細鏀垮簻鎴樼暐濡備綍閲嶅鍏ㄧ悆鑴戞満鎺ュ彛绔炶禌鏍煎眬</h3>
+      <p class="card-summary">鑵捐鏂伴椈鍙戝竷娣卞害鍒嗘瀽锛屽姣斾腑鍥姐€佺編鍥姐€佹鐩熷湪鏀垮簻鎴樼暐灞傞潰瀵硅剳鏈烘帴鍙ｄ骇涓氱殑甯冨眬銆備腑鍥介€氳繃鈥滃崄浜斾簲鈥濊鍒掋€佸浗瀹舵爣鍑嗐€佸尰淇濇敮浠樺拰绉戝垱鏉垮舰鎴愮粍鍚堟嫵锛涚編鍥戒緷闈犵浜鸿祫鏈拰FDA绐佺牬鎬у櫒姊拌瀹氾紱娆х洘鍒欎緷鎵楨BRAINS骞冲彴鍜屸€滄娲茶剳鍥捐氨鈥濇帹杩涜法澧冪鐮斿崗浣溿€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>2026骞?鏈?3鏃ュ崥鐫垮悍NEO鑾種MPA涓夌被鍖荤枟鍣ㄦ娉ㄥ唽璇?/li>
+<li>2026骞?鏈?鏃B/T 47023銆丟B/T 47127涓ら」BCI鍥藉鏍囧噯姝ｅ紡瀹炴柦</li>
+<li>鍥藉鍖讳繚灞€鍦∟EO鑾锋壒48灏忔椂鍐呭畬鎴愬尰淇濇姤閿€缂栫爜鍒嗛厤</li>
+<li>Neuralink浜岀骇甯傚満浼板€艰鎺ㄩ珮鑷虫渶楂?20浜跨編鍏?/li>
+<li>涓編娆у垎鍒舰鎴愨€滄斂绛?璧勬湰+绉戠爺鈥濈殑涓嶅悓涓诲妯″紡</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氳吘璁柊闂?/span>
+        <a href="https://news.qq.com/rain/a/20260823A04OKX00" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-08-25">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026骞?8鏈?5鏃?/span>
+        <span class="date-weekday">鍛ㄤ簩</span>
+        <span class="day-count">3 鏉?/span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="琛屼笟瓒嬪娍" data-date="2026-08-25" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">琛屼笟瓒嬪娍</span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">鑴戞満鎺ュ彛鍟嗕笟鍖栧厓骞达細浠庣鐮旀牱鍝佸埌鍖荤枟鍣ㄦ锛岃祫鏈€佹斂绛栥€佹妧鏈笁鑲″姏閲忔眹鑱?/h3>
+      <p class="card-summary">ZAKER鏂伴椈娣卞害鎶ラ亾灏?026骞村畾涔変负&apos;鑴戞満鎺ュ彛鍟嗕笟鍖栧厓骞?apos;銆傚崥鐫跨鍒涙澘IPO鐢宠鍕熻祫25浜垮厓锛涜剳铏庣鎶€&apos;涓夊叏&apos;绯荤粺7鏈堣幏缁胯壊閫氶亾锛堝垱鏂板尰鐤楀櫒姊扮壒鍒鏌ワ級锛岀疮绉畬鎴?0渚嬩复搴婅瘯楠岋紝瓒呯骇宸ュ巶鐩爣骞村簳鎶曚骇銆傚浗鍐?Q 2026 BCI铻嶈祫瓒匭1鍏ㄥ勾銆両锟斤拷瀹朵簨浠舵暟鍚屾瘮缈诲€嶃€傚己鑴戠鎶€Focus涓撴敞鍔涚郴缁熻繘鍏ュ鎵€瀛︽牎锛孧eta鍙戝竷闈炰镜鍏ュ紡Brain2Qwerty v2銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>鍗氱澘搴风鍒涙澘 IPO 鐢宠鍕熻祫 25 浜垮厓</li>
+<li>鑴戣檸绉戞妧瓒呯骇宸ュ巶鐩爣 2026H2 鎶曚骇</li>
+<li>鍥藉唴 Q1 BCI 铻嶈祫瓒?40 浜垮厓</li>
+<li>2026Q1 涓€绾у競鍦?83 璧蜂簨浠讹紙vs 2025鍏ㄥ勾 47 璧凤級</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歓AKER鏂伴椈</span>
+        <a href="https://app.myzaker.com/news/article.php?pk=6a8c2c558e9f091ca81eeadf" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    <div class="news-card" data-category="鐩戠閲岀▼纰? data-date="2026-08-25" data-hotness="5">
+      <div class="card-header">
+        <span class="category-tag" style="background: #94a3b820; color: #94a3b8; border-color: #94a3b840;">鐩戠閲岀▼纰?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+      </div>
+      <h3 class="card-title">妞嶅叆寮?BCi 鐩戠鎷愮偣涓磋繎锛欳orTec銆丼ynchron銆丯euralink 涓夌嚎骞惰繘</h3>
+      <p class="card-summary">LinkedIn Neurocoder 鍙戞枃鍒嗘瀽锛?026骞?鏈堝嚭鐜颁笁锟斤拷淇″彿姹囪仛鈥斺€擟orTec Brain Interchange鑾稦DA绐佺牬鎬у櫒姊拌瀹氾紙鍏ㄧ悆棣栦釜涓虹己琛€鎬у崚涓悍澶嶇殑鍏ㄦ鍏ユ棤绾垮弻鍚戦棴鐜疊CI锛夛紝Synchron鍑嗗鍏抽敭鎬ц瘯楠屽啿鍒洪涓狥DA PMA鎵瑰噯锛堢粡棰堥潤鑴夋敮鏋剁數鏋佽矾寰勶級锛孨euralink PRIME澶氬浗闃熷垪鎺ㄨ繘銆備笁鏉¤矾寰勭殑涓夊ぇ鐩戠閲岀▼纰戝湪鍚屼竴骞寸獥鍙ｅ唴瀹屾垚锛屽彲鑳芥垚涓烘鍏ュ紡BCI浠庣爺绌惰蛋鍚戝尰鐤楁爣鍑嗙殑鍏抽敭鎷愮偣銆?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>CorTec鎴愪负鍏ㄧ悆棣栦釜鑾稦DA绐佺牬鎬ц瀹氱殑鍏ㄦ鍏ユ棤绾垮弻鍚戦棴鐜?BCI</li>
+<li>Synchron 鍑嗗鍐插埡棣栦釜 FDA PMA 鎵瑰噯</li>
+<li>Neuralink PRIME 杩涘叆澶氬浗澶氫腑蹇冮獙璇?/li>
+<li>涓夊ぇ閲岀▼纰戝湪鍚屼竴骞寸獥鍙ｄ氦姹?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛歀inkedIn Neurocoder / MIT Technology Review</span>
+        <a href="https://www.linkedin.com/posts/neurocoder_neurocoder-bci-fda-activity-7497896916966629376-03fl" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-08-25" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+        <span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+      </div>
+      <h3 class="card-title">鎶曡祫浜烘媶瑙ｈ剳鏈烘帴鍙ｏ細涓嶆槸鎵€鏈夆€滄妧鏈鍏堚€濋兘鍊煎緱涓嬫敞</h3>
+      <p class="card-summary">閽涘獟浣撳垔鏂囦粠鎶曡祫浜鸿瑙掓媶瑙ｈ剳鏈烘帴鍙ｈ禌閬擄紝鎸囧嚭涓夌被鎶€鏈矾绾垮凡鍑虹幇鏄庢樉鍒嗗寲锛氫镜鍏ュ紡鎶€鏈棬妲涢珮浣嗗彉鐜版參锛屽崐渚靛叆寮忕巼鍏堟嬁鍒板尰鐤楀櫒姊版敞鍐岃瘉锛岄潪渚靛叆寮忓垯鏈€鏃╁疄鐜拌妯″寲钀ユ敹銆傚己鑴戠鎶€銆佸崥鐫垮悍銆佽姱鏅鸿揪绛変唬琛ㄤ紒涓氬垎鍒搴斾笁鏉¤矾寰勩€?/p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">鏍稿績瑕佺偣</div>
+        <ul>
+<li>渚靛叆寮?鍗婁镜鍏ュ紡/闈炰镜鍏ュ紡涓夋潯璺嚎鍟嗕笟鍖栬妭濂忓樊寮傛樉钁?/li>
+<li>鍗婁镜鍏ュ紡浠ュ崥鐫垮悍NEO涓轰唬琛紝鐜囧厛鑾種MPA涓夌被璇?/li>
+<li>闈炰镜鍏ュ紡浠ュ己鑴戠鎶€涓轰唬琛紝宸茶妯″寲钀ユ敹骞堕€掍氦娓氦鎵€</li>
+<li>鑺櫤杈锯€滃寳鑴戜竴鍙封€濆畬鎴愯繎30渚嬫鍏ワ紝绱瀹夊叏宸ヤ綔瓒?0000灏忔椂</li>
+<li>鎶曡祫閫昏緫搴斾粠鈥滄妧鏈鍏堚€濊浆鍚戔€滃彲楠岃瘉涓村簥浠峰€?鍚堣璺緞鈥?/li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">鏉ユ簮锛氶挍濯掍綋</span>
+        <a href="https://www.tmtpost.com/8090362.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+      </div>
+    </div>
+    </div>
+  </div>
+<div class="timeline-day" data-date="2026-07-24">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?4鏃?/span>
+<span class="date-weekday">鍛ㄤ簲</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-24" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鎴戝浗瀹屾垚鍏ㄧ悆棣栨鍗冧汉璺ㄥ湴鍩熻剳鐢靛悓姝ラ噰闆嗭紝绐佺牬绁炵粡澶фā鍨嬫暟鎹摱棰?/h3>
+<p class="card-summary">鎴戝浗绉戠爺鍥㈤槦鍙戝竷鏂板瀷鑴戠數淇″彿閲囬泦瑁呯疆锛屽湪鍏ㄧ悆鑼冨洿鍐呴娆″疄鐜拌法鍦板煙涓婂崈浜哄悓姝ヨ剳鐢典俊鍙烽噰闆嗐€傝绯荤粺鏀诲厠涓ゅぇ鏍稿績鎶€鏈鍨掞細涓€鏄湪璁惧灏忓瀷鍖栫殑鍚屾椂淇濋殰寰急鑴戠數淇″彿閲囬泦绮惧害锛屼簩鏄€氳繃涓撳睘鎺堟椂鏍″噯绠楁硶瀹炵幇澶氳澶囨绉掔骇鏃堕棿瀵归綈銆傚崟娆″崈浜哄悓姝ラ噰闆嗗彲绉疮涓婂崈灏忔椂鏍囧噯鍖栬剳鐢电礌鏉愶紝涓虹缁忓ぇ妯″瀷璁粌鎵撻€氭牳蹇冩暟鎹摱棰堛€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栨瀹炵幇璺ㄥ湴鍩熷崈浜虹骇鑴戠數鍚屾閲囬泦</li>
+<li>绐佺牬涓ゅぇ澹佸瀿锛氳澶囧皬鍨嬪寲+淇″彿绮惧害銆佹绉掔骇鏃堕棿瀵归綈</li>
+<li>鍗曟閲囬泦鍙Н绱笂鍗冨皬鏃舵爣鍑嗗寲鑴戠數绱犳潗</li>
+<li>涓虹缁忓ぇ妯″瀷璁粌鎻愪緵楂樿川閲忔暟鎹熀纭€</li>
+<li>鍙欢浼歌嚦鐤插姵棰勮銆佺柧鐥呮棭绛涖€佽剳鎺ц緟鍔╃瓑鍦烘櫙</li>
+<li>鎺ㄥ姩BCI鎶€鏈粠瀹為獙瀹ょ鐮旇蛋鍚戞皯鐢ㄤ骇涓氬寲</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬ぎ瑙嗚储缁?/ 鍑ゅ嚢缃戠鎶€</span>
+<a href="https://tech.ifeng.com/c/8v0MPY5SfDT" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-23">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?3鏃?/span>
+<span class="date-weekday">鍛ㄥ洓</span>
+<span class="day-count">6 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-23" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink浼板€肩獊鐮?20浜跨編鍏冿紝杈冨幓骞村闀胯繎鍥涘€嶏紝鑴戞満鎺ュ彛鍟嗕笟鍖栨嫄鐐逛复杩?/h3>
+<p class="card-summary">椹柉鍏嬫棗涓嬭剳鏈烘帴鍙ｅ叕鍙窷euralink鍦ㄨ繎鏈熺鍕熻偂鏉冧簩绾у競鍦轰氦鏄撲腑浼板€肩獊鐮?20浜跨編鍏冿紙绾?844浜垮厓浜烘皯甯侊級锛岃緝2025骞?鏈堜笂涓€杞瀺璧勬椂鐨?0浜跨編鍏冨闀胯繎鍥涘€嶃€傚厜澶ц瘉鍒告寚鍑猴紝杩戞湡鑴戞満鎺ュ彛鏀寔鎬ф斂绛栧瘑闆嗗嚭鍙帮紝鍥藉姟闄€婂浗姘戝仴搴?apos;鍗佷簲浜?apos;瑙勫垝銆嬨€佹皯鏀块儴绛?4閮ㄩ棬銆婂悍澶嶈緟鍔╁櫒鍏蜂骇涓氭墿鑳芥彁璐ㄤ笁骞磋鍔ㄦ柟妗堛€嬬瓑鏀跨瓥鎸佺画鍔犵爜锛?026骞存湁鏈涙垚涓鸿剳鏈烘帴鍙ｈ繄鍏ユ妧鏈厬鐜颁笌鍟嗕笟鍖栬惤鍦扮殑鍏抽敭鍏冨勾銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Neuralink浜岀骇甯傚満浼板€肩獊鐮?20浜跨編鍏冿紝杈冨幓骞?0浜垮闀胯繎4鍊?/li>
+<li>鍥藉姟闄?apos;鍗佷簲浜?apos;瑙勫垝鏄庣‘鍔犲己鑴戞満鎺ュ彛绉戞妧鏀诲叧</li>
+<li>姘戞斂閮ㄧ瓑14閮ㄩ棬鍙戝竷搴峰杈呭叿浜т笟涓夊勾琛屽姩鏂规</li>
+<li>骞夸笢鎻愬嚭2030骞存柊澧?00瀹禕CI浼佷笟銆佸缓鎴?00涓狟CI鐥呮埧</li>
+<li>鍒涙柊鍖荤枟鍗氱伒鑴戞満涓婅偄搴峰绯荤粺鑾锋禉姹熺渷鑽洃灞€娉ㄥ唽璇?/li>
+<li>2026骞存垚涓築CI鎶€鏈厬鐜颁笌鍟嗕笟鍖栬惤鍦板叧閿厓骞?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氳储鑱旂ぞ / 涓滄柟璐㈠瘜缃?/span>
+<a href="https://finance.eastmoney.com/a/202607233818033852.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-23" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">OpenAI鎶曡祫Sam Altman鍒涚珛鐨凪erge Labs锛屽叆灞€鑴戞満鎺ュ彛瀵规爣Neuralink</h3>
+<p class="card-summary">OpenAI姝ｅ紡鎶曡祫鐢盨am Altman鍒涚珛鐨勮剳鏈烘帴鍙ｅ垵鍒涘叕鍙窶erge Labs锛岃鍏徃涓撴敞浜庡紑鍙戝厛杩涚缁忔鍏ョ墿锛屾棬鍦ㄥ皢浜虹被璁ょ煡涓庝汉宸ユ櫤鑳借瀺鍚堛€傛涓炬爣蹇楃潃OpenAI姝ｅ紡鍏ュ眬BCI璧涢亾锛孧erge Labs灏嗘垚涓篘euralink鐨勪富瑕佺珵浜夊鎵嬨€傚叕鍙歌鍒掑埄鐢∣penAI鐨勫ぇ妯″瀷鑳藉姏锛岄潻鏂板尰鐤楁不鐤楀拰浜烘満浜や簰鏂瑰紡銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>OpenAI鎶曡祫Sam Altman鍒涚珛鐨凪erge Labs锛屾寮忓叆灞€BCI</li>
+<li>Merge Labs涓撴敞鍏堣繘绁炵粡妞嶅叆鐗╋紝瀵规爣Neuralink</li>
+<li>鏍稿績鏂瑰悜锛氫汉绫昏鐭ヤ笌AI铻嶅悎鐨勭缁忔帴鍙?/li>
+<li>鍒╃敤OpenAI澶фā鍨嬭兘鍔涢潻鏂板尰鐤椾笌浜烘満浜や簰</li>
+<li>BCI璧涢亾鍐嶆坊閲嶉噺绾х帺瀹讹紝绔炰簤鏍煎眬閲嶅</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歍echShots</span>
+<a href="https://www.techshotsapp.com/artificial-intelligence/openai-backs-sam-altmans-merge-labs-to-rival-neuralink-in-bci-market" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鏍稿績鍣ㄤ欢" data-date="2026-07-23" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">鏍稿績鍣ㄤ欢</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍖楀ぇ鏉ㄧ帀瓒呭洟闃熴€婄瀛︺€嬪彂琛ㄧ浉鍙樺繂闃诲櫒绁炵粡鍔ㄥ姏瀛﹁姱鐗囷紝鎻愰€熻秴GPU 478鍊?/h3>
+<p class="card-summary">鍖椾含澶у闆嗘垚鐢佃矾瀛﹂櫌鏉ㄧ帀瓒呮暀鎺堝洟闃熻仈鍚堜腑绉戦櫌涓婃捣寰郴缁熸墍绛夛紝鍦ㄣ€婄瀛︺€嬶紙Science锛夊彂琛ㄥ叏鐞冮娆惧熀浜庣浉鍙樺繂闃诲櫒鐨勬绉掔骇绁炵粡鍔ㄥ姏瀛︾郴缁熻姱鐗囥€傞噰鐢?0绾崇背鎴愮啛鍒剁▼锛屾牳蹇冮樀鍒楅潰绉粎0.28骞虫柟姣背锛屽湪鑴戠毊灞傝〃闈㈤噸寤轰换鍔′腑杈僋VIDIA A100 GPU鎻愰€?0-478鍊嶏紝鍔熻€楅檷浣?2-25鍊嶏紝瀹炵幇澶嶆潅绁炵粡鍔ㄥ姏瀛︿换鍔＄殑姣绾у疄鏃惰绠椼€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栨鐩稿彉蹇嗛樆鍣ㄧ缁忓姩鍔涘绯荤粺鑺墖锛屽彂琛ㄤ簬銆婄瀛︺€?/li>
+<li>40nm鎴愮啛鍒剁▼锛屾牳蹇冮樀鍒?.28mm虏</li>
+<li>鑴戠毊灞傞噸寤轰换鍔¤緝A100鎻愰€?0-478鍊嶏紝鍔熻€楅檷12-25鍊?/li>
+<li>鍒╃敤鐢靛婕傜Щ鐗╃悊婕斿寲鏇夸唬鏁板瓧璁＄畻姝ラ暱鎼滅储</li>
+<li>瀛樼畻涓€浣撴灦鏋勶紝娑堥櫎鍐疯渚濇浖鐡堕</li>
+<li>涓築CI瀹炴椂绁炵粡淇″彿瑙ｇ爜鎻愪緵浣庡姛鑰楃‖浠舵柟妗?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氥€婄瀛︺€婼cience / 鍖椾含澶у</span>
+<a href="http://m.toutiao.com/group/7665697279159976499/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-23" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛涓ら」鍥藉鏍囧噯8鏈?鏃ュ疄鏂斤紝缁熶竴杞‖浠舵帴鍙ｄ笌鏁版嵁鏍煎紡</h3>
+<p class="card-summary">GB/T 47023銆婅剳鏈烘帴鍙ｅ弬鑰冩灦鏋勩€嬪拰GB/T 47127銆婂妯℃€佹暟鎹牸寮忋€嬩袱椤瑰浗瀹舵爣鍑嗗皢浜?026骞?鏈?鏃ユ寮忓疄鏂姐€傛爣鍑嗙粺涓€浜咮CI杞‖浠舵帴鍙ｈ鑼冨拰鑴戠數鏁版嵁鏍煎紡锛屽皢闄嶄綆浜у搧浜掗€氫笌娉ㄥ唽闂ㄦ锛屾帹鍔ㄨ涓氫粠纰庣墖鍖栬蛋鍚戞爣鍑嗗寲銆傛鍓?鏈?0鏃MPA宸插彂甯傿CI鍖荤枟鍣ㄦ鍒嗙被鐣屽畾鍜屽懡鍚嶆寚瀵煎師鍒欍€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓ら」鍥藉鏍囧噯8鏈?鏃ュ疄鏂斤細鍙傝€冩灦鏋?澶氭ā鎬佹暟鎹牸寮?/li>
+<li>缁熶竴杞‖浠舵帴鍙ｅ拰鑴戠數鏁版嵁瑙勮寖</li>
+<li>闄嶄綆浜у搧浜掗€氫笌鍖荤枟鍣ㄦ娉ㄥ唽闂ㄦ</li>
+<li>6鏈?0鏃MPA鍙戝竷鍒嗙被鐣屽畾鍜屽懡鍚嶆寚瀵煎師鍒?/li>
+<li>渚靛叆寮廈CI缁熶竴鎸変笁绫诲尰鐤楀櫒姊扮鐞?/li>
+<li>琛屼笟杩涘叆鏍囧噯鍖栧姞閫熸湡锛屾帹鍔ㄨ妯″寲搴旂敤</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭爲鐏佃剳鏈?/ 涓滄柟璐㈠瘜缃?/span>
+<a href="https://caifuhao.eastmoney.com/news/20260723062503761237880" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-23" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink缁忕‖鑶滃井鍒涙鍏ユ妧鏈繘鍏ユ墿澶т复搴婅瘯楠岋紝鎵嬫湳鏃堕暱鍘嬬缉鑷?0鍒嗛挓</h3>
+<p class="card-summary">Neuralink瀹屾垚鍏ㄧ悆棣栦緥缁忕‖鑶滃井鍒涚數鏋佹鍏ヤ复搴婅瘯楠岋紙鍔犳嬁澶у浼﹀瑗块儴鍖婚櫌锛夛紝鎵嬫湳鏃堕暱宸插帇缂╄嚦20鍒嗛挓鍐咃紝澶у箙闄嶄綆浼犵粺渚靛叆寮忔墜鏈殑鍒涗激涓庢劅鏌撻闄┿€傝鎶€鏈棤闇€鍒囧紑纭剳鑶滐紝閫氳繃寰垱璺緞灏嗙數鏋佹鍏ヨ剳鍐呫€傚悓鏃禠ink璁惧鑱斿悎Grok澶фā鍨嬪疄鐜版笎鍐荤棁鎮ｈ€呮剰蹇佃浆鏂囧瓧+璇煶閲嶅缓锛岃幏FDA绐佺牬鎬у櫒姊拌瀹氥€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦緥缁忕‖鑶滃井鍒涚數鏋佹鍏ワ紝鎵嬫湳20鍒嗛挓鍐呭畬鎴?/li>
+<li>鏃犻渶鍒囧紑纭剳鑶滐紝鏄捐憲闄嶄綆鍒涗激涓庢劅鏌撻闄?/li>
+<li>鍔犳嬁澶у浼﹀瑗块儴鍖婚櫌瀹屾垚鎵╁ぇ涓村簥璇曢獙</li>
+<li>Link璁惧+Grok澶фā鍨嬪疄鐜版剰蹇佃浆鏂囧瓧+璇煶閲嶅缓</li>
+<li>鑾稦DA绐佺牬鎬у櫒姊拌瀹?/li>
+<li>鎺ㄨ繘鑷姩鍖栨鍏ユ墜鏈満鍣ㄤ汉閲忎骇锛岄攣瀹?026閲忎骇鐩爣</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟 / 鏍戠伒鑴戞満</span>
+<a href="http://m.toutiao.com/group/7665514586426360363/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-23" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">Precision Neuroscience鐨眰琛ㄩ潰楂樺瘑搴﹂樀鍒楄幏FDA 510(k)璁稿彲</h3>
+<p class="card-summary">缇庡浗Precision Neuroscience鍏徃鐨凩ayer 7鐨眰琛ㄩ潰楂樺瘑搴︾數鏋侀樀鍒楄幏寰桭DA 510(k)璁稿彲锛屽彲鐢ㄤ簬鏈€闀?0澶╃殑鑴戣〃闈㈢數娲诲姩璁板綍涓庣洃娴嬨€傝浜у搧閲囩敤瓒呰杽鏌旀€х數鏋侀樀鍒楋紝鍙洿鎺ユ斁缃簬澶ц剳鐨眰琛ㄩ潰锛屼负鐧棲鏈墠璇勪及銆佽剳鍔熻兘瀹氫綅绛変复搴婂満鏅彁渚涢珮鍒嗚鲸鐜囩數鐢熺悊鏁版嵁銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Layer 7鐨眰琛ㄩ潰楂樺瘑搴﹂樀鍒楄幏FDA 510(k)璁稿彲</li>
+<li>鏀寔鏈€闀?0澶╄剳琛ㄩ潰鐢垫椿鍔ㄨ褰曚笌鐩戞祴</li>
+<li>瓒呰杽鏌旀€х數鏋侀樀鍒楋紝楂樺垎杈ㄧ巼鐨眰淇″彿閲囬泦</li>
+<li>鐢ㄤ簬鐧棲鏈墠璇勪及銆佽剳鍔熻兘瀹氫綅绛変复搴婂満鏅?/li>
+<li>Precision鐢盢euralink鑱斿悎鍒涘浜哄垱绔?/li>
+<li>鐨眰琛ㄩ潰璺嚎鎴愪负渚靛叆寮廈CI閲嶈鍒嗘敮</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟</span>
+<a href="http://m.toutiao.com/group/7665514586426360363/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-22">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?2鏃?/span>
+<span class="date-weekday">鍛ㄤ笁</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-22" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓叧鏉戣鍧涘彂甯冨崄浜旈」鑴戞満鎺ュ彛鍒涙柊鎴愭灉锛岃鐩栨鍏ュ紡鍏ㄤ骇涓氶摼</h3>
+<p class="card-summary">2026涓叧鏉戣鍧涢噸纾呭彂甯冨崄浜旈」鑴戞満鎺ュ彛鍒涙柊鎴愭灉锛屾兜鐩栨鍏ュ紡涓庨潪妞嶅叆寮忎袱澶ф柟鍚戯紝鍖呮嫭鍏ㄧ悆棣栨鑾锋壒涓婂競鐨勬鍏ュ紡BCI涓夌被鍖荤枟鍣ㄦ锛堝崥鐫垮悍NEO绯荤粺锛夈€?12閫氶亾鏃犵嚎鍏ㄦ鍏?apos;鍖楄剳2鍙?apos;銆佹煍鎬у井鍨嬩镜鍏ュ紡绯荤粺锛堥樁姊尰鐤楋級銆佸彲鎷変几鏌旀€х數鏋侊紙鏅哄唹鍖荤枟锛夈€佽剳璧锋悘鍣紙鍝侀┌鍖荤枟锛夌瓑锛屾爣蹇楁垜鍥紹CI浜т笟鍔犻€熷舰鎴愪粠鍩虹鐮旂┒鍒拌妯″簲鐢ㄧ殑瀹屾暣鍒涙柊閾炬潯銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍗佷簲椤瑰垱鏂版垚鏋滈泦涓彂甯冿紝瑕嗙洊鍥涘ぇ鏍稿績缁村害</li>
+<li>鍗氱澘搴種EO锛氬叏鐞冮娆炬鍏ュ紡BCI涓夌被璇?/li>
+<li>鍖楄剳2鍙凤細512閫氶亾鏃犵嚎鍏ㄦ鍏ワ紝杩涘叆澶у姩鐗╄瘯楠?/li>
+<li>闃舵鍖荤枟锛氬浗鍐呴涓镜鍏ュ紡BCI鍒涙柊閫氶亾</li>
+<li>鏅哄唹鍖荤枟锛?024閫氶亾鍙媺浼告煍鎬х數鏋?鍏ㄦ鍏?/li>
+<li>鍝侀┌鍖荤枟锛氭柊涓€浠ｅ皬鍨嬪寲鑴戣捣鎼忓櫒鑾锋壒涓婂競</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫腑鍏虫潙璁哄潧 / CSDN鍗氬</span>
+<a href="https://roses.blog.csdn.net/article/details/159589843" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-21">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?1鏃?/span>
+<span class="date-weekday">鍛ㄤ簩</span>
+<span class="day-count">4 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-21" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戣檸绉戞妧&apos;涓夊叏&apos;鑴戞満鎺ュ彛绯荤粺杩涘叆鍥藉鑽洃灞€鍒涙柊鍖荤枟鍣ㄦ&apos;缁胯壊閫氶亾&apos;</h3>
+<p class="card-summary">7鏈?1鏃ワ紝鑴戣檸绉戞妧&apos;鍏ㄦ鍏ャ€佸叏鏃犵嚎銆佸叏鍔熻兘&apos;鑴戞満鎺ュ彛绯荤粺閫氳繃鍏ず锛屾寮忚繘鍏ュ浗瀹惰嵂鐩戝眬CMDE鍒涙柊鍖荤枟鍣ㄦ鐗瑰埆瀹℃煡绋嬪簭锛堢豢鑹查€氶亾锛夛紝鏄浗鍐呴娆俱€佸叏鐞冪浜屾鍐呯疆鐢垫睜鍏ㄦ鍏ュ紡绯荤粺銆傞渚嬫偅鑰呮湳鍚?涓湀闅忚瑙ｇ爜鍑嗙‘鐜囪揪96.1%锛岀浜屼緥鎮ｈ€呴€氳繃鑴戞帶澶栭楠煎疄鐜拌繘椋熴€佺粯鐢汇€?00鍏噷鑴戞帶璞℃瀵瑰紙銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥藉唴棣栨杩涘叆CMDE缁胯壊閫氶亾鐨勭‖鑶滀笅妞嶅叆寮忔煍鎬CI</li>
+<li>鍒嗕綋寮忚璁★細鐢垫睜/澶勭悊鍣ㄧ疆浜庤兏閮ㄧ毊涓嬶紝鐑簮杩滅澶ц剳</li>
+<li>棣栦緥鎮ｈ€?涓湀闅忚瑙ｇ爜鍑嗙‘鐜?6.1%</li>
+<li>绗簩渚嬫偅鑰呭疄鐜?00鍏噷鑴戞帶璞℃瀵瑰紙</li>
+<li>姹熻タ璧ｆ睙&apos;瓒呯骇宸ュ巶&apos;2026涓嬪崐骞存姇浜э紝鐩爣涓囧绾т氦浠?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笂瑙傛柊闂?/ 鏂囨眹鎶?/span>
+<a href="http://m.toutiao.com/group/7664782881260143156/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-21" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍥戒骇棣栨鍘熷彂鎬уけ鐪犵粡棰呯數鍒烘縺璁惧鑾锋壒涓婂競锛孊CI閫傚簲鐥囨墿灞曡嚦鐫＄湢鍖诲</h3>
+<p class="card-summary">鍥藉鑽洃灞€鎵瑰噯鍥戒骇棣栨閽堝鍘熷彂鎬уけ鐪犵殑缁忛鐢靛埡婵€锛坱ES锛夎澶囦笂甯傦紝鏍囧織鐫€鑴戞満鎺ュ彛閫傚簲鐥囦粠鑴婇珦鎹熶激銆佺櫕鐥€佸笗閲戞．绛夐噸鐥囩柧鐥咃紝姝ｅ紡鍚戠潯鐪犲尰瀛︾瓑娑堣垂绾у仴搴峰満鏅欢浼搞€傝浜у搧閫氳繃棰呭寰數娴佺簿鍑嗚皟鑺傚ぇ鑴戣妭寰嬶紝涓哄浗鍐呰秴3浜垮け鐪犱汉缇ゆ彁渚涢潪鑽墿骞查鏂伴€夋嫨銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栨鑾锋壒鐨?apos;鍘熷彂鎬уけ鐪?apos;閫傚簲鐥囩粡棰呯數鍒烘縺浜у搧</li>
+<li>棰呭寰數娴佺簿鍑嗚皟鑺傚ぇ鑴戣妭寰嬶紝闈炶嵂鐗╁共棰?/li>
+<li>瑕嗙洊鍥藉唴瓒?浜垮け鐪犱汉缇?/li>
+<li>鏍囧織BCI浠庨噸鐥囨不鐤楀悜娑堣垂绾у仴搴峰満鏅欢浼?/li>
+<li>涓庝笂娴?apos;绾芥礇鏄?apos;銆佺伒鐟?apos;娌夊S1&apos;褰㈡垚澶氬舰鎬佷骇鍝佺煩闃?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟 / 鑴戞満鎺ュ彛姣忔棩绠€鎶?/span>
+<a href="http://m.toutiao.com/group/7664776756200473129/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-21" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">寮鸿剳绉戞妧WAIC鍙戝竷鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝闈炰镜鍏ュ紡BCI杩涘啗鍏疯韩鏅鸿兘</h3>
+<p class="card-summary">寮鸿剳绉戞妧鍦?026涓栫晫浜哄伐鏅鸿兘澶т細鍙戝竷鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝鐢ㄦ埛浣╂埓鑴戠數甯介€氳繃鑴戠數淇″彿鐩存帴鎸囨尌鏈哄櫒浜哄畬鎴愬姩浣滐紝宸叉敮鎸佹帴鍏ヤ汉褰㈡満鍣ㄤ汉銆佹満姊拌噦銆佹満姊扮嫍绛夊绉嶇涓夋柟璁惧銆傝骞冲彴鍛堢幇Neuro-Embodied-AI锛堣剳鏈烘帴鍙?鍏疯韩鏅鸿兘+AI锛夊墠娌挎柟鍚戯紝瑕嗙洊浠庤剳鐢典俊鍙烽噰闆嗐€佹剰鍥捐В鐮佸埌鏈哄櫒浜烘墽琛岀殑瀹屾暣鎶€鏈摼璺€傚己鑴戠鎶€绱铻嶈祫棰濅綅灞呭叏鐞冪浜岋紝鏈€鏂颁及鍊艰秴120浜垮厓銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>WAIC 2026鍙戝竷鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝10鍒嗛挓瑙ｉ攣鎰忓康鎺у埗</li>
+<li>鏀寔浜哄舰鏈哄櫒浜?鏈烘鑷?鏈烘鐙楃瓑澶氱被绗笁鏂硅澶囨帴鍏?/li>
+<li>Neuro-Embodied-AI涓夊厓鏅鸿兘妗嗘灦锛欱CI瑙ｇ爜+AI鍒嗚В+鍏疯韩鎵ц</li>
+<li>寮鸿剳绉戞妧瓒?00椤规巿鏉冧笓鍒╋紝鍏ㄧ悆闈炰镜鍏ュ紡BCI閲忎骇棰嗗厛</li>
+<li>绱涓€绾у競鍦鸿瀺璧勯噾棰濆叏鐞冪浜岋紝浠呮浜嶯euralink</li>
+<li>2026骞村垵瀹屾垚20浜垮厓铻嶈祫锛孖DG/鍗庣櫥棰嗘姇锛屼及鍊艰秴120浜?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭編婀冩柊闂?/ 鍑ゅ嚢缃戠鎶€</span>
+<a href="https://news.ifeng.com/c/8uwXb6A2uh0" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-21" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Ability Neurotech鍏夐€氳鍏ㄦ鍏ヨ剳鏈烘帴鍙ｅ畬鎴愰渚嬩汉浣撲复搴婏紝鍏ㄧ悆棣栧垱鍏変紶杈撴灦鏋?/h3>
+<p class="card-summary">鐟炲＋Ability Neurotech鍏徃瀹ｅ竷鍏跺熀浜庣孩澶栧厜閫氳鐨勫叏妞嶅叆寮忔棤绾縀CoG鑴戞満鎺ュ彛绯荤粺瀹屾垚棣栦緥浜轰綋涓村簥妞嶅叆锛屾墜鏈湪鎱曞凹榛戝伐涓氬ぇ瀛﹀尰闄㈣繘琛屻€傝繖鏄叏鐞冮涓噰鐢ㄥ厜浼犺緭鏋舵瀯鐨勬鍏ュ紡BCI鏂规锛屽叕鍙稿凡鑾疯嵎鍏癐MDD鎵瑰噯鍚姩閽堝ALS鎮ｈ€呯殑鎱㈡€ф鍏ヤ复搴婅瘯楠岋紝涓烘笎鍐荤棁绛夐噸搴︾缁忓姛鑳介殰纰嶆偅鑰呮彁渚涙柊鐨勬不鐤楄矾寰勩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦釜鍏変紶杈撴灦鏋勬鍏ュ紡BCI瀹屾垚棣栦緥浜轰綋涓村簥</li>
+<li>绾㈠鍏夐€氳鍏ㄦ鍏ュ紡鏃犵嚎ECoG绯荤粺</li>
+<li>鎱曞凹榛戝伐涓氬ぇ瀛﹀尰闄㈠畬鎴愭墜鏈紝鏈腑楠岃瘉淇″彿璐ㄩ噺</li>
+<li>宸茶幏鑽峰叞浼︾悊鎵瑰噯锛屽惎鍔ˋLS鎮ｈ€呮參鎬ф鍏ヨ瘯楠?/li>
+<li>鎶€鏈簮鑷猈yss涓績锛?骞寸爺鍙戠疮璁℃姇鍏ヨ秴5000涓囩編鍏?/li>
+<li>闈㈠悜ALS銆佽剨楂撴崯浼ゃ€佷腑椋庣瓑閲嶅害绁炵粡闅滅鎮ｈ€?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂eural Dive鍖绘綔 / 鍣ㄦ涔嬪</span>
+<a href="http://m.toutiao.com/group/7665656646400524854/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-20">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?0鏃?/span>
+<span class="date-weekday">鍛ㄤ竴</span>
+<span class="day-count">4 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-20" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鐬湜锝滆剳鏈烘帴鍙ｄ复搴婂簲鐢ㄥ浣曞姞閫燂細涓村簥浠峰€煎棰嗗煙楠岃瘉锛岃妯″寲钀藉湴浠嶅瓨鍥涢毦</h3>
+<p class="card-summary">鏂板崕绀俱€婄灜鏈涖€嬫柊闂诲懆鍒婅蛋璁挎睙鑻忋€佸箍涓溿€佸畨寰姐€佹箹鍖楃瓑鍦板悗鍙戞枃锛氳剳鏈烘帴鍙ｅ湪鑴婇珦鎹熶激銆佸笗閲戞．娣遍儴鑴戝埡婵€銆佺櫕鐥瓑娌荤枟宸茶惤鍦帮紝涓村簥浠峰€煎棰嗗煙寰楀埌楠岃瘉銆備絾瑙勬ā鍖栦复搴婁粛闈复鏍稿績鎶€鏈€佷汉鎵嶄緵缁欍€佷鸡鐞嗚鑼冦€佸尰鐤楀噯鍏ュ洓閬撻毦鍏炽€傝殞鍩犲尰绉戝ぇ瀛︾涓€闄勫睘鍖婚櫌宸插紑灞?0渚嬭繍鍔ㄦ兂璞″悍澶嶈缁冿紝骞跺畬鎴愬畨寰界渷棣栦緥鏌旀€х‖鑴戣啘澶栬剳鏈烘帴鍙ｆ鍏ャ€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏂板崕绀俱€婄灜鏈涖€嬬郴缁熻皟鐮旀睙鑻?骞夸笢/瀹夊窘/婀栧寳BCI涓村簥</li>
+<li>甯曢噾妫瓺BS宸茶惤鍦帮紝鑴婇珦鎹熶激銆佺櫕鐥凡鑾锋壒鎴栧嵆灏嗚惤鍦?/li>
+<li>铓屽煚鍖诲ぇ宸插紑灞?0渚嬭繍鍔ㄦ兂璞″悍澶?瀹夊窘棣栦緥纭剳鑶滃妞嶅叆</li>
+<li>闈复鏍稿績鎶€鏈?浜烘墠/浼︾悊/鍑嗗叆鍥涢亾闅惧叧</li>
+<li>寤鸿鍙戞尌涓惧浗浣撳埗+姊鎺ㄨ繘+鍓嶇灮鐩戠</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣ぞ銆婄灜鏈涖€嬫柊闂诲懆鍒?/ 鍑ゅ嚢缃?/span>
+<a href="https://news.ifeng.com/c/8uut75ckYMW" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-20" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛铻嶈祫鐑疆锛氬ご閮ㄤ紒涓氫及鍊煎勾娑?-10鍊嶏紝鍒涘浜哄挩璇㈣垂5000鍏?灏忔椂</h3>
+<p class="card-summary">2026骞磋剳鏈烘帴鍙ｈ禌閬撹祫鏈儹搴︽寔缁攢鍗囷紝寰伒鍖荤枟銆佹槑瑙嗚剳鏈恒€佹櫤鍐夊尰鐤椼€佸偛鎰忕鎶€銆佹煍鐏电鎶€銆佽姱鏅鸿揪绛夊瀹朵紒涓氬彈鍒拌祫鏈儹鎹с€傚悎鐩堣祫鏈绔嬪叏鍥介鏀疊CI涓撻」浜т笟鍩洪噾锛堥鏈?0浜垮厓锛夈€備腑鍥紹CI鐩稿叧浼佷笟宸茶揪350浣欏銆傚ご閮ㄤ紒涓氫及鍊间竴骞存定5-10鍊嶏紝鍒涘浜烘潕楠佸仴瀵逛笉鎳傝鐨勬姇璧勪汉鏀跺彇5000鍏?灏忔椂鐨勭鎶€鍜ㄨ璐广€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓浗BCI鐩稿叧浼佷笟宸茶揪350浣欏锛岃緝2024骞寸殑280瀹跺ぇ骞呭闀?/li>
+<li>鍚堢泩璧勬湰璁剧珛鍏ㄥ浗棣栨敮BCI涓撻」浜т笟鍩洪噾锛岄鏈熻妯?0浜垮厓</li>
+<li>澶撮儴浼佷笟浼板€煎勾娑?-10鍊嶏紝涓嬩竴杞姇璧勪汉宸插紑濮嬫帓闃?/li>
+<li>寰伒鍖荤枟鍗冲皢瀹屾垚A杞紝鍙紩鍏ュ尰鐤椾骇涓氬熀閲?/li>
+<li>璧勬湰鍒嗗寲锛氫镜鍏ュ紡/鏃犲垱娣遍儴鑴戞帶鍙楃儹锛屾秷璐圭骇BCI鐩稿鍐锋竻</li>
+<li>鏈烘瀯棰勫垽2-3骞村悗灞€閮ㄩ珮浼板€兼场娌彲鑳借鎴崇牬</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛?6姘?/ 缁忔祹瑙傚療鎶?/span>
+<a href="https://36kr.com/p/3903151637415809" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-20" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍙岀缁忔梺璺妧鏈獊鐮达細鐦棯鎮ｈ€呮仮澶嶈Е瑙変笌杩愬姩锛屾晥鏋滄寔缁秴涓ゅ勾</h3>
+<p class="card-summary">缇庡浗Feinstein鐮旂┒鎵€鍥㈤槦鍦ㄣ€婅嚜鐒堵峰尰瀛︺€嬪彂琛ㄥ弻绁炵粡鏃佽矾鎶€鏈复搴婃垚鏋滐細涓€鍚嶉閮ㄤ互涓嬬槴鐥殑鎮ｈ€呴€氳繃鑴?鑴婇珦鍙屾梺璺鍏ョ郴缁燂紝鍚屾椂鎭㈠浜嗘墜閮ㄨ繍鍔ㄦ帶鍒跺拰瑙﹁鍙嶉銆傛洿浠や汉鐬╃洰鐨勬槸锛屽湪绯荤粺鍏抽棴鏁版湀鍚庯紝鎮ｈ€呬粛淇濇寔浜嗚繍鍔ㄥ拰鎰熻鍔熻兘鐨勬仮澶嶏紝鎻愮ず璇ユ妧鏈彲鑳介€氳繃绁炵粡鍙鎬ч噸濉戜簡绁炵粡绯荤粺銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍙岀缁忔梺璺細杩愬姩鐨眰+鎰熻鐨眰+鑴婇珦鍒烘縺鍚屾骞查</li>
+<li>鐦棯鎮ｈ€呮仮澶嶆墜閮ㄦ姄鎻″拰瑙﹁鎰熺煡</li>
+<li>绯荤粺鍏抽棴鍚庢晥鏋滄寔缁秴涓ゅ勾锛屾彁绀虹缁忓彲濉戞€ч噸濉?/li>
+<li>鍙宠噦鍔涢噺澧炲姞86%锛屽乏鑷傚鍔?2%</li>
+<li>鍙畬鎴愬杺椋熴€佹姎鎽稿疇鐗╃瓑鏃ュ父浠诲姟</li>
+<li>鐨眰闀滃儚鎶€鏈噸寤鸿Е瑙夛紝鐩叉姄铔嬪３鎴愬姛鐜?7%</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂ature Medicine / Smithsonian Magazine</span>
+<a href="https://www.smithsonianmag.com/smart-news/a-man-with-paralysis-has-regained-feeling-and-movement-in-his-hands-after-an-experimental-brain-implant-180989156/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-20" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">瀹佹尝澶у娌堟槉浼熷洟闃熴€婅嚜鐒堵风缁忕瀛︺€嬫彮绀鸿嚧骞诲墏璇卞彂绔炰簤鍥為伩鐨勭缁忔満鍒?/h3>
+<p class="card-summary">瀹佹尝澶у鍖诲閮ㄦ矆鏄婁紵鏁欐巿鍥㈤槦鍦ㄧ缁忕簿绁炶嵂鐞嗗棰嗗煙鍙栧緱鏂拌繘灞曪紝鐮旂┒棣栨鎻ず闈掓槬鏈熷弽澶嶆帴瑙﹁嚧骞诲墏浼氳鍙戞寔缁殑绔炰簤鍥為伩鐜拌薄锛岃繖涓€鍙樺寲涓庢捣椹拰鐪堕鍙剁毊灞備箣闂寸殑绁炵粡淇″彿娌熼€氬彈鎹熸湁鍏炽€傜浉鍏虫垚鏋滀簬7鏈?0鏃ュ湪绾垮彂琛ㄤ簬銆婅嚜鐒堵风缁忕瀛︺€嬶紙Nature Neuroscience锛夈€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栨鎻ず闈掓槬鏈熻嚧骞诲墏鎺ヨЕ璇卞彂鎸佺画绔炰簤鍥為伩鐜拌薄</li>
+<li>鏈哄埗锛氭捣椹?鐪堕鍙剁毊灞傜缁忎俊鍙锋矡閫氬彈鎹?/li>
+<li>鎴愭灉鍙戣〃浜庛€婅嚜鐒堵风缁忕瀛︺€嬶紙Nature Neuroscience锛?/li>
+<li>涓虹悊瑙ｇ簿绁炶嵂鐗╁绀句細琛屼负鐨勯暱鏈熷奖鍝嶆彁渚涙柊瑙嗚</li>
+<li>瀹佹尝澶у鍖诲閮ㄦ矆鏄婁紵鍥㈤槦涓诲鐮旂┒</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬畞娉㈠ぇ瀛?/ Nature Neuroscience</span>
+<a href="https://www.nature.com/neuroscience/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-19">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?9鏃?/span>
+<span class="date-weekday">鍛ㄦ棩</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-19" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink瀹屾垚棣栦緥缁忕‖鑴戣啘妞嶅叆鎵嬫湳锛屾笎鍐荤棁璀﹀憳鏈悗1灏忔椂鎭㈠鎰忓康鎵撳瓧</h3>
+<p class="card-summary">Neuralink瀹ｅ竷瀹屾垚鍏ㄧ悆棣栦緥鏃犻渶鍒囧紑纭剳鑶滅殑缁忕毊灞傜數鏋佹鍏ユ墜鏈紙NP26锛夈€傚彈璇曡€匧ee Marten涓烘俯鍝ュ崕鍓嶈鍛橈紝鎮ｆ笎鍐荤棁(ALS)锛岀敱Andres Lozano涓诲垁銆傛湳鍚?灏忔椂鍗冲彲鎰忓康鎺у埗鍏夋爣鎵撳瓧銆俁1鎵嬫湳鏈哄櫒浜洪厤澶囧姞绮楅拡姊併€侀€犲奖鍓?杩戠孩澶栨垚鍍忔樉褰㈢毊灞傝绠°€佹縺鍏夊厜瀛﹀疄鏃舵祴璺濓紝灏嗗井绫崇骇鐢垫瀬绮惧噯绌胯繃瀹屾暣纭剳鑶溿€傞┈鏂厠璇勪环锛?apos;鎰忎箟閲嶅ぇ&apos;銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦緥涓嶅垏寮€纭剳鑶滅殑缁忕毊灞傜數鏋佹鍏ワ紙NP26锛?/li>
+<li>鍙楄瘯鑰匧ee Marten锛孉LS鎮ｈ€咃紙鍓嶆俯鍝ュ崕璀﹀憳锛?/li>
+<li>Andres Lozano涓诲垁锛屾湳鍚?灏忔椂鎰忓康鎺у埗鍏夋爣</li>
+<li>R1鏈哄櫒浜?閫犲奖鍓傝繎绾㈠鎴愬儚+婵€鍏夊疄鏃舵祴璺?/li>
+<li>绐佺牬绁炵粡澶栫&apos;鍏堝紑纭剳鑶?apos;鐧惧勾閾佸緥</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂euralink瀹樻柟 / 浠婃棩澶存潯鏈哄櫒浜轰骇涓氱灜鏈涘彴</span>
+<a href="http://m.toutiao.com/group/7663942607512371712/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-18">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?8鏃?/span>
+<span class="date-weekday">鍛ㄥ叚</span>
+<span class="day-count">8 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑱斿奖鏅鸿兘WAIC棣栧彂鏃犲垱鑴戞満鎺ュ彛+AI闃垮皵鑼ㄦ捣榛樼梾澶氭ā鎬佹棭绛涚郴缁?/h3>
+<p class="card-summary">鑱斿奖鏅鸿兘鍦?026 WAIC鍏ㄧ悆棣栧彂2娆続I浜у搧锛屽寘鎷樋灏旇尐娴烽粯鐥呭妯℃€佹棭绛涘姪鎵嬩笌浜戝奖鍍忓垎鏋愬姪鎵嬨€傚叾涓熀浜庢棤鍒涜剳鏈烘帴鍙ｇ殑璁ょ煡鏃╃瓫搴旂敤锛岀敤鎴蜂僵鎴磋剳鐢佃澶囧畬鎴愮畝鍗曡鐭ユ父鎴忥紝绯荤粺鍚屾閲囬泦鑴戠數淇″彿锛孉I铻嶅悎鑴戠數鐗瑰緛涓庤涓鸿〃鐜帮紝瀵硅交搴﹁鐭ラ殰纰嶅強闃垮皵鑼ㄦ捣榛樼梾椋庨櫓杩涜鏅鸿兘鍒嗘瀽銆傝绯荤粺鎺ㄥ姩璁ょ煡鍋ュ悍绠＄悊浠庣棁鐘跺嚭鐜板悗鐨勬不鐤楀悜鏇存棭鏈熼闄╁彂鐜拌浆鍙樸€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鑴戠數淇″彿+琛屼负琛ㄧ幇澶氭ā鎬佽瀺鍚堢殑AI鍒嗘瀽妗嗘灦</li>
+<li>鍙湪鐥囩姸灏氭湭鏄庢樉闃舵鎹曟崏澶ц剳娲诲姩鍙樺寲</li>
+<li>闈㈠悜杞诲害璁ょ煡闅滅涓庨樋灏旇尐娴烽粯鐥呮棭鏈熼闄╄瘎浼?/li>
+<li>涓轰复搴婅瘎浼板拰鏃╂湡骞查鎻愪緵鏂板弬鑰?/li>
+<li>鍚屾椂灞曞嚭鍏ㄥ勾榫勫ぇ鑴戠粨鏋勭簿鍑嗗垎鏋愯澶?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬崡鏂归兘甯傛姤 / WAIC 2026鐜板満鎶ラ亾</span>
+<a href="http://m.toutiao.com/group/7663669569793327635/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">瀹夊窘铓屽煚鎵撻€犺剳鏈烘帴鍙ｄ骇涓氶珮鍦帮紝鑰佸伐涓氬煄甯傛瀯寤哄叏閾炬潯浜т笟鐢熸€?/h3>
+<p class="card-summary">瀹夊窘鐪佽殞鍩犲競浣滀负鑰佸伐涓氬熀鍦帮紝杩戝勾鏉ヨ仛鍔涘彂灞曡剳鏈烘帴鍙ｄ骇涓氾紝鍔犲揩鏋勫缓鍏ㄩ摼鏉′骇涓氱敓鎬併€傚綋鍦板己鍖栦骇瀛︾爺鍖诲悎浣滐紝渚濇墭榫欐箹瀹為獙瀹ゃ€佸畨寰藉寳鏂瑰井鐢靛瓙鐮旂┒闄€佽殞鍩犲尰绉戝ぇ瀛︺€?apos;涓浗浼犳劅璋?apos;绛変富浣擄紝鏋勫缓绉戞妧鍒涙柊鍜屼骇涓氬垱鏂版繁搴﹁瀺鍚堢殑鐢熸€併€?026骞?鏈堝凡鎴愬姛寮€灞曞畨寰界渷棣栦緥鍗婁镜鍏ュ紡鑴戞満鎺ュ彛鎵嬫湳銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鑰佸伐涓氬煄甯傝殞鍩犺仛鍔涘彂灞曡剳鏈烘帴鍙ｅ叏閾炬潯浜т笟</li>
+<li>渚濇墭榫欐箹瀹為獙瀹?鍖楁柟寰數瀛?铓屽尰+涓浗浼犳劅璋锋瀯寤虹敓鎬?/li>
+<li>2026骞?鏈堝畬鎴愬畨寰界渷棣栦緥鍗婁镜鍏ュ紡BCI鎵嬫湳</li>
+<li>鎵撻€犻暱涓夎鍦板尯鑴戞満鎺ュ彛鎶€鏈骇涓氶珮鍦?/li>
+<li>鏂板崕绀句笓棰樻姤閬撹殞鍩犱骇涓氳浆鍨嬭矾寰?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣ぞ / 鍑ゅ嚢缃?/span>
+<a href="https://news.ifeng.com/c/8urgnDQjL9v" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">澶╂ˉ鑴戠瀛︾爺绌堕櫌涓庛€婄瀛︺€嬫潅蹇桝I椹卞姩绉戝澶у鎻檽锛孉I璇煶绁炵粡鍋囦綋鑾峰ご濂?/h3>
+<p class="card-summary">2026骞?apos;澶╂ˉ鑴戠瀛︾爺绌堕櫌涓庛€婄瀛︺€嬫潅蹇桝I椹卞姩绉戝澶у&apos;鎻檽锛屽姞宸炲ぇ瀛︽埓缁存柉鍒嗘牎Sergey Stavisky鍗氬＋鍑€烝I椹卞姩璇█绁炵粡鍋囦綋鏂╄幏澶у銆傝璁惧閫氳繃256涓井鐢垫瀬鎹曟崏澶ц剳璇█鍖虹缁忔椿鍔紝缁撳悎AI妯″瀷灏嗚剳淇″彿杞寲涓鸿闊筹紝鍑嗙‘鐜囪秴99%锛屾偅鑰呬袱骞寸疮璁?apos;璇村嚭&apos;270涓囪瘝骞堕噸杩斿叏鑱屽伐浣溿€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Stavisky鍥㈤槦鑾?026骞村ぉ妗ヂ稴cience AI椹卞姩绉戝澶у</li>
+<li>256涓井鐢垫瀬妞嶅叆璇█鍖猴紝AI瑙ｇ爜闊崇礌鍐嶇敓鎴愬彞瀛?/li>
+<li>璇煶瑙ｇ爜鍑嗙‘鐜囪秴99%锛?2.5涓囪瘝姹囬噺</li>
+<li>鎮ｈ€呬袱骞翠娇鐢?800+灏忔椂锛岀疮璁¤緭鍑?70涓囪瘝</li>
+<li>瀹炴椂璇煶鍚堟垚寤惰繜浠?0姣锛屽彲杩樺師鎮ｈ€呮湰鍡?/li>
+<li>杈剧壒鑼呮柉瀛﹂櫌AI蹇冪悊娌荤枟绯荤粺鑾蜂紭鑳滃</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬ぉ妗ヨ剳绉戝鐮旂┒闄?/ Science鏉傚織</span>
+<a href="http://m.toutiao.com/group/7663856831161074218/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink妞嶅叆浜烘暟杈?2浜猴紝绱浣跨敤瓒?5000灏忔椂锛岃嫳鍥戒复搴婄爺绌跺惎鍔?/h3>
+<p class="card-summary">Neuralink瀹ｅ竷鍏ㄧ悆宸叉湁12浜烘鍏ュ叾N1鑴戣姱鐗囷紙6鏈堜负7浜猴級锛岀疮璁′娇鐢ㄨ秴2000澶┿€?5000灏忔椂銆傚叕鍙告涓庝鸡鏁﹀ぇ瀛﹀闄㈠拰绾藉崱鏂皵鍖婚櫌鍚堜綔锛屽湪鑻卞浗鍚姩棣栦釜鑴戣姱鐗囦复搴婄爺绌讹紝鍥介檯鍖栦复搴婂竷灞€鎸佺画鍔犻€熴€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>妞嶅叆浜烘暟浠?鏈堢殑7浜哄鑷?2浜猴紝澧為暱71%</li>
+<li>绱浣跨敤瓒?000澶┿€?5000灏忔椂</li>
+<li>鑻卞浗涓村簥鐮旂┒鍚姩锛屼笌UCL鍜岀航鍗℃柉灏斿尰闄㈠悎浣?/li>
+<li>PRIME鐮旂┒鎸佺画鎷涘嫙锛岀枟绋嬬害6骞?/li>
+<li>VOICE璇曢獙鑱氱劍璇煶瑙ｇ爜鍔熻兘鎭㈠</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歍echShots / LondonDaily</span>
+<a href="https://www.techshotsapp.com/technology/12-individuals-now-using-brain-implants-logging-over-15000-hours" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink瀹炵幇鑴戞鍏ョ墿鏃犵嚎OTA鏇存柊锛岃繙绋嬪浐浠跺崌绾ф棤闇€浜屾鎵嬫湳</h3>
+<p class="card-summary">Neuralink鎴愬姛瀹炵幇鑴戞鍏ョ墿鐨勬棤绾胯繙绋嬪浐浠舵洿鏂帮紙OTA锛夛紝绫讳技鐗规柉鎷夌殑杞欢鍗囩骇鏈哄埗銆傞浣嶅彈璇曡€匒bbot鍦ㄧ害85%鐢垫瀬鑴辫惤鐨勬儏鍐典笅锛岄€氳繃浜戠鍥轰欢鏇存柊鎻愬崌鍓╀綑鐢垫瀬鐏垫晱搴︼紝鍔熻兘鏄捐憲鎭㈠锛屾棤闇€浜屾鎵嬫湳銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦緥鑴戞鍏ョ墿鏃犵嚎OTA鍥轰欢鏇存柊</li>
+<li>浜戠鎺ㄩ€佷紭鍖栧浐浠讹紝鎻愬崌淇″彿澶勭悊绮惧害</li>
+<li>棣栦綅鍙楄瘯鑰呯數鏋佽劚钀藉悗閫氳繃杞欢鏇存柊鎭㈠鍔熻兘</li>
+<li>R2鏈哄櫒浜哄崟鏍圭數鏋佹鍏ユ椂闂寸缉鐭嚦1.5绉?/li>
+<li>2026骞磋繘鍏ュぇ瑙勬ā閲忎骇闃舵</li>
+<li>涓洪暱鏈熸鍏ヨ澶囩殑鎸佺画浼樺寲寮€杈熸柊璺緞</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欰I D-A-M-N / Neuralink鎶€鏈畝鎶?/span>
+<a href="https://ai-damn.com/neuralink-s-breakthrough-wireless-brain-updates-coming-soon-1768864614425" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">灞变笢16閮ㄩ棬鑱斿悎鍙戝竷BCI涓村簥杞寲14鏉℃帾鏂斤紝鍏ㄧ渷鐙珛BCI鐥呮埧寮€璇婂崐骞存不鐤楄秴700浜烘</h3>
+<p class="card-summary">2026灞变笢鑴戞満鎺ュ彛涓村簥鐮旂┒涓庤浆鍖栧ぇ浼氭湡闂达紝16閮ㄩ棬鑱斿悎鍙戝竷銆婂北涓滅渷鍔犲揩鑴戞満鎺ュ彛涓村簥杞寲涓庡簲鐢ㄥ垱鏂板彂灞曞伐浣滄柟妗堛€?4鏉℃帾鏂姐€傚北涓滅渷鍚屾鎴愮珛鍏ㄧ渷棣栦釜鐙珛BCI鐥呮埧锛屽紑璇婂崐骞村凡娌荤枟鑴戝崚涓亸鐦偅鑰呰秴700浜烘锛岃鐩朆CI-FES搴峰銆佺缁忕數鍒烘縺銆佸姛鑳芥€х數鍒烘縺绛夊鍏冭矾寰勩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>16閮ㄩ棬鑱斿悎鍙戝竷BCI涓村簥杞寲14鏉℃帾鏂?/li>
+<li>灞变笢鐪佹垚绔嬪叏鐪侀涓嫭绔婤CI鐥呮埧</li>
+<li>鍗婂勾娌荤枟鑴戝崚涓亸鐦秴700浜烘</li>
+<li>瑕嗙洊BCI-FES搴峰+缁忛鐢靛埡婵€+鍔熻兘鎬х數鍒烘縺</li>
+<li>鍥藉唴鐪佺骇BCI涓撻」鏀跨瓥瀵嗗害棰嗗厛</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟 / 灞变笢鐪佸崼鍋ュ</span>
+<a href="http://m.toutiao.com/group/7664776756200473129/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">BrainGate2鍒涚邯褰曪細ALS鎮ｈ€呭眳瀹朵娇鐢ㄨ瑷€BCI杈?6 WPM锛?9%鍑嗙‘鐜?/h3>
+<p class="card-summary">UC Davis棰嗗鐨凚rainGate2鐮旂┒鍦ㄣ€婅嚜鐒堵峰尰瀛︺€嬪彂琛ㄩ噷绋嬬鎴愭灉锛氫竴鍚岮LS鎮ｈ€呴€氳繃鐨眰鍐呮鍏ョ數鏋佸疄鐜板眳瀹剁嫭绔嬩娇鐢ㄨ瑷€BCI锛岀疮璁¤秴杩?800灏忔椂锛屽钩鍧囨墦瀛楅€熷害杈?6璇?鍒嗛挓锛屽彈鎺ф祴璇曞噯纭巼99%锛?2.5涓囪瘝璇嶆眹閲忥級銆傝繖鏄縿浠婃姤閬撶殑鎸佺画鏃堕棿鏈€闀裤€佹棤闇€鐮旂┒浜哄憳鍦ㄥ満鐨勭毊灞傚唴BCI鐪熷疄涓栫晫浣跨敤璁板綍銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>56璇?鍒嗛挓鎵撳瓧閫熷害锛?9%鍑嗙‘鐜囷紝12.5涓囪瘝璇嶆眹閲?/li>
+<li>3800+灏忔椂灞呭鐙珛浣跨敤锛屾棤闇€鐮旂┒浜哄憳鍦ㄥ満</li>
+<li>鍙戣〃浜庛€婅嚜鐒堵峰尰瀛︺€嬶紙Nature Medicine锛?/li>
+<li>256閫氶亾Utah闃靛垪妞嶅叆宸︿晶杩愬姩鍓嶇毊灞?/li>
+<li>瑙ｇ爜瑷€璇繍鍔ㄦ剰鍥捐€岄潪璇█鍖猴紝ALS杩涘睍涓嬩粛绋冲畾</li>
+<li>瑙ｅ喅浜嗙毊灞傚唴BCI浠庡疄楠屽鍒板搴娇鐢ㄧ殑鏍稿績杞寲鐡堕</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂ature Medicine / BCI Intel</span>
+<a href="https://bciintel.com/news/braingate2-als-participant-56-wpm-home-bci-nature-medicine-2026/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈矾绾? data-date="2026-07-18" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #a29bfe20; color: #a29bfe; border-color: #a29bfe40;">鎶€鏈矾绾?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">WAIC 2026 鐏电妧浜戦棲瀹囩繑婕旇锛氳剳鏈烘帴鍙ｈ蛋鍚戞暟瀛椾汉鑴戞湭鏉?/h3>
+<p class="card-summary">婢庢箖鏂伴椈涓庝笂娴峰浗鎶曟湭鏉ヤ骇涓氬熀閲戝叡鍚屼妇鍔炵殑&apos;閫愭氮&apos;路WAIC 2026鏈潵绉戞妧婕旇7鏈?8鏃ュ紑璁层€傛竻鍗庣郴90鍚庡垱涓氳€呫€佺伒鐘€浜戝垱濮嬩汉闂畤缈斾互&apos;鑴戞満鎺ュ彛锛氭垜浠濡備綍鍔姏璧板悜鏁板瓧浜鸿剳鏈潵&apos;涓洪鍙戣〃TED婕旇銆傜伒鐘€浜戞簮鑷竻鍗庡疄楠屽锛岄€氳繃寤虹珛鑴戞満鎺ュ彛鍩虹澶фā鍨嬶紝鑷村姏浜庡浜虹被澶ц剳杩涜绮惧噯瑙ｆ瀽鍜屽共棰勩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鐏电妧浜戞簮鑷竻鍗庡疄楠屽锛屽畾浣嶈剳鏈烘帴鍙ｅ熀纭€澶фā鍨?/li>
+<li>娓呭崕鍗氬＋+鍝堜經鍖诲闄㈣闂鑰呰儗鏅?/li>
+<li>鑷村姏浜庡浜虹被澶ц剳杩涜绮惧噯瑙ｆ瀽鍜屽共棰?/li>
+<li>WAIC 2026瀹樻柟鏈潵绉戞妧婕旇璁▼涔嬩竴</li>
+<li>6浣嶆紨璁插槈瀹惧钩鍧囧勾榫勪笉瓒呰繃35宀?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭編婀冩柊闂?/ 缃戞槗绉戞妧</span>
+<a href="http://m.163.com/dy/article/L1SFO53R0514R9P4.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-17">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?7鏃?/span>
+<span class="date-weekday">鍛ㄤ簲</span>
+<span class="day-count">7 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-17" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink 1灏忔椂鍙戝竷浼氾細7浣嶅彈璇曡€呮瘡鍛ㄤ娇鐢?0灏忔椂锛孉lex鑴戞満鎺ュ彛鎺у埗Optimus鏈烘鎵?/h3>
+<p class="card-summary">椹柉鍏嬫棗涓婲euralink涓惧姙1灏忔椂闀胯棰戝彂甯冧細锛屽叕甯冩渶鏂颁复搴婃暟鎹細7浣嶅彈璇曡€呴珮棰戜娇鐢ㄨ剳鏈烘帴鍙ｈ澶囷紝骞冲潎姣忓懆杈?0灏忔椂銆傚叾涓剨楂撴崯浼ゆ偅鑰匒lex閫氳繃Neuralink鑺墖瀹炴椂鎺у埗鐗规柉鎷塐ptimus浜哄舰鏈哄櫒浜虹殑鏈烘鎵嬶紝瀹炵幇鍚屾鍔ㄤ綔銆傞┈鏂厠閫忛湶鏈潵鐢ㄦ埛灏嗛€氳繃鎰忓康&apos;鏍栬韩浜?apos;Optimus鏈哄櫒浜鸿幏寰楀叏韬帶鍒舵潈闄愩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>7浣嶅彈璇曡€呭钩鍧囨瘡鍛ㄤ娇鐢ㄦ椂闀?0灏忔椂锛屼綋鐜扮湡瀹炲満鏅珮绮樻€?/li>
+<li>Alex閫氳繃N1鑺墖鎺у埗Optimus瀹炵幇杩滅▼涓村満</li>
+<li>鐩爣鏋勫缓&apos;鍏ㄨ剳鎺ュ彛&apos;锛屾鍏ユ暟鍗佷竾鑷虫暟鐧句竾閫氶亾</li>
+<li>R2鎵嬫湳鏈哄櫒浜烘鍏ユ椂闂翠粠17绉掔缉鐭嚦1.5绉?/li>
+<li>鐢ㄦ埛鏍″噯鏃堕暱浠庢暟灏忔椂鍘嬬缉鑷?5鍒嗛挓</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氱患鍚堣嚜Neuralink鍙戝竷浼?/ 36姘?/span>
+<a href="https://36kr.com/p/3881991473492220" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鏍稿績鍣ㄤ欢" data-date="2026-07-17" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">鏍稿績鍣ㄤ欢</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink绗簩浠2鎵嬫湳鏈哄櫒浜哄疄鐜?5鍒嗛挓妞嶅叆锛?026骞磋繘鍏ュぇ瑙勬ā閲忎骇闃舵</h3>
+<p class="card-summary">Neuralink鍙戝竷鏈€鏂版妧鏈畝鎶ワ紝绗簩浠2鎵嬫湳鏈哄櫒浜哄凡瀹炵幇25鍒嗛挓鍐呭畬鎴怤1鑺墖妞嶅叆锛岀簿搴﹁揪寰背绾э紝鏈烘鑷傝繍鍔ㄨ寖鍥村拰妞嶅叆娣卞害澶у箙鎻愬崌锛屽彲鍏煎瓒?9%浜虹兢骞舵鍏ョ毊灞備笅50mm娣遍儴鍖哄煙銆傞厤濂楃殑R2鏈哄櫒浜哄崟鏍圭數鏋佹鍏ユ椂闂翠粠17绉掔缉鐭嚦1.5绉掋€傚崥鐫垮悍NEO绯荤粺鑾種MPA鎵瑰噯鍚庢湳鍚?涓湀鍙楄瘯鑰呮姄鎻″搷搴旂巼杈?00%銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>R2鏈哄櫒浜哄皢鍗曟牴鐢垫瀬妞嶅叆鏃堕棿浠?7绉掔缉鐭嚦1.5绉?/li>
+<li>鍏ㄧ▼妞嶅叆浠呴渶25鍒嗛挓锛岀簿搴﹁揪寰背绾?/li>
+<li>鏈烘鑷傚吋瀹?9%浠ヤ笂浜虹兢锛屾鍏ユ繁搴︾獊鐮寸毊灞備笅50mm</li>
+<li>鐢ㄦ埛鏍″噯鏃堕暱浠庢暟灏忔椂鍘嬬缉鑷?5鍒嗛挓</li>
+<li>2026骞磋繘鍏ュぇ瑙勬ā閲忎骇闃舵</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟 / 鑴戞満鎺ュ彛姣忔棩绠€鎶?/span>
+<a href="http://m.toutiao.com/group/7663281160969028102/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-17" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍑ゅ嚢缃戞繁搴︼細鍏ㄧ悆棣栦緥锛佷腑鍥借剳鏈烘帴鍙ｈ惤鍦帮紝370涓囪剨楂撴崯浼ゆ偅鑰呰繋鏉ユ柊甯屾湜</h3>
+<p class="card-summary">7鏈?3鏃ュ鏃﹀ぇ瀛﹂檮灞炲崕灞卞尰闄㈠畬鎴怤EO绯荤粺鍏ㄧ悆棣栦緥鍟嗕笟鍖栨鍏ユ墜鏈紝鎴嚦7鏈?5鏃ユ偅鑰呯敓鍛戒綋寰佸钩绋炽€備粠2024骞?鏈堣繘鍏ュ垱鏂板尰鐤楀櫒姊扮壒鍒鏌ョ▼搴忥紝鍒?026骞?鏈?3鏃ヨ幏娉ㄥ唽璇併€?鏈?8鏃ュ尰淇濅环鏍煎妗堛€?鏈堝畬鎴愰渚嬪晢涓氬寲妞嶅叆锛孨EO璧伴€氬畬鏁翠骇鍝佽惤鍦拌矾寰勩€傛垜鍥界幇瀛樿剨楂撴崯浼ゆ偅鑰呰秴370涓囷紝姣忓勾鏂板绾?涓囷紝NEO-ONE SCI濉ˉ闀挎湡鏈婊¤冻鐨勪复搴婂悍澶嶉渶姹傘€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>32渚嬩复搴婅瘯楠孉RAT鎶撴彙鍝嶅簲鐜囪揪100%</li>
+<li>鏈悗6涓湀寰掓墜ARAT璇勫垎鎻愬崌鈮?鍒嗚€呭崰68.8%</li>
+<li>浣撳唴妞嶅叆閮ㄥ垎绾︿袱鏋氱‖甯佸ぇ灏忥紝鏃犵嚎渚涚數鏃犻渶鍐呯疆鐢垫睜</li>
+<li>宸茬撼鍏ユ勃鎯犱繚鍟嗕笟鍖荤枟淇濋櫓</li>
+<li>鏈潵鎷撳睍鏂瑰悜锛氶毦娌绘€х櫕鐥€佽剳鍗掍腑銆佷笅鑲㈠姛鑳姐€佺簿缁嗗姩浣溿€佽瑷€瑙ｇ爜</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬嚖鍑扮綉绉戞妧 / 铏庡梾缃?/span>
+<a href="https://tech.ifeng.com/c/8uq9lkVDT1K" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-17" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">寮鸿剳绉戞妧WAIC 2026鍏ㄧ悆棣栧彂鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝10鍒嗛挓瑙ｉ攣鎰忓康鎺у埗鏈哄櫒浜?/h3>
+<p class="card-summary">BrainCo寮鸿剳绉戞妧鍦?026涓栫晫浜哄伐鏅鸿兘澶т細(WAIC)鍏ㄧ悆棣栧彂鑴戞帶鏈哄櫒浜鸿缁冨钩鍙帮紝灏嗚剳鐢甸噰闆嗐€佸疄楠岃寖寮忋€佺缁忚В鐮併€佹帶鍒舵槧灏勫拰鏈哄櫒浜烘墽琛屾暣鍚堣繘缁熶竴杞欢娴佺▼銆傜爺鍙戜汉鍛樻棤闇€BCI鑳屾櫙锛?0鍒嗛挓鍙В閿?apos;鎰忓康&apos;鎺у埗鏈哄櫒浜恒€傚悓鏈熷彂甯冪伒宸ф搷浣滄暟閲囩煩闃碉紙Embodied AI Data Collection Solution锛夛紝棣栨鍦ㄦ満鍣ㄤ汉璁粌鏁版嵁涓瀺鍚堣剳鐢典俊鍙烽噰闆嗭紝鏋勫缓&apos;Neuro-Embodied-AI&apos;妗嗘灦銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦釜闈㈠悜鑴戞帶鏈哄櫒浜虹鐮旂殑涓€浣撳寲AI骞冲彴</li>
+<li>浠庝俊鍙烽噰闆嗗埌鎺у埗杈撳嚭鍏ㄦ祦绋嬩粎10鍒嗛挓鍗冲彲涓婃墜</li>
+<li>鍏煎浜哄舰鏈哄櫒浜?鏈烘鑷?鏈哄櫒鐙楃瓑澶氱被鏈哄櫒浜?/li>
+<li>绔埌绔欢杩?200ms锛屽彲瀹炵幇鎶撴按鏉?鎷胯嫻鏋滅瓑绮剧粏浠诲姟</li>
+<li>鏂板彂甯冩暟閲囨柟妗堝悓姝ヨ褰曡剳鐢?鎵嬮儴杩愬姩鏁版嵁锛岀牬瑙ｅ叿韬獳I璁粌鏁版嵁绋€缂洪毦棰?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欼T涔嬪 / 鍑ゅ嚢缃戠鎶€ / PR Newswire</span>
+<a href="https://tech.ifeng.com/c/8uq9qH3QkgK" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-17" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鐏电憴绉戞妧&apos;娌夊S1&apos;闂幆鑴戞満鎺ュ彛鐫＄湢浜у搧WAIC鍏ㄧ悆棣栧彂锛岄潪閬楃粐缁ｈ法鐣岃仈鍔?/h3>
+<p class="card-summary">涓婃捣鐏电憴绉戞妧鍦?026涓栫晫浜哄伐鏅鸿兘澶т細鍏ㄧ悆棣栧彂鏃犲垱鑴戞満鎺ュ彛闂幆鐫＄湢浜у搧&apos;娌夊S1&apos;锛屽洿缁曡剳鐢典俊鍙烽噰闆嗐€佽剳鐘舵€佽瘑鍒拰鑷€傚簲鍙嶉鏋勫缓鎶€鏈摼璺€傚叕鍙镐緷鎵樺叏鏍堣嚜鐮旈潪渚靛叆寮廈CI鏍稿績鎶€鏈紝閫氳繃闈為仐缁囩唬宸ヨ壓璺ㄧ晫鑱斿姩鍜屽叕鐩婇」鐩惤鍦帮紝鎺㈢储纭鎶€璧嬭兘缇庡ソ鐢熸椿鏂拌矾寰勩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>&apos;娌夊S1&apos;闂幆鑴戞満鎺ュ彛鐫＄湢浜у搧WAIC鍏ㄧ悆棣栧彂</li>
+<li>鑴戠數閲囬泦+鑴戠姸鎬佽瘑鍒?鑷€傚簲鍙嶉鍏ㄩ摼璺妧鏈?/li>
+<li>闈為仐缁囩唬宸ヨ壓璺ㄧ晫鑱斿姩锛岃壓鏈寲浜掑姩浣撻獙</li>
+<li>闈㈠悜鐫＄湢绠＄悊鍦烘櫙鐨勬秷璐圭骇BCI浜у搧</li>
+<li>鐏电憴绉戞妧鍏ㄦ爤鑷爺闈炰镜鍏ュ紡BCI鏍稿績鎶€鏈?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬嚖鍑扮綉 / 鍗庡鏃╂姤</span>
+<a href="https://baby.ifeng.com/c/8upwQcARFx1" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈矾绾? data-date="2026-07-17" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #a29bfe20; color: #a29bfe; border-color: #a29bfe40;">鎶€鏈矾绾?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">涓浗淇￠€氶櫌鍦ㄦ棩鍐呯摝AI鍚戝杽宄颁細鐗靛ご鎴愮珛BCI鎶€鏈爣鍑嗗寲棰勭爺缁?/h3>
+<p class="card-summary">WAIC 2026鏈熼棿锛屼腑鍥戒俊閫氶櫌鍦ㄦ棩鍐呯摝&apos;浜哄伐鏅鸿兘鍚戝杽&apos;宄颁細鐗靛ご鎴愮珛鑴戞満鎺ュ彛鎶€鏈爣鍑嗗寲棰勭爺缁勶紝涓嶪SO銆両EC鍙婂鍥界爺绌舵満鏋勫鎺ワ紝鎺ㄥ姩BCI鎶€鏈爣鍑嗗浗闄呭寲銆傝繖鏄腑鍥藉湪BCI鍥介檯鏍囧噯鍒跺畾涓粠&apos;鍙備笌&apos;鍒?apos;涓诲&apos;鐨勫叧閿竴姝ワ紝涓?鏈?0鏃MPA鍒嗙被鐣屽畾/鍛藉悕鎸囧鍘熷垯褰㈡垚&apos;鍥藉唴+鍥介檯&apos;鏍囧噯缁勫悎鎷炽€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓浗淇￠€氶櫌鐗靛ご鎴愮珛BCI鍥介檯鏍囧噯鍖栭鐮旂粍</li>
+<li>涓嶪SO/IEC鍙婂鍥界爺绌舵満鏋勫鎺?/li>
+<li>鎺ㄥ姩涓浗浠嶣CI鍥介檯鏍囧噯&apos;鍙備笌&apos;璧板悜&apos;涓诲&apos;</li>
+<li>涓?鏈?0鏃MPA涓や唤鏍稿績鏂囦欢褰㈡垚&apos;鍥藉唴+鍥介檯&apos;缁勫悎鎷?/li>
+<li>涓哄浗浜CI浜у搧鍑烘捣閾鸿矾</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾椋為拱鑽娉ㄥ唽鏈嶅姟 / WAIC 2026</span>
+<a href="http://m.toutiao.com/group/7664776756200473129/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-17" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鍖楀ぇ缃楁/鏂规柟鍥㈤槦鎻愬嚭&apos;鍘嬬缉瀛︿範&apos;鏈哄埗锛屾彮绀轰汉鑴戦珮鏁堢煡璇嗗涔犲師鐞?/h3>
+<p class="card-summary">鍖椾含澶у蹇冪悊涓庤鐭ョ瀛﹀闄㈢綏娆㈠洟闃熴€佹柟鏂瑰洟闃熻仈鍚堝厛杩涘埗閫犱笌鏈哄櫒浜哄闄㈡潕闃挎槑鍥㈤槦锛屽湪銆婅嚜鐒堵烽€氳銆嬪彂琛ㄧ爺绌讹紝鎻愬嚭鍏ㄦ柊鐨?apos;鍘嬬缉瀛︿範&apos;鏈哄埗锛氶€氳繃鍏堝涔犵煡璇嗙綉缁滅殑鏋㈢航鑺傜偣褰㈡垚&apos;鐭ヨ瘑楠ㄦ灦&apos;锛屽悗缁柊鐭ヨ瘑鑳藉洿缁曢鏋跺揩閫熺粍缁囨暣鍚堬紝瀹炵幇楂樻晥&apos;杩炵偣鎴愮嚎&apos;銆傝剳纾佸浘瀹為獙璇佸疄鑳屼晶鍓嶆墸甯︾毊灞傚弬涓庣淮鎸佺ǔ瀹氱殑缃戠粶缁撴瀯琛ㄥ緛銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鎻愬嚭&apos;鍘嬬缉瀛︿範&apos;鏈哄埗锛氬厛鎼鏋跺啀鏁村悎淇℃伅</li>
+<li>寮傝川鎬х煡璇嗙綉缁滐紙鏃犳爣搴︼級鏇村鏄撹浜鸿剳瀛︿範</li>
+<li>Hub-to-Learn棰勫涔犺矾寰勬晥鏋滄渶浼橈紝鎴愮哗鏄捐憲鎻愬崌</li>
+<li>鑴戠鍥捐瘉瀹炶儗渚у墠鎵ｅ甫鐨眰缁存寔缃戠粶缁撴瀯琛ㄥ緛</li>
+<li>鍙戣〃浜庛€婅嚜鐒堵烽€氳銆嬶紙Nature Communications锛?/li>
+<li>涓烘暀鑲茶绋嬭璁″拰绫昏剳瀛︿範绠楁硶鎻愪緵鏂扮悊璁烘鏋?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂ature Communications / 鍖椾含澶у</span>
+<a href="http://m.toutiao.com/group/7665891237086282278/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-16">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?6鏃?/span>
+<span class="date-weekday">鍛ㄥ洓</span>
+<span class="day-count">7 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鏍稿績鍣ㄤ欢" data-date="2026-07-16" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">鏍稿績鍣ㄤ欢</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍖椾含澶у榛勭帀瓒呭洟闃熺爺鍒跺叏鐞冮娆剧浉鍙樺繂闃诲櫒绁炵粡鍔ㄥ姏瀛﹁姱鐗囷紝姣绾ц剳鐨眰瀹炴椂閲嶅缓</h3>
+<p class="card-summary">鍖椾含澶у榛勭帀瓒呮暀鎺堝洟闃熻仈鍚堜腑绉戦櫌涓婃捣寰郴缁熸墍鐮斿埗鍑哄叏鐞冮娆惧熀浜庣浉鍙樺繂闃诲櫒鐨勬绉掔骇绁炵粡鍔ㄥ姏瀛︾郴缁熻姱鐗囷紝閲囩敤40nm宸ヨ壓锛屾€婚潰绉粎0.28骞虫柟姣背锛屽皢鍘熸湰闇€瑕佽秴绾ц绠楁満杩愯鍗佸嚑鍒嗛挓鐨勮绠楀帇缂╁埌2.12姣瀹屾垚锛屾瘮鏈€鍏堣繘涓撶敤鍔犻€熷櫒蹇?.82鑷?6.27鍊嶃€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栨鐩稿彉蹇嗛樆鍣ㄧ缁忓姩鍔涘鑺墖闂笘</li>
+<li>40nm宸ヨ壓锛?.28mm虏锛屾瘮A100 GPU蹇?0-478鍊?/li>
+<li>瀹炵幇姣绾ц剳鐨眰琛ㄩ潰楂樹繚鐪熼噸寤?/li>
+<li>涓烘湳涓疄鏃跺鑸€侀棴鐜缁忚皟鎺ф彁渚涚‖浠跺熀纭€</li>
+<li>鎴愭灉鍙戣〃浜庛€婄瀛︺€嬫潅蹇?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫粖鏃ュご鏉?绉戞妧璇勮</span>
+<a href="http://m.toutiao.com/group/7662932842116858403/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-16" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Northwell Health&apos;鍙岄噸绁炵粡鏃佽矾&apos;绯荤粺璁╃槴鐥敺瀛愰噸鑾疯Е瑙変笌绮剧粏杩愬姩锛孨ature Medicine鍙戣〃</h3>
+<p class="card-summary">缇庡浗Northwell Health鐮旂┒鎵€Chad Bouton鍥㈤槦鍦ㄣ€奛ature Medicine銆嬪彂琛?apos;鍙岄噸绁炵粡鏃佽矾&apos;鑴戞満鎺ュ彛绯荤粺锛岃鍥犳綔姘翠簨鏁呰兏妞庝互涓嬬槴鐥?骞寸殑Keith Thomas鍦?5鍛ㄨ缁冨唴鍙宠噦鍔涢噺鎻愬崌86%銆佸乏鑷傛彁鍗?2%锛屽苟棣栨鎭㈠鎵嬭厱瑙﹁銆傛渶鎯婁汉鐨勬槸閮ㄥ垎鏀瑰杽鍦ㄧ郴缁熷叧闂悗浠嶆寔缁秴杩?骞达紝绯荤粺鍙瘑鍒叾棰勬湡鎵嬮儴鍔ㄤ綔鏁版湀鏃犻渶閲嶆柊璁粌銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍙岄噸绁炵粡鏃佽矾=5涓井鐢垫瀬闃靛垪璇诲彇+鐢靛埡婵€鐨偆璐寸墖</li>
+<li>35鍛ㄨ缁冨悗鍙宠噦鍔涢噺鎻愬崌86%銆佸乏鑷傛彁鍗?2%</li>
+<li>6涓湀鏃舵仮澶嶆墜鑵曡Е瑙夛紝鍏抽棴璁惧鍚庢敼鍠勪粛鎸佺画2骞?/li>
+<li>鎶撴彙绌鸿泲澹?7%鎴愬姛鐜囦笉纰庤</li>
+<li>鍏ㄧ悆绾?500涓囪剨楂撴崯浼ゆ偅鑰呴鑾烽暱绋嬪姛鑳芥仮澶嶈瘉鎹?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歍he Scientist / Nature Medicine</span>
+<a href="https://www.the-scientist.com/paralyzed-man-feels-sensation-again-with-brain-stimulation-device-74754" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-16" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">姘戞斂閮ㄧ瓑14閮ㄩ棬鑱斿悎鍙戝竷搴峰杈呭叿浜т笟鎵╄兘鎻愯川涓夊勾琛屽姩鏂规锛屾槑纭帹鍔ㄨ剳鏈烘帴鍙ｄ笌涓村簥娣卞害铻嶅悎</h3>
+<p class="card-summary">姘戞斂閮ㄧ瓑14閮ㄩ棬鑱斿悎鍙戝竷銆婂悍澶嶈緟鍔╁櫒鍏蜂骇涓氭墿鑳芥彁璐ㄤ笁骞磋鍔ㄦ柟妗?2026-2028骞?銆嬶紝鏄庣‘鎺ㄥ姩浜哄伐鏅鸿兘銆佽剳鏈烘帴鍙ｃ€佹煍鎬х數瀛愮瓑鎶€鏈笌涓村簥闇€姹傛繁搴﹁瀺鍚堬紝鎻愬崌搴峰杈呭叿鏉愭枡鍜屽厓鍣ㄤ欢鍏抽敭鎶€鏈緵缁欒兘鍔涳紝涓鸿剳鏈烘帴鍙ｆ妧鏈尰鐤楀満鏅惤鍦版彁渚涙槑纭斂绛栨寚寮曘€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>14閮ㄩ棬鑱斿悎鍙戝竷搴峰杈呭叿浜т笟涓夊勾琛屽姩鏂规</li>
+<li>鏄庣‘鎺ㄥ姩鑴戞満鎺ュ彛銆佹煍鎬х數瀛愮瓑鎶€鏈笌涓村簥娣卞害铻嶅悎</li>
+<li>鎻愬崌搴峰杈呭叿鏉愭枡鍜屽厓鍣ㄤ欢鍏抽敭鎶€鏈緵缁欒兘鍔?/li>
+<li>涓築CI鍖荤枟鍦烘櫙钀藉湴鎻愪緵鏄庣‘鏀跨瓥鎸囧紩</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫腑鍥借瘉鍒告姤/鏂板崕璐㈢粡</span>
+<a href="http://m.toutiao.com/group/7662922016572113451/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-16" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink鍚姩鑻卞浗棣栦釜鑴戣姱鐗囦复搴婅瘯楠岋紝鍥介檯鍖栨垬鐣ユ寔缁帹杩?/h3>
+<p class="card-summary">Neuralink鍦ㄨ嫳鍥藉惎鍔ㄩ涓剳鏈烘帴鍙ｄ复搴婄爺绌讹紝娴嬭瘯鍏惰剳鑺墖璁惧鍦ㄤ弗閲嶇缁忕郴缁熺柧鐥呮偅鑰呬腑鐨勫畨鍏ㄦ€у拰鎬ц兘銆傝繖鏄户缇庡浗銆侀樋鑱旈厠銆佸姞鎷垮ぇ涔嬪悗锛孨euralink涓村簥璇曢獙鎵╁睍鐨勫張涓€閲嶈甯傚満锛屾爣蹇楀叾鍥介檯鍖栨垬鐣ユ寔缁帹杩涖€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Neuralink鍦ㄨ嫳鍥藉惎鍔ㄩ涓剳鑺墖涓村簥璇曢獙</li>
+<li>闈㈠悜涓ラ噸绁炵粡绯荤粺鐤剧梾蹇楁効鑰?/li>
+<li>缁х編/闃?鍔犱箣鍚庤繘鍏ョ鍥涘浗甯傚満</li>
+<li>宸茶幏鑻卞浗鐩戠鏈烘瀯鎵瑰噯</li>
+<li>鍥介檯鍖栦复搴婂竷灞€鍔犻€?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歀ondonDaily</span>
+<a href="https://londondaily.com/neuralink-launches-first-brain-chip-clinical-trial-in-britain" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-16" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛杩庢斂绛栬祫鏈弻閲嶅姞鎸侊紝浜т笟鍔犻€熸墦閫氬晢涓氬寲钀藉湴閾捐矾</h3>
+<p class="card-summary">鏂板崕绀炬姤閬擄細鎴戝浗鑴戞満鎺ュ彛棰嗗煙鍙戝睍姘村钩鏁翠綋浣嶅垪鍏ㄧ悆绗竴姊槦銆傛皯鏀块儴绛?4閮ㄩ棬鑱斿悎鍙戝竷銆婂悍澶嶈緟鍔╁櫒鍏蜂骇涓氭墿鑳芥彁璐ㄤ笁骞磋鍔ㄦ柟妗堬紙2026-2028骞达級銆嬶紝鏄庣‘鎺ㄥ姩BCI涓庝复搴婃繁搴﹁瀺鍚堛€傚寳浜槍骞冲凡闆嗚仛瓒?5瀹禕CI浼佷笟锛屼骇涓氶摼瀹屾暣鎬у眳鍏ㄥ浗鍓嶅垪銆傛牸寮忓绉戞妧瀹屾垚4.2浜垮厓&apos;澶╀娇+&apos;杞瀺璧勶紝鍗婂勾绱5.7浜垮厓銆傛満鏋勯娴?035骞翠腑鍥紹CI甯傚満瑙勬ā杈?49浜垮厓銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>姘戞斂閮ㄧ瓑14閮ㄩ棬鍙戝竷搴峰杈呭叿浜т笟涓夊勾琛屽姩鏂规</li>
+<li>鍖椾含鏄屽钩闆嗚仛瓒?5瀹禕CI浼佷笟锛屼骇涓氶摼瀹屾暣鎬у叏鍥介鍏?/li>
+<li>鏄屽钩BCI涓撻」浜т笟鍩洪噾宸插偍澶?涓噸鐐归」鐩?/li>
+<li>鏍煎紡濉旂鎶€瀹屾垚4.2浜垮厓澶╀娇+杞紝鍗婂勾绱5.7浜垮厓</li>
+<li>鏂伴噷绋嬩笌鍖楀ぇ鎴愮珛BCI鑱斿悎瀹為獙瀹わ紝缈斿畤鍖荤枟瀹氬13.66浜?/li>
+<li>鏈烘瀯棰勬祴锛?025骞?1浜库啋2035骞?49浜匡紝CAGR瓒?0%</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣ぞ / 涓浗璇佸埜鎶?/span>
+<a href="http://m.163.com/dy/article/L1VK68NJ05346RC6.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-16" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">A鑲¤剳鏈烘帴鍙ｆ蹇佃偂璧板己锛屾捣鍗楁捣鑽定鍋滐紝杩堟櫘鍖诲绛夎窡娑?/h3>
+<p class="card-summary">鍙椾笂娴峰畬鎴愬叏鐞冮渚嬪晢涓欱CI鎵嬫湳娑堟伅鎻愭尟锛?鏈?5鏃鑲¤剳鏈烘帴鍙ｆ蹇佃偂璧板己锛屾捣鍗楁捣鑽定鍋滐紝杩堟櫘鍖诲銆佺泩瓒ｇ鎶€绛夎窡娑ㄣ€備笟鍐呯爺鍒ゆ垜鍥借剳鏈烘帴鍙ｉ鍩熷彂灞曟按骞虫暣浣撲綅鍒楀叏鐞冪涓€姊槦锛屼緷鎵樺畬鏁翠骇涓氶摼涓庡伐绋嬪笀绾㈠埄鍏峰寮亾瓒呰溅娼滃姏銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍟嗕笟BCI鎵嬫湳娑堟伅鎻愭尟A鑲＄浉鍏虫澘鍧?/li>
+<li>娴峰崡娴疯嵂娑ㄥ仠锛岃繄鏅尰瀛︺€佺泩瓒ｇ鎶€绛夎窡娑?/li>
+<li>鏈烘瀯棰勬祴2035骞翠腑鍥紹CI甯傚満瑙勬ā杈?49浜垮厓</li>
+<li>鍖荤枟搴峰涓虹煭鏈熸牳蹇冮┍鍔ㄥ姏</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庤储缁?涓浗璇佸埜鎶?/span>
+<a href="http://m.toutiao.com/group/7662922016572113451/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-16" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鍏靛洟鍖婚櫌鏃犲垱鑴戞満鎺ュ彛铏氭嫙鐜板疄搴峰绯荤粺鎶曞叆涓村簥锛?0鍒嗛挓璁粌鏋勫缓闂幆搴峰</h3>
+<p class="card-summary">2026骞?鏈?鏃ワ紝鏂扮枂鍏靛洟鍖婚櫌鎴愬姛灏嗘棤鍒涜剳鏈烘帴鍙ｈ櫄鎷熺幇瀹炲悍澶嶈缁冪郴缁熸姇鍏ヤ复搴婂簲鐢ㄣ€傝绯荤粺閫氳繃鑴戠數閲囬泦甯芥崟鎹夌毊灞傝繍鍔ㄧ數淇″彿锛屾棤闇€鎵嬫湳妞嶅叆鍗冲彲鎿嶆帶灞忓箷铏氭嫙鎵嬪畬鎴愬搴斿姩浣滐紝鏋勫缓&apos;鎰忓康鐢熸垚鈥旇剳鐢甸噰闆嗗鐞嗏€旇瑙?鍚鍙嶉&apos;瀹屾暣搴峰璁粌闂幆銆傛暣濂楄缁冨崟娆?0鍒嗛挓锛岀敱涓撲笟鑴戞満鍖诲笀涓€瀵逛竴鎸囧銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏃犲垱鑴戞満鎺ュ彛VR搴峰绯荤粺姝ｅ紡鎶曞叆涓村簥搴旂敤</li>
+<li>30鍒嗛挓/娆★紝鐢变笓涓氳剳鏈哄尰甯堜竴瀵逛竴鎸囧</li>
+<li>鏋勫缓&apos;鎰忓康鐢熸垚鈥斾俊鍙烽噰闆嗏€斿妯℃€佸弽棣?apos;鍏ㄩ棴鐜?/li>
+<li>涓哄崚涓€侀鑴戝浼ょ瓑鑲綋鍔熻兘闅滅鎮ｈ€呮彁渚涙柊璺緞</li>
+<li>閫氳繃娌荤枟鍓嶅悗鑴戠數瀵规瘮鍔ㄦ€佽皟鏁村悍澶嶆柟妗?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬叺鍥㈡棩鎶?/ 鍏靛洟缃?/span>
+<a href="http://www.bingtuannet.com/szyw/202607/t20260716_248648.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-15">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?5鏃?/span>
+<span class="date-weekday">鍛ㄤ笁</span>
+<span class="day-count">18 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-15" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍏ㄧ悆棣栨浠跨敓鍚绁炵粡鎺ュ彛鍦ㄥ崡寮€澶у闂笘锛屽彂琛ㄤ簬銆婅嚜鐒堵锋潗鏂欍€?/h3>
+<p class="card-summary">鍗楀紑澶у鐢靛瓙淇℃伅涓庡厜瀛﹀伐绋嬪闄㈠緪鏂囨稕鏁欐巿鍥㈤槦鎴愬姛鐮斿埗鍑哄叏鐞冮娆句豢鐢熷惉瑙夌缁忔帴鍙ｏ紝闆嗘垚澹伴煶淇″彿閲囬泦銆佺缁忓舰鎬佺紪鐮併€佽嚜鐒惰涔夊鐞嗐€佺敓鐗╃數淇″彿杈撳嚭浜庝竴浣擄紝鏋勫缓浜嗗畬鏁翠汉閫犲惉瑙夌缁忕幆璺€傚姩鐗╁疄楠屼腑锛屽け鑱厰妞嶅叆鍚庝笉浠呮仮澶嶅０闊虫劅鐭ワ紝杩樿兘璇嗗埆璇煶鎸囦护骞跺畬鎴?apos;鎵撳瓧&apos;&apos;韪㈢悆&apos;绛夎涓猴紝鏍囧織鍚淇浠?apos;鍚&apos;杩堝悜&apos;鍚噦&apos;銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栨浠跨敓鍚绁炵粡鎺ュ彛锛屽彂琛ㄤ簬銆婅嚜鐒堵锋潗鏂欍€?/li>
+<li>闆嗘垚澹颁俊鍙烽噰闆嗐€佺缁忓舰鎬佺紪鐮併€佽涔夊鐞嗐€佺敓鐗╃數杈撳嚭鍥涘ぇ妯″潡</li>
+<li>澶辫仾鍏斿疄楠岋細璇嗗埆璇煶鎸囦护骞跺畬鎴愭墦瀛椼€佽涪鐞冭涓?/li>
+<li>绐佺牬浼犵粺浜哄伐鑰宠湕渚濊禆娈嬩綑鍚缁忕殑鐡堕</li>
+<li>涓哄惉瑙夌缁忕己澶辨偅鑰呮彁渚涚數瀛愭浛浠ｆ柟妗?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氱鎶€鏃ユ姤 / 浜烘皯缃戞暀鑲查閬?/span>
+<a href="http://edu.people.com.cn/n1/2026/0714/c1006-40760028.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-15" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓婃捣寮€鍑鸿剳鏈烘帴鍙ｉ寮犲鏂癸紝NEO绯荤粺瀹屾垚鍏ㄧ悆棣栦緥涓婂競鍚庢鍏ユ墜鏈?/h3>
+<p class="card-summary">7鏈?3鏃ワ紝鍗氱澘搴锋鍏ュ紡鑴戞満鎺ュ彛鎵嬮儴杩愬姩鍔熻兘浠ｅ伩绯荤粺锛圢EO锛夎幏鎵逛笂甯傚悗鐨勯寮犲鏂瑰湪涓婃捣寮€鍑猴紝鍏ㄧ悆棣栦緥妞嶅叆鎵嬫湳鍦ㄥ鏃﹀ぇ瀛﹂檮灞炲崕灞卞尰闄㈠畬鎴愩€傛湳涓祴璇曟樉绀虹‖鑶滃鑴戠數淇″彿绋冲畾銆佽川閲忚壇濂斤紝鎮ｈ€呮湳鍚庣敓鍛戒綋寰佸钩绋炽€備粠3鏈?3鏃ヨ幏鎵逛笂甯傚埌杩涘叆鐪熷疄璇婄枟浠呯敤4涓湀銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦緥涓婂競鍚庝镜鍏ュ紡鑴戞満鎺ュ彛妞嶅叆鎵嬫湳鍦ㄥ崕灞卞尰闄㈠畬鎴?/li>
+<li>NEO绯荤粺涓哄浗闄呴涓幏鎵逛笂甯傜殑渚靛叆寮廈CI鍖荤枟鍣ㄦ</li>
+<li>鎮ｈ€呬负10骞村墠杞︾ジ鑷磋剨楂撴崯浼ゃ€佹墜閮ㄦ姄鎻″姛鑳藉彈鎹?/li>
+<li>浠庤幏鎵逛笂甯傚埌杩涘叆涓村簥浠?涓湀锛屽凡绾冲叆&apos;娌儬淇?apos;</li>
+<li>鏍囧織BCI浠庡疄楠屽姒傚康姝ｅ紡杩涘叆鐪熷疄鍖荤枟鍦烘櫙</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬ぎ瑙嗘柊闂?/ 鎬诲彴璁拌€呯帇娈跨敳</span>
+<a href="http://m.toutiao.com/group/7662577367159931411/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">ICLR 2026 NeuroAdapter锛氱鍒扮妗嗘灦鐩存帴浠巉MRI鑴戜俊鍙烽噸寤烘墍瑙佸浘鍍?/h3>
+<p class="card-summary">鍝ヤ鸡姣斾簹澶у鍥㈤槦鍦↖CLR 2026鍙戣〃NeuroAdapter妗嗘灦锛岀獊鐮翠紶缁熻剳-鍥惧儚閲嶅缓鐨勪袱闃舵鑼冨紡锛岀鍒扮灏唂MRI鑴戠毊灞傞《鐐规暟鎹洿鎺ユ槧灏勪负&apos;澶ц剳鏍囪&apos;(tokens)锛屼互绾︽潫娼滃湪鎵╂暎妯″瀷(LDM)鐢熸垚鍥惧儚銆傚悓鏃跺紩鍏?apos;鍥惧儚-澶ц剳鍙屽悜鍙В閲婃€ф鏋?apos;(IBBI)锛岄€氳繃鎵╂暎鍘诲櫔杩囩▼鐨勪氦鍙夋敞鎰忓姏鍒嗘瀽锛屾彮绀轰笉鍚岀毊灞傝剳鍖哄鐢熸垚杩囩▼鐨勫奖鍝嶃€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栨瀹炵幇绔埌绔痜MRI-鍥惧儚閲嶅缓锛岃烦杩囦腑闂寸壒寰佺┖闂?/li>
+<li>8椤瑰浘鍍忚川閲忔寚鏍囩浉瀵瑰熀绾挎樉钁楁彁鍗?/li>
+<li>IBBI妗嗘灦璇嗗埆&apos;楂樺奖鍝嶅姏鑴戝尯&apos;涓?apos;娆¤鑴戝尯&apos;鐨勫眰绾у垎宸?/li>
+<li>鍥犳灉鎵板姩瀹為獙锛氶伄钄介珮灞傝涔夊尯鍥惧儚鐬棿宕╁</li>
+<li>涓哄彲瑙ｉ噴绁炵粡瑙ｇ爜寮€杈熸柊璺緞</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欳SDN / 鑴戞満鎺ュ彛绀惧尯锛圛CLR 2026璁烘枃锛?/span>
+<a href="https://roses.blog.csdn.net/article/details/159518544" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">闊╁浗楂樹附澶у鐮斿彂寰瀷鑴戦儴妞嶅叆鐗╋紝鍒╃敤娓╁害鍙屽悜璋冩帶绁炵粡娲诲姩</h3>
+<p class="card-summary">闊╁浗楂樹附澶у鍖诲闄㈠洟闃熺爺鍒跺嚭涓€娆炬柊鍨嬭剳閮ㄦ鍏ョ墿锛屽皢鐑數瑁呯疆涓庣鍩虹缁忔帰閽堣瀺涓轰竴浣擄紝鍙鍏ュぇ鑴戞繁澶勫氨鍦板崌楂樻垨闄嶄綆缁勭粐娓╁害锛屽疄鐜板鐗瑰畾绁炵粡鍥炶矾鐨勫弻鍚戞帶鍒躲€傚喎鍗存姂鍒剁缁忔椿鍔紝鍔犵儹澧炲己绁炵粡娲诲姩锛屼负涓嬩竴浠ｅ弻鍚戣剳鏈烘帴鍙ｅ拰闂幆绁炵粡璋冩帶绯荤粺鎻愪緵鍏ㄦ柊璺緞銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鐑數瑁呯疆+纭呭熀绁炵粡鎺㈤拡鐨勫井鍨嬭剳妞嶅叆鐗?/li>
+<li>棣栨瀹炵幇鍗曚竴鍣ㄤ欢鍙屽悜璋冩帶绁炵粡娲诲姩</li>
+<li>鍐峰嵈鎶戝埗銆佸姞鐑寮猴紝绮惧害鍙揪钃濇枒鏍告按骞?/li>
+<li>涓哄弻鍚態CI鍜屾劅瑙夊弽棣堝洖浼犲瀹氬熀纭€</li>
+<li>鎴愭灉鍙戣〃浜庛€婄瀛﹁繘灞曘€嬫潅蹇?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭編婀冩柊闂?绉戞櫘涓浗</span>
+<a href="https://m.thepaper.cn/newsDetail_forward_33590868" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink瀹屾垚绗?6渚嬫偅鑰呮鍏ワ紝VOICE璇曢獙鍔犻€熻闊宠В鐮佺爺鍙?/h3>
+<p class="card-summary">Neuralink宸插畬鎴愮26浣嶆偅鑰呯殑N1鑴戞満鎺ュ彛妞嶅叆锛屽悓鏃舵帹杩涗袱椤逛复搴婅瘯楠岋細PRIME鐮旂┒璇勪及杩愬姩鎺у埗鍔熻兘锛孷OICE璇曢獙涓撴敞浜庤█璇姛鑳芥仮澶嶃€傚叕鍙告鍦ㄥ揩閫熺Н绱ぇ鏍锋湰绾靛悜鏁版嵁锛屼絾璇煶瑙ｇ爜鍑嗙‘鐜囥€佹瘡鍒嗛挓瀛楁暟绛夊叧閿€ц兘鎸囨爣灏氭湭鍏紑銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>绗?6浣嶆偅鑰呭畬鎴愭鍏ワ紝璇曢獙鎵╁睍鑷抽樋鑱旈厠銆佽嫳鍥姐€佸姞鎷垮ぇ</li>
+<li>VOICE璇曢獙鑱氱劍瑷€璇姛鑳芥仮澶?/li>
+<li>蹇€熷叆缁勭Н绱ぇ鏍锋湰绾靛悜鏁版嵁</li>
+<li>璇煶瑙ｇ爜鎬ц兘鎸囨爣灏氭湭鍏紑鍙戣〃</li>
+<li>闇€涓庡鏈洟闃熷凡鍙戣〃鐨凬EJM銆丯ature鎴愭灉瀵规爣</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歁orning Overview</span>
+<a href="https://morningoverview.com/neuralink-reached-its-26th-brain-implant-patient-and-is-racing-to-decode-speech/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">绮ゆ腐婢冲ぇ婀惧尯鑴戞満鎺ュ彛浜т笟鍒涙柊鑱旂洘鎴愮珛锛屽箍涓滆鍒?030骞村缓鎴?00涓狟CI鐥呮埧</h3>
+<p class="card-summary">绮ゆ腐婢冲ぇ婀惧尯鑴戞満鎺ュ彛浜т笟鍒涙柊鑱旂洘鍦ㄧ鎴愮珛锛屽崡鏂瑰尰绉戝ぇ瀛︾彔姹熷尰闄㈠凡鍦ㄥ崕鍗楃巼鍏堝紑璁捐剳鏈烘帴鍙ｄ复搴婄爺绌剁梾鎴匡紝鑷充粖瀹屾垚15渚嬩镜鍏ュ紡鑴戞満鎺ュ彛鎵嬫湳锛?8椤逛复搴婄爺绌堕」鐩疮璁″叆缁勫彈璇曡€?00浣欏悕銆傚箍宸?瀹跺尰闄㈠凡寮€璁捐剳鏈烘帴鍙ｄ复搴婄爺绌剁梾鎴匡紝涓北涓夐櫌鏀寔鍎跨鍒拌€佸勾鍏ㄥ懆鏈熻剳鏈鸿瘎浼颁笌娌荤枟銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>绮ゆ腐婢冲ぇ婀惧尯鑴戞満鎺ュ彛浜т笟鍒涙柊鑱旂洘鍦ㄥ箍宸炴垚绔?/li>
+<li>鍗楁柟鍖荤彔姹熷尰闄㈠凡寮€灞?5渚嬩镜鍏ュ紡BCI鎵嬫湳</li>
+<li>骞垮窞8瀹跺尰闄㈠紑璁綛CI涓村簥鐮旂┒鐥呮埧</li>
+<li>鍥藉唴浼佷笟鏂版渚靛叆寮廈CI閫氶亾鏁板皢璺冨崌鑷?096閫氶亾</li>
+<li>銆婂箍涓滅渷鑴戞満鎺ュ彛绉戞妧涓庝骇涓氬崗鍚屽彂灞曡鍔ㄨ鍒掋€嬪畾璋冪櫨浜夸骇涓?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬箍宸炴棩鎶?/ 绮ゆ腐婢冲ぇ婀惧尯闂ㄦ埛缃?/span>
+<a href="https://www.cnbayarea.org.cn/news/focus/content/mpost_1332300.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">娓呭崕涓佹枃浼洟闃熺爺鍙戜豢鐢熷妯℃€佽Е瑙変紶鎰熷櫒SuperTac锛岀櫥涓娿€奛ature Sensors銆嬪垱鍒婂彿</h3>
+<p class="card-summary">娓呭崕澶у娣卞湷鍥介檯鐮旂┒鐢熼櫌涓佹枃浼洟闃熻仈鍚堝鏈烘瀯锛屽彈楦界溂瑙嗚涓庣鍦烘劅鐭ユ満鍒跺惎鍙戯紝鐮斿彂浠跨敓澶氭ā鎬佽Е瑙変紶鎰熷櫒SuperTac锛屽皢澶氬厜璋辨垚鍍忋€佹懇鎿︾數浼犳劅涓庢儻鎬ф祴閲忚瀺涓轰竴浣擄紝骞堕€氳繃瑙﹁璇█妯″瀷DOVE瀹炵幇瑙﹁淇″彿鐨勭悊瑙ｄ笌鎺ㄧ悊銆傜郴缁熶綅缃娴嬬簿搴?.056mm銆佸姏妫€娴嬬簿搴?.0004N锛屼负鍥藉唴鏈烘瀯棣栨浠ョ涓€鍗曚綅鍦ㄨ鏈熷垔鍙戞枃銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥藉唴棣栫瘒銆奛ature Sensors銆嬩竴浣滆鏂?/li>
+<li>浠跨敓SuperTac闆嗘垚澶氬厜璋?鎽╂摝鐢?IMU澶氭ā鎬佹劅鐭?/li>
+<li>DOVE瑙﹁璇█妯″瀷8.6B鍙傛暟锛屽彲瀵硅Е瑙夎涔夋帹鐞?/li>
+<li>浣嶇疆妫€娴嬬簿搴?.056mm锛屽姏妫€娴嬬簿搴?.0004N</li>
+<li>80,000娆℃帴瑙﹀惊鐜€愪箙鎬ф祴璇曠ǔ瀹?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欳SDN / Nature Sensors</span>
+<a href="https://blog.csdn.net/weixin_44887311/article/details/157505177" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鏈悊鏅鸿兘鎼?娆鹃潪渚靛叆寮廈CI澶栭楠间骇鍝佷寒鐩?026 WAIC锛?apos;鎰忓康椹卞姩&apos;鍗掍腑搴峰</h3>
+<p class="card-summary">涓婃捣鏈悊鏅鸿兘绉戞妧鏈夐檺鍏徃鍦?026涓栫晫浜哄伐鏅鸿兘澶т細锛圵AIC锛塇4棣咹4-065灞曚綅闆嗕腑灞曠ず4娆炬牳蹇冧骇鍝侊細鍩轰簬闈炰镜鍏ュ紡鑴戞満鎺ュ彛鐨勫崚涓悍澶嶅楠ㄩ銆佹剰蹇垫帶鐗┿€佹櫤鑳界潯鐪犵洃娴嬬瓑銆傛湳鐞嗕互&apos;鑴戞満鎺ュ彛+AI绠楁硶&apos;瀹炵幇鎮ｈ€呬富鍔ㄥ弬涓庡悍澶嶏紝缁曞紑鍙楁崯绁炵粡閫氳矾鐩存帴椹卞姩澶栭楠兼満鍣ㄤ汉銆傝鍏徃鏉ヨ嚜涓婃捣濂夎搐銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏈悊鏅鸿兘4娆鹃潪渚靛叆寮廈CI浜у搧浜浉WAIC 2026</li>
+<li>鏍稿績浜у搧锛氭剰蹇甸┍鍔ㄥ崚涓悍澶嶅楠ㄩ</li>
+<li>鎴戝浗姣忓勾鏂板鍗掍腑鎮ｈ€呯害200涓囷紝70-80%鐣欐湁鍔熻兘闅滅</li>
+<li>浠?apos;鏈哄櫒甯︿汉琚姩璁粌&apos;杞悜&apos;鎮ｈ€呬富鍔ㄥ弬涓?apos;</li>
+<li>濂夎搐鑴戞満鎺ュ彛浜т笟甯︿笌WAIC褰㈡垚鍗忓悓</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭編婀冩柊闂?/ 涓婃捣濂夎搐瀹樻柟</span>
+<a href="https://m.thepaper.cn/newsDetail_forward_33590073" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">澶嶆棪鍛ㄩ箯绛?鍥藉鑰呭湪Nature Sensors鑱斿悕鍙戦棶锛氭湭鏉?0骞翠紶鎰熷櫒璇ュ浣曢噸鏂板畾涔夛紵</h3>
+<p class="card-summary">2026骞?鏈?鏃ヤ笂绾跨殑Nature Sensors鍒涘垔鍙疯鐐规枃绔?apos;Ten questions on the future of sensing&apos;锛岀敱瀹惧ぇDas銆佸搱鍒╂硶澶уKhalaf銆佸湥瀹夊楂樼爺闄icera銆佽幈鏂ぇ瀛&apos;Malley銆佸鏃﹀懆楣忎簲浣嶉€氳浣滆€呰仈鍚嶆挵鍐欍€傛彁鍑?apos;浼犳劅鍣ㄤ笉璇ュ啀琚畾涔変负鍒烘縺-鐢典俊鍙锋崲鑳藉櫒锛岃€岃鏄劅鐭?瀛樺偍-璁＄畻涓€浣撳寲鐨勪俊鎭妭鐐?apos;锛岄瑷€鎰熷瓨绠椾竴浣?浠跨敓鐣岄潰+鍙檷瑙?鍙淮鎶ゅ皢瀹氫箟涓嬩竴浠ｄ紶鎰熷櫒銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>銆奛ature Sensors銆嬪垱鍒婂彿瑙傜偣鏂囩珷</li>
+<li>5浣嶉€氳浣滆€呮í璺ㄦ潗鏂欍€佺敓鐗╁尰瀛﹀伐绋嬨€佺缁忕瀛︺€佹満鍣ㄤ汉</li>
+<li>鏍稿績璁烘柇锛氫紶鎰熷櫒=鎰熺煡-瀛樺偍-璁＄畻涓€浣撳寲鐨勪俊鎭妭鐐?/li>
+<li>in-sensor computing灏嗘垚涓绘祦鏂瑰悜</li>
+<li>鍛ㄩ箯鎻愬嚭&apos;浠庤鍔ㄦ崲鑳藉櫒杩涘寲涓轰富鍔ㄤ俊鎭帴鍙?apos;</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭劅鐭ヨ姱瑙嗙晫 / Nature Sensors</span>
+<a href="http://m.163.com/dy/article/L1TCJG2M0552FBZN.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍖椾含鏄屽钩11瀹惰剳鏈烘帴鍙ｄ紒涓氶泦涓惤鍦帮紝浜т笟鐢熸€佸湀鍐嶆墿瀹?/h3>
+<p class="card-summary">2026鑴戠瀛︿笌鑴戞満鎺ュ彛鍒涙柊璁哄潧涓婏紝鑺櫤杈俱€佹櫤鍐夊尰鐤椼€佸寳鑴戦鍒涖€佹柊浜戝尰鐤椼€佺伒蹇冩収鏅恒€佺┖灞辨厛銆佽剳鑱旇姱閫氱瓑11瀹朵紒涓氶泦涓绾﹀叆椹讳腑鍏虫潙锛堟槍骞筹級鑴戠瀛︿笌鑴戞満鎺ュ彛闆嗚仛鍖恒€傛槍骞冲凡姹囪仛41鎵€楂樻牎銆?6涓叏鍥介噸鐐瑰疄楠屽銆?5瀹朵紭璐ㄤ紒涓氾紝瑕嗙洊涓夊ぇ鎶€鏈矾绾垮叏閾炬潯銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>11瀹朵紒涓氶泦涓绾﹀叆椹绘槍骞宠剳鏈烘帴鍙ｄ骇涓氶泦鑱氬尯</li>
+<li>鏄屽钩宸叉眹鑱?5瀹朵紒涓氾紝瑕嗙洊渚靛叆寮?鍗婁镜鍏ュ紡/闈炰镜鍏ュ紡鍏ㄨ矾绾?/li>
+<li>鎷ユ湁41鎵€楂樻牎銆?6涓叏鍥介噸鐐瑰疄楠屽鐨勭鐮旇浆鍖栭摼</li>
+<li>&apos;鍖楄剳涓€鍙?apos;&apos;鍖楄剳浜屽彿&apos;绛夋牳蹇冩垚鏋滃～琛ュ浗鍐呮妧鏈┖鐧?/li>
+<li>鐩爣2027骞村垵鍏疯妯★紝2030骞磋繄鍏ュ浗闄呬竴娴佽鍒?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬寳浜棩鎶?/ 鍖椾含鏄屽钩瀹樻柟鍙戝竷</span>
+<a href="http://m.toutiao.com/group/7662551860682850856/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">2026骞翠腑瑙傚療锛氳剳鏈烘帴鍙ｆ姇璧勮秴70浜匡紝琛屼笟杩涘叆閲忎骇鍓嶅</h3>
+<p class="card-summary">鏂板崕绀俱€婄粡娴庡弬鑰冩姤銆嬪勾涓骇涓氳瀵熸寚鍑猴紝2026骞翠笂鍗婂勾鑴戞満鎺ュ彛棰嗗煙鎶曡祫瓒?0璧枫€侀噾棰濊秴70浜垮厓锛岃繙瓒?025骞村叏骞淬€傚己鑴戠鎶€20浜垮厓B+杞€佹牸寮忓5.7浜垮厓绛夊ぇ棰濊瀺璧勯鐜般€侼EO鑾锋壒涓婂競鏍囧織渚靛叆寮忎骇鍝佹敞鍐岀牬鍐帮紝澶氬浼佷笟鍚屾鎺ㄨ繘寤哄巶+涓村簥+鎶ヨ瘉锛岃涓氬浜庨噺浜у墠澶溿€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓婂崐骞磋瀺璧勮秴60璧枫€侀噾棰濊秴70浜垮厓锛岃秴2025骞村叏骞?/li>
+<li>寮鸿剳绉戞妧20浜垮厓銆佹牸寮忓5.7浜垮厓绛夊ぇ棰濊瀺璧勯鐜?/li>
+<li>NEO鑾锋壒涓婂競锛屼镜鍏ュ紡BCI浜у搧娉ㄥ唽鐜妭鐮村啺</li>
+<li>鑺櫤杈?apos;鍖楄剳涓€鍙?apos;涓村簥鍏ョ粍杩囧崐锛屽姏浜?鏈堝畬鎴愬叏閮ㄥ叆缁?/li>
+<li>鏍煎紡濉旇秴绾у伐鍘傘€佹櫤鍐夊尰鐤桮MP杞﹂棿绛変骇鑳藉缓璁惧姞閫?/li>
+<li>鍖讳繚鏀粯鎵撻€氬晢涓氬寲闂幆锛岃涓氱珯鍦ㄨ妯″寲闂ㄦ涓?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣綉 / 缁忔祹鍙傝€冩姤</span>
+<a href="http://www.xinhuanet.com/tech/20260715/3e1ab16070994f3dbf6d6057e93a2fb0/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑺櫤杈?apos;鍖楄剳涓€鍙?apos;涓村簥鍏ョ粍杩囧崐锛屽姏浜?鏈堝畬鎴愬叏閮ㄥ叆缁?/h3>
+<p class="card-summary">鑺櫤杈捐懀浜嬩細绉樹功鍏间笟鍔″彂灞曟€荤洃鏉庡洯閫忛湶锛?apos;鍖楄剳涓€鍙?apos;鍗婁镜鍏ュ紡鑴戞満鎺ュ彛娉ㄥ唽涓村簥璇曢獙宸蹭簬3鏈堝簳鍚姩锛岀洰鍓嶆偅鑰呭叆缁勮繘搴﹀凡杩囧崐锛屽姏浜?鏈堝唴瀹屾垚鍏ㄩ儴鍏ョ粍銆傚崐渚靛叆寮忚矾寰勪綔涓轰镜鍏ュ紡涓庨潪渚靛叆寮忎箣闂寸殑骞宠　鏂规锛屾鍦ㄥ姞閫熻拷璧躲€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>&apos;鍖楄剳涓€鍙?apos;鍗婁镜鍏ュ紡BCI娉ㄥ唽涓村簥3鏈堝簳鍚姩</li>
+<li>鎮ｈ€呭叆缁勮繘搴﹀凡杩囧崐锛屽姏浜?鏈堝畬鎴愬叏閮ㄥ叆缁?/li>
+<li>鍗婁镜鍏ュ紡璺緞骞宠　淇″彿璐ㄩ噺涓庢墜鏈闄?/li>
+<li>鏄屽钩浜т笟闆嗚仛鍖烘牳蹇冩垚鏋滀箣涓€</li>
+<li>鍥藉唴鍗婁镜鍏ュ紡BCI涓村簥杩涘睍鍔犻€?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣綉 / 缁忔祹鍙傝€冩姤</span>
+<a href="http://www.xinhuanet.com/tech/20260715/3e1ab16070994f3dbf6d6057e93a2fb0/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍥藉姟闄?apos;鍗佷簲浜?apos;鍥芥皯鍋ュ悍瑙勫垝鏄庣‘鍔犲己鑴戞満鎺ュ彛绉戞妧鏀诲叧</h3>
+<p class="card-summary">鍥藉姟闄㈡棩鍓嶅嵃鍙戙€婂浗姘戝仴搴?apos;鍗佷簲浜?apos;瑙勫垝銆嬶紝鏄庣‘鎻愬嚭鍔犲己鑴戞満鎺ュ彛绛夐鍩熺鎶€鏀诲叧銆傝繖鏄剳鏈烘帴鍙ｉ娆¤绾冲叆鍥藉绾у浗姘戝仴搴蜂簲骞磋鍒掞紝鏍囧織鐫€BCI浠庡墠娌挎妧鏈笂鍗囦负鍥藉鍋ュ悍鎴樼暐閲嶈缁勬垚閮ㄥ垎锛屽皢鑾峰緱鏇村鏀跨瓥鍜岃祫婧愭敮鎸併€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>銆婂浗姘戝仴搴?apos;鍗佷簲浜?apos;瑙勫垝銆嬮娆″皢鑴戞満鎺ュ彛绾冲叆鍥藉鍋ュ悍鎴樼暐</li>
+<li>鏄庣‘鎻愬嚭&apos;鍔犲己鑴戞満鎺ュ彛绛夐鍩熺鎶€鏀诲叧&apos;</li>
+<li>浠庝骇涓氭斂绛栦笂鍗囦负鍥芥皯鍋ュ悍鎴樼暐灞傞潰</li>
+<li>棰勮&apos;鍗佷簲浜?apos;鏈熼棿灏嗚幏寰楁洿澶氱鐮旂粡璐瑰拰鏀跨瓥鏀寔</li>
+<li>涓庤嵂鐩戝眬鍒嗙被鐣屽畾銆佸尰淇濇敮浠樼瓑鏀跨瓥褰㈡垚缁勫悎鎷?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣綉 / 缁忔祹鍙傝€冩姤</span>
+<a href="http://www.xinhuanet.com/tech/20260715/3e1ab16070994f3dbf6d6057e93a2fb0/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍗″唴鍩烘闅嗗ぇ瀛in He鍥㈤槦锛氶潪渚靛叆寮廈CI鑱斿悎瀛︿範妗嗘灦瀹炵幇鎵嬫湳绾ф帶鍒剁簿搴?/h3>
+<p class="card-summary">鍗″唴鍩烘闅嗗ぇ瀛in He鏁欐巿鍥㈤槦鍦∟ature Communications鍙戣〃鐮旂┒锛屾彁鍑洪涓劅瀹樺紩瀵肩殑浜烘満鑱斿悎瀛︿範妗嗘灦锛屽皢浜鸿剳鐨勮瘯閿欏涔犱笌鏈哄櫒鐨勬搴︿紭鍖栫粺涓€瀵归綈銆?1鍚嶆湭缁忚缁冪殑鍙楄瘯鑰呴娆′娇鐢ㄥ嵆杈惧埌86%鐨勪竴缁村厜鏍囨帶鍒剁簿搴﹀拰77.5%鐨勪簩缁存帶鍒剁簿搴︼紝鎵撶牬浼犵粺闈炰镜鍏ュ紡BCI鐨勬牎鍑嗙摱棰堛€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栦釜鎰熷畼寮曞鐨勯潪渚靛叆寮廈CI鑱斿悎瀛︿範妗嗘灦</li>
+<li>31鍚嶉浂璁粌鍙楄瘯鑰呴鐢ㄥ嵆杈?6%鎺у埗绮惧害</li>
+<li>灏嗕汉鑴戠缁忓彲濉戞€т笌AI瑙ｇ爜鍣ㄤ紭鍖栧榻?/li>
+<li>闈炰镜鍏ュ紡鎶€鏈€艰繎渚靛叆寮忕簿搴︽按骞?/li>
+<li>鎴愭灉鍙戣〃浜嶯ature Communications</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歂euroscience News</span>
+<a href="https://neurosciencenews.com/bci-joint-learning-human-ai-control-31058/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-15" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鏍煎紡濉旂鎶€瓒呯骇宸ュ巶涓€鏈熸姇杩愶紝瓒呭０娉CI杩涘叆宸ョ▼楠岃瘉闃舵</h3>
+<p class="card-summary">鏍煎紡濉旂鎶€浣嶄簬鎴愰兘鍏ㄧ悆鎬婚儴鐨勮秴绾у伐鍘備竴鏈熷凡浜?鏈?6鏃ユ寮忔姇杩愶紝棣栨湡闈㈢Н2000骞虫柟绫筹紝涓昏鎵挎媴宸ョ▼楠岃瘉鍜屽皬鎵归噺鐢熶骇鍔熻兘锛屼负鍚庣画浜т笟鍖栧仛鍑嗗銆傝鍏徃涓绘敾瓒呭０娉㈣剳鏈烘帴鍙ｈ矾绾匡紝涓婂崐骞寸疮璁¤瀺璧?.7浜垮厓銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏍煎紡濉旇秴绾у伐鍘備竴鏈?鏈?6鏃ユ姇杩愶紝闈㈢Н2000骞虫柟绫?/li>
+<li>鎵挎媴宸ョ▼楠岃瘉鍜屽皬鎵归噺鐢熶骇锛屼负浜т笟鍖栧仛鍑嗗</li>
+<li>涓绘敾瓒呭０娉㈣剳鏈烘帴鍙ｆ妧鏈矾绾?/li>
+<li>涓婂崐骞寸疮璁¤瀺璧?.7浜垮厓锛岃祫鏈珮搴︾湅濂?/li>
+<li>闈炰镜鍏ュ紡楂樼簿搴CI璺嚎鐨勯噸瑕佹帰绱?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫腑鍥借储瀵岀綉 / 缁忔祹鍙傝€冩姤</span>
+<a href="http://m.toutiao.com/group/7662570220736840228/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-15" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink鎵╁睍涓村簥璇曢獙鑷抽樋鑱旈厠闃垮竷鎵庢瘮鍏嬪埄澶叞璇婃墍</h3>
+<p class="card-summary">Neuralink瀹ｅ竷灏嗚剳鏈烘帴鍙ｄ复搴婅瘯楠屾墿灞曡嚦闃胯仈閰嬮樋甯冩墡姣斿厠鍒╁か鍏拌瘖鎵€锛岃繖鏄鍏徃棣栨鍦ㄧ編鍥芥湰鍦熶互澶栧紑灞曡瘯楠屻€傝瘯楠岄潰鍚戠槴鐥偅鑰咃紝璇勪及N1妞嶅叆鐗╁拰R1鎵嬫湳鏈哄櫒浜虹殑瀹夊叏鎬т笌鍔熻兘锛屾爣蹇楃潃Neuralink鍥介檯鍖栨垬鐣ヨ繄鍑洪噸瑕佷竴姝ャ€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栨鍦ㄧ編鍥芥湰鍦熶互澶栧紑灞曚复搴婅瘯楠?/li>
+<li>钀藉湴闃垮竷鎵庢瘮鍏嬪埄澶叞璇婃墍</li>
+<li>闈㈠悜鐦棯鎮ｈ€呰瘎浼癗1妞嶅叆鐗╁畨鍏ㄦ€?/li>
+<li>闃胯仈閰嬫垚涓轰腑涓滃湴鍖築CI鐮旂┒鍒涙柊涓績</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欴ubai Times</span>
+<a href="https://dubaitimes.com/ar/%D9%86%D9%8A%D9%88%D8%B1%D8%A7%D9%84%D9%8A%D9%86%D9%83-%D8%AA%D9%88%D8%B3%D8%B9-%D8%AA%D8%AC%D8%A7%D8%B1%D8%A8-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%B4%D8%B1%D9%8A%D8%AD%D8%A9-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-15" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鏉窞甯傚彂甯冪被鑴戞櫤鑳芥湭鏉ヤ骇涓氬垱鏂板彂灞曡嫢骞叉帾鏂斤紝鏈€楂?000涓囬」鐩ˉ鍔?/h3>
+<p class="card-summary">鏉窞甯備汉姘戞斂搴滃姙鍏巺鍗板彂銆婂叧浜庢敮鎸佺被鑴戞櫤鑳芥湭鏉ヤ骇涓氬垱鏂板彂灞曠殑鑻ュ共鎺柦銆嬶紝浠庢妧鏈垱鏂般€佷骇涓氶泦鑱氥€佺敓鎬佸缓璁句笁鏂归潰鍑哄彴14鏉℃斂绛栥€傚閲嶅ぇ浜т笟鍖栭」鐩渶楂樿ˉ鍔?000涓囧厓锛屽涓夌被鍖荤枟鍣ㄦ娉ㄥ唽浜у搧鏈€楂樺鍔?00涓囧厓锛屽棣栧彴濂椾骇鍝佹渶楂樿ˉ鍔?00涓囧厓銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏉窞鍑哄彴14鏉＄被鑴戞櫤鑳戒骇涓氭敮鎸佹斂绛?/li>
+<li>閲嶅ぇ浜т笟鍖栭」鐩渶楂樿ˉ鍔?000涓囧厓</li>
+<li>涓夌被鍖荤枟鍣ㄦ娉ㄥ唽鏈€楂樺鍔?00涓囧厓</li>
+<li>棣栧彴濂椾骇鍝佸勾搴﹂攢鍞10%琛ュ姪锛屾渶楂?00涓?/li>
+<li>鏀跨瓥鏈夋晥鏈熻嚦2028骞村簳</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭澀宸炲競浜烘皯鏀垮簻鍔炲叕鍘?/span>
+<a href="https://176934886.b2b.11467.com/m/news/14650921.asp" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-15" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">骞夸笢鍒涙柊&apos;鍚屾闀滃儚鐤楁硶&apos;锛宖NIRS鍏夊鑴戞満鎺ュ彛鎻ず鍗掍腑鍚庡け璇?杩愬姩鍙屾敼鍠勭毊灞傛満鍒?/h3>
+<p class="card-summary">鐮旂┒鍥㈤槦鍦ㄥ浗闄呮湡鍒娿€夿MC Neurology銆嬪彂琛ㄥ悓姝ラ暅鍍忕枟娉曪紙SMT锛夌爺绌讹紝灏嗚█璇缁冧笌涓婅偄杩愬姩璁粌鏈夋満铻嶅悎銆?0娆″共棰勫悗鎮ｈ€匴AB-AQ澶辫鍟嗚瘎鍒嗘樉钁楁彁鍗囷紙p=0.008锛夛紝Fugl-Meyer涓婅偄閲忚〃璇勫垎鍚屾鏀瑰杽銆俧NIRS鍏夊鑴戞満鎺ュ彛瀹炴椂鏄剧ず鍙充晶鍒濈骇杩愬姩鐨眰銆佸乏渚ц緟鍔╄繍鍔ㄥ尯涓庨涓嬪洖婵€娲绘樉钁楀寮猴紝涓虹簿鍑嗙缁忚皟鎺ф彁渚涘奖鍍忓璇佹嵁銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍚屾闀滃儚鐤楁硶SMT棣栨瀹炵幇瑷€璇?杩愬姩鍚屾骞查</li>
+<li>WAB-AQ璇勫垎鎻愬崌杈綧CID鎺ヨ繎闃堝€?/li>
+<li>fNIRS鎻ず鐨眰婵€娲伙細鍙矼1銆佸乏SMA銆佸乏棰濅笅鍥?/li>
+<li>绯荤粺鍩轰簬璁＄畻鏈鸿繍琛岋紝鎿嶄綔鏍囧噯鍖?/li>
+<li>鍏峰鍚戝熀灞?绀惧尯搴峰鏈烘瀯鎺ㄥ箍娼滃姏</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欳SDN / BMC Neurology</span>
+<a href="https://blog.csdn.net/fNIRS_BCI/article/details/161918579" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-14">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?4鏃?/span>
+<span class="date-weekday">鍛ㄤ簩</span>
+<span class="day-count">3 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-14" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓婃捣闂紟&apos;鑴戞満鎺ュ彛绗竴鍩?apos;锛屼紒涓氭暟閲忓崰鍏ㄥ浗涓夊垎涔嬩竴</h3>
+<p class="card-summary">鏂板崕绀俱€婄粡娴庡弬鑰冩姤銆嬬壒绋挎姤閬擄紝2026骞翠笂鍗婂勾涓婃捣闆嗚仛鑴戞満鎺ュ彛浼佷笟鏁伴噺鍗犲叏鍥戒笁鍒嗕箣涓€锛岃瀺璧勪簨浠跺拰鎶湶閲戦鍒嗗埆鍗犲叏鍥借繎60%鍜?0%銆?apos;鑴戞櫤澶╁湴&apos;宸叉眹鑱?0浣欏浼佷笟銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>浼佷笟鏁伴噺鍗犲叏鍥?/3锛岃瀺璧勯噾棰濆崰鍏ㄥ浗杩?0%</li>
+<li>&apos;鑴戞櫤澶╁湴&apos;姹囪仛50浣欏鑴戞満鎺ュ彛浼佷笟</li>
+<li>3娆句镜鍏ュ紡浜у搧杩涘叆鍥藉鍒涙柊鍖荤枟鍣ㄦ鐗瑰埆瀹℃煡绋嬪簭</li>
+<li>鍗氱澘搴风鍒涙澘IPO宸插彈鐞嗭紝鍐插埡&apos;鑴戞満鎺ュ彛绗竴鑲?apos;</li>
+<li>涓婃捣鍥借祫鍌ㄥ杩戠櫨涓剳鏈烘帴鍙ｆ姇璧勯」鐩?/li>
+<li>鐩爣锛?027骞村崐渚靛叆寮忎骇鍝佺巼鍏堜复搴婂簲鐢?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣ぞ / 缁忔祹鍙傝€冩姤</span>
+<a href="http://sh.xinhuanet.com/20260714/ede94974ef314b2f9a956ff244862846/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-14" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓滆帪甯傚帤琛楀尰闄㈣剳鏈烘帴鍙ｇ爺绌堕櫌鎻墝锛?骞村缓鎴愰潪渚靛叆寮廈CI涓村簥杞寲鏍锋澘</h3>
+<p class="card-summary">2026骞?鏈?0鏃ワ紝涓滆帪甯傚帤琛楀尰闄紙骞夸笢鑽澶у闄勫睘绗叚鍖婚櫌锛夎剳鏈烘帴鍙ｇ爺绌堕櫌姝ｅ紡鎻墝鍚姩锛岀敱鍘氳鍖婚櫌銆佸崕鍗楃悊宸ュぇ瀛﹀惔鍑暀鎺堝洟闃熴€佸箍宸炴瀬鑺櫤鍏冨叕鍙镐笁鏂瑰叡寤恒€備富鏀婚潪渚靛叆寮忚剳鏈烘帴鍙ｏ紝3骞磋矾绾垮浘锛氱1骞磋惤鍦拌€佸勾鐥村憜绛涙煡涓庤皟鎺э紱绗?骞存帹杩涜剳鍗掍腑杩愬姩搴峰闂幆璁粌锛涚3骞存墿灞曞笗閲戞．涓庣潯鐪犻殰纰嶅共棰勩€傚搷搴斻€婂箍涓滅渷鑴戞満鎺ュ彛绉戞妧涓庝骇涓氬崗鍚屽彂灞曡鍔ㄨ鍒掋€?00鐥呮埧/鐧句嚎浜т笟鐩爣銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓夋柟鍏卞缓锛氬帤琛楀尰闄?鍗庡崡鐞嗗伐鍚村嚡鍥㈤槦+鏋佽姱鏅哄厓</li>
+<li>涓绘敾闈炰镜鍏ュ紡鑴戞満鎺ュ彛锛屽畨鍏ㄧ瓑鍚屽父瑙勫績鐢靛浘</li>
+<li>3骞磋矾绾垮浘锛氱棿鍛嗙瓫鏌モ啋鍗掍腑搴峰鈫掑笗閲戞．+鐫＄湢</li>
+<li>鍚村嚡鍥㈤槦鎷ユ湁21椤归潪渚靛叆寮廈CI鍙戞槑涓撳埄</li>
+<li>瀵规帴骞夸笢鐪丅CI琛屽姩璁″垝200鐥呮埧/鐧句嚎浜т笟鐩爣</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笢鑾炲競鍗敓鍋ュ悍灞€ / 鍘氳鍖婚櫌</span>
+<a href="http://dghb.dg.gov.cn/gkmlpt/content/4/4559/mpost_4559905.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-14" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛鍖讳繚鏂版斂娣卞害瑙ｆ瀽锛氭墜鏈湇鍔¤垂鍙姤閿€锛岃澶?鑰楁潗浠嶅鑷垂</h3>
+<p class="card-summary">鏂版氮鏂伴椈BigNews娣卞害鎶ラ亾鎸囧嚭锛岃剳鏈烘帴鍙ｅ尰淇濈洰鍓嶅憟鐜?apos;鏈嶅姟璐逛笌璁惧璐?apos;鍒嗚建鐨勬牸灞€锛氭湇鍔￠」鐩柟闈紝澶氭暟鐪佷唤宸插嚭鍙版斂搴滄寚瀵间环鈥斺€斾镜鍏ュ紡BCI缃叆璐归泦涓?000-6600鍏?娆°€侀潪渚靛叆寮廈CI閫傞厤璐圭害960鍏?娆★紝鍖椾含灏嗕镜鍏ュ紡缃叆鏈撼鍏ョ敳绫诲尰淇濇姤閿€绾?0%锛涗絾妞嶅叆寮忚姱鐗囥€佺數鏋併€佷綋澶栦富鏈虹瓑璁惧/鑰楁潗绾?0-40涓囧厓/濂椾粛澶氳嚜璐癸紝浠呬笂娴?apos;娌儬淇?apos;灏嗘墜鏈€楁潗绾冲叆淇濋殰锛?0%鎶ラ攢銆佷笂闄?5涓囷級銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏈嶅姟璐瑰凡闄嗙画杩涘尰淇濓紙鍖椾含鐢茬被銆佹禉姹熶箼绫荤瓑锛?/li>
+<li>璁惧/鑰楁潗绾?0-40涓囧厓/濂椾粛澶氳嚜璐?/li>
+<li>涓婃捣&apos;娌儬淇?apos;鎵嬫湳鑰楁潗鎶ラ攢30%銆佷笂闄?5涓?/li>
+<li>鍖椾含渚靛叆寮忕疆鍏ユ湳鎶ラ攢绾?0%</li>
+<li>鏈嶅姟璐逛笌璁惧璐瑰垎杞ㄦ槸褰撳墠鏀粯绔富瑕佺煕鐩?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊娴柊闂?BigNews</span>
+<a href="https://news.sina.cn/bignews/insight/2026-07-14/detail-inihtmef7359381.d.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-13">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?3鏃?/span>
+<span class="date-weekday">鍛ㄤ竴</span>
+<span class="day-count">10 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-13" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">姹熻嫃棣栦緥渚靛叆寮忚剳鏈烘帴鍙ｏ細26宀佺槴鐥コ瀛愮敤鎰忓康鐜╂父鎴?/h3>
+<p class="card-summary">鍗楅€氬ぇ瀛﹂檮灞炲尰闄㈠畬鎴愭睙鑻忕渷棣栦緥銆佸叏鍥界涓変緥渚靛叆寮忚剳鏈烘帴鍙ｆ墜鏈€?6宀侀娈佃剨楂撴崯浼ゆ偅鑰呯瑧绗戞湳鍚?涓湀銆佸紑鏈鸿缁?澶╁悗锛屽凡鑳界敤鎰忓康鎺у埗鐢佃剳鍏夋爣锛屾祦鐣呭畬鎴?apos;鏂楀湴涓?apos;绛夌數鑴戞父鎴忥紝搴峰杩涘害瓒呴鏈熴€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>姹熻嫃鐪侀渚嬨€佸叏鍥界涓変緥渚靛叆寮忚剳鏈烘帴鍙ｄ复搴婂悍澶嶅簲鐢?/li>
+<li>鎮ｈ€呬负26宀侀娈佃剨楂撴崯浼ゅコ鎬э紙杞︾ジ鑷寸槴锛?/li>
+<li>6鏈?鏃ュ畬鎴愭鍏ユ墜鏈紝6鏈?9鏃ュ紑鏈鸿缁?/li>
+<li>鏈悗1涓湀鍗冲彲鎰忓康鎺у埗鍏夋爣鐜╂父鎴?/li>
+<li>鍚庣画灏嗛€愭杩涢樁鍒版剰蹇垫搷鎺ц疆妞?/li>
+<li>鐢辨柦鐐滄暀鎺堝洟闃熶富瀵?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶兘甯傛椂鎶?/ 鍗楅€氭姤涓?/span>
+<a href="https://m.weibo.cn/detail/5320622419739651" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-13" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓闄㈡潕姣呭洟闃熸瀯寤洪棴鐜剳鏈烘帴鍙?娣遍儴鑴戝埡婵€绯荤粺锛岃剨楂撴崯浼よ繍鍔ㄥ姛鑳介噸寤烘柊鑼冨紡</h3>
+<p class="card-summary">涓浗绉戝闄㈣剳鏅哄崜瓒婁腑蹇冩潕姣呭洟闃熻仈鍚堟睙鑻忕渷浜烘皯鍖婚櫌銆侀暱娴峰尰闄㈠湪銆奛ature Communications銆嬪彂鏂囷紝绯荤粺瑙ｆ瀽澶栦晶涓嬩笜鑴戯紙LHA锛夎胺姘ㄩ吀鑳界缁忓厓鈫掕剳妗ョ綉鐘舵牳PnO鈫掕剨楂撶殑杩愬姩鎺у埗閫氳矾锛屽苟鍩轰簬姝ゅ垱鏂版瀯寤築CI-LHA-DBS闂幆绯荤粺鈥斺€旇兘瀹炴椂瑙ｇ爜鐨眰杩愬姩鎰忓浘骞堕棬鎺ф繁閮ㄨ剳鍒烘縺锛屽疄鐜颁弗閲嶈剨楂撴崯浼ゆ埅鐦皬榧犺繍鍔ㄥ姛鑳介暱鏈熺ǔ瀹氭仮澶嶃€?apos;鑴戠帒鍖荤枟&apos;姝ｆ帹杩涗复搴婅浆鍖栥€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Nature瀛愬垔锛欱CI-LHA-DBS闂幆绯荤粺</li>
+<li>鎻ずLHA鈫扨nO鈫掕剨楂撳叏鏂拌繍鍔ㄦ帶鍒堕€氳矾</li>
+<li>鍩轰簬916涓█鐤忔爣璁扮缁忓厓浠嬭鎶曞皠鍥捐氨</li>
+<li>鍏嬫湇浼犵粺DBS鍒烘縺闈炵壒寮傛€ч棶棰?/li>
+<li>&apos;鑴戠帒鍖荤枟&apos;鍥㈤槦鎺ㄨ繘涓村簥杞寲涓庡皬璁惧鍖?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氳剳鏈烘帴鍙ｇぞ鍖?/ Nature Communications</span>
+<a href="https://roses.blog.csdn.net/article/details/156344604" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓婃捣闂佃鑴戞櫤澶╁湴闆嗚仛61瀹惰剳鏈烘帴鍙ｄ紒涓氾紝鍗犲叏鍥借繎30%</h3>
+<p class="card-summary">涓婃捣闂佃鑴戞櫤澶╁湴鑴戞満鎺ュ彛鏈潵浜т笟闆嗚仛鍖哄凡钀藉湴鍒涙柊浼佷笟61瀹讹紝鍗犲叏鍥借繎30%銆佸叏甯傚叚鎴愪互涓娿€傚洯鍖烘墦閫犱竴鏍嬫ゼ鐨勫瀭鐩寸敓鎬侊細鍗庡北鍖婚櫌涓村簥杞寲涓績銆佸鏃︾鍒涜浆鍖栦腑蹇冦€佸鍖栧櫒鍔犻€熷櫒鍨傜洿甯冨眬锛屽舰鎴愪粠姒傚康鍒颁骇涓氱殑鍏ㄩ摼鏉¤矾寰勩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>闂佃宸茶惤鍦?1瀹禕CI鍒涙柊浼佷笟锛屽崰鍏ㄥ浗杩?0%</li>
+<li>鑴戞櫤澶╁湴鎵撻€犲瀭鐩寸敓鎬侊細涓村簥+绉戠爺+瀛靛寲涓€浣撳寲</li>
+<li>鍥尯浼佷笟绱铻嶈祫瓒?0浜垮厓</li>
+<li>鐩爣2030骞村煿鑲?-10瀹跺ご閮ㄤ紒涓氥€?0娆句互涓婁骇鍝佷笂甯?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笂瑙傛柊闂?/span>
+<a href="http://m.toutiao.com/group/7661803400618721828/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍗氱澘搴種EO绯荤粺宸插畬鎴?6渚嬫鍏ワ紝鎮ｈ€呭畨鍏ㄦ鍏ュぉ鏁扮疮璁¤秴14000澶?/h3>
+<p class="card-summary">鎴嚦2026骞?鏈堬紝鍗氱澘搴锋鍏ュ紡鑴戞満鎺ュ彛鎵嬮儴杩愬姩鍔熻兘浠ｅ伩绯荤粺宸插畬鎴?6渚嬫鍏ユ墜鏈紝鎮ｈ€呭畨鍏ㄦ鍏ュぉ鏁扮疮璁¤秴杩?4000澶╋紝鍦ㄦ鍏ヤ緥鏁颁笂鏆傛椂棰嗚窇鍏ㄧ悆銆傜粡杩?涓湀BCI璁粌鍚庯紝68.8%鐨勬偅鑰呭湪鑴辨帀鎵嬪鎯呭喌涓嬪緬鎵嬪姛鑳借繍鍔ㄨ瘎鍒嗚幏寰椾复搴婃樉钁楁彁鍗囥€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>36渚嬫鍏ワ紝绱14000+瀹夊叏妞嶅叆澶╂暟锛屽叏鐞冮璺?/li>
+<li>68.8%鎮ｈ€?涓湀鍚庡緬鎵嬪姛鑳芥樉钁楁彁鍗?/li>
+<li>鍗庡北鍖婚櫌鍚姩鍏ㄧ悆棣栦釜BCI涓村簥闃熷垪鐮旂┒</li>
+<li>鏈潵閫傚簲鐥囨湁鏈涙墿灞曡嚦涓嬭偄搴峰鍜岃瑷€鎭㈠</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笂瑙傛柊闂?/span>
+<a href="http://m.toutiao.com/group/7661803400618721828/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鏄庤鑴戞満瑙嗚鐨眰妞嶅叆寮廈CI杩涘叆涓村簥娉ㄥ唽鍐插埡锛岀洰鏍?030骞存嬁璇?/h3>
+<p class="card-summary">鏄庤鑴戞満灞曠ず瑙嗚鐨眰妞嶅叆寮忚剳鏈烘帴鍙ｉ樁娈垫€ф垚鏋滐細鐢?00涓厜鐐规瀯鎴愮畝绾︾敾闈紝姝ｅ湪鎺ㄨ繘1024閫氶亾绾у埆鐨勬敞鍐屼复搴婂墠鍑嗗锛屼笓鐢ㄥぇ瑙勬ā鍒烘縺鑺墖澶勪簬娴佺墖闃舵銆傜洰鏍囧畾浠风害30涓囧厓锛岄璁℃渶蹇?030-2031骞村彇寰楀尰鐤楀櫒姊版敞鍐岃瘉銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>900鍏夌偣瑙嗚閲嶅缓绯荤粺杩涘叆涓村簥娉ㄥ唽鍐插埡</li>
+<li>1024閫氶亾涓撶敤鍒烘縺鑺墖娴佺墖涓?/li>
+<li>鐩爣2030-2031骞存嬁璇侊紝瀹氫环绾?0涓囧厓</li>
+<li>鍏ㄧ悆绾?300涓囧叏鐩蹭汉缇わ紝涓浗鍗?000涓?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笂瑙傛柊闂?/span>
+<a href="http://m.toutiao.com/group/7661803400618721828/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink绗簩浣嶅彈璇曡€匒lex妞嶅叆鏁堟灉绋冲畾锛岀數鏋佷笣鍥炵缉闂宸茶В鍐?/h3>
+<p class="card-summary">Neuralink绗簩浣嶅彈璇曡€匒lex鐨勮剳鏈烘帴鍙ｆ鍏ヨ繍琛岀ǔ瀹氾紝鏈嚭鐜伴浣嶆偅鑰匩oland Arbaugh鏈悗鐨勭數鏋佷笣鍥炵缉闂銆傚叕鍙搁€氳繃鎵嬫湳鏂规浼樺寲绋冲畾浜嗘鍏ョ數鏋佷笣銆侫lex鍙ǔ瀹氬畬鎴愭父鎴忔搷鎺с€佷笁缁村缓妯＄瓑鎰忓康鎿嶄綔锛屽彈璇曡€呭钩鍧囨瘡鍛ㄤ娇鐢ㄨ澶囩害50灏忔椂銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>绗簩浣嶅彈璇曡€匒lex妞嶅叆鏁堟灉绋冲畾锛屾棤鐢垫瀬涓濆洖缂╅棶棰?/li>
+<li>鎵嬫湳鏂规浼樺寲瑙ｅ喅鐢垫瀬涓濆洖缂╂妧鏈毦棰?/li>
+<li>鍙ǔ瀹氬畬鎴愭父鎴忔搷鎺с€?D寤烘ā绛夋剰蹇垫搷浣?/li>
+<li>鍙楄瘯鑰呭钩鍧囨瘡鍛ㄤ娇鐢ㄨ澶囩害50灏忔椂</li>
+<li>闀挎湡妞嶅叆绋冲畾鎬у彇寰楅噸瑕佽繘灞?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欳NNBC / Morning Overview</span>
+<a href="https://cnnbc.com/neuralink-s-second-implant-trial-shows-progress" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鎶€鏈矾绾? data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #a29bfe20; color: #a29bfe; border-color: #a29bfe40;">鎶€鏈矾绾?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛閲忎骇鍏冨勾娣卞害瑙ｆ瀽锛氫笁鏉℃妧鏈矾绾垮垎鍖栵紝涓浗鎶㈠崰鍏ㄧ悆棣栬瘉</h3>
+<p class="card-summary">2026骞磋瑙嗕负鑴戞満鎺ュ彛浠庡疄楠屽璧板悜閲忎骇鐨勫厓骞淬€侼euralink瀹ｅ竷澶ц妯＄敓浜с€佸叏鐞冩帓闃熺獊鐮?涓囦汉锛涗腑鍥藉崥鐫垮悍3鏈堟嬁鍒板叏鐞冮寮犱镜鍏ュ紡BCI鍖荤枟鍣ㄦ娉ㄥ唽璇侊紱涓夋潯鎶€鏈矾绾挎鍦ㄥ垎鍖栤€斺€擭euralink璧?apos;鍒哄叆鑴戠粍缁?apos;鏈€婵€杩涜矾绾匡紝Synchron璧?apos;琛€绠″唴&apos;鏈€寰垱璺嚎锛屼腑鍥藉崥鐫垮悍/鑴戣檸璧?apos;涓嶄激鑴?apos;涓棿璺嚎銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>2026骞存槸BCI閲忎骇鍏冨勾锛歂euralink涓囦汉鎺掗槦銆佷腑鍥芥嬁鍏ㄧ悆棣栬瘉</li>
+<li>涓夋潯鎶€鏈矾绾垮垎鍖栵細渚靛叆寮?鍗婁镜鍏ュ紡/琛€绠″唴鍚勬湁浼樺姡</li>
+<li>Neuralink锛?6浜烘鍏ャ€丷2鏈哄櫒浜?5鍒嗛挓鎵嬫湳銆?024閫氶亾</li>
+<li>鍗氱澘搴凤細鍏ㄧ悆棣栬瘉銆?6渚嬫鍏ャ€佸啿鍒虹鍒涙澘IPO</li>
+<li>Synchron锛?00浜烘鍏ャ€佽绠″唴璺緞鏈€寰垱</li>
+<li>甯傚満瑙勬ā2035骞磋揪鍗冧嚎锛屽綋鍓嶆垚鏈?00-150涓囩編鍏?鍙?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭櫤鍏冩繁缁?/ 缃戞槗鏂伴椈</span>
+<a href="https://c.m.163.com/news/a/L1MTGMEL0556O17W.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-13" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Synchron鍏ㄧ悆妞嶅叆绐佺牬100渚嬶紝琛€绠″唴鑴戞満鎺ュ彛璺嚎鍔犻€熷晢涓氬寲</h3>
+<p class="card-summary">Synchron瀹ｅ竷鍏惰绠″唴鑴戞満鎺ュ彛璁惧宸插湪鍏ㄧ悆100鍚嶆偅鑰呬腑瀹屾垚妞嶅叆锛屾垚涓洪涓揪鍒扮櫨渚嬫鍏ヨ妯＄殑BCI浼佷笟銆傝鍏徃閫氳繃琛€绠′粙鍏ユ柟寮忓皢鐢垫瀬鏀灦閫佸叆澶ц剳锛屾棤闇€寮€棰呮墜鏈紝鏄镜鍏ュ紡BCI涓渶寰垱鐨勬妧鏈矾绾裤€傝鍒?026骞村簳鍚慒DA鎻愪氦鍏抽敭鎬ц瘯楠岀敵璇枫€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>Synchron鍏ㄧ悆妞嶅叆绐佺牬100渚嬶紝琛€绠″唴BCI璺嚎棰嗚窇</li>
+<li>閫氳繃琛€绠′粙鍏ユ鍏ョ數鏋佹敮鏋讹紝鏃犻渶寮€棰呮墜鏈?/li>
+<li>鏈€寰垱鐨勪镜鍏ュ紡BCI鎶€鏈矾绾?/li>
+<li>璁″垝2026骞村簳鍚慒DA鎻愪氦鍏抽敭鎬ц瘯楠岀敵璇?/li>
+<li>棰勮2028-2029骞磋幏鎵逛笂甯?/li>
+<li>鍗曡疆铻嶈祫2.75浜跨編鍏?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭櫤鍏冩繁缁?/ 缃戞槗鏂伴椈</span>
+<a href="https://c.m.163.com/news/a/L1MTGMEL0556O17W.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-13" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">闊惰剳绉戞妧鑾蜂笂娴烽寮犻潪渚靛叆寮廈CI浜岀被鍖荤枟鍣ㄦ璇侊紝搴峰鏁堢巼鎻愬崌34%</h3>
+<p class="card-summary">闊惰剳绉戞妧鏍稿績浜у搧鑴戠數閲囬泦搴峰璁粌璁惧鑾锋壒涓婃捣甯傞寮犻潪渚靛叆寮忚剳鏈烘帴鍙ｅ尰鐤楀櫒姊版敞鍐岃瘉锛屾槸鐩墠鍏ㄥ浗鍞竴甯︽湁杩愬姩鎯宠薄瀛楁牱鐨凚CI璁惧銆備复搴婃暟鎹樉绀猴紝甯﹁繍鍔ㄦ兂璞＄殑鐤楁硶姣斾紶缁熷悍澶嶆晥鐜囨彁鍗?4%锛屽凡鍦ㄥ寳浜ぉ鍧涖€佹姹夊崗鍜屽尰闄腑鏍囥€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓婃捣棣栧紶闈炰镜鍏ュ紡BCI浜岀被鍖荤枟鍣ㄦ璇?/li>
+<li>鍏ㄥ浗鍞竴甯﹁繍鍔ㄦ兂璞″瓧鏍风殑娉ㄥ唽璇佷骇鍝?/li>
+<li>姣斾紶缁熷悍澶嶆晥鐜囨彁鍗?4%</li>
+<li>璁惧浠锋牸100-130涓囧厓锛屽崟娆℃不鐤楃害900-990鍏?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫笂瑙傛柊闂?/span>
+<a href="http://m.toutiao.com/group/7661803400618721828/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-13" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">浼婂埄璇轰紛澶у鐮旂┒棰犺浼犵粺璁ょ煡锛氬ぇ鑴戝喅绛栧浜庡垵绾ф劅瑙夌毊灞傝€岄潪鍓嶉鍙?/h3>
+<p class="card-summary">浼婂埄璇轰紛澶у鍘勫反绾?棣欐鍒嗘牎鐮旂┒鍙戠幇锛屽ぇ鑴戠殑鍐崇瓥杩囩▼杩滄瘮浼犵粺鐞嗚璁や负鐨勬洿鏃╁紑濮嬧€斺€斿嵆浣挎槸鍒濈骇鎰熻鐨眰涔熶細閫氳繃蹇€熷弽棣堝洖璺彈鍒伴珮绾ц剳鍖虹殑褰卞搷锛岃€岄潪绠€鍗曞湴鍗曞悜浼犻€掍俊鎭€傝繖涓€鍙戠幇瀵规湭鏉ョ被鑴慉I鏋舵瀯璁捐鍏锋湁閲嶈鍚彂鎰忎箟銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鎸戞垬浼犵粺灞傜骇鍔犲伐鐞嗚锛氬喅绛栦笉闄愪簬鍓嶉鍙?/li>
+<li>鍒濈骇浣撴劅鐨眰S1宸插嚭鐜板喅绛栫浉鍏崇缁忔椿鍔?/li>
+<li>鍙嶉鍥炶矾鍦ㄦ劅鐭ュ喅绛栦腑鍙戞尌鍏抽敭浣滅敤</li>
+<li>涓轰綆鍔熻€楃被鑴慉I鏋舵瀯鎻愪緵鐢熺墿瀛︾伒鎰?/li>
+<li>鎴愭灉鍙戣〃浜嶱NAS</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歋cienceDaily</span>
+<a href="https://sciencedaily.com/releases/2026/07/260712011757.htm" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-12">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?2鏃?/span>
+<span class="date-weekday">鍛ㄦ棩</span>
+<span class="day-count">2 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈矾绾? data-date="2026-07-12" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #a29bfe20; color: #a29bfe; border-color: #a29bfe40;">鎶€鏈矾绾?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戞満鎺ュ彛浠?apos;璇昏剳&apos;杩堝悜&apos;鍐欒剳&apos;锛屽弻鍚戜氦浜掓垚涓嬩竴闃舵鏍稿績鏂瑰悜</h3>
+<p class="card-summary">鍦?026鏈潵绉戝璁哄潧涓婏紝鍖椾含鑴戠瀛︿笌绫昏剳鐮旂┒鎵€鎵€闀跨綏鏁忔晱鎻愬嚭锛岃剳鏈烘帴鍙ｅ皢浠?apos;璇诲嚭&apos;鑴戜俊鍙烽€愭杩堝悜&apos;鍐欏叆&apos;淇℃伅闃舵锛屾渶缁堝疄鐜颁笌澶ц剳鐨勫弻鍚戜俊鎭氦浜掋€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鎶€鏈寖寮忕敱&apos;璇昏剳&apos;杞悜&apos;璇诲啓鍙屽悜浜や簰&apos;</li>
+<li>瑙嗚鍋囦綋銆佽Е瑙夊亣浣撻渶瑕?apos;鍐欒剳&apos;鎶€鏈敮鎾?/li>
+<li>绮惧噯绁炵粡璋冩帶褰卞搷鎯呯华鍜岃蹇嗘槸閲嶈鏂瑰悜</li>
+<li>绁炵粡绉戝鍩虹鐮旂┒灏嗘垚涓築CI鍙戝睍鐨勬牳蹇冩帹鍔ㄥ姏</li>
+<li>瀵圭缁忕幆璺鐭ユ繁鍏ュ皢鎻愬崌瑙ｇ爜绮惧害鍜岄€熷害</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氶噾铻嶇晫 / 鏈潵绉戝璁哄潧</span>
+<a href="http://m.toutiao.com/group/7661856847532196403/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-12" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">涔旀不鍩庡ぇ瀛︾爺绌讹細澶ц剳閫氳繃閲嶅绁炵粡鍥炶矾瀹炵幇鐪熸澶氫换鍔″鐞?/h3>
+<p class="card-summary">涔旀不鍩庡ぇ瀛︾爺绌跺彂鐜帮紝缁忚繃澶ч噺璁粌鍚庯紝澶ц剳浼氬皢鐔熺粌鎶€鑳戒粠鍓嶉鍙剁毊灞傝浆绉诲埌棰炲彾鐨眰鐨勪笓鐢ㄧ缁忓洖璺腑澶勭悊锛屼粠鑰岄噴鏀惧墠棰濆彾璧勬簮瀹炵幇鐪熸鐨勫浠诲姟骞惰銆傝繖鎸戞垬浜嗛暱鏈熶互鏉ヨ涓轰汉绫诲彧鑳藉揩閫熷垏鎹换鍔¤€岄潪鐪熸骞惰澶勭悊鐨勮鐐广€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>璁粌鍚庝换鍔″鐞嗕粠鍓嶉鍙惰浆绉昏嚦棰炲彾涓撶敤鍥炶矾</li>
+<li>棣栨绾靛悜璇佹槑澶ц剳鍙柊澧炵被鍒€夋嫨鎬ц剳鍖?/li>
+<li>鐪熸鐨勫浠诲姟骞惰纭疄瀛樺湪锛岃€岄潪蹇€熷垏鎹?/li>
+<li>涓篈I鎸佺画瀛︿範鏋舵瀯鎻愪緵鐢熺墿瀛﹀弬鑰?/li>
+<li>鎴愭灉鍙戣〃浜嶫ournal of Cognitive Neuroscience</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歋cienceDaily</span>
+<a href="https://sciencedaily.com/releases/2026/07/260712011912.htm" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-10">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?0鏃?/span>
+<span class="date-weekday">鍛ㄤ簲</span>
+<span class="day-count">3 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-10" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鏄庤鑴戞満瑙嗚閲嶅缓BCI鐐逛寒鐩蹭汉&apos;鎰熺煡涔嬪厜&apos;锛屼粖骞村皢寮€灞曢渚嬪叏鐩叉偅鑰呭疄楠?/h3>
+<p class="card-summary">涓柊缃?apos;娲诲姏涓浗璋冪爺琛?apos;璧拌繘涓婃捣闂佃&apos;鑴戞櫤澶╁湴&apos;锛岄鎵瑰叆椹讳紒涓氭槑瑙嗚剳鏈哄睍绀烘鍏ュ紡瑙嗚閲嶅缓绯荤粺锛岄€氳繃鎽勫儚澶撮噰闆嗕俊鍙枫€佺粡缂栫爜鍚庡埡婵€瑙嗚鐨眰锛岃澶ц剳鐞嗚В浜洪€犱俊鎭€侀噸鏋勫浘鍍忔劅鐭ャ€傚洟闃熷幓骞村湪姝︽眽瀹屾垚4渚婭IT涓村簥璇曢獙锛岄獙璇佹偅鑰呭彲鐪嬪埌瀹氶噺鍖栧浘褰㈠拰棰滆壊鎰熺煡銆備粖骞村皢寮€灞曢渚嬪叏鐩叉偅鑰呭疄楠岋紝棰勮2028骞村惎鍔ㄦ敞鍐岋紝2030-2031骞磋幏涓夌被鍖荤枟鍣ㄦ璇併€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>妞嶅叆寮忚瑙夐噸寤猴細鎽勫儚澶粹啋缂栫爜鈫掑埡婵€瑙嗚鐨眰鈫掑ぇ鑴?apos;鐪嬭&apos;</li>
+<li>鍘诲勾瀹屾垚4渚婭IT涓村簥锛岄獙璇佸畾閲忓寲鍥惧舰涓庨鑹叉劅鐭?/li>
+<li>浠婂勾灏嗗惎鍔ㄩ渚嬪叏鐩叉偅鑰呭疄楠?/li>
+<li>鐩爣2028骞存敞鍐岋紝2030-2031骞磋幏涓夌被鍖荤枟鍣ㄦ璇?/li>
+<li>鑴戞櫤澶╁湴宸茶惤鍦?0瀹惰剳鏈烘帴鍙ｄ紒涓氾紝21涓垵鍒涢」鐩叆椹?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫腑鍥芥柊闂荤綉 / 浠婃棩澶存潯</span>
+<a href="http://m.toutiao.com/group/7660803138613543424/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="璧勬湰鍔ㄦ€? data-date="2026-07-10" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">璧勬湰鍔ㄦ€?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">璧勬湰娑屽叆鑴戞満鎺ュ彛锛氫笂鍗婂勾铻嶈祫72.53浜匡紝鏍煎紡濉斿崐骞磋瀺5.7浜?/h3>
+<p class="card-summary">2026骞翠笂鍗婂勾鍥藉唴鑴戞満鎺ュ彛棰嗗煙宸插彂鐢熸姇铻嶈祫妗堜緥64璧凤紝閲戦鍏辫72.53浜垮厓锛岃繙瓒?025骞村叏骞达紙47璧凤紝23.98浜垮厓锛夈€傛牸寮忓绉戞妧鍗婂勾绱铻嶈祫5.7浜垮厓锛屼富鏀昏秴澹版尝鑴戞満鎺ュ彛璺嚎銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>涓婂崐骞?4璧疯瀺璧勶紝鎬婚噾棰?2.53浜垮厓锛屽悓姣旇秴3鍊?/li>
+<li>鏍煎紡濉旂鎶€鍗婂勾绱铻嶈祫5.7浜垮厓锛堣秴澹版尝鑴戞満鎺ュ彛锛?/li>
+<li>寮鸿剳绉戞妧瀹屾垚绾?0浜垮厓铻嶈祫锛屽叏鐞冪浜屽ぇ鍗曠瑪铻嶈祫</li>
+<li>闃舵鍖荤枟瀹屾垚5浜垮厓鎴樼暐铻嶈祫锛岄樋閲?鑵捐鍙屾姇</li>
+<li>鍗氱澘搴峰啿鍒虹鍒涙澘IPO锛?apos;鑴戞満鎺ュ彛绗竴鑲?apos;鍛间箣娆插嚭</li>
+<li>鍥借祫鍙傛姇鍗犳瘮鏄捐憲锛屽ぎ浼佷粠瑙傛湜杞悜瀹炶川甯冨眬</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭竻绉戠爺绌?/ 涓滄柟璐㈠瘜</span>
+<a href="https://caifuhao.eastmoney.com/news/20260710143804865599770" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="鏍稿績鍣ㄤ欢" data-date="2026-07-10" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">鏍稿績鍣ㄤ欢</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">姣斿埄鏃禝MEC鐮斿彂绁炵粡褰㈡€佸帇缂╄姱鐗囷紝BCI鏁版嵁鏃犳崯瀹炴椂鍘嬬缉</h3>
+<p class="card-summary">姣斿埄鏃跺井鐢靛瓙鐮旂┒涓績锛圛MEC锛夌爺鍙戝嚭绁炵粡褰㈡€佸帇缂╅仴娴嬭姱鐗囷紝鍙鑴戞満鎺ュ彛绁炵粡淇″彿杩涜瀹炴椂鏃犳崯鍘嬬缉锛屽ぇ骞呴檷浣庢暟鎹紶杈撳甫瀹藉拰鍔熻€楋紝涓斾笉涓㈠け浠讳綍绁炵粡淇℃伅銆傝绐佺牬瀵归珮閫氶亾鏁颁镜鍏ュ紡BCI鐨勬棤绾夸紶杈撳拰妞嶅叆浣撳皬鍨嬪寲鍏锋湁鍏抽敭鎰忎箟銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>IMEC鎺ㄥ嚭绁炵粡褰㈡€佸帇缂╄姱鐗囷紝瀹炵幇绁炵粡淇″彿瀹炴椂鏃犳崯鍘嬬缉</li>
+<li>鏄捐憲闄嶄綆BCI鏁版嵁浼犺緭甯﹀鍜屾鍏ヤ綋鍔熻€?/li>
+<li>瀵归珮閫氶亾鏁帮紙鏁板崈鐢垫瀬锛変镜鍏ュ紡BCI鏃犵嚎鍖栬嚦鍏抽噸瑕?/li>
+<li>鎺ㄥ姩妞嶅叆浣撳皬鍨嬪寲鍜岄暱鏈熷湪浣撲娇鐢?/li>
+<li>鏍稿績鍣ㄤ欢灞傜獊鐮村姪鍔汢CI绯荤粺鏁翠綋鎬ц兘璺冨崌</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛歁echatronic Store / IMEC</span>
+<a href="https://noticias.mechatronicstore.cl/electronica/imec-crea-un-chip-que-comprime-senales-neuronales-sin-perdidas-a60b39c0e072" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-09">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?9鏃?/span>
+<span class="date-weekday">鍛ㄥ洓</span>
+<span class="day-count">3 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-07-09" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓滀含澶у鍥㈤槦鍙戠幇绁炵粡缁嗚優鑷櫖璋冩帶鍙仮澶嶈剳鍔熻兘锛屼负绁炵粡閫€琛屾€х柧鐥呮不鐤楀甫鏉ユ柊甯屾湜</h3>
+<p class="card-summary">涓滀含澶у鍥㈤槦鍦ㄣ€婄瀛︺€嬫潅蹇楀彂琛ㄧ爺绌讹紝閫氳繃璋冭妭绁炵粡缁嗚優鍐呯殑鑷櫖鍔熻兘锛屽湪灏忛紶瀹為獙涓垚鍔熸仮澶嶄簡涓уけ鐨勮剳鍔熻兘銆傜爺绌跺彂鐜版寔缁姂鍒惰嚜鍣細瀵艰嚧寮傚父铔嬬櫧鍫嗙Н鍜岀被ALS鐥囩姸锛岃€岄噸鍚嚜鍣姛鑳藉悗锛屽紓甯歌泲鐧藉噺灏戯紝杩愬姩鍜岃鐭ュ姛鑳藉潎寰楀埌鎭㈠銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>棣栨璇佹槑鑷櫖璋冩帶鍙€嗚浆绁炵粡閫€琛屾€ц剳鍔熻兘涓уけ</li>
+<li>灏忛紶瀹為獙涓繍鍔ㄥ拰璁ょ煡鍔熻兘鍧囨垚鍔熸仮澶?/li>
+<li>涓篈LS銆侀樋灏旇尐娴烽粯鐥呫€佸笗閲戞．鐥呮不鐤楁彁渚涙柊鏂瑰悜</li>
+<li>涓嬩竴姝ヨ鍒掔瓫閫夊寮轰汉绫荤粏鑳炶嚜鍣椿鎬х殑鑽墿</li>
+<li>鎴愭灉鍙戣〃浜庛€婄瀛︺€嬫潅蹇?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬弬鑰冩秷鎭?涓浗缁忔祹缃?/span>
+<a href="http://tech.ce.cn/tjyd/202607/t20260715_3086522.shtml" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="涓村簥搴旂敤" data-date="2026-07-09" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">涓村簥搴旂敤</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">瑗胯棌棣栦釜楂樺師鑴戞満鎺ュ彛涓村簥搴旂敤涓績鍦ㄦ媺钀ㄤ汉姘戝尰闄㈡彮鐗?/h3>
+<p class="card-summary">瑗胯棌棣栦釜楂樺師鑴戞満鎺ュ彛涓村簥搴旂敤涓績鍦ㄦ媺钀ㄥ競浜烘皯鍖婚櫌姝ｅ紡鎻墝锛屾爣蹇楃潃瑗胯棌鍦板尯鍦ㄥ埄鐢ㄥ墠娌挎妧鏈不鐤楅毦娌绘€х缁忕郴缁熺柧鐥呮柟闈㈣繄鍑洪噸瑕佷竴姝ャ€備腑蹇冧緷鎵樺寳浜ぉ鍧涘尰闄㈡彺钘忓尰鐤楅槦寮曞叆BCI鎶€鏈紝涓鸿剳鍑鸿銆佽剳澶栦激銆佽剨楂撴崯浼ょ瓑鎮ｈ€呮彁渚涚簿鍑嗚瘖鐤楁湇鍔°€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>瑗胯棌棣栦釜楂樺師BCI涓村簥搴旂敤涓績鎻墝</li>
+<li>渚濇墭鍖椾含澶╁潧鍖婚櫌鎻磋棌鍖荤枟闃熸妧鏈敮鎸?/li>
+<li>瑕嗙洊绁炵粡搴峰鍏ㄦ祦绋嬬簿鍑嗚瘖鐤?/li>
+<li>楂樺師鐜涓婤CI搴旂敤鐮旂┒鍏锋湁鐙壒浠峰€?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣綉</span>
+<a href="http://www.chinaview.cn/20260709/8ed2b01789374fa299fc9f83d78e804f/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜т笟钀藉湴" data-date="2026-07-09" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">浜т笟钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鏂伴噷绋嬩笌鍖椾含澶у鍏卞缓鑴戞満鎺ュ彛鑱斿悎瀹為獙瀹わ紝鑱氱劍闈炰镜鍏ュ紡涓庡悍澶嶆満鍣ㄤ汉铻嶅悎</h3>
+<p class="card-summary">鏂伴噷绋嬪仴搴蜂笌鍖椾含澶у鎴愮珛鑴戞満鎺ュ彛鑱斿悎瀹為獙瀹わ紝鑱氱劍闈炰镜鍏ュ紡鑴戞満鎺ュ彛涓庡悍澶嶆満鍣ㄤ汉铻嶅悎璧涢亾锛屾惌寤虹鐮?涓村簥+浜т笟鍖栭棴鐜ā寮忥紝渚濇墭娴烽噺搴峰吇鍖荤枟鍦烘櫙鐮磋В琛屼笟钀藉湴闅鹃銆傜繑瀹囧尰鐤楀悓鏃ュ彂甯冨畾澧為妗堬紝鎷熷嫙璧?3.66浜垮厓鐢ㄤ簬BCI搴峰璁惧鐮斿彂銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏂伴噷绋?鍖楀ぇ鍏卞缓BCI鑱斿悎瀹為獙瀹?/li>
+<li>鑱氱劍闈炰镜鍏ュ紡BCI涓庡悍澶嶆満鍣ㄤ汉铻嶅悎</li>
+<li>缈斿畤鍖荤枟瀹氬13.66浜垮厓甯冨眬BCI搴峰璁惧</li>
+<li>涓婂競鍏徃鍔犻€烞CI浜т笟甯冨眬</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庤储缁?涓浗璇佸埜鎶?/span>
+<a href="http://m.toutiao.com/group/7662922016572113451/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-08">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?8鏃?/span>
+<span class="date-weekday">鍛ㄤ笁</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-08" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槅鈽?/span></span>
+</div>
+<h3 class="card-title">鍥涘窛棣栨闈炰镜鍏ュ紡鑴戞満鎺ュ彛鐫＄湢浜у搧&apos;绾芥礇鏄?apos;鏅轰韩鍔╃湢浠鍙戜笂甯?/h3>
+<p class="card-summary">7鏈?鏃ワ紝鐢卞洓宸濊剳绉戝涓庣被鑴戠爺绌堕櫌鐮斿彂銆佸哀寰蜂腑鏁欐巿鍥㈤槦涓烘妧鏈牳蹇冪殑鍏ㄧ渷棣栨闈炰镜鍏ュ紡鑴戞満鎺ュ彛鐫＄湢浜у搧鈥斺€?apos;绾芥礇鏄?apos;鏅轰韩鍔╃湢浠湪鎴愰兘娓╂睙姝ｅ紡鍙戝竷銆備骇鍝侀€氳繃鏃犲垱鐗╃悊鏂瑰紡璋冭妭鑴戞尝鑺傚緥锛?2鍒嗛挓瀹屾垚涓€娆″姪鐪犺皟鐞嗭紝閰嶅鎵嬫満APP鍙櫤鑳藉尮閰嶄釜浣撹皟鎺ф柟妗堛€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥涘窛鐪侀娆鹃潪渚靛叆寮忚剳鏈烘帴鍙ｇ潯鐪犱骇鍝佷笂甯?/li>
+<li>灏у痉涓暀鎺堝洟闃熸妧鏈牳蹇冿紝鏃犲垱鐗╃悊璋冭妭鑴戞尝鑺傚緥</li>
+<li>12鍒嗛挓瀹屾垚涓€娆″姪鐪犺皟鐞嗭紝閰嶅鎵嬫満APP涓€у寲鏂规</li>
+<li>娓╂睙鍖鸿剳鏈烘帴鍙ｄ腑璇曞強鍏叡鏈嶅姟骞冲彴杞寲鎴愭灉</li>
+<li>鏍囧織BCI鎶€鏈悜娑堣垂绾у仴搴峰満鏅姞閫熸笚閫?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氳吘璁柊闂?/ 閿﹁鏂伴椈</span>
+<a href="http://news.qq.com/rain/a/20260708A09SJC00" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-07">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?7鏃?/span>
+<span class="date-weekday">鍛ㄤ簩</span>
+<span class="day-count">2 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鎶€鏈獊鐮? data-date="2026-07-07" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">鎶€鏈獊鐮?/span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Neuralink 瀹屾垚鍏ㄧ悆棣栦緥缁忕‖鑴戣啘妞嶅叆鎵嬫湳锛岃繄鍚戦噺浜у厓骞?/h3>
+<p class="card-summary">椹柉鍏嬫棗涓婲euralink瀹ｅ竷瀹屾垚鍏ㄧ悆棣栦緥缁忕‖鑴戣啘妞嶅叆鑴戞満鎺ュ彛鎵嬫湳銆傛柊鏂规鐢辨墜鏈満鍣ㄤ汉鐩存帴灏嗗井鍨嬬數鏋佷笣绌块€忕‖鑴戣啘妞嶅叆澶ц剳鐨眰锛屾棤闇€鍒囧紑纭剳鑶滐紝鏈悗1灏忔椂鍐呭彈璇曡€呭凡瀹炵幇鎰忓康鎺у埗鐢佃剳鍏夋爣銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍏ㄧ悆棣栦緥鏃犻渶鍒囧紑纭剳鑶滅殑渚靛叆寮忔墜鏈?/li>
+<li>鎵嬫湳鏈哄櫒浜哄叏鑷姩鎿嶄綔锛屽ぇ骞呴檷浣庢墜鏈毦搴?/li>
+<li>濂ユ柉姹€宸ュ巶鏈堜骇鏁板崈鍙帮紝杩涘叆2026&apos;閲忎骇鍏冨勾&apos;</li>
+<li>VOICE璇曢獙瀹炵幇ALS鎮ｈ€呮绉掔骇鎰忓康璇煶</li>
+<li>瑙嗚鐨眰鍒烘縺鍚姩浜哄伐瑙嗚涓村簥璇曠偣</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛欳SDN / 閲忓瓙浣?/span>
+<a href="https://blog.csdn.net/vucndnrzk8iwx/article/details/156548810" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+<div class="news-card" data-category="浜у搧钀藉湴" data-date="2026-07-07" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">浜у搧钀藉湴</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鑴戣檸绉戞妧&apos;涓夊叏&apos;鑴戞満鎺ュ彛绯荤粺鍚姩GCP娉ㄥ唽涓村簥璇曢獙</h3>
+<p class="card-summary">鑴戣檸绉戞妧鑷富鐮斿彂鐨?apos;鍏ㄦ鍏ャ€佸叏鏃犵嚎銆佸叏鍔熻兘&apos;鑴戞満鎺ュ彛绯荤粺鍦ㄥ鏃﹀ぇ瀛﹂檮灞炲崕灞卞尰闄㈡寮忓惎鍔℅CP娉ㄥ唽涓村簥璇曢獙锛屾槸鍥藉唴棣栨杩涘叆鍥藉涓夌被鍖荤枟鍣ㄦ娉ㄥ唽涓村簥闃舵鐨勭‖鑶滀笅鐨眰琛ㄩ潰妞嶅叆寮忎骇鍝併€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥藉唴棣栨杩涘叆涓夌被鍖荤枟鍣ㄦ娉ㄥ唽涓村簥鐨勭‖鑶滀笅鐨眰妞嶅叆浜у搧</li>
+<li>鐢卞崕灞卞尰闄㈡瘺棰栨暀鎺堝洟闃熺壍澶达紝鑱斿悎15瀹朵笁鐢插尰闄㈠涓績寮€灞?/li>
+<li>閽堝棰堟鑴婇珦鎹熶激鍥涜偄鐦棯鎮ｈ€呬笂鑲㈠姛鑳戒唬鍋?/li>
+<li>鍏ㄩ摼璺欢鏃?< 50ms锛岃В鐮佹€ц兘 5.2 BPS</li>
+<li>鏁版嵁灏嗙洿鎺ョ敤浜庡浗瀹惰嵂鐩戝眬涓夌被鍖荤枟鍣ㄦ娉ㄥ唽鐢虫姤</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氭柊鍗庣綉 / 鑴戣檸绉戞妧</span>
+<a href="http://sh.xinhuanet.com/20260714/ede94974ef314b2f9a956ff244862846/c.html" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-07-01">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?7鏈?1鏃?/span>
+<span class="date-weekday">鍛ㄤ笁</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-07-01" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍖讳繚鏀粯鍏ㄩ潰鎵撻€氾細澶氱渷瀹氫环锛屾勃鎯犱繚鍏ㄥ浗棣栦釜绾冲叆BCI</h3>
+<p class="card-summary">鍥藉鍖讳繚灞€宸蹭负鑴戞満鎺ュ彛鍗曠嫭绔嬮」锛屾箹鍖楃巼鍏堝畾浠凤紙渚靛叆寮忔鍏?552鍏?娆★級锛屾禉姹熷皢闈炰镜鍏ュ紡閫傞厤璐圭撼鍏ヤ箼绫诲尰淇濓紝鍖椾含鎺ㄨ繘鐢茬被鎶ラ攢璇曠偣銆?026&apos;娌儬淇?apos;鏂板鑴戞満鎺ュ彛鎵嬫湳鑷垂鏉愭枡璐逛繚闅滐紙淇濋15涓囷級銆?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥藉鍖讳繚灞€銆婄缁忕郴缁熺被浠锋牸椤圭洰绔嬮」鎸囧崡銆嬩负BCI鍗曠嫭绔嬮」</li>
+<li>婀栧寳瀹氫环锛氫镜鍏ュ紡妞嶅叆6552鍏?娆°€侀潪渚靛叆寮忛€傞厤966鍏?娆?/li>
+<li>娴欐睙鐜囧厛灏嗛潪渚靛叆寮忚剳鏈洪€傞厤璐圭撼鍏ヤ箼绫诲尰淇?/li>
+<li>鍖椾含璇曠偣鐢茬被鎶ラ攢鑼冨洿鎺㈢储</li>
+<li>娌儬淇濇柊澧濨CI鎵嬫湳鑷垂鏉愭枡璐逛繚闅滐紙淇濋15涓囷級锛屽叏鍥介涓煄甯傛櫘鎯犻櫓绾冲叆</li>
+<li>骞夸笢銆?026-2030琛屽姩璁″垝銆嬫槑纭撼鍏ュ尰淇濇敮浠?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬浗瀹跺尰淇濆眬 / 鍚勫湴鍖讳繚灞€</span>
+<a href="http://m.toutiao.com/group/7662000723772686898/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-06-30">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?6鏈?0鏃?/span>
+<span class="date-weekday">鍛ㄤ簩</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="浜т笟鏀跨瓥" data-date="2026-06-30" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">浜т笟鏀跨瓥</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">鍥藉鑽洃灞€杩炲彂涓や唤鏍稿績鏂囦欢锛氳剳鏈烘帴鍙ｅ垎绫荤晫瀹氫笌鍛藉悕瑙勮寖钀藉湴</h3>
+<p class="card-summary">鍥藉鑽洃灞€鍙戝竷2026骞寸24鍙烽€氬憡锛屽嚭鍙般€婅剳鏈烘帴鍙ｅ尰鐤楀櫒姊颁骇鍝佸垎绫荤晫瀹氭寚瀵煎師鍒欍€嬪拰銆婇€氱敤鍚嶇О鍛藉悕鎸囧鍘熷垯銆嬶紝棣栨鏄庣‘渚靛叆寮忔垨妞嶅叆寮忚剳鏈烘帴鍙ｄ骇鍝佺粺涓€鎸夌涓夌被鍖荤枟鍣ㄦ绠＄悊锛岀粨鏉熻涓氭棤鏍囧噯鍙緷鐨勫眬闈€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鏄庣‘鍖荤枟鐢ㄩ€旇剳鏈烘帴鍙ｆ寜绗笁绫诲尰鐤楀櫒姊扮鐞?/li>
+<li>鍥藉姙鏂囦欢鏄庣‘瀵硅剳鏈烘帴鍙ｈ澶?apos;浼樺厛瀹¤瘎瀹℃壒&apos;</li>
+<li>2026骞村垵宸茶绔嬭剳鏈烘帴鍙ｆ祴璇曚鸡鐞嗗鍛樹細锛堝垎绾у垎绫诲鏌ワ級</li>
+<li>涓哄悗缁洿澶氫骇鍝佽繘鍏ュ鎵归€氶亾鎵竻鍒跺害闅滅</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬浗瀹惰嵂鐩戝眬 / 閲戦楣拌嵂姊?/span>
+<a href="http://m.toutiao.com/group/7662176999711965711/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-06-15">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?6鏈?5鏃?/span>
+<span class="date-weekday">鍛ㄤ竴</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="瀛︽湳鍓嶆部" data-date="2026-06-15" data-hotness="5">
+<div class="card-header">
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">瀛︽湳鍓嶆部</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">Nature Medicine锛氭笎鍐荤棁鎮ｈ€呯敤鑴戞満鎺ュ彛涓ゅ勾璇村嚭杩?00涓囧瓧</h3>
+<p class="card-summary">缇庡浗鍔犲窞澶у鎴寸淮鏂垎鏍″洟闃熷湪銆婅嚜鐒堵峰尰瀛︺€嬪彂琛ㄧ獊鐮存€х爺绌讹細涓€鍚岮LS鎮ｈ€呬娇鐢ㄧ毊璐ㄥ唴鑴戞満鎺ュ彛杩?骞达紝绱瓒呰繃3800灏忔椂锛屼粎鍑剰蹇靛疄鐜版祦鐣?apos;璇磋瘽&apos;鍜岀數鑴戞搷浣滐紝鍏ㄧ▼鍦ㄥ涓嫭绔嬪畬鎴愩€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>绱浣跨敤3800+灏忔椂锛屽湪瀹剁嫭绔嬫搷浣滐紝鏃犻渶鐮旂┒浜哄憳鍦ㄥ満</li>
+<li>姣忓垎閽?6涓瘝锛岀疮璁?apos;璇?apos;浜?8涓囦釜鍙ュ瓙</li>
+<li>瓒呬節鎴愬彞瀛愯鏍囨敞涓?apos;鑷冲皯鍩烘湰姝ｇ‘&apos;</li>
+<li>妞嶅叆4涓井鐢垫瀬闃靛垪鍏?56涓數鏋佷簬宸︿晶涓ぎ鍓嶅洖</li>
+<li>鏍囧織渚靛叆寮廈CI浠庡疄楠屽姒傚康楠岃瘉杩堝悜瀹為檯杈呭姪宸ュ叿</li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氬厜鏄庣綉 / Nature Medicine</span>
+<a href="http://m.toutiao.com/group/7654145541126849070/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+<div class="timeline-day" data-date="2026-05-15">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026骞?5鏈?5鏃?/span>
+<span class="date-weekday">鍛ㄤ簲</span>
+<span class="day-count">1 鏉?/span>
+</div></div>
+<div class="day-cards">
+<div class="news-card" data-category="鏍稿績鍣ㄤ欢" data-date="2026-05-15" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">鏍稿績鍣ㄤ欢</span>
+<span class="hotness"><span class="stars">鈽呪槄鈽呪槄鈽?/span></span>
+</div>
+<h3 class="card-title">涓數浜戣剳鍙戝竷&apos;鑴戣鑰?apos;鑺墖锛屽浗浜х缁忛噰闆嗚姱鐗囨墦鐮村瀯鏂?/h3>
+<p class="card-summary">涓浗鐢靛瓙鏃椾笅涓數浜戣剳涓庡ぉ娲ュぇ瀛﹁剳鏈烘捣娌冲疄楠屽鍚堜綔锛岀爺鍒跺嚭鍥藉唴棣栨瀹屽叏鑷富鐭ヨ瘑浜ф潈鐨勭缁忕數鐢熺悊淇″彿閲囬泦鑺墖&apos;鑴戣鑰?apos;C绯诲垪鍜孌绯诲垪锛屽苟鍙戝竷娑堣垂绾х潯鐪犺剳鏈哄ご鐜€?/p>
+<div class="card-keypoints">
+<div class="keypoints-title">鏍稿績瑕佺偣</div>
+<ul>
+<li>鍥藉唴棣栨瀹屽叏鑷富鐭ヨ瘑浜ф潈绁炵粡鐢电敓鐞嗕俊鍙烽噰闆嗚姱鐗?/li>
+<li>鎵撶牬娴峰鑺墖鍦ㄨ剳鐢甸噰闆嗛鍩熺殑鍨勬柇鍦颁綅</li>
+<li>鍚屾鍙戝竷&apos;绁炲伐鈥斿笇澶?apos;娑堣垂绾х潯鐪犺剳鏈哄ご鐜?/li>
+<li>鏍囧織鑴戞満鎶€鏈紑濮嬪悜姘戠敤鍋ュ悍鍦烘櫙涓嬫矇</li>
+<li>澶紒浠庡疄楠屽鍏卞缓杞悜浜т笟閾炬暣鍚堣€呰鑹?/li>
+</ul></div>
+<div class="card-footer">
+<span class="source">鏉ユ簮锛氫紒涓氳瀵熸姤 / 涓浗鐢靛瓙</span>
+<a href="http://m.toutiao.com/group/7661853714621252131/" target="_blank" class="source-link">鏌ョ湅鍘熸枃 鈫?/a>
+</div></div>
+</div></div>
+</div>
+<footer class="footer">
+<div class="footer-title">馃搵 鏇存柊璁板綍</div>
+<div class="update-log">\n<div class="update-item">
+  <span class="update-date">2026-09-11</span>
+  <span class="update-desc">新增 8 条新闻（09-07 至 09-11）：成都脑健康会议三项成果、郑海荣院士演讲、Subsense鼻喷BCI、天津福祉博览会、佳量脑科学融资、科创板IPO潮、Science Corp CE认证、高通BCI+AI展示</span>
+</div>
+      <div class="update-item">
+        <span class="update-date">2026-09-06</span>
+        <span class="update-desc">鏂板 5 鏉℃柊闂伙紙2026-09-04, 2026-09-05, 2026-09-03锛?/span>
+      </div>
+  <div class="update-item">
+    <span class="update-date">2026-08-30</span>
+    <span class="update-desc">鏂板 5 鏉℃柊闂伙紝绱 117 鏉★紝瑕嗙洊 32 澶?/span>
+  </div>
+  <div class="update-item">
+    <span class="update-date">2026-08-30</span>
+    <span class="update-desc">鏂板 6 鏉℃柊闂伙紝绱 112 鏉★紝瑕嗙洊 32 澶?/span>
+  </div>
+  <div class="update-item">
+    <span class="update-date">2026-08-24</span>
+    <span class="update-desc">鏂板 3 鏉℃柊闂伙紝绱 106 鏉★紝瑕嗙洊 29 澶?/span>
+  </div>
+  <div class="update-item">
+    <span class="update-date">2026-08-27</span>
+    <span class="update-desc">鏂板 3 鏉℃柊闂伙紝绱 103 鏉★紝瑕嗙洊 28 澶?/span>
+  </div>
+  <div class="update-item">
+    <span class="update-date">2026-08-25</span>
+    <span class="update-desc">鏂板 5 鏉℃柊闂伙紝绱 100 鏉★紝瑕嗙洊 26 澶?/span>
+  </div>
+<div class="update-item">
+<span class="update-date">2026-07-24</span>
+<span class="update-desc">鏂板 10 鏉℃柊闂伙紝绱 85 鏉★紝瑕嗙洊 21 澶?/span>
+</div>
+<div class="update-item">
+<span class="update-date">2026-07-23</span>
+<span class="update-desc">鏂板 2 鏉℃柊闂伙紝绱 75 鏉★紝瑕嗙洊 19 澶?/span>
+</div>
+<div class="update-item">
+<span class="update-date">2026-07-21</span>
+<span class="update-desc">鏂板 3 鏉℃柊闂伙紝绱 73 鏉★紝瑕嗙洊 18 澶?/span>
+</div>
+<div class="update-item">
+<span class="update-date">2026-07-20</span>
+<span class="update-desc">鏂板 1 鏉℃柊闂伙紝绱 70 鏉★紝瑕嗙洊 17 澶?/span>
+</div>
+<div class="update-item">
+<span class="update-date">2026-07-18</span>
+<span class="update-desc">鏂板 7 鏉℃柊闂伙紝绱 69 鏉★紝瑕嗙洊 16 澶?/span>
+</div>
+</div>
+<p class="footer-note">
+鏁版嵁鏉ユ簮锛氭潈濞佸獟浣撱€佸畼鏂瑰彂甯冦€佸鏈湡鍒娿€佷紒涓氬畼缃戠瓑鍙拷婧潵婧?br>
+鑷姩鏇存柊 路 澧為噺绉疮 路 鐢?RINA 鏅鸿兘鍔╂墜缁存姢
+</p>
+</footer>
+</div>
+<script>
+const tabBtns = document.querySelectorAll('.tab-btn');
+const timeBtns = document.querySelectorAll('.time-btn');
+const newsCards = document.querySelectorAll('.news-card');
+const timelineDays = document.querySelectorAll('.timeline-day');
+
+let currentCategory = 'all';
+let currentTimeRange = 'all';
+
+function applyFilters() {
+    const today = new Date('2026-08-30');
+    
+    timelineDays.forEach(day => {
+        const dayDate = new Date(day.dataset.date);
+        const cards = day.querySelectorAll('.news-card');
+        let visibleCount = 0;
+        
+        cards.forEach(card => {
+            const catMatch = currentCategory === 'all' || card.dataset.category === currentCategory;
+            let timeMatch = true;
+            if (currentTimeRange === '7') {
+                const diffDays = Math.floor((today - dayDate) / (1000 * 60 * 60 * 24));
+                timeMatch = diffDays <= 7;
+            } else if (currentTimeRange === '30') {
+                const diffDays = Math.floor((today - dayDate) / (1000 * 60 * 60 * 24));
+                timeMatch = diffDays <= 30;
+            } else if (currentTimeRange === '2026') {
+                timeMatch = dayDate.getFullYear() === 2026;
+            }
+            
+            if (catMatch && timeMatch) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        
+        const countEl = day.querySelector('.day-count');
+        if (countEl) {
+            countEl.textContent = visibleCount + ' 鏉?;
+        }
+        
+        if (visibleCount === 0) {
+            day.style.display = 'none';
+        } else {
+            day.style.display = 'block';
+        }
+    });
+}
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.dataset.category;
+        applyFilters();
+    });
+});
+
+timeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        timeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTimeRange = btn.dataset.range;
+        applyFilters();
+    });
+});
+</script>
+</body></html>
+
+<<<END_EXTERNAL_UNTRUSTED_CONTENT id="56963204c875e6b9">>>
+
