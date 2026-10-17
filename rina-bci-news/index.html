@@ -562,6 +562,10 @@ body::before {
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- GoatCounter Tracking -->
+<script data-goatcounter="https://daniel-hwang.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- End GoatCounter Tracking -->
 </head>
 <body>
 <div class="container">
@@ -5924,18 +5928,22 @@ body::before {
 </p>
 </div>
 <!-- GoatCounter Public Stats Placeholder -->
+<!-- GoatCounter Public Stats -->
 <section class="featured-section" id="analytics" style="margin-top: 40px;">
   <div class="featured-header">
     <div class="featured-title-wrap">
       <h2 class="featured-section-title">📊 访问统计</h2>
-      <p class="featured-section-subtitle">公开访问数据面板（由 GoatCounter 提供）</p>
+      <p class="featured-section-subtitle">实时公开访问数据（由 GoatCounter 提供）</p>
     </div>
   </div>
-  <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-muted);">
-    <p>GoatCounter 统计面板将在此处显示。</p>
-    <p style="font-size: 0.85rem; margin-top: 8px;">请在 GoatCounter 注册并把站点代码发给我，我会替换为实时公开统计面板。</p>
+  <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;">
+    <iframe src="https://daniel-hwang.goatcounter.com/?days=30" 
+            style="width: 100%; height: 500px; border: none;" 
+            title="GoatCounter 访问统计">
+    </iframe>
   </div>
 </section>
+<!-- End GoatCounter Public Stats -->
 
 </footer>
 </div>
