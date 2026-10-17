@@ -577,12 +577,12 @@ body::before {
 <div class="stat-item"><div class="stat-number">72</div><div class="stat-label">覆盖天数</div></div>
 <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数</div></div>
 <div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-10-16</div><div class="stat-label">最新更新<div class="stat-item">
-                <div class="stat-number stat-number-small" id="today-visits">-</div>
-                <div class="stat-label">今日访问</div>
+                <div class="stat-number stat-number-small" id="busuanzi_value_site_pv">-</div>
+                <div class="stat-label">累计访问</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number stat-number-small" id="total-visits">-</div>
-                <div class="stat-label">累计访问</div>
+                <div class="stat-number stat-number-small" id="busuanzi_value_site_uv">-</div>
+                <div class="stat-label">总访客</div>
             </div>
         </div></div>
 </div>
@@ -5948,36 +5948,9 @@ timeBtns.forEach(btn => {
 });
 </script>
 
-<!-- Visitor Counter Script -->
-<script>
-(function() {
-    const namespace = 'bci-news.daniel-hwang';
-    const today = new Date().toISOString().split('T')[0];
-    const totalKey = 'visits';
-    const todayKey = 'visits-' + today;
 
-    function updateCounter(elementId, key) {
-        const url = 'https://api.countapi.xyz/hit/' + namespace + '/' + key;
-        fetch(url)
-            .then(r => r.json())
-            .then(data => {
-                const el = document.getElementById(elementId);
-                if (el) el.textContent = data.value.toLocaleString();
-            })
-            .catch(err => console.error('CountAPI error:', err));
-    }
 
-    // Update on page load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCounter('today-visits', todayKey);
-            updateCounter('total-visits', totalKey);
-        });
-    } else {
-        updateCounter('today-visits', todayKey);
-        updateCounter('total-visits', totalKey);
-    }
-})();
-</script>
-
+<!-- Busuanzi Visitor Counter -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- End Busuanzi Visitor Counter -->
 </body></html>
