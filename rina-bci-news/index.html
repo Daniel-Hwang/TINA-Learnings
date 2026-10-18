@@ -559,13 +559,166 @@ body::before {
 /* Visitor Counter Styles */
 .stat-number-small { font-size: 1.4rem; }
 
+
+/* Featured Articles Styles */
+.featured-section {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+}
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.featured-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+.featured-section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.featured-update-time {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    background: var(--bg-card);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+.featured-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.featured-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 30px var(--glow-blue);
+    transform: translateY(-3px);
+}
+.featured-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 8px;
+}
+.featured-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.12);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+}
+.featured-code-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 3px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.featured-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+.featured-summary {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+.featured-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.featured-source {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+.featured-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+.featured-code-link {
+    font-size: 0.8rem;
+    color: #10b981;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.featured-code-link:hover {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+@media (max-width: 640px) {
+    .featured-section { padding: 20px; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-header { flex-direction: column; }
+}
+/* Visitor Counter Styles */
+.stat-number-small { font-size: 1.4rem; }
+
 </style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
+
 <!-- GoatCounter Tracking -->
 <script data-goatcounter="https://daniel-hwang.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <!-- End GoatCounter Tracking -->
+
 </head>
 <body>
 <div class="container">
@@ -573,23 +726,16 @@ body::before {
 <h1 class="hero-title">🧠 脑机接口热点新闻时间轴</h1>
 <p class="hero-subtitle">BCI News Timeline · 每日更新 · 增量积累</p>
 <div class="stats-grid">
-<div class="stat-item"><div class="stat-number">211</div><div class="stat-label">热点总数</div></div>
-<div class="stat-item"><div class="stat-number">72</div><div class="stat-label">覆盖天数</div></div>
+<div class="stat-item"><div class="stat-number">214</div><div class="stat-label">热点总数</div></div>
+<div class="stat-item"><div class="stat-number">74</div><div class="stat-label">覆盖天数</div></div>
 <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数</div></div>
-<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-10-16</div><div class="stat-label">最新更新<div class="stat-item">
-                <div class="stat-number stat-number-small" id="busuanzi_value_site_pv">-</div>
-                <div class="stat-label">累计访问</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number stat-number-small" id="busuanzi_value_site_uv">-</div>
-                <div class="stat-label">总访客</div>
-            </div>
-        </div></div>
+<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-10-18</div><div class="stat-label">最新更新</div></div>
+<div class="stat-item"><div class="stat-number stat-number-small" id="today-visits">-</div><div class="stat-label">今日访问</div></div>
+<div class="stat-item"><div class="stat-number stat-number-small" id="total-visits">-</div><div class="stat-label">累计访问</div></div>
+<div class="stat-item"><div class="stat-number stat-number-small" id="busuanzi_value_site_pv">-</div><div class="stat-label">累计访问</div></div>
+<div class="stat-item"><div class="stat-number stat-number-small" id="busuanzi_value_site_uv">-</div><div class="stat-label">总访客</div></div>
 </div>
 </header>
-<!-- Featured Articles Section -->
-
-  
 <!-- Featured Articles Section -->
 <section class="featured-section" id="featured">
   <div class="featured-header">
@@ -597,7 +743,7 @@ body::before {
       <h2 class="featured-section-title">⭐ 精选推荐</h2>
       <p class="featured-section-subtitle">每日精选 BCI 领域高热度资讯与优质论文（优先展示带开源代码项目）</p>
     </div>
-    <span class="featured-update-time">更新于 2026-10-17</span>
+    <span class="featured-update-time">更新于 2026-10-18</span>
   </div>
   <div class="featured-grid">
     
@@ -676,15 +822,15 @@ body::before {
 
   <div class="filter-bar">
 <div class="tabs">
-<button class="tab-btn active" data-category="all"><span class="tab-name">全部</span><span class="tab-badge">211</span></button>
-<button class="tab-btn" data-category="临床应用"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-badge">31</span></button>
+<button class="tab-btn active" data-category="all"><span class="tab-name">全部</span><span class="tab-badge">214</span></button>
+<button class="tab-btn" data-category="临床应用"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-badge">32</span></button>
 <button class="tab-btn" data-category="技术突破"><span class="tab-dot" style="background: #4ecdc4;"></span><span class="tab-badge">24</span></button>
 <button class="tab-btn" data-category="产业落地"><span class="tab-dot" style="background: #feca57;"></span><span class="tab-badge">35</span></button>
 <button class="tab-btn" data-category="学术前沿"><span class="tab-dot" style="background: #dfe6e9;"></span><span class="tab-badge">23</span></button>
-<button class="tab-btn" data-category="产业政策"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-badge">35</span></button>
+<button class="tab-btn" data-category="产业政策"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-badge">36</span></button>
 <button class="tab-btn" data-category="产品落地"><span class="tab-dot" style="background: #96ceb4;"></span><span class="tab-badge">18</span></button>
 <button class="tab-btn" data-category="资本动态"><span class="tab-dot" style="background: #ff9ff3;"></span><span class="tab-badge">27</span></button>
-<button class="tab-btn" data-category="核心器件"><span class="tab-dot" style="background: #fd79a8;"></span><span class="tab-badge">5</span></button>
+<button class="tab-btn" data-category="核心器件"><span class="tab-dot" style="background: #fd79a8;"></span><span class="tab-badge">6</span></button>
 <button class="tab-btn" data-category="技术路线"><span class="tab-dot" style="background: #a29bfe;"></span><span class="tab-badge">4</span></button>
 </div>
 <div class="time-filter">
@@ -695,6 +841,91 @@ body::before {
 </div>
 </div>
 <div class="timeline">
+<div class="timeline-day" data-date="2026-10-18">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月18日</span>
+<span class="date-weekday">周日</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业政策" data-date="2026-10-18" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
+<span class="hotness"><span class="stars">★★★★☆</span></span>
+</div>
+<h3 class="card-title">国家重点研发计划“面向脑健康的脑机接口新技术开发与产业化应用”专项征求意见截止</h3>
+<p class="card-summary">上海市科学技术委员会发布国家重点研发计划“面向脑健康的脑机接口新技术开发与产业化应用”重点专项2026年度项目申报指南征求意见稿，意见反馈于10月18日18时截止，持续引导脑机接口从基础研究到产业转化的国家资金支持。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>专项聚焦面向脑健康的脑机接口新技术开发与产业化应用</li>
+<li>指南征求意见时间为2026年10月15日至10月18日</li>
+<li>体现国家重大科技专项层面对脑机接口领域的系统布局</li>
+<li>推动产学研医资协同，加速脑机接口科技成果转化</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：上海市科学技术委员会 / 北京科技大学科研院</span>
+<a class="source-link" href="https://research.ustb.edu.cn/kyxm/kjbxm/kjbtzgg/89694370586942499ce5ecc4d607235b.htm" target="_blank">查看原文 →</a>
+</div>
+</div><!-- END_NEWS_CARD -->
+</div>
+</div>
+<div class="timeline-day" data-date="2026-10-17">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月17日</span>
+<span class="date-weekday">周六</span>
+<span class="day-count">2 条</span>
+</div>
+</div>
+<div class="day-cards">
+<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="核心器件" data-date="2026-10-17" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #fd79a820; color: #fd79a8; border-color: #fd79a840;">核心器件</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">先进微电极阵列技术革新助力神经科学研究与临床应用</h3>
+<p class="card-summary">随着半导体与神经工程技术的交叉融合，新一代先进微电极阵列在信号采集密度、生物相容性与长期稳定性方面取得突破，为脑机接口基础研究向临床转化提供了关键硬件支撑。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>新型微电极阵列提升神经信号采集密度与空间分辨率</li>
+<li>材料与封装工艺改进增强长期植入稳定性与生物相容性</li>
+<li>为脑机接口基础研究及临床神经疾病诊疗提供关键器件</li>
+<li>连接神经科学与工程，推动高密度神经接口发展</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：GeneOnline</span>
+<a class="source-link" href="https://geneonline.news/%E5%85%88%E9%80%B2%E5%BE%AE%E9%9B%BB%E9%9B%BB%E6%A5%B5%E9%99%A3%E5%88%97%E6%8A%80%E8%A1%93%E9%9D%A9%E6%96%B0%E5%8A%A9%E5%8A%9B%E7%A5%9E%E7%B6%93%E7%A7%91%E5%AD%B8%E7%A0%94%E7%A9%B6%E8%88%87%E8%87%A8%E5%BA%8A" target="_blank">查看原文 →</a>
+</div>
+</div><!-- END_NEWS_CARD -->
+<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="临床应用" data-date="2026-10-17" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">中华医学会脑机接口对高位截瘫偏瘫人群治疗进展培训在深圳举办</h3>
+<p class="card-summary">由中华医学会内科学分会、继续教育部主办，深圳市中西医结合医院承办的“脑机接口对高位截瘫偏瘫人群的治疗进展培训”于2026年10月17日至18日在深圳举行，推动脑机接口技术在神经康复领域的规范化应用。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>培训时间为2026年10月17日全天及10月18日上午</li>
+<li>内容涵盖脑机接口技术闭环、非侵入式/半侵入式BCI在运动功能重建中的进展</li>
+<li>探索针灸等传统中医手段与非侵入式脑机接口联合治疗</li>
+<li>面向神经外科、康复医学科、神经内科及科研人员，免收培训费</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：中华医学会继续教育部</span>
+<a class="source-link" href="https://www.cma.org.cn/art/2026/9/14/art_33_60751.html" target="_blank">查看原文 →</a>
+</div>
+</div><!-- END_NEWS_CARD -->
+</div>
+</div>
 <div class="timeline-day" data-date="2026-10-16">
 <div class="day-header">
 <div class="day-date">
@@ -5758,6 +5989,11 @@ body::before {
 <div class="footer-title">📋 更新记录</div>
 <div class="update-log">
 <div class="update-item">
+<span class="update-date">2026-10-18</span>
+<span class="update-desc">增量更新：新增 2026-10-17 2 条, 2026-10-18 1 条；热点总数、覆盖天数与分类标签已同步刷新。</span>
+</div>
+
+<div class="update-item">
 <span class="update-date">2026-10-16</span>
 <span class="update-desc">增量更新：新增 2026-10-16 共 3 条新闻；热点总数、覆盖天数与分类标签已同步刷新。</span>
 </div>
@@ -5885,6 +6121,9 @@ body::before {
 </section>
 <!-- End GoatCounter Public Stats -->
 
+
+
+
 </footer>
 </div>
 <script>
@@ -5895,7 +6134,7 @@ const timelineDays = document.querySelectorAll('.timeline-day');
 let currentCategory = 'all';
 let currentTimeRange = 'all';
 function applyFilters() {
-    const today = new Date('2026-10-07');
+    const today = new Date('2026-10-18');
     timelineDays.forEach(day => {
         const dayDate = new Date(day.dataset.date);
         const cards = day.querySelectorAll('.news-card');
@@ -5953,4 +6192,37 @@ timeBtns.forEach(btn => {
 <!-- Busuanzi Visitor Counter -->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- End Busuanzi Visitor Counter -->
+
+<!-- Visitor Counter Script -->
+<script>
+(function() {
+    const namespace = 'bci-news.daniel-hwang';
+    const today = new Date().toISOString().split('T')[0];
+    const totalKey = 'visits';
+    const todayKey = 'visits-' + today;
+
+    function updateCounter(elementId, key) {
+        const url = 'https://api.countapi.xyz/hit/' + namespace + '/' + key;
+        fetch(url)
+            .then(r => r.json())
+            .then(data => {
+                const el = document.getElementById(elementId);
+                if (el) el.textContent = data.value.toLocaleString();
+            })
+            .catch(err => console.error('CountAPI error:', err));
+    }
+
+    // Update on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounter('today-visits', todayKey);
+            updateCounter('total-visits', totalKey);
+        });
+    } else {
+        updateCounter('today-visits', todayKey);
+        updateCounter('total-visits', totalKey);
+    }
+})();
+</script>
+
 </body></html>
