@@ -277,440 +277,6 @@ body::before {
     .news-card { padding: 16px; }
     .card-title { font-size: 1rem; }
 }
-/* Featured Articles Styles */
-.featured-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.featured-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
-}
-.featured-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.featured-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.featured-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.featured-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-.featured-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.featured-card:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 8px 30px var(--glow-blue);
-    transform: translateY(-3px);
-}
-.featured-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    gap: 8px;
-}
-.featured-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(6, 182, 212, 0.25);
-}
-.featured-code-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.featured-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin-bottom: 10px;
-    flex-grow: 1;
-}
-.featured-summary {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 14px;
-}
-.featured-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.featured-source {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.featured-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-@media (max-width: 640px) {
-    .featured-section { padding: 20px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-header { flex-direction: column; }
-}
-
-/* Featured Articles Styles */
-.featured-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.featured-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
-}
-.featured-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.featured-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.featured-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.featured-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-.featured-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.featured-card:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 8px 30px var(--glow-blue);
-    transform: translateY(-3px);
-}
-.featured-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    gap: 8px;
-}
-.featured-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(6, 182, 212, 0.25);
-}
-.featured-code-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.featured-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin-bottom: 10px;
-    flex-grow: 1;
-}
-.featured-summary {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 14px;
-}
-.featured-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.featured-source {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.featured-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-.featured-code-link {
-    font-size: 0.8rem;
-    color: #10b981;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-.featured-code-link:hover {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-}
-@media (max-width: 640px) {
-    .featured-section { padding: 20px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-header { flex-direction: column; }
-}
-/* Visitor Counter Styles */
-.stat-number-small { font-size: 1.4rem; }
-
-
-/* Featured Articles Styles */
-.featured-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.featured-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
-}
-.featured-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.featured-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.featured-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.featured-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-.featured-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.featured-card:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 8px 30px var(--glow-blue);
-    transform: translateY(-3px);
-}
-.featured-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    gap: 8px;
-}
-.featured-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(6, 182, 212, 0.25);
-}
-.featured-code-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.featured-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin-bottom: 10px;
-    flex-grow: 1;
-}
-.featured-summary {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 14px;
-}
-.featured-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.featured-source {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.featured-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-.featured-code-link {
-    font-size: 0.8rem;
-    color: #10b981;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-.featured-code-link:hover {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-}
-@media (max-width: 640px) {
-    .featured-section { padding: 20px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-header { flex-direction: column; }
-}
-/* Visitor Counter Styles */
-.stat-number-small { font-size: 1.4rem; }
-
 
 /* Featured Articles Styles */
 .featured-section {
@@ -864,14 +430,13 @@ body::before {
 .stat-number-small { font-size: 1.4rem; }
 
 </style>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
-
 <!-- GoatCounter Tracking -->
 <script data-goatcounter="https://daniel-hwang.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 <!-- End GoatCounter Tracking -->
 
 
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 <div class="container">
@@ -879,19 +444,23 @@ body::before {
 <h1 class="hero-title">🧠 脑机接口热点新闻时间轴</h1>
 <p class="hero-subtitle">BCI News Timeline · 每日更新 · 增量积累</p>
 <div class="stats-grid">
-<div class="stat-item"><div class="stat-number">214</div><div class="stat-label">热点总数</div></div>
-<div class="stat-item"><div class="stat-number">74</div><div class="stat-label">覆盖天数</div></div>
+<div class="stat-item"><div class="stat-number">218</div><div class="stat-label">热点总数</div></div>
+<div class="stat-item"><div class="stat-number">76</div><div class="stat-label">覆盖天数</div></div>
 <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数</div></div>
-<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-10-18</div><div class="stat-label">最新更新</div></div>
-<div class="stat-item"><div class="stat-number stat-number-small" id="today-visits">-</div><div class="stat-label">今日访问</div></div>
-<div class="stat-item"><div class="stat-number stat-number-small" id="total-visits">-</div><div class="stat-label">累计访问</div></div>
+<div class="stat-item"><div class="stat-number" style="font-size: 1.2rem;">2026-10-20</div><div class="stat-label">最新更新</div></div>
 <div class="stat-item"><div class="stat-number stat-number-small" id="busuanzi_value_site_pv">-</div><div class="stat-label">累计访问</div></div>
-<div class="stat-item"><div class="stat-number stat-number-small" id="busuanzi_value_site_uv">-</div><div class="stat-label">总访客</div></div>
+<div class="stat-item"><div class="stat-number stat-number-small" id="busuanzi_value_site_uv">-</div><div class="stat-label">总访客<div class="stat-item">
+                <div class="stat-number stat-number-small" id="today-visits">-</div>
+                <div class="stat-label">今日访问</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number stat-number-small" id="total-visits">-</div>
+                <div class="stat-label">累计访问</div>
+            </div>
+        </div></div>
 </div>
 </header>
-<!-- Featured Articles Section -->
 
-  
 <!-- Featured Articles Section -->
 <section class="featured-section" id="featured">
   <div class="featured-header">
@@ -899,24 +468,10 @@ body::before {
       <h2 class="featured-section-title">⭐ 精选推荐</h2>
       <p class="featured-section-subtitle">每日精选 BCI 领域高热度资讯与优质论文（优先展示带开源代码项目）</p>
     </div>
-    <span class="featured-update-time">更新于 2026-10-17</span>
+    <span class="featured-update-time">更新于 2026-10-20</span>
   </div>
   <div class="featured-grid">
     
-      <a href="https://arxiv.org/abs/2610.16921v1" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">开源论文</span>
-          <span class="featured-code-badge">开源代码</span>
-        </div>
-        <h3 class="featured-title">Time Window Optimization for Motor Imagery Classification via Temporal Structure Embedded Reinforcement Learning</h3>
-        <p class="featured-summary">Online motor imagery-based brain-computer interfaces (MI-BCIs) typically decode continuous EEG using fixed-length sliding windows that may be misaligned with ne...</p>
-        <div class="featured-footer">
-          <span class="featured-source">arXiv (Huan Luo, Na Lu)</span>
-          <span class="featured-date">2026-10-12</span>
-        </div>
-        <a href="https://github.com/rosiindahag/aco_bci_mi" target="_blank" class="featured-code-link" onclick="event.stopPropagation();">📎 代码仓库</a>
-      </a>
-
       <a href="https://arxiv.org/abs/2610.13894v1" target="_blank" class="featured-card">
         <div class="featured-card-header">
           <span class="featured-category">开源论文</span>
@@ -973,6 +528,20 @@ body::before {
         
       </a>
 
+      <a href="https://timeline.sohu.com/news/q7EMgzgG0j" target="_blank" class="featured-card">
+        <div class="featured-card-header">
+          <span class="featured-category">技术突破</span>
+          
+        </div>
+        <h3 class="featured-title">Neuralink发布5万小时脑数据预训练模型，光标控制创11.32比特/秒纪录</h3>
+        <p class="featured-summary">Neuralink发布技术更新，利用临床试验参与者累计超过5万小时的颅内神经记录，以自监督方式预训练神经编码器。据此训练的解码器可连续数周无需重新校准，光标控制成绩达到11.32比特/秒，高于此前约10.39比特/秒的纪录，标志着BCI基础模型从单次植入演示向跨人、长期、少标定能...</p>
+        <div class="featured-footer">
+          <span class="featured-source">来源：搜狐时间线 / Neuralink</span>
+          
+        </div>
+        
+      </a>
+
   </div>
 </section>
 
@@ -997,6 +566,114 @@ body::before {
 </div>
 </div>
 <div class="timeline">
+  <div class="timeline-day" data-date="2026-10-20">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年10月20日</span>
+        <span class="date-weekday">周二</span>
+        <span class="day-count">1 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="资本动态" data-date="2026-10-20" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+        <span class="hotness"><span class="stars">★★★☆☆</span></span>
+      </div>
+      <h3 class="card-title">植入式脑机接口市场规模预计 2026 年达 15.3 亿美元</h3>
+      <p class="card-summary">The Business Research Company 报告显示，全球植入式脑机接口市场预计从 2025 年的 13.4 亿美元增长至 2026 年的 15.3 亿美元，复合年增长率约 13.6%。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+          <li>2025 年市场规模约 13.4 亿美元，2026 年预计达 15.3 亿美元</li>
+          <li>增长驱动包括神经假体需求、神经系统疾病患病率上升、非侵入式 BCI 普及</li>
+          <li>主要参与者涵盖 Neuralink、Synchron、Paradromics、Blackrock Neurotech 等</li>
+          <li>报告提供 TAM、细分赛段与公司评分矩阵等战略分析</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：openPR / The Business Research Company</span>
+        <a href="https://www.openpr.com/news/4666065/implantable-brain-computer-interfaces-market-report-2026" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="timeline-day" data-date="2026-10-19">
+    <div class="day-header">
+      <div class="day-date">
+        <span class="date-main">2026年10月19日</span>
+        <span class="date-weekday">周一</span>
+        <span class="day-count">3 条</span>
+      </div>
+    </div>
+    <div class="day-cards">
+    <div class="news-card" data-category="产业政策" data-date="2026-10-19" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">中国牵头《信息技术 脑机接口 参考架构》国际标准发布</h3>
+      <p class="card-summary">国家市场监督管理总局10月19日披露，我国专家担任项目负责人的《信息技术 脑机接口 参考架构》国际标准正式发布，为脑机接口产品研发、系统设计及后续标准研制提供全球统一的讨论框架。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+          <li>我国专家担任项目负责人，联合多国专家共同制定</li>
+          <li>明确软硬件供应方、系统集成方、服务运营方、使用方、监管方六类角色</li>
+          <li>将脑机接口功能划分为输入输出、数据、信号处理、应用、安全伦理五大类</li>
+          <li>与国标 GB/T 47023—2026 配套，推动产业分工与完整交付</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：国家市场监督管理总局 / 脑机接口社区</span>
+        <a href="https://www.163.com/dy/article/L9M8QE7F05567NX1.html" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="产业落地" data-date="2026-10-19" data-hotness="4">
+      <div class="card-header">
+        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+        <span class="hotness"><span class="stars">★★★★☆</span></span>
+      </div>
+      <h3 class="card-title">Paradromics 与西门子医疗合作构建脑机接口多模态影像基础</h3>
+      <p class="card-summary">Paradromics 宣布与 Siemens Healthineers 合作，开发面向植入式脑机接口的端到端多模态影像工作流，用于患者评估、手术规划、BCI 植入及长期随访。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+          <li>合作目标是构建支持临床级 BCI 植入全流程的影像平台</li>
+          <li>整合患者评估、手术规划、植入手术与长期预后分析</li>
+          <li>基于 Paradromics Connexus BCI 高数据率神经接口系统</li>
+          <li>强调个体化脑功能区定位对植入靶点选择的重要性</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：BioSpace / Business Wire</span>
+        <a href="https://www.biospace.com/press-releases/paradromics-and-siemens-healthineers-launch-strategic-initiative-to-build-advanced-imaging-foundation-for-the-future-of-brain-computer-interfaces" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+
+    <div class="news-card" data-category="技术突破" data-date="2026-10-19" data-hotness="3">
+      <div class="card-header">
+        <span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+        <span class="hotness"><span class="stars">★★★☆☆</span></span>
+      </div>
+      <h3 class="card-title">聚芯医疗完成介入式脑机接口支架电极羊模型植入实验</h3>
+      <p class="card-summary">聚芯医疗联合广东省人民医院张弩教授团队，完成介入式脑机接口支架电极羊模型植入实验。电极经血管送入上矢状窦，紧贴运动皮层，成功采集稳定脑电信号且未观察到不良反应。</p>
+      <div class="card-keypoints">
+        <div class="keypoints-title">核心要点</div>
+        <ul>
+          <li>通过颈部或股部血管穿刺，经血管介入路径将支架电极送达颅内</li>
+          <li>电极贴靠血管壁读取脑电，不开颅、不触碰脑实质</li>
+          <li>在羊模型上验证信号采集与刺激闭环调控</li>
+          <li>介乎侵入式与非侵入式之间，被称为“半侵入式”路线</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <span class="source">来源：网易号 / 聚芯医疗</span>
+        <a href="https://www.163.com/dy/article/L9JQ30B505119GLN.html" target="_blank" class="source-link">查看原文 →</a>
+      </div>
+    </div>
+    </div>
+  </div>
 <div class="timeline-day" data-date="2026-10-18">
 <div class="day-header">
 <div class="day-date">
@@ -6144,6 +5821,11 @@ body::before {
 <footer class="footer">
 <div class="footer-title">📋 更新记录</div>
 <div class="update-log">
+    <div class="update-item">
+      <span class="update-date">2026-10-20</span>
+      <span class="update-desc">新增4条：中国牵头《信息技术 脑机接口 参考架构》国际标准发布、Paradromics 与西门子医疗合作构建脑机接口多模态影像基础、聚芯医疗完成介入式脑机接口支架电极羊模型植入实验、植入式脑机接口市场规模预计 2026 年达 15.3 亿美元</span>
+    </div>
+
 <div class="update-item">
 <span class="update-date">2026-10-18</span>
 <span class="update-desc">增量更新：新增 2026-10-17 2 条, 2026-10-18 1 条；热点总数、覆盖天数与分类标签已同步刷新。</span>
@@ -6259,22 +5941,6 @@ body::before {
 自动更新 · 增量积累 · 由 RINA 智能助手维护
 </p>
 </div>
-<!-- GoatCounter Public Stats Placeholder -->
-<!-- GoatCounter Public Stats -->
-<section class="featured-section" id="analytics" style="margin-top: 40px;">
-  <div class="featured-header">
-    <div class="featured-title-wrap">
-      <h2 class="featured-section-title">📊 访问统计</h2>
-      <p class="featured-section-subtitle">实时公开访问数据（由 GoatCounter 提供）</p>
-    </div>
-  </div>
-  <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden;">
-    <iframe src="https://daniel-hwang.goatcounter.com/?days=30" 
-            style="width: 100%; height: 500px; border: none;" 
-            title="GoatCounter 访问统计">
-    </iframe>
-  </div>
-</section>
 <!-- End GoatCounter Public Stats -->
 
 
@@ -6282,6 +5948,21 @@ body::before {
 
 
 
+
+
+<!-- GoatCounter Public Stats Placeholder -->
+<section class="featured-section" id="analytics" style="margin-top: 40px;">
+  <div class="featured-header">
+    <div class="featured-title-wrap">
+      <h2 class="featured-section-title">📊 访问统计</h2>
+      <p class="featured-section-subtitle">公开访问数据面板（由 GoatCounter 提供）</p>
+    </div>
+  </div>
+  <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-muted);">
+    <p>GoatCounter 统计面板将在此处显示。</p>
+    <p style="font-size: 0.85rem; margin-top: 8px;">请在 GoatCounter 注册并把站点代码发给我，我会替换为实时公开统计面板。</p>
+  </div>
+</section>
 
 </footer>
 </div>
@@ -6353,6 +6034,10 @@ timeBtns.forEach(btn => {
 <!-- End Busuanzi Visitor Counter -->
 
 <!-- Visitor Counter Script -->
+
+
+
+<!-- Visitor Counter Script -->
 <script>
 (function() {
     const namespace = 'bci-news.daniel-hwang';
@@ -6383,9 +6068,5 @@ timeBtns.forEach(btn => {
     }
 })();
 </script>
-
-
-<!-- Visitor Counter Script -->
-
 
 </body></html>
