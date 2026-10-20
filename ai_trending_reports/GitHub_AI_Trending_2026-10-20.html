@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub AI 热榜 — 2026-10-20</title>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-goatcounter="https://ai-trending.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --fg: #1f2328;
+    --muted: #656d76;
+    --card: #ffffff;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --accent2: #1f883d;
+    --danger: #cf222e;
+    --warning: #9a6700;
+    --shadow: 0 1px 3px rgba(31,35,40,0.08);
+    --shadow-lg: 0 8px 24px rgba(31,35,40,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --maxw: 980px;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --fg: #c9d1d9;
+    --muted: #8b949e;
+    --card: #161b22;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --danger: #f85149;
+    --warning: #d29922;
+    --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg); line-height: 1.6;
+    transition: background .25s, color .25s;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+  nav {
+    padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--card);
+    display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 10;
+    box-shadow: var(--shadow);
+  }
+  nav .back { font-size: .9rem; font-weight: 600; }
+  nav .date { margin-left: auto; font-size: .85rem; color: var(--muted); }
+  .theme-toggle {
+    background: var(--card); border: 1px solid var(--border); color: var(--fg);
+    border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: .8rem;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+  header.report-header {
+    text-align: center; padding: 40px 20px 24px;
+  }
+  header.report-header h1 { font-size: 1.7rem; font-weight: 800; }
+  header.report-header .meta { color: var(--muted); font-size: .9rem; margin-top: 6px; }
+  .section-title {
+    font-size: 1.15rem; font-weight: 700; margin: 28px 0 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  table {
+    width: 100%; border-collapse: collapse; background: var(--card);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    overflow: hidden; box-shadow: var(--shadow); font-size: .92rem;
+  }
+  thead { background: rgba(9,105,218,.06); }
+  [data-theme="dark"] thead { background: rgba(88,166,255,.08); }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(9,105,218,.03); }
+  [data-theme="dark"] tr:hover td { background: rgba(88,166,255,.05); }
+  .rank { font-weight: 700; color: var(--accent); width: 44px; text-align: center; }
+  .stars { font-weight: 600; color: var(--accent2); white-space: nowrap; }
+  .total { color: var(--muted); white-space: nowrap; }
+  .repo a { font-weight: 600; }
+  .repo .desc { font-size: .82rem; color: var(--muted); }
+  .insights {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 20px; box-shadow: var(--shadow); margin: 28px 0;
+  }
+  .insights h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .insights p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+  .counter { text-align: center; padding: 16px; font-size: .85rem; color: var(--muted); }
+  footer {
+    text-align: center; padding: 28px 20px; color: var(--muted); font-size: .8rem;
+    border-top: 1px solid var(--border); margin-top: 12px;
+  }
+  @media (max-width: 640px) {
+    th, td { padding: 8px 10px; font-size: .85rem; }
+    .repo .desc { display: none; }
+    header.report-header h1 { font-size: 1.3rem; }
+  }
+</style>
+<style>
+.ai-trending-portal-nav { background: #0f172a; border-bottom: 1px solid #334155; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.ai-trending-portal-nav a { color: #38bdf8; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+.ai-trending-portal-nav a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="ai-trending-portal-nav"><a href="../index.html">← 返回 AI Trending 门户</a></div>
+
+<nav>
+  <a class="back" href="../index.html">← 返回门户首页</a>
+  <span class="date">2026-10-20（周二）</span>
+  <button class="theme-toggle" id="themeBtn">🌓</button>
+</nav>
+
+<div class="container">
+  <header class="report-header">
+    <h1>🔥 GitHub AI 热榜 Top10 — 2026-10-20</h1>
+    <div class="meta">
+      页面浏览 <span id="busuanzi_value_page_pv">--</span> 次
+    </div>
+  </header>
+
+  <div class="section-title"><span>🐍</span> Python 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank">MadsLorentzen/ai-job-search</a>
+          <div class="desc">AI 求职框架，基于 Claude Code 实现职位评估、简历定制、面试准备</div>
+        </td>
+        <td class="stars">+3,856</td>
+        <td class="total">58.0k</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a>
+          <div class="desc">最强大的模块化扩散模型 GUI 与本地推理引擎</div>
+        </td>
+        <td class="stars">+1,011</td>
+        <td class="total">140.0k</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a>
+          <div class="desc">将代码库转换为可查询的知识图谱，支持 Claude Code / Cursor / Codex</div>
+        </td>
+        <td class="stars">+751</td>
+        <td class="total">129.3k</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/anthropics/claude-plugins-official" target="_blank">anthropics/claude-plugins-official</a>
+          <div class="desc">Anthropic 官方维护的高质量 Claude Code 插件目录</div>
+        </td>
+        <td class="stars">+733</td>
+        <td class="total">43.2k</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="repo">
+          <a href="https://github.com/HKUDS/CLI-Anything" target="_blank">HKUDS/CLI-Anything</a>
+          <div class="desc">让所有传统 CLI 软件 Agent 原生化的枢纽</div>
+        </td>
+        <td class="stars">+606</td>
+        <td class="total">55.4k</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="repo">
+          <a href="https://github.com/google/artemis" target="_blank">google/artemis</a>
+          <div class="desc">自然语言指令转为可靠的 Android 自动化，支持 AI 编码助手</div>
+        </td>
+        <td class="stars">+597</td>
+        <td class="total">13.1k</td>
+      </tr>
+      <tr>
+        <td class="rank">7</td>
+        <td class="repo">
+          <a href="https://github.com/usestrix/strix" target="_blank">usestrix/strix</a>
+          <div class="desc">开源 AI 渗透测试工具，自动发现与修复应用漏洞</div>
+        </td>
+        <td class="stars">+509</td>
+        <td class="total">70.2k</td>
+      </tr>
+      <tr>
+        <td class="rank">8</td>
+        <td class="repo">
+          <a href="https://github.com/666ghj/MiroFish" target="_blank">666ghj/MiroFish</a>
+          <div class="desc">简洁通用的群体智能引擎，预测万物</div>
+        </td>
+        <td class="stars">+386</td>
+        <td class="total">80.7k</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title"><span>📘</span> TypeScript 赛道</div>
+  <table>
+    <thead>
+      <tr><th class="rank">#</th><th>项目</th><th class="stars">日增 ⭐</th><th class="total">总 ⭐</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="repo">
+          <a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a>
+          <div class="desc">Agent 舰队工作平台，支持 Grok Bot、Claude Code 等</div>
+        </td>
+        <td class="stars">+1,590</td>
+        <td class="total">98.6k</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="repo">
+          <a href="https://github.com/anomalyco/opencode" target="_blank">anomalyco/opencode</a>
+          <div class="desc">开源编码 Agent</div>
+        </td>
+        <td class="stars">+1,311</td>
+        <td class="total">218.1k</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="repo">
+          <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
+          <div class="desc">Agent  Harness，支持多智能体群、自主工作流、向量 RAG</div>
+        </td>
+        <td class="stars">+564</td>
+        <td class="total">77.3k</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="repo">
+          <a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a>
+          <div class="desc">免费 MIT AI 网关，375 提供商、1400+ 模型，支持 MCP/A2A</div>
+        </td>
+        <td class="stars">+424</td>
+        <td class="total">78.6k</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="repo">
+          <a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a>
+          <div class="desc">Cursor 插件规范与官方插件</div>
+        </td>
+        <td class="stars">+407</td>
+        <td class="total">13.1k</td>
+      </tr>
+      <tr>
+        <td class="rank">6</td>
+        <td class="repo">
+          <a href="https://github.com/thesysdev/openui" target="_blank">thesysdev/openui</a>
+          <div class="desc">生成式 UI 的开放标准</div>
+        </td>
+        <td class="stars">+401</td>
+        <td class="total">12.3k</td>
+      </tr>
+      <tr>
+        <td class="rank">7</td>
+        <td class="repo">
+          <a href="https://github.com/anthropics/claude-quickstarts" target="_blank">anthropics/claude-quickstarts</a>
+          <div class="desc">Claude API 快速入门项目合集</div>
+        </td>
+        <td class="stars">+233</td>
+        <td class="total">18.9k</td>
+      </tr>
+      <tr>
+        <td class="rank">8</td>
+        <td class="repo">
+          <a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a>
+          <div class="desc">实时全球情报仪表盘，AI 新闻聚合与地缘监控</div>
+        </td>
+        <td class="stars">+146</td>
+        <td class="total">88.9k</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insights">
+    <h3>💡 今日洞察</h3>
+    <p>
+      AI 求职框架 <strong>ai-job-search</strong> 以 +3,856 ⭐ 强势领跑全场，连续多日霸榜；<strong>orca</strong> Agent 舰队平台在 TypeScript 赛道以 +1,590 ⭐ 拔得头筹，<strong>opencode</strong> 开源编码 Agent 紧随其后；知识图谱工具 <strong>graphify</strong> 和 CLI Agent 化方案 <strong>CLI-Anything</strong> 增长迅猛，显示开发者对代码库理解与工具链 Agent 化的强烈需求；Google <strong>ARTEMIS</strong> 将自然语言转化为 Android 自动化，代表移动端 Agent 新方向；<strong>ruflo</strong> 多智能体群与 <strong>OmniRoute</strong> AI 网关继续扩展 Agent 基础设施边界；生成式 UI 标准 <strong>openui</strong> 和群体智能引擎 <strong>MiroFish</strong> 展现了 AI 应用范式的多元化探索。
+    </p>
+  </div>
+
+  <div class="counter">
+    <span id="busuanzi_container_site_pv">本站总浏览 <span id="busuanzi_value_site_pv">--</span> 次</span> ·
+    <span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv">--</span> 人</span>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="2026-10-19.html">← 上一篇 2026-10-19</a> ·
+    <a href="../index.html">返回门户首页</a>
+  </p>
+  <p style="margin-top:6px">© 2026 GitHub AI 热榜门户</p>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('themeBtn');
+  const saved = localStorage.getItem('ai-trending-theme');
+  if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
+  else if (saved === 'light') document.documentElement.setAttribute('data-theme','light');
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('ai-trending-theme', next);
+  });
+})();
+</script>
+
+<script data-goatcounter="https://daniel-hwang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>
