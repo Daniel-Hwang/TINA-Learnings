@@ -737,6 +737,171 @@ body::before {
 /* Visitor Counter Styles */
 .stat-number-small { font-size: 1.4rem; }
 
+
+/* Academic Papers Section */
+.academic-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(59, 130, 246, 0.06));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+.academic-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #10b981, var(--accent-cyan), var(--accent-blue));
+}
+.academic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.academic-title-wrap {
+    flex: 1;
+}
+.academic-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #10b981, var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+.academic-section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.academic-update-time {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    background: var(--bg-card);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+.academic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+.academic-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.academic-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
+    transform: translateY(-3px);
+}
+.academic-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+.academic-source-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    white-space: nowrap;
+}
+.academic-journal-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(6, 182, 212, 0.25);
+    white-space: nowrap;
+}
+.academic-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin-bottom: 8px;
+    flex-grow: 1;
+}
+.academic-authors {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.academic-abstract {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+.academic-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.academic-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+.academic-link {
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.academic-link:hover { color: var(--accent-cyan); }
+.academic-weekly-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(6,182,212,0.15));
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 10px;
+    color: #10b981;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.academic-weekly-link:hover {
+    background: linear-gradient(135deg, rgba(16,185,129,0.25), rgba(6,182,212,0.25));
+    color: #34d399;
+}
+@media (max-width: 640px) {
+    .academic-section { padding: 20px; }
+    .academic-grid { grid-template-columns: 1fr; }
+    .academic-header { flex-direction: column; }
+}
+
 </style>
 <!-- GoatCounter Tracking -->
 <script async="" data-goatcounter="https://daniel-hwang.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
@@ -849,6 +1014,135 @@ body::before {
       </a>
 
   </div>
+</section>
+
+  
+<!-- Academic Papers Section -->
+<section class="academic-section" id="academic">
+  <div class="academic-header">
+    <div class="academic-title-wrap">
+      <h2 class="academic-section-title">🎓 学术顶刊</h2>
+      <p class="academic-section-subtitle">近期 BCI 领域顶刊论文与高质量预印本（PubMed / arXiv / Nature / Science / Cell 等）</p>
+    </div>
+    <span class="academic-update-time">更新于 2026-10-26</span>
+  </div>
+  <div class="academic-grid">
+    
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Advanced healthcare materials</span>
+        </div>
+        <h3 class="academic-title">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</h3>
+        <div class="academic-authors">Sun M, Ma X, Wang X et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-25</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42908451/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Zhen ci yan jiu = Acupuncture research</span>
+        </div>
+        <h3 class="academic-title">[Discussion on the closed-loop regulation strategy for acupuncture "Deqi" based on brain-computer interface and its peripheral-central mechanisms].</h3>
+        <div class="academic-authors">Yin L, Ye Y, Li Y et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-25</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Advanced Healthcare Materials</span>
+        </div>
+        <h3 class="academic-title">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes</h3>
+        <div class="academic-authors">Sun M, Ma X, Wang X et al.</div>
+        <p class="academic-abstract">This study reviews fabrication strategies and performance optimization for flexible brain-computer interface electrodes, covering materials selection, structural design, and signal fidelity improvements.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-25</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">The journal of spinal cord medicine</span>
+        </div>
+        <h3 class="academic-title">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</h3>
+        <div class="academic-authors">Jiang X, Zhang L, Li S et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-23</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">npj biomedical innovations</span>
+        </div>
+        <h3 class="academic-title">Generalizable neural decoding for clinically scalable brain-computer interfaces.</h3>
+        <div class="academic-authors">Gu Y, Yin H, Wang Y et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-23</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Science advances</span>
+        </div>
+        <h3 class="academic-title">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</h3>
+        <div class="academic-authors">Wu Y, Chang T, Chen S et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-23</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42805221/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Journal of neural engineering</span>
+        </div>
+        <h3 class="academic-title">From confidence to caution: conformal gating for cross-session motor imagery brain-computer interfaces.</h3>
+        <div class="academic-authors">Xing S, Nagarajan A</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-23</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">The Journal of Spinal Cord Medicine</span>
+        </div>
+        <h3 class="academic-title">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report</h3>
+        <div class="academic-authors">Jiang X, Zhang L, Li S et al.</div>
+        <p class="academic-abstract">Case report demonstrating functional recovery from complete spinal cord injury using combined central-peripheral-central neuromodulation strategies.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-10-23</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+  </div>
+  
+<a href="weekly/2026-11-01.html" class="academic-weekly-link">📊 查看本周学术周报</a>
 </section>
 
   <div class="filter-bar">

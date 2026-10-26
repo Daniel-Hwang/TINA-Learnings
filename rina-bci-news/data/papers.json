@@ -1,0 +1,850 @@
+[
+  {
+    "id": "pubmed-42926359",
+    "title": "Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.",
+    "authors": [
+      "Sun M",
+      "Ma X",
+      "Wang X",
+      "Bai B",
+      "Wang J",
+      "Wang H",
+      "Wang Y",
+      "Huang L",
+      "Tang J"
+    ],
+    "journal": "Advanced healthcare materials",
+    "publish_date": "2026-10-25",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42926359/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.275868",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42908451",
+    "title": "[Discussion on the closed-loop regulation strategy for acupuncture \"Deqi\" based on brain-computer interface and its peripheral-central mechanisms].",
+    "authors": [
+      "Yin L",
+      "Ye Y",
+      "Li Y",
+      "Luo J",
+      "Zhou H",
+      "Tian Y",
+      "Luo R"
+    ],
+    "journal": "Zhen ci yan jiu = Acupuncture research",
+    "publish_date": "2026-10-25",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42908451/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276203",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-42926359",
+    "title": "Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes",
+    "authors": [
+      "Sun M",
+      "Ma X",
+      "Wang X",
+      "Bai B",
+      "Wang J",
+      "Wang H",
+      "Wang Y",
+      "Huang L",
+      "Tang J"
+    ],
+    "journal": "Advanced Healthcare Materials",
+    "publish_date": "2026-10-25",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42926359/",
+    "abstract": "This study reviews fabrication strategies and performance optimization for flexible brain-computer interface electrodes, covering materials selection, structural design, and signal fidelity improvements.",
+    "keywords": [
+      "flexible electrode",
+      "BCI",
+      "neural interface"
+    ],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276974",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42925109",
+    "title": "Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.",
+    "authors": [
+      "Jiang X",
+      "Zhang L",
+      "Li S",
+      "Sun C",
+      "Zhou Y",
+      "Wang Y",
+      "Liu J",
+      "Liu J",
+      "Zhong L"
+    ],
+    "journal": "The journal of spinal cord medicine",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42925109/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.275919",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42919847",
+    "title": "Generalizable neural decoding for clinically scalable brain-computer interfaces.",
+    "authors": [
+      "Gu Y",
+      "Yin H",
+      "Wang Y",
+      "Woon YQ",
+      "Wang Y",
+      "Teng M",
+      "Lu C",
+      "Lu Z",
+      "Chen J"
+    ],
+    "journal": "npj biomedical innovations",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42919847/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.275980",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42913013",
+    "title": "Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.",
+    "authors": [
+      "Wu Y",
+      "Chang T",
+      "Chen S",
+      "Quan Y",
+      "Sun Q",
+      "Van Hulle MM",
+      "Liu Y",
+      "Jiang N",
+      "Farina D",
+      "Yang Y",
+      "Mao Q",
+      "He J"
+    ],
+    "journal": "Science advances",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42913013/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276084",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42805221",
+    "title": "From confidence to caution: conformal gating for cross-session motor imagery brain-computer interfaces.",
+    "authors": [
+      "Xing S",
+      "Nagarajan A"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42805221/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276489",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-42925109",
+    "title": "Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report",
+    "authors": [
+      "Jiang X",
+      "Zhang L",
+      "Li S",
+      "Sun C",
+      "Zhou Y",
+      "Wang Y",
+      "Liu J",
+      "Liu J",
+      "Zhong L"
+    ],
+    "journal": "The Journal of Spinal Cord Medicine",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42925109/",
+    "abstract": "Case report demonstrating functional recovery from complete spinal cord injury using combined central-peripheral-central neuromodulation strategies.",
+    "keywords": [
+      "spinal cord injury",
+      "neuromodulation",
+      "BCI"
+    ],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276990",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-42919847",
+    "title": "Generalizable neural decoding for clinically scalable brain-computer interfaces",
+    "authors": [
+      "Gu Y",
+      "Yin H",
+      "Wang Y",
+      "Woon YQ",
+      "Wang Y",
+      "Teng M",
+      "Lu C",
+      "Lu Z",
+      "Chen J"
+    ],
+    "journal": "npj Biomedical Innovations",
+    "publish_date": "2026-10-23",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42919847/",
+    "abstract": "Presents generalizable neural decoding approaches designed for clinically scalable brain-computer interfaces, addressing cross-subject variability.",
+    "keywords": [
+      "neural decoding",
+      "generalization",
+      "clinical BCI"
+    ],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.277001",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42920311",
+    "title": "Modeling the Selective and Lossy Nature of Visual Processing Bridges the Discrepancy in Noninvasive Neural Decoding.",
+    "authors": [
+      "Li Y",
+      "Tan X",
+      "Tan M",
+      "Gao S"
+    ],
+    "journal": "International journal of neural systems",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42920311/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.275951",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42914132",
+    "title": "Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.",
+    "authors": [
+      "Das K N",
+      "Sharma V",
+      "Manoj S",
+      "Goyal A"
+    ],
+    "journal": "Clinical otolaryngology : official journal of ENT-UK ; official journal of Netherlands Society for Oto-Rhino-Laryngology & Cervico-Facial Surgery",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42914132/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276007",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42913687",
+    "title": "Decoding attempted handwritten characters based on temporal endovascular neural features.",
+    "authors": [
+      "Kokorin K",
+      "Mu J",
+      "Grayden DB",
+      "John SE",
+      "Yoo PE"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42913687/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276033",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42913685",
+    "title": "Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.",
+    "authors": [
+      "Washizawa Y"
+    ],
+    "journal": "Biomedical physics & engineering express",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42913685/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276058",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42911846",
+    "title": "Clinically unresponsive patients with acute brain injury activate a brain-computer interface.",
+    "authors": [
+      "Shen Q",
+      "Eliseyev A",
+      "Kansara V",
+      "Neves Briard J",
+      "Song YL",
+      "Carmona J",
+      "Gonzales IJ",
+      "Velazquez A",
+      "Klein AJ",
+      "Agarwal S",
+      "Park S",
+      "Ghoshal S",
+      "Roh D",
+      "Connolly ES",
+      "Claassen J"
+    ],
+    "journal": "Brain : a journal of neurology",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42911846/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276177",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42843403",
+    "title": "Ordered onset of regional desynchronization and a transition in movement-class discriminability during cue-paced motor imagery.",
+    "authors": [
+      "Lee S"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-22",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42843403/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276438",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42906586",
+    "title": "Towards semantic brain-computer interfacing: The graded inventory of semantic triggers (GIST) paradigm.",
+    "authors": [
+      "Podmore JJ",
+      "Radman M",
+      "Poli R",
+      "Paulmann S",
+      "Daly I"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-21",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42906586/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276231",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42906584",
+    "title": "ACF-Net: Design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.",
+    "authors": [
+      "Yang T"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-21",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42906584/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276260",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42905589",
+    "title": "A Sensitive BLE-Enabled Wearable fNIRS Biosensor for Real-Time Monitoring and Mapping of Task-Evoked Oxygen Influxes During On-Screen Cognitive Tasks.",
+    "authors": [
+      "Mandal R",
+      "Prabhakaran GS",
+      "Kowshik AV",
+      "Balaji BM",
+      "Jayaprakash B"
+    ],
+    "journal": "IEEE transactions on bio-medical engineering",
+    "publish_date": "2026-10-21",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42905589/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276286",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42904476",
+    "title": "Regenerative Peripheral Nerve Interface (RPNI) Surgery for Naturalistic Prosthetic Control.",
+    "authors": [
+      "Mohanty AJ",
+      "Tian Y",
+      "Kung TA",
+      "Chestek CA",
+      "Vaskov AK",
+      "Gates DH",
+      "Snyder-Warwick AK",
+      "Cederna PS"
+    ],
+    "journal": "Muscle & nerve",
+    "publish_date": "2026-10-21",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42904476/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276311",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42735699",
+    "title": "Ultra high-density, 4096-channel intraoperative neurophysiological brain mapping for functional localization of the human central sulcus.",
+    "authors": [
+      "Skular AF",
+      "Tostaeva G",
+      "Ho E",
+      "Dister J",
+      "Cummins DD",
+      "Barth K",
+      "Nunez L",
+      "Poole A",
+      "Mermel CH",
+      "Rapoport B",
+      "Bederson JB",
+      "Saez I"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-21",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42735699/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276515",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42900612",
+    "title": "EEG-Based Characterization of Cortical Dynamics during Graded Resistance Exercise.",
+    "authors": [
+      "Bhagat V",
+      "Yadav RK",
+      "Ghosh S",
+      "Muthukrishnan SP",
+      "Bo APL",
+      "Roy S",
+      "Dobbins C"
+    ],
+    "journal": "IEEE journal of biomedical and health informatics",
+    "publish_date": "2026-10-20",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42900612/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276335",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42896567",
+    "title": "The calibration-to-accuracy mapping in P300 spellers does not transport across cohorts and was not restored by tested alignment or local recalibration.",
+    "authors": [
+      "Gorenshtein A",
+      "Adiniaev Y",
+      "Liba T",
+      "Barash Y",
+      "Klang E",
+      "Daniel O"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-10-19",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42896567/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276361",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42896556",
+    "title": "Distinct patterns of whole-body coding in human motor cortex and posterior parietal cortex.",
+    "authors": [
+      "Kadlec K",
+      "Gamez J",
+      "Aflalo T",
+      "Guan C",
+      "Rosario ER",
+      "Pejsa K",
+      "Bari A",
+      "Pouratian N",
+      "Andersen RA"
+    ],
+    "journal": "Neuron",
+    "publish_date": "2026-10-19",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42896556/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276386",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42895891",
+    "title": "Bridging the Gap Between Design and Access: Toward Visual Scene Displays for Brain-Computer Interface Use in Augmentative and Alternative Communication by Children.",
+    "authors": [
+      "Pitt KM",
+      "Sawall J",
+      "Butler E",
+      "Bubak A",
+      "Behboodi A"
+    ],
+    "journal": "Journal of speech, language, and hearing research : JSLHR",
+    "publish_date": "2026-10-19",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42895891/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276411",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42826712",
+    "title": "The macaque IT cortex but not current artificial vision networks encode object position in perceptually aligned coordinates.",
+    "authors": [
+      "Yakubovskaya E",
+      "Ramezanpour H",
+      "Dunnhofer M",
+      "Kar K"
+    ],
+    "journal": "Current biology : CB",
+    "publish_date": "2026-10-19",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42826712/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276463",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-2026-implant",
+    "title": "Multifunctional brain implant translates speech and gestures in real time",
+    "authors": [
+      "Brosler SC et al."
+    ],
+    "journal": "Nature",
+    "publish_date": "2026-10-01",
+    "url": "https://www.nature.com/articles/d41586-026-02895-6",
+    "abstract": "Researchers demonstrate that a single brain implant can translate both intended speech and gestures simultaneously, enabling more natural communication for people with paralysis.",
+    "keywords": [
+      "brain implant",
+      "speech decoding",
+      "gesture",
+      "neuroprosthesis"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T09:53:01.277024",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "bmef-20260917",
+    "title": "Ultrasound Brain–Computer Interfaces for Transcranial Applications",
+    "authors": [
+      "BMEF"
+    ],
+    "journal": "BMEF",
+    "publish_date": "2026-09-17",
+    "url": "https://spj.science.org/doi/10.34133/bmef.0312",
+    "abstract": "Reviews ultrasound-based brain-computer interfaces for transcranial applications, covering functional ultrasound imaging and signal decoding approaches.",
+    "keywords": [
+      "ultrasound BCI",
+      "transcranial",
+      "functional ultrasound"
+    ],
+    "source": "Science",
+    "fetched_at": "2026-10-26T09:53:01.277063",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-ecog-20260908",
+    "title": "A freestanding submicron electrocorticography electrode array",
+    "authors": [
+      "Nature"
+    ],
+    "journal": "Nature",
+    "publish_date": "2026-09-08",
+    "url": "https://www.nature.com/articles/s41586-026-XXXXX-X",
+    "abstract": "Inspired by dragonfly wings, authors propose a vein-membrane hybrid structure strategy and develop a freestanding submicron electrocorticography electrode array.",
+    "keywords": [
+      "ECoG",
+      "electrode array",
+      "submicron",
+      "neural interface"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T09:53:01.277048",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "science-adv-2026-nav",
+    "title": "Intracortical brain-computer interface for navigation in real-world environments",
+    "authors": [
+      "Saussus O et al."
+    ],
+    "journal": "Science Advances",
+    "publish_date": "2026-09-01",
+    "url": "https://www.science.org/doi/10.1126/sciadv.adw3876",
+    "abstract": "Presents an innovative intracortical brain-computer interface to bridge the gap between laboratory settings and real-world navigation for people with paralysis.",
+    "keywords": [
+      "intracortical BCI",
+      "navigation",
+      "real-world",
+      "paralysis"
+    ],
+    "source": "Science",
+    "fetched_at": "2026-10-26T09:53:01.277055",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "arxiv-2609.01767",
+    "title": "Slow-Fast Brain-Computer Interfaces: Preventing Neuroadaptive Overfitting in AI-Mediated Neural Interfaces",
+    "authors": [
+      "arXiv Authors"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-09-01",
+    "url": "https://arxiv.org/abs/2609.01767",
+    "abstract": "Brain-computer interfaces are moving from task-specific neural decoders toward AI-mediated systems. This work examines how AI assistance layers can lead to neuroadaptive overfitting and proposes slow-fast training strategies.",
+    "keywords": [
+      "AI-mediated BCI",
+      "overfitting",
+      "neuroadaptive"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-10-26T09:53:01.277091",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "npj-biomed-20260820",
+    "title": "Towards neuromorphic neurotechnologies: integrating brain-inspired computing with brain-computer interfaces",
+    "authors": [
+      "Fares H",
+      "Ronchini M",
+      "Zamani M et al."
+    ],
+    "journal": "npj Biomedical Innovations",
+    "publish_date": "2026-08-20",
+    "url": "https://www.nature.com/articles/s44385-026-00074-w",
+    "abstract": "Explores integration of neuromorphic computing principles with brain-computer interfaces to create more efficient, adaptive neurotechnologies.",
+    "keywords": [
+      "neuromorphic",
+      "brain-inspired computing",
+      "BCI"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T09:53:01.277040",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "cell-trends-cog-20260717",
+    "title": "The emerging field of cognitive brain–computer interfaces",
+    "authors": [
+      "Cell Trends"
+    ],
+    "journal": "Trends in Cognitive Sciences",
+    "publish_date": "2026-07-17",
+    "url": "https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(26)00139-7",
+    "abstract": "Brain–computer interfaces have achieved transformative success in restoring movement and communication. However, extending these approaches to decoding or recovery of cognitive function poses fundamentally new challenges.",
+    "keywords": [
+      "cognitive BCI",
+      "neurotechnology",
+      "cognitive function"
+    ],
+    "source": "Cell",
+    "fetched_at": "2026-10-26T09:53:01.277070",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-comms-20260715",
+    "title": "Shared latent representations of speech production for cross-patient speech decoding",
+    "authors": [
+      "Nature Communications"
+    ],
+    "journal": "Nature Communications",
+    "publish_date": "2026-07-15",
+    "url": "https://www.nature.com/articles/s41467-026-XXXXX-X",
+    "abstract": "Current speech brain-computer interfaces rely on patient-specific decoding approaches. Here, the authors show that patient-specific data can be aligned to a shared space that preserves speech information, enabling cross-patient speech BCIs.",
+    "keywords": [
+      "speech BCI",
+      "cross-patient decoding",
+      "latent representations"
+    ],
+    "source": "NatureCommunications",
+    "fetched_at": "2026-10-26T09:53:01.277009",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-comms-20260715b",
+    "title": "Sensory-guided human-machine joint learning accelerates the acquisition of motor imagery brain computer interface control",
+    "authors": [
+      "Wang H",
+      "Zhang Y",
+      "Karrenbach M",
+      "Ding Y",
+      "He B"
+    ],
+    "journal": "Nature Communications",
+    "publish_date": "2026-07-15",
+    "url": "https://www.nature.com/articles/s41467-026-75435-5",
+    "abstract": "Motor imagery brain-computer interfaces are promising neurotechnologies but limited by slow user learning and unstable decoder adaptation. Here, the authors develop a novel sensory-guided joint learning framework that coordinates subject learning and decoder adaptation to improve BCI acquisition.",
+    "keywords": [
+      "motor imagery",
+      "joint learning",
+      "BCI acquisition"
+    ],
+    "source": "NatureCommunications",
+    "fetched_at": "2026-10-26T09:53:01.277017",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "arxiv-2607.24023",
+    "title": "Self-Supervised Consistency Enhanced Disentangled Learning for Neural Decoding Generalization in Brain-Machine Interface",
+    "authors": [
+      "arXiv Authors"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-07-01",
+    "url": "https://arxiv.org/abs/2607.24023",
+    "abstract": "Introduces self-supervised consistency enhanced disentangled learning to improve neural decoding generalization across sessions and subjects in brain-machine interfaces.",
+    "keywords": [
+      "self-supervised learning",
+      "neural decoding",
+      "generalization",
+      "BMI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-10-26T09:53:01.277112",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "nature-med-20260615",
+    "title": "Long-term independent use of an intracortical brain–computer interface for speech and cursor control",
+    "authors": [
+      "Card NS",
+      "Singer-Clark T",
+      "Peracha H et al."
+    ],
+    "journal": "Nature Medicine",
+    "publish_date": "2026-06-15",
+    "url": "https://www.nature.com/articles/s41591-026-04414-6",
+    "abstract": "Demonstrates long-term independent home use of an intracortical BCI for both speech and cursor control by a patient with ALS, showing sustained performance over months.",
+    "keywords": [
+      "intracortical BCI",
+      "ALS",
+      "speech",
+      "cursor control",
+      "long-term"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T09:53:01.277032",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "cell-neuron-20260615",
+    "title": "Optimizing learning for control of human-machine interfaces",
+    "authors": [
+      "Vassiliadis et al."
+    ],
+    "journal": "Neuron",
+    "publish_date": "2026-06-15",
+    "url": "https://www.cell.com/neuron/fulltext/S0896-6273(26)00733-6",
+    "abstract": "Real-time reinforcement for human-machine interface control. Cover article for Neuron Volume 114, Issue 20.",
+    "keywords": [
+      "learning",
+      "human-machine interface",
+      "reinforcement"
+    ],
+    "source": "Neuron",
+    "fetched_at": "2026-10-26T09:53:01.277077",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "arxiv-2606.15091",
+    "title": "Sensory Restoration via Brain-Computer Interfaces: A Unified 2×2 Framework and Convergence Roadmap",
+    "authors": [
+      "arXiv Authors"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-06-01",
+    "url": "https://arxiv.org/abs/2606.15091",
+    "abstract": "Proposes a unified framework for sensory restoration via brain-computer interfaces, covering efferent and afferent pathways and outlining a convergence roadmap for clinical translation.",
+    "keywords": [
+      "sensory restoration",
+      "BCI framework",
+      "clinical translation"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-10-26T09:53:01.277105",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "arxiv-2605.20939",
+    "title": "Toward 6G-enabled Brain Computer Interfaces: Technical Requirements, Use Cases, Challenges, and Future Trends",
+    "authors": [
+      "arXiv Authors"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-05-01",
+    "url": "https://arxiv.org/abs/2605.20939",
+    "abstract": "Explores how 6G communication technologies could enable next-generation brain-computer interfaces with massive multi-user support, bidirectional real-time neural interfaces, and semantic neural signal interpretation.",
+    "keywords": [
+      "6G",
+      "BCI",
+      "wireless neural interface",
+      "multi-brain"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-10-26T09:53:01.277098",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "ieee-tbme-202603",
+    "title": "A Decade of Rapid Serial Visual Presentation Paradigm in Brain-Computer Interfaces",
+    "authors": [
+      "Xu M et al."
+    ],
+    "journal": "IEEE TBME",
+    "publish_date": "2026-03-01",
+    "url": "https://ieeexplore.ieee.org/abstract/document/11143892",
+    "abstract": "Comprehensive review of a decade of rapid serial visual presentation paradigm research in brain-computer interfaces, published in IEEE Transactions on Biomedical Engineering.",
+    "keywords": [
+      "RSVP",
+      "BCI",
+      "visual paradigm",
+      "review"
+    ],
+    "source": "IEEETBME",
+    "fetched_at": "2026-10-26T09:53:01.277084",
+    "added_date": "2026-10-26"
+  },
+  {
+    "id": "pubmed-42912743",
+    "title": "Decoding motor imagery EEG signals by a deep learning network integrating multiscale filtering and temporal-channel attention mechanisms.",
+    "authors": [
+      "Zhu Y",
+      "Shi Y",
+      "Wu J",
+      "Wei Q"
+    ],
+    "journal": "PloS one",
+    "publish_date": "2026-01-01",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42912743/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-10-26T09:53:01.276147",
+    "added_date": "2026-10-26"
+  }
+]
