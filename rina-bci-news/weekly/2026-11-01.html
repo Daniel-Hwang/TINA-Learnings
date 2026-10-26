@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BCI 学术周报 | 2026-10-26 ~ 2026-11-01</title>
+<title>BCI 学术周综述 | 2026-10-26 ~ 2026-11-01</title>
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
     --bg-primary: #0a0e17;
     --bg-secondary: #111827;
@@ -17,7 +18,6 @@
     --accent-blue: #3b82f6;
     --accent-cyan: #06b6d4;
     --accent-green: #10b981;
-    --accent-purple: #8b5cf6;
 }
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
@@ -25,690 +25,733 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
-    margin: 0;
 }
-body::before {
-    content: '';
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background:
-        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at top right, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom center, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
-    pointer-events: none; z-index: 0;
-}
-.container { max-width: 960px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
-.hero { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
-.hero-title {
-    font-size: 2rem; font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 8px;
-}
-.hero-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 20px; }
-.week-range {
-    display: inline-block;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 8px 18px;
-    color: var(--accent-cyan);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-.stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
-    margin-bottom: 30px;
-}
-.stat-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 18px;
-    text-align: center;
-}
-.stat-box-number { font-size: 1.6rem; font-weight: 700; color: var(--accent-green); margin-bottom: 4px; }
-.stat-box-label { font-size: 0.8rem; color: var(--text-muted); }
-.breakdown-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-.breakdown-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 20px;
-}
-.breakdown-title {
-    font-size: 1rem; font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 14px;
-    display: flex; align-items: center; gap: 8px;
-}
-.breakdown-table { width: 100%; border-collapse: collapse; }
-.breakdown-table th {
-    text-align: left; font-size: 0.8rem; color: var(--text-muted);
-    padding: 8px 0; border-bottom: 1px solid var(--border-color);
-}
-.breakdown-table td {
-    font-size: 0.9rem; color: var(--text-secondary);
-    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.breakdown-table tr:last-child td { border-bottom: none; }
-.paper-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
-.weekly-paper {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 22px;
-    transition: all 0.3s ease;
-}
-.weekly-paper:hover {
-    border-color: var(--accent-green);
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
-}
-.weekly-paper-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; line-height: 1.45; }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+.hero { text-align: center; padding: 30px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+.hero-title { font-size: 1.8rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 10px; }
+.hero-subtitle { color: var(--text-secondary); font-size: 1rem; }
+.back-link { display: inline-block; margin-bottom: 20px; color: var(--accent-cyan); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 30px; }
+.stat-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px; text-align: center; }
+.stat-number { font-size: 1.6rem; font-weight: 700; color: var(--accent-green); }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+.section { margin-bottom: 30px; }
+.section-title { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 16px; }
+.weekly-paper { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; margin-bottom: 16px; transition: all 0.3s ease; }
+.weekly-paper:hover { border-color: var(--accent-cyan); }
+.weekly-paper-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.weekly-paper-source { font-size: 0.7rem; font-weight: 600; color: var(--accent-green); background: rgba(16,185,129,0.12); padding: 3px 8px; border-radius: 20px; }
+.weekly-paper-date { font-size: 0.75rem; color: var(--text-muted); }
+.weekly-paper-title { font-size: 1.1rem; margin-bottom: 8px; }
 .weekly-paper-title a { color: var(--text-primary); text-decoration: none; }
 .weekly-paper-title a:hover { color: var(--accent-cyan); }
-.weekly-paper-meta {
-    display: flex; flex-wrap: wrap; gap: 10px;
-    margin-bottom: 12px; font-size: 0.8rem;
-}
-.weekly-paper-authors { color: var(--text-muted); }
-.weekly-paper-journal {
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.1);
-    padding: 2px 8px; border-radius: 6px;
-}
-.weekly-paper-date { color: var(--text-muted); background: var(--bg-secondary); padding: 2px 8px; border-radius: 6px; }
-.weekly-paper-source {
-    color: var(--accent-green);
-    background: rgba(16, 185, 129, 0.1);
-    padding: 2px 8px; border-radius: 6px;
-}
-.weekly-paper-abstract { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
-.weekly-paper-keywords { color: var(--text-muted); font-size: 0.8rem; margin-top: 10px; }
-.nav-bar {
-    display: flex; justify-content: center; gap: 16px;
-    flex-wrap: wrap; margin-bottom: 30px;
-}
-.weekly-nav-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 10px 16px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
-.weekly-nav-link:hover { border-color: var(--accent-blue); color: var(--text-primary); }
-.footer {
-    margin-top: 40px; padding: 20px;
-    text-align: center; color: var(--text-muted);
-    font-size: 0.85rem;
-    border-top: 1px solid var(--border-color);
-}
-@media (max-width: 640px) {
-    .container { padding: 20px 15px; }
-    .hero { padding: 20px 0; }
-    .hero-title { font-size: 1.5rem; }
-}
+.weekly-paper-meta { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px; }
+.weekly-paper-abstract { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+.weekly-empty { color: var(--text-muted); text-align: center; padding: 40px; }
+.footer { text-align: center; padding: 30px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 40px; }
 </style>
-<!-- GoatCounter Tracking -->
-<script async="" data-goatcounter="https://daniel-hwang.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="container">
-  <header class="hero">
-    <h1 class="hero-title">📚 BCI 学术周报</h1>
-    <p class="hero-subtitle">每周精选脑机接口领域顶刊论文与高质量预印本</p>
-    <div class="week-range">2026-10-26 ~ 2026-11-01</div>
-  </header>
-
-  <nav class="nav-bar">
-    <a href="../index.html" class="weekly-nav-link">🏠 返回 BCI News</a>
-  </nav>
-
-  <div class="stats-row">
-    <div class="stat-box">
-      <div class="stat-box-number">41</div>
-      <div class="stat-box-label">本周论文</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-box-number">8</div>
-      <div class="stat-box-label">来源数</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-box-number">28</div>
-      <div class="stat-box-label">期刊数</div>
-    </div>
+  <a href="../index.html" class="back-link">← 返回 BCI News</a>
+  <div class="hero">
+    <h1 class="hero-title">📚 BCI 学术周综述</h1>
+    <p class="hero-subtitle">2026-10-26 ~ 2026-11-01</p>
   </div>
-
-  <div class="breakdown-grid">
-    <div class="breakdown-card">
-      <div class="breakdown-title">📊 来源分布</div>
-      <table class="breakdown-table">
-        <tr><th>来源</th><th>数量</th></tr>
-        <tr><td>PubMed</td><td>26</td></tr><tr><td>Nature</td><td>4</td></tr><tr><td>arXiv</td><td>4</td></tr><tr><td>Science</td><td>2</td></tr><tr><td>NatureCommunications</td><td>2</td></tr><tr><td>Cell</td><td>1</td></tr><tr><td>Neuron</td><td>1</td></tr><tr><td>IEEETBME</td><td>1</td></tr>
-      </table>
-    </div>
-    <div class="breakdown-card">
-      <div class="breakdown-title">📰 期刊分布</div>
-      <table class="breakdown-table">
-        <tr><th>期刊</th><th>数量</th></tr>
-        <tr><td>Journal of neural engineering</td><td>7</td></tr><tr><td>arXiv</td><td>4</td></tr><tr><td>npj Biomedical Innovations</td><td>2</td></tr><tr><td>Neuron</td><td>2</td></tr><tr><td>Nature</td><td>2</td></tr><tr><td>Nature Communications</td><td>2</td></tr><tr><td>Advanced healthcare materials</td><td>1</td></tr><tr><td>Zhen ci yan jiu = Acupuncture research</td><td>1</td></tr><tr><td>Advanced Healthcare Materials</td><td>1</td></tr><tr><td>The journal of spinal cord medicine</td><td>1</td></tr><tr><td>npj biomedical innovations</td><td>1</td></tr><tr><td>Science advances</td><td>1</td></tr><tr><td>The Journal of Spinal Cord Medicine</td><td>1</td></tr><tr><td>International journal of neural systems</td><td>1</td></tr><tr><td>Clinical otolaryngology : official journal of ENT-UK ; official journal of Netherlands Society for Oto-Rhino-Laryngology & Cervico-Facial Surgery</td><td>1</td></tr><tr><td>Biomedical physics & engineering express</td><td>1</td></tr><tr><td>Brain : a journal of neurology</td><td>1</td></tr><tr><td>IEEE transactions on bio-medical engineering</td><td>1</td></tr><tr><td>Muscle & nerve</td><td>1</td></tr><tr><td>IEEE journal of biomedical and health informatics</td><td>1</td></tr><tr><td>Journal of speech, language, and hearing research : JSLHR</td><td>1</td></tr><tr><td>Current biology : CB</td><td>1</td></tr><tr><td>BMEF</td><td>1</td></tr><tr><td>Science Advances</td><td>1</td></tr><tr><td>Trends in Cognitive Sciences</td><td>1</td></tr><tr><td>Nature Medicine</td><td>1</td></tr><tr><td>IEEE TBME</td><td>1</td></tr><tr><td>PloS one</td><td>1</td></tr>
-      </table>
-    </div>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-number">68</div><div class="stat-label">本周新增论文</div></div>
+    <div class="stat-card"><div class="stat-number">9</div><div class="stat-label">来源数</div></div>
   </div>
-
-  <h2 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-    📝 论文详情
-  </h2>
-  <div class="paper-list">
+  <div class="section">
+    <h2 class="section-title">来源分布</h2>
+    <p style="color: var(--text-secondary);">PubMed: 46 · Nature: 6 · Science: 4 · arXiv: 4 · Cell: 3 · NatureCommunications: 2 · NatureNeuroscience: 1 · Neuron: 1 · IEEETBME: 1</p>
+  </div>
+  <div class="section">
+    <h2 class="section-title">论文列表</h2>
     
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Sun M, Ma X, Wang X, Bai B et al.</span>
-        <span class="weekly-paper-journal">Advanced healthcare materials</span>
-        <span class="weekly-paper-date">2026-10-25</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" rel="noopener">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</a></h3>
+        <p class="weekly-paper-meta">Sun M, Ma X, Wang X et al. · Adv Healthc Mater</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42908451/" target="_blank">[Discussion on the closed-loop regulation strategy for acupuncture "Deqi" based on brain-computer interface and its peripheral-central mechanisms].</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Yin L, Ye Y, Li Y, Luo J et al.</span>
-        <span class="weekly-paper-journal">Zhen ci yan jiu = Acupuncture research</span>
-        <span class="weekly-paper-date">2026-10-25</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" rel="noopener">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</a></h3>
+        <p class="weekly-paper-meta">Jiang X, Zhang L, Li S et al. · J Spinal Cord Med</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Sun M, Ma X, Wang X, Bai B et al.</span>
-        <span class="weekly-paper-journal">Advanced Healthcare Materials</span>
-        <span class="weekly-paper-date">2026-10-25</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920124/" target="_blank" rel="noopener">Polygenicity shapes distinct brain patterns and clinical profiles of bipolar disorder.</a></h3>
+        <p class="weekly-paper-meta">Feng Y, Guo X, Huang P et al. · BMC Med</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">This study reviews fabrication strategies and performance optimization for flexible brain-computer interface electrodes, covering materials selection, structural design, and signal fidelity improvements.</p>
-      <div class="weekly-paper-keywords">关键词: flexible electrode, BCI, neural interface</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Jiang X, Zhang L, Li S, Sun C et al.</span>
-        <span class="weekly-paper-journal">The journal of spinal cord medicine</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914707/" target="_blank" rel="noopener">DNA metabarcoding reveals the trophic ecology of Critically Endangered juvenile green sawfish (Pristis zijsron) and sympatric predators.</a></h3>
+        <p class="weekly-paper-meta">Dornan TN, Dantas PT, Morgan DL et al. · Mar Environ Res</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank">Generalizable neural decoding for clinically scalable brain-computer interfaces.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Gu Y, Yin H, Wang Y, Woon YQ et al.</span>
-        <span class="weekly-paper-journal">npj biomedical innovations</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914132/" target="_blank" rel="noopener">Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.</a></h3>
+        <p class="weekly-paper-meta">Das K N, Sharma V, Manoj S et al. · Clin Otolaryngol</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Wu Y, Chang T, Chen S, Quan Y et al.</span>
-        <span class="weekly-paper-journal">Science advances</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913687/" target="_blank" rel="noopener">Decoding attempted handwritten characters based on temporal endovascular neural features.</a></h3>
+        <p class="weekly-paper-meta">Kokorin K, Mu J, Grayden DB et al. · J Neural Eng</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42805221/" target="_blank">From confidence to caution: conformal gating for cross-session motor imagery brain-computer interfaces.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Xing S, Nagarajan A</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913685/" target="_blank" rel="noopener">Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.</a></h3>
+        <p class="weekly-paper-meta">Washizawa Y · Biomed Phys Eng Express</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Jiang X, Zhang L, Li S, Sun C et al.</span>
-        <span class="weekly-paper-journal">The Journal of Spinal Cord Medicine</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" rel="noopener">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</a></h3>
+        <p class="weekly-paper-meta">Wu Y, Chang T, Chen S et al. · Sci Adv</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Case report demonstrating functional recovery from complete spinal cord injury using combined central-peripheral-central neuromodulation strategies.</p>
-      <div class="weekly-paper-keywords">关键词: spinal cord injury, neuromodulation, BCI</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank">Generalizable neural decoding for clinically scalable brain-computer interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Gu Y, Yin H, Wang Y, Woon YQ et al.</span>
-        <span class="weekly-paper-journal">npj Biomedical Innovations</span>
-        <span class="weekly-paper-date">2026-10-23</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42911846/" target="_blank" rel="noopener">Clinically unresponsive patients with acute brain injury activate a brain-computer interface.</a></h3>
+        <p class="weekly-paper-meta">Shen Q, Eliseyev A, Kansara V et al. · Brain</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Presents generalizable neural decoding approaches designed for clinically scalable brain-computer interfaces, addressing cross-subject variability.</p>
-      <div class="weekly-paper-keywords">关键词: neural decoding, generalization, clinical BCI</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920311/" target="_blank">Modeling the Selective and Lossy Nature of Visual Processing Bridges the Discrepancy in Noninvasive Neural Decoding.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Li Y, Tan X, Tan M, Gao S</span>
-        <span class="weekly-paper-journal">International journal of neural systems</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42911760/" target="_blank" rel="noopener">Adaptive local temporal weighting for short-window EEG-based SSVEP recognition using FB-eTRCA.</a></h3>
+        <p class="weekly-paper-meta">Zhao G, Feng Z, Wang Z · Sci Prog</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914132/" target="_blank">Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Das K N, Sharma V, Manoj S, Goyal A</span>
-        <span class="weekly-paper-journal">Clinical otolaryngology : official journal of ENT-UK ; official journal of Netherlands Society for Oto-Rhino-Laryngology & Cervico-Facial Surgery</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42909857/" target="_blank" rel="noopener">Conductive hydrogel bioelectronics for chronic neuromodulation: From biomimetic design and bioactive interfaces to integrated neural platforms.</a></h3>
+        <p class="weekly-paper-meta">Liu C, Mao Y, Ren Z et al. · Mater Today Bio</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913687/" target="_blank">Decoding attempted handwritten characters based on temporal endovascular neural features.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Kokorin K, Mu J, Grayden DB, John SE et al.</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42908451/" target="_blank" rel="noopener">[Discussion on the closed-loop regulation strategy for acupuncture "Deqi" based on brain-computer interface and its peripheral-central mechanisms].</a></h3>
+        <p class="weekly-paper-meta">Yin L, Ye Y, Li Y et al. · Zhen Ci Yan Jiu</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913685/" target="_blank">Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Washizawa Y</span>
-        <span class="weekly-paper-journal">Biomedical physics & engineering express</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42907939/" target="_blank" rel="noopener">Preclinical models of Wilson's disease: From pathogenesis to clinical translation.</a></h3>
+        <p class="weekly-paper-meta">Zheng ZW, Wu ZY · Zool Res</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42911846/" target="_blank">Clinically unresponsive patients with acute brain injury activate a brain-computer interface.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Shen Q, Eliseyev A, Kansara V, Neves Briard J et al.</span>
-        <span class="weekly-paper-journal">Brain : a journal of neurology</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906586/" target="_blank" rel="noopener">Towards semantic brain-computer interfacing: The graded inventory of semantic triggers (GIST) paradigm.</a></h3>
+        <p class="weekly-paper-meta">Podmore JJ, Radman M, Poli R et al. · J Neural Eng</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42843403/" target="_blank">Ordered onset of regional desynchronization and a transition in movement-class discriminability during cue-paced motor imagery.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Lee S</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-22</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906584/" target="_blank" rel="noopener">ACF-Net: Design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.</a></h3>
+        <p class="weekly-paper-meta">Yang T · J Neural Eng</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906586/" target="_blank">Towards semantic brain-computer interfacing: The graded inventory of semantic triggers (GIST) paradigm.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Podmore JJ, Radman M, Poli R, Paulmann S et al.</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-21</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906547/" target="_blank" rel="noopener">A GABAergic preoptic-raphe circuit mediates paradoxical coupling of anxiety and social preference after comparative social deficit.</a></h3>
+        <p class="weekly-paper-meta">Zhang YY, Hu MT, Xie SZ et al. · Neuron</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906584/" target="_blank">ACF-Net: Design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Yang T</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-21</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-26</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42905589/" target="_blank" rel="noopener">A Sensitive BLE-Enabled Wearable fNIRS Biosensor for Real-Time Monitoring and Mapping of Task-Evoked Oxygen Influxes During On-Screen Cognitive Tasks.</a></h3>
+        <p class="weekly-paper-meta">Mandal R, Prabhakaran GS, Kowshik AV et al. · IEEE Trans Biomed Eng</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42905589/" target="_blank">A Sensitive BLE-Enabled Wearable fNIRS Biosensor for Real-Time Monitoring and Mapping of Task-Evoked Oxygen Influxes During On-Screen Cognitive Tasks.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Mandal R, Prabhakaran GS, Kowshik AV, Balaji BM et al.</span>
-        <span class="weekly-paper-journal">IEEE transactions on bio-medical engineering</span>
-        <span class="weekly-paper-date">2026-10-21</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-25</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" rel="noopener">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</a></h3>
+        <p class="weekly-paper-meta">Sun M, Ma X, Wang X et al. · Advanced healthcare materials</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42904476/" target="_blank">Regenerative Peripheral Nerve Interface (RPNI) Surgery for Naturalistic Prosthetic Control.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Mohanty AJ, Tian Y, Kung TA, Chestek CA et al.</span>
-        <span class="weekly-paper-journal">Muscle & nerve</span>
-        <span class="weekly-paper-date">2026-10-21</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-25</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42908451/" target="_blank" rel="noopener">[Discussion on the closed-loop regulation strategy for acupuncture "Deqi" based on brain-computer interface and its peripheral-central mechanisms].</a></h3>
+        <p class="weekly-paper-meta">Yin L, Ye Y, Li Y et al. · Zhen ci yan jiu = Acupuncture research</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42735699/" target="_blank">Ultra high-density, 4096-channel intraoperative neurophysiological brain mapping for functional localization of the human central sulcus.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Skular AF, Tostaeva G, Ho E, Dister J et al.</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-21</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-25</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" rel="noopener">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes</a></h3>
+        <p class="weekly-paper-meta">Sun M, Ma X, Wang X et al. · Advanced Healthcare Materials</p>
+        <p class="weekly-paper-abstract">This study reviews fabrication strategies and performance optimization for flexible brain-computer interface electrodes, covering materials selection, structural design, and signal fidelity improvements.</p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42900612/" target="_blank">EEG-Based Characterization of Cortical Dynamics during Graded Resistance Exercise.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Bhagat V, Yadav RK, Ghosh S, Muthukrishnan SP et al.</span>
-        <span class="weekly-paper-journal">IEEE journal of biomedical and health informatics</span>
-        <span class="weekly-paper-date">2026-10-20</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Science</span>
+          <span class="weekly-paper-date">2026-10-24</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.science.org/doi/10.1126/sciadv.aee1540" target="_blank" rel="noopener">Highly stretchable, hair-compatible multichannel neural interfaces for EEG monitoring and BCI applications</a></h3>
+        <p class="weekly-paper-meta"> · Science Advances</p>
+        <p class="weekly-paper-abstract">Introduces MindStretcH, a reusable platform for long-term EEG monitoring and BCI applications in laboratory, clinical, and home settings.</p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42896567/" target="_blank">The calibration-to-accuracy mapping in P300 spellers does not transport across cohorts and was not restored by tested alignment or local recalibration.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Gorenshtein A, Adiniaev Y, Liba T, Barash Y et al.</span>
-        <span class="weekly-paper-journal">Journal of neural engineering</span>
-        <span class="weekly-paper-date">2026-10-19</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Science</span>
+          <span class="weekly-paper-date">2026-10-24</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.science.org/doi/10.1126/sciadv.adx5564" target="_blank" rel="noopener">Biophysically constrained learning from healthy neural architectures improves brain-computer interface decoding</a></h3>
+        <p class="weekly-paper-meta"> · Science Advances</p>
+        <p class="weekly-paper-abstract">Provides proof of concept for improving decoding in compromised networks by harnessing healthy neural dynamics, laying foundation for neuroprostheses.</p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42896556/" target="_blank">Distinct patterns of whole-body coding in human motor cortex and posterior parietal cortex.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Kadlec K, Gamez J, Aflalo T, Guan C et al.</span>
-        <span class="weekly-paper-journal">Neuron</span>
-        <span class="weekly-paper-date">2026-10-19</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Cell</span>
+          <span class="weekly-paper-date">2026-10-24</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(26)01092-2" target="_blank" rel="noopener">Theta synchronization coordinates ventral temporal and frontal regions during visual working memory</a></h3>
+        <p class="weekly-paper-meta"> · Cell Reports</p>
+        <p class="weekly-paper-abstract">Investigates theta synchronization in working memory, with relevance for cognitive BCIs.</p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42895891/" target="_blank">Bridging the Gap Between Design and Access: Toward Visual Scene Displays for Brain-Computer Interface Use in Augmentative and Alternative Communication by Children.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Pitt KM, Sawall J, Butler E, Bubak A et al.</span>
-        <span class="weekly-paper-journal">Journal of speech, language, and hearing research : JSLHR</span>
-        <span class="weekly-paper-date">2026-10-19</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" rel="noopener">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</a></h3>
+        <p class="weekly-paper-meta">Jiang X, Zhang L, Li S et al. · The journal of spinal cord medicine</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42826712/" target="_blank">The macaque IT cortex but not current artificial vision networks encode object position in perceptually aligned coordinates.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Yakubovskaya E, Ramezanpour H, Dunnhofer M, Kar K</span>
-        <span class="weekly-paper-journal">Current biology : CB</span>
-        <span class="weekly-paper-date">2026-10-19</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank" rel="noopener">Generalizable neural decoding for clinically scalable brain-computer interfaces.</a></h3>
+        <p class="weekly-paper-meta">Gu Y, Yin H, Wang Y et al. · npj biomedical innovations</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/d41586-026-02895-6" target="_blank">Multifunctional brain implant translates speech and gestures in real time</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Brosler SC et al.</span>
-        <span class="weekly-paper-journal">Nature</span>
-        <span class="weekly-paper-date">2026-10-01</span>
-        <span class="weekly-paper-source">Nature</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" rel="noopener">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</a></h3>
+        <p class="weekly-paper-meta">Wu Y, Chang T, Chen S et al. · Science advances</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Researchers demonstrate that a single brain implant can translate both intended speech and gestures simultaneously, enabling more natural communication for people with paralysis.</p>
-      <div class="weekly-paper-keywords">关键词: brain implant, speech decoding, gesture, neuroprosthesis</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://spj.science.org/doi/10.34133/bmef.0312" target="_blank">Ultrasound Brain–Computer Interfaces for Transcranial Applications</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">BMEF</span>
-        <span class="weekly-paper-journal">BMEF</span>
-        <span class="weekly-paper-date">2026-09-17</span>
-        <span class="weekly-paper-source">Science</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42805221/" target="_blank" rel="noopener">From confidence to caution: conformal gating for cross-session motor imagery brain-computer interfaces.</a></h3>
+        <p class="weekly-paper-meta">Xing S, Nagarajan A · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Reviews ultrasound-based brain-computer interfaces for transcranial applications, covering functional ultrasound imaging and signal decoding approaches.</p>
-      <div class="weekly-paper-keywords">关键词: ultrasound BCI, transcranial, functional ultrasound</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41586-026-XXXXX-X" target="_blank">A freestanding submicron electrocorticography electrode array</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Nature</span>
-        <span class="weekly-paper-journal">Nature</span>
-        <span class="weekly-paper-date">2026-09-08</span>
-        <span class="weekly-paper-source">Nature</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" rel="noopener">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report</a></h3>
+        <p class="weekly-paper-meta">Jiang X, Zhang L, Li S et al. · The Journal of Spinal Cord Medicine</p>
+        <p class="weekly-paper-abstract">Case report demonstrating functional recovery from complete spinal cord injury using combined central-peripheral-central neuromodulation strategies.</p>
       </div>
-      <p class="weekly-paper-abstract">Inspired by dragonfly wings, authors propose a vein-membrane hybrid structure strategy and develop a freestanding submicron electrocorticography electrode array.</p>
-      <div class="weekly-paper-keywords">关键词: ECoG, electrode array, submicron, neural interface</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.science.org/doi/10.1126/sciadv.adw3876" target="_blank">Intracortical brain-computer interface for navigation in real-world environments</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Saussus O et al.</span>
-        <span class="weekly-paper-journal">Science Advances</span>
-        <span class="weekly-paper-date">2026-09-01</span>
-        <span class="weekly-paper-source">Science</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank" rel="noopener">Generalizable neural decoding for clinically scalable brain-computer interfaces</a></h3>
+        <p class="weekly-paper-meta">Gu Y, Yin H, Wang Y et al. · npj Biomedical Innovations</p>
+        <p class="weekly-paper-abstract">Presents generalizable neural decoding approaches designed for clinically scalable brain-computer interfaces, addressing cross-subject variability.</p>
       </div>
-      <p class="weekly-paper-abstract">Presents an innovative intracortical brain-computer interface to bridge the gap between laboratory settings and real-world navigation for people with paralysis.</p>
-      <div class="weekly-paper-keywords">关键词: intracortical BCI, navigation, real-world, paralysis</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2609.01767" target="_blank">Slow-Fast Brain-Computer Interfaces: Preventing Neuroadaptive Overfitting in AI-Mediated Neural Interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">arXiv Authors</span>
-        <span class="weekly-paper-journal">arXiv</span>
-        <span class="weekly-paper-date">2026-09-01</span>
-        <span class="weekly-paper-source">arXiv</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s44385-026-00119-0" target="_blank" rel="noopener">Generalizable neural decoding for clinically scalable brain-computer interfaces</a></h3>
+        <p class="weekly-paper-meta">Gu, Y., Yin, H., Wang, Y. et al. · npj Biomedical Innovations</p>
+        <p class="weekly-paper-abstract">This paper explores generalizable neural decoding approaches to enable clinically scalable brain-computer interfaces.</p>
       </div>
-      <p class="weekly-paper-abstract">Brain-computer interfaces are moving from task-specific neural decoders toward AI-mediated systems. This work examines how AI assistance layers can lead to neuroadaptive overfitting and proposes slow-fast training strategies.</p>
-      <div class="weekly-paper-keywords">关键词: AI-mediated BCI, overfitting, neuroadaptive</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s44385-026-00074-w" target="_blank">Towards neuromorphic neurotechnologies: integrating brain-inspired computing with brain-computer interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Fares H, Ronchini M, Zamani M et al.</span>
-        <span class="weekly-paper-journal">npj Biomedical Innovations</span>
-        <span class="weekly-paper-date">2026-08-20</span>
-        <span class="weekly-paper-source">Nature</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">NatureNeuroscience</span>
+          <span class="weekly-paper-date">2026-10-23</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41593-026-02456-0" target="_blank" rel="noopener">A neural architecture for imagined and overt speech motor dynamics</a></h3>
+        <p class="weekly-paper-meta">Xiaowei Gao, Binke Yuan, Shelley Xiuli Tong et al. · Nature Neuroscience</p>
+        <p class="weekly-paper-abstract">Presents a neural architecture for decoding imagined and overt speech motor dynamics, with relevance for speech BCIs.</p>
       </div>
-      <p class="weekly-paper-abstract">Explores integration of neuromorphic computing principles with brain-computer interfaces to create more efficient, adaptive neurotechnologies.</p>
-      <div class="weekly-paper-keywords">关键词: neuromorphic, brain-inspired computing, BCI</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(26)00139-7" target="_blank">The emerging field of cognitive brain–computer interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Cell Trends</span>
-        <span class="weekly-paper-journal">Trends in Cognitive Sciences</span>
-        <span class="weekly-paper-date">2026-07-17</span>
-        <span class="weekly-paper-source">Cell</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920311/" target="_blank" rel="noopener">Modeling the Selective and Lossy Nature of Visual Processing Bridges the Discrepancy in Noninvasive Neural Decoding.</a></h3>
+        <p class="weekly-paper-meta">Li Y, Tan X, Tan M et al. · International journal of neural systems</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Brain–computer interfaces have achieved transformative success in restoring movement and communication. However, extending these approaches to decoding or recovery of cognitive function poses fundamentally new challenges.</p>
-      <div class="weekly-paper-keywords">关键词: cognitive BCI, neurotechnology, cognitive function</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41467-026-XXXXX-X" target="_blank">Shared latent representations of speech production for cross-patient speech decoding</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Nature Communications</span>
-        <span class="weekly-paper-journal">Nature Communications</span>
-        <span class="weekly-paper-date">2026-07-15</span>
-        <span class="weekly-paper-source">NatureCommunications</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914132/" target="_blank" rel="noopener">Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.</a></h3>
+        <p class="weekly-paper-meta">Das K N, Sharma V, Manoj S et al. · Clinical otolaryngology : official journal of ENT-UK ; official journal of Netherlands Society for Oto-Rhino-Laryngology & Cervico-Facial Surgery</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Current speech brain-computer interfaces rely on patient-specific decoding approaches. Here, the authors show that patient-specific data can be aligned to a shared space that preserves speech information, enabling cross-patient speech BCIs.</p>
-      <div class="weekly-paper-keywords">关键词: speech BCI, cross-patient decoding, latent representations</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41467-026-75435-5" target="_blank">Sensory-guided human-machine joint learning accelerates the acquisition of motor imagery brain computer interface control</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Wang H, Zhang Y, Karrenbach M, Ding Y et al.</span>
-        <span class="weekly-paper-journal">Nature Communications</span>
-        <span class="weekly-paper-date">2026-07-15</span>
-        <span class="weekly-paper-source">NatureCommunications</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913687/" target="_blank" rel="noopener">Decoding attempted handwritten characters based on temporal endovascular neural features.</a></h3>
+        <p class="weekly-paper-meta">Kokorin K, Mu J, Grayden DB et al. · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Motor imagery brain-computer interfaces are promising neurotechnologies but limited by slow user learning and unstable decoder adaptation. Here, the authors develop a novel sensory-guided joint learning framework that coordinates subject learning and decoder adaptation to improve BCI acquisition.</p>
-      <div class="weekly-paper-keywords">关键词: motor imagery, joint learning, BCI acquisition</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2607.24023" target="_blank">Self-Supervised Consistency Enhanced Disentangled Learning for Neural Decoding Generalization in Brain-Machine Interface</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">arXiv Authors</span>
-        <span class="weekly-paper-journal">arXiv</span>
-        <span class="weekly-paper-date">2026-07-01</span>
-        <span class="weekly-paper-source">arXiv</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913685/" target="_blank" rel="noopener">Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.</a></h3>
+        <p class="weekly-paper-meta">Washizawa Y · Biomedical physics & engineering express</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Introduces self-supervised consistency enhanced disentangled learning to improve neural decoding generalization across sessions and subjects in brain-machine interfaces.</p>
-      <div class="weekly-paper-keywords">关键词: self-supervised learning, neural decoding, generalization, BMI</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41591-026-04414-6" target="_blank">Long-term independent use of an intracortical brain–computer interface for speech and cursor control</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Card NS, Singer-Clark T, Peracha H et al.</span>
-        <span class="weekly-paper-journal">Nature Medicine</span>
-        <span class="weekly-paper-date">2026-06-15</span>
-        <span class="weekly-paper-source">Nature</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42911846/" target="_blank" rel="noopener">Clinically unresponsive patients with acute brain injury activate a brain-computer interface.</a></h3>
+        <p class="weekly-paper-meta">Shen Q, Eliseyev A, Kansara V et al. · Brain : a journal of neurology</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Demonstrates long-term independent home use of an intracortical BCI for both speech and cursor control by a patient with ALS, showing sustained performance over months.</p>
-      <div class="weekly-paper-keywords">关键词: intracortical BCI, ALS, speech, cursor control, long-term</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273(26)00733-6" target="_blank">Optimizing learning for control of human-machine interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Vassiliadis et al.</span>
-        <span class="weekly-paper-journal">Neuron</span>
-        <span class="weekly-paper-date">2026-06-15</span>
-        <span class="weekly-paper-source">Neuron</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-22</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42843403/" target="_blank" rel="noopener">Ordered onset of regional desynchronization and a transition in movement-class discriminability during cue-paced motor imagery.</a></h3>
+        <p class="weekly-paper-meta">Lee S · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Real-time reinforcement for human-machine interface control. Cover article for Neuron Volume 114, Issue 20.</p>
-      <div class="weekly-paper-keywords">关键词: learning, human-machine interface, reinforcement</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2606.15091" target="_blank">Sensory Restoration via Brain-Computer Interfaces: A Unified 2×2 Framework and Convergence Roadmap</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">arXiv Authors</span>
-        <span class="weekly-paper-journal">arXiv</span>
-        <span class="weekly-paper-date">2026-06-01</span>
-        <span class="weekly-paper-source">arXiv</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-21</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906586/" target="_blank" rel="noopener">Towards semantic brain-computer interfacing: The graded inventory of semantic triggers (GIST) paradigm.</a></h3>
+        <p class="weekly-paper-meta">Podmore JJ, Radman M, Poli R et al. · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Proposes a unified framework for sensory restoration via brain-computer interfaces, covering efferent and afferent pathways and outlining a convergence roadmap for clinical translation.</p>
-      <div class="weekly-paper-keywords">关键词: sensory restoration, BCI framework, clinical translation</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2605.20939" target="_blank">Toward 6G-enabled Brain Computer Interfaces: Technical Requirements, Use Cases, Challenges, and Future Trends</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">arXiv Authors</span>
-        <span class="weekly-paper-journal">arXiv</span>
-        <span class="weekly-paper-date">2026-05-01</span>
-        <span class="weekly-paper-source">arXiv</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-21</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906584/" target="_blank" rel="noopener">ACF-Net: Design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.</a></h3>
+        <p class="weekly-paper-meta">Yang T · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Explores how 6G communication technologies could enable next-generation brain-computer interfaces with massive multi-user support, bidirectional real-time neural interfaces, and semantic neural signal interpretation.</p>
-      <div class="weekly-paper-keywords">关键词: 6G, BCI, wireless neural interface, multi-brain</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://ieeexplore.ieee.org/abstract/document/11143892" target="_blank">A Decade of Rapid Serial Visual Presentation Paradigm in Brain-Computer Interfaces</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Xu M et al.</span>
-        <span class="weekly-paper-journal">IEEE TBME</span>
-        <span class="weekly-paper-date">2026-03-01</span>
-        <span class="weekly-paper-source">IEEETBME</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-21</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42905589/" target="_blank" rel="noopener">A Sensitive BLE-Enabled Wearable fNIRS Biosensor for Real-Time Monitoring and Mapping of Task-Evoked Oxygen Influxes During On-Screen Cognitive Tasks.</a></h3>
+        <p class="weekly-paper-meta">Mandal R, Prabhakaran GS, Kowshik AV et al. · IEEE transactions on bio-medical engineering</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract">Comprehensive review of a decade of rapid serial visual presentation paradigm research in brain-computer interfaces, published in IEEE Transactions on Biomedical Engineering.</p>
-      <div class="weekly-paper-keywords">关键词: RSVP, BCI, visual paradigm, review</div>
-    </div>
 
-    <div class="weekly-paper">
-      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42912743/" target="_blank">Decoding motor imagery EEG signals by a deep learning network integrating multiscale filtering and temporal-channel attention mechanisms.</a></h3>
-      <div class="weekly-paper-meta">
-        <span class="weekly-paper-authors">Zhu Y, Shi Y, Wu J, Wei Q</span>
-        <span class="weekly-paper-journal">PloS one</span>
-        <span class="weekly-paper-date">2026-01-01</span>
-        <span class="weekly-paper-source">PubMed</span>
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-21</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42904476/" target="_blank" rel="noopener">Regenerative Peripheral Nerve Interface (RPNI) Surgery for Naturalistic Prosthetic Control.</a></h3>
+        <p class="weekly-paper-meta">Mohanty AJ, Tian Y, Kung TA et al. · Muscle & nerve</p>
+        <p class="weekly-paper-abstract"></p>
       </div>
-      <p class="weekly-paper-abstract"></p>
-      
-    </div>
 
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-21</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42735699/" target="_blank" rel="noopener">Ultra high-density, 4096-channel intraoperative neurophysiological brain mapping for functional localization of the human central sulcus.</a></h3>
+        <p class="weekly-paper-meta">Skular AF, Tostaeva G, Ho E et al. · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-20</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42900612/" target="_blank" rel="noopener">EEG-Based Characterization of Cortical Dynamics during Graded Resistance Exercise.</a></h3>
+        <p class="weekly-paper-meta">Bhagat V, Yadav RK, Ghosh S et al. · IEEE journal of biomedical and health informatics</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-19</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42896567/" target="_blank" rel="noopener">The calibration-to-accuracy mapping in P300 spellers does not transport across cohorts and was not restored by tested alignment or local recalibration.</a></h3>
+        <p class="weekly-paper-meta">Gorenshtein A, Adiniaev Y, Liba T et al. · Journal of neural engineering</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-19</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42896556/" target="_blank" rel="noopener">Distinct patterns of whole-body coding in human motor cortex and posterior parietal cortex.</a></h3>
+        <p class="weekly-paper-meta">Kadlec K, Gamez J, Aflalo T et al. · Neuron</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-19</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42895891/" target="_blank" rel="noopener">Bridging the Gap Between Design and Access: Toward Visual Scene Displays for Brain-Computer Interface Use in Augmentative and Alternative Communication by Children.</a></h3>
+        <p class="weekly-paper-meta">Pitt KM, Sawall J, Butler E et al. · Journal of speech, language, and hearing research : JSLHR</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-10-19</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42826712/" target="_blank" rel="noopener">The macaque IT cortex but not current artificial vision networks encode object position in perceptually aligned coordinates.</a></h3>
+        <p class="weekly-paper-meta">Yakubovskaya E, Ramezanpour H, Dunnhofer M et al. · Current biology : CB</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Cell</span>
+          <span class="weekly-paper-date">2026-10-19</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.cell.com/trends/neurosciences/pdf/S0166-2236(26)00185-2.pdf" target="_blank" rel="noopener">Brain-computer interfaces and the future of mental privacy</a></h3>
+        <p class="weekly-paper-meta"> · Trends in Neurosciences</p>
+        <p class="weekly-paper-abstract">Discusses rapid advances in brain-computer interface technologies and implications for mental privacy.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-10-08</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41597-026-07607-3" target="_blank" rel="noopener">A Multitasking EEG Dataset for Cognitive Workload</a></h3>
+        <p class="weekly-paper-meta"> · Scientific Data</p>
+        <p class="weekly-paper-abstract">Freely available dataset supporting cognitive workload classification, signal quality assessment, and adaptive BCI development.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-10-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/d41586-026-02895-6" target="_blank" rel="noopener">Multifunctional brain implant translates speech and gestures in real time</a></h3>
+        <p class="weekly-paper-meta">Brosler SC et al. · Nature</p>
+        <p class="weekly-paper-abstract">Researchers demonstrate that a single brain implant can translate both intended speech and gestures simultaneously, enabling more natural communication for people with paralysis.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Science</span>
+          <span class="weekly-paper-date">2026-09-17</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://spj.science.org/doi/10.34133/bmef.0312" target="_blank" rel="noopener">Ultrasound Brain–Computer Interfaces for Transcranial Applications</a></h3>
+        <p class="weekly-paper-meta">BMEF · BMEF</p>
+        <p class="weekly-paper-abstract">Reviews ultrasound-based brain-computer interfaces for transcranial applications, covering functional ultrasound imaging and signal decoding approaches.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-09-08</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41586-026-XXXXX-X" target="_blank" rel="noopener">A freestanding submicron electrocorticography electrode array</a></h3>
+        <p class="weekly-paper-meta">Nature · Nature</p>
+        <p class="weekly-paper-abstract">Inspired by dragonfly wings, authors propose a vein-membrane hybrid structure strategy and develop a freestanding submicron electrocorticography electrode array.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Science</span>
+          <span class="weekly-paper-date">2026-09-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.science.org/doi/10.1126/sciadv.adw3876" target="_blank" rel="noopener">Intracortical brain-computer interface for navigation in real-world environments</a></h3>
+        <p class="weekly-paper-meta">Saussus O et al. · Science Advances</p>
+        <p class="weekly-paper-abstract">Presents an innovative intracortical brain-computer interface to bridge the gap between laboratory settings and real-world navigation for people with paralysis.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">arXiv</span>
+          <span class="weekly-paper-date">2026-09-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2609.01767" target="_blank" rel="noopener">Slow-Fast Brain-Computer Interfaces: Preventing Neuroadaptive Overfitting in AI-Mediated Neural Interfaces</a></h3>
+        <p class="weekly-paper-meta">arXiv Authors · arXiv</p>
+        <p class="weekly-paper-abstract">Brain-computer interfaces are moving from task-specific neural decoders toward AI-mediated systems. This work examines how AI assistance layers can lead to neuroadaptive overfitting and proposes slow-fast training strategies.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-08-20</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s44385-026-00074-w" target="_blank" rel="noopener">Towards neuromorphic neurotechnologies: integrating brain-inspired computing with brain-computer interfaces</a></h3>
+        <p class="weekly-paper-meta">Fares H, Ronchini M, Zamani M et al. · npj Biomedical Innovations</p>
+        <p class="weekly-paper-abstract">Explores integration of neuromorphic computing principles with brain-computer interfaces to create more efficient, adaptive neurotechnologies.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Cell</span>
+          <span class="weekly-paper-date">2026-07-17</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(26)00139-7" target="_blank" rel="noopener">The emerging field of cognitive brain–computer interfaces</a></h3>
+        <p class="weekly-paper-meta">Cell Trends · Trends in Cognitive Sciences</p>
+        <p class="weekly-paper-abstract">Brain–computer interfaces have achieved transformative success in restoring movement and communication. However, extending these approaches to decoding or recovery of cognitive function poses fundamentally new challenges.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">NatureCommunications</span>
+          <span class="weekly-paper-date">2026-07-15</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41467-026-XXXXX-X" target="_blank" rel="noopener">Shared latent representations of speech production for cross-patient speech decoding</a></h3>
+        <p class="weekly-paper-meta">Nature Communications · Nature Communications</p>
+        <p class="weekly-paper-abstract">Current speech brain-computer interfaces rely on patient-specific decoding approaches. Here, the authors show that patient-specific data can be aligned to a shared space that preserves speech information, enabling cross-patient speech BCIs.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">NatureCommunications</span>
+          <span class="weekly-paper-date">2026-07-15</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41467-026-75435-5" target="_blank" rel="noopener">Sensory-guided human-machine joint learning accelerates the acquisition of motor imagery brain computer interface control</a></h3>
+        <p class="weekly-paper-meta">Wang H, Zhang Y, Karrenbach M et al. · Nature Communications</p>
+        <p class="weekly-paper-abstract">Motor imagery brain-computer interfaces are promising neurotechnologies but limited by slow user learning and unstable decoder adaptation. Here, the authors develop a novel sensory-guided joint learning framework that coordinates subject learning and decoder adaptation to improve BCI acquisition.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">arXiv</span>
+          <span class="weekly-paper-date">2026-07-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2607.24023" target="_blank" rel="noopener">Self-Supervised Consistency Enhanced Disentangled Learning for Neural Decoding Generalization in Brain-Machine Interface</a></h3>
+        <p class="weekly-paper-meta">arXiv Authors · arXiv</p>
+        <p class="weekly-paper-abstract">Introduces self-supervised consistency enhanced disentangled learning to improve neural decoding generalization across sessions and subjects in brain-machine interfaces.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Nature</span>
+          <span class="weekly-paper-date">2026-06-15</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.nature.com/articles/s41591-026-04414-6" target="_blank" rel="noopener">Long-term independent use of an intracortical brain–computer interface for speech and cursor control</a></h3>
+        <p class="weekly-paper-meta">Card NS, Singer-Clark T, Peracha H et al. · Nature Medicine</p>
+        <p class="weekly-paper-abstract">Demonstrates long-term independent home use of an intracortical BCI for both speech and cursor control by a patient with ALS, showing sustained performance over months.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">Neuron</span>
+          <span class="weekly-paper-date">2026-06-15</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://www.cell.com/neuron/fulltext/S0896-6273(26)00733-6" target="_blank" rel="noopener">Optimizing learning for control of human-machine interfaces</a></h3>
+        <p class="weekly-paper-meta">Vassiliadis et al. · Neuron</p>
+        <p class="weekly-paper-abstract">Real-time reinforcement for human-machine interface control. Cover article for Neuron Volume 114, Issue 20.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">arXiv</span>
+          <span class="weekly-paper-date">2026-06-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2606.15091" target="_blank" rel="noopener">Sensory Restoration via Brain-Computer Interfaces: A Unified 2×2 Framework and Convergence Roadmap</a></h3>
+        <p class="weekly-paper-meta">arXiv Authors · arXiv</p>
+        <p class="weekly-paper-abstract">Proposes a unified framework for sensory restoration via brain-computer interfaces, covering efferent and afferent pathways and outlining a convergence roadmap for clinical translation.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">arXiv</span>
+          <span class="weekly-paper-date">2026-05-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2605.20939" target="_blank" rel="noopener">Toward 6G-enabled Brain Computer Interfaces: Technical Requirements, Use Cases, Challenges, and Future Trends</a></h3>
+        <p class="weekly-paper-meta">arXiv Authors · arXiv</p>
+        <p class="weekly-paper-abstract">Explores how 6G communication technologies could enable next-generation brain-computer interfaces with massive multi-user support, bidirectional real-time neural interfaces, and semantic neural signal interpretation.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">IEEETBME</span>
+          <span class="weekly-paper-date">2026-03-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://ieeexplore.ieee.org/abstract/document/11143892" target="_blank" rel="noopener">A Decade of Rapid Serial Visual Presentation Paradigm in Brain-Computer Interfaces</a></h3>
+        <p class="weekly-paper-meta">Xu M et al. · IEEE TBME</p>
+        <p class="weekly-paper-abstract">Comprehensive review of a decade of rapid serial visual presentation paradigm research in brain-computer interfaces, published in IEEE Transactions on Biomedical Engineering.</p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-01-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42912743/" target="_blank" rel="noopener">Decoding motor imagery EEG signals by a deep learning network integrating multiscale filtering and temporal-channel attention mechanisms.</a></h3>
+        <p class="weekly-paper-meta">Zhu Y, Shi Y, Wu J et al. · PloS one</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-01-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42921446/" target="_blank" rel="noopener">Correction: Perioperative management for invasive brain-computer interface implantation under surgical navigation in a patient with traumatic spinal cord injury: a case report.</a></h3>
+        <p class="weekly-paper-meta">Yang S, Sun Q, Mo H et al. · Front Hum Neurosci</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-01-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920766/" target="_blank" rel="noopener">Case Report: An MDT-guided multimodal protocol for large-area stroke plateau - integrating neuromodulation with multimodal assessment.</a></h3>
+        <p class="weekly-paper-meta">Wu XL, Xia XQ, Ye CQ et al. · Front Rehabil Sci</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
+
+      <div class="weekly-paper">
+        <div class="weekly-paper-header">
+          <span class="weekly-paper-source">PubMed</span>
+          <span class="weekly-paper-date">2026-01-01</span>
+        </div>
+        <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42912743/" target="_blank" rel="noopener">Decoding motor imagery EEG signals by a deep learning network integrating multiscale filtering and temporal-channel attention mechanisms.</a></h3>
+        <p class="weekly-paper-meta">Zhu Y, Shi Y, Wu J et al. · PLoS One</p>
+        <p class="weekly-paper-abstract"></p>
+      </div>
   </div>
-
   <div class="footer">
-    <p>BCI News Academic Weekly · Generated on 2026-10-26 09:53</p>
-    <p><a href="../index.html" style="color: var(--accent-blue); text-decoration: none;">← 返回 BCI News 主页</a></p>
+    <p>BCI News · 每周学术综述 · 数据来自 PubMed / arXiv / 顶刊检索</p>
   </div>
 </div>
 </body>

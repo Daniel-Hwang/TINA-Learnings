@@ -908,6 +908,148 @@ body::before {
 <!-- End GoatCounter Tracking -->
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
+
+/* Academic Section Styles */
+.academic-section {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08));
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+.academic-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #10b981, var(--accent-cyan), var(--accent-blue));
+}
+.academic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.academic-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #10b981, var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+.academic-section-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.academic-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.academic-weekly-link {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border: 1px solid var(--accent-cyan);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+.academic-weekly-link:hover {
+    background: rgba(6, 182, 212, 0.12);
+}
+.academic-update-time {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    background: var(--bg-card);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+.paper-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.paper-card:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 8px 30px var(--glow-cyan);
+    transform: translateY(-3px);
+}
+.paper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+.paper-source {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 3px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.paper-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+.paper-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.paper-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.paper-title a:hover {
+    color: var(--accent-cyan);
+}
+.paper-authors {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+.paper-journal {
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.paper-abstract {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+.paper-empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+}
+
 </head>
 <body>
 <div class="container">
@@ -1165,6 +1307,111 @@ body::before {
 <button class="time-btn" data-range="2026">2026年</button>
 </div>
 </div>
+
+<!-- Academic Top Journals Section -->
+<section class="academic-section" id="academic">
+  <div class="academic-header">
+    <div class="academic-title-wrap">
+      <h2 class="academic-section-title">🎓 学术顶刊</h2>
+      <p class="academic-section-subtitle">每日追踪 Nature、Science、Cell、Neuron、IEEE TBME、PubMed、arXiv 等顶刊的 BCI 最新论文</p>
+    </div>
+    <div class="academic-actions">
+      <a href="./weekly/index.html" class="academic-weekly-link">📚 每周综述 →</a>
+      <span class="academic-update-time">更新于 2026-10-26</span>
+    </div>
+  </div>
+  <div class="paper-grid">
+    
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" rel="noopener">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</a></h3>
+        <p class="paper-authors">Sun M, Ma X, Wang X et al.</p>
+        <p class="paper-journal">Adv Healthc Mater</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" rel="noopener">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</a></h3>
+        <p class="paper-authors">Jiang X, Zhang L, Li S et al.</p>
+        <p class="paper-journal">J Spinal Cord Med</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920124/" target="_blank" rel="noopener">Polygenicity shapes distinct brain patterns and clinical profiles of bipolar disorder.</a></h3>
+        <p class="paper-authors">Feng Y, Guo X, Huang P et al.</p>
+        <p class="paper-journal">BMC Med</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914707/" target="_blank" rel="noopener">DNA metabarcoding reveals the trophic ecology of Critically Endangered juvenile green sawfish (Pristis zijsron) and sympatric predators.</a></h3>
+        <p class="paper-authors">Dornan TN, Dantas PT, Morgan DL et al.</p>
+        <p class="paper-journal">Mar Environ Res</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914132/" target="_blank" rel="noopener">Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.</a></h3>
+        <p class="paper-authors">Das K N, Sharma V, Manoj S et al.</p>
+        <p class="paper-journal">Clin Otolaryngol</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913687/" target="_blank" rel="noopener">Decoding attempted handwritten characters based on temporal endovascular neural features.</a></h3>
+        <p class="paper-authors">Kokorin K, Mu J, Grayden DB et al.</p>
+        <p class="paper-journal">J Neural Eng</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913685/" target="_blank" rel="noopener">Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.</a></h3>
+        <p class="paper-authors">Washizawa Y</p>
+        <p class="paper-journal">Biomed Phys Eng Express</p>
+        <p class="paper-abstract"></p>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-header">
+          <span class="paper-source">PubMed</span>
+          <span class="paper-date">2026-10-26</span>
+        </div>
+        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" rel="noopener">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</a></h3>
+        <p class="paper-authors">Wu Y, Chang T, Chen S et al.</p>
+        <p class="paper-journal">Sci Adv</p>
+        <p class="paper-abstract"></p>
+      </div>
+  </div>
+</section>
+
 <div class="timeline">
   <div class="timeline-day" data-date="2026-10-26">
     <div class="day-header">

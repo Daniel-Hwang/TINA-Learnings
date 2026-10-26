@@ -1,0 +1,128 @@
+[
+  {
+    "id": "nature:npj-biomed-innov-026-00119-0",
+    "title": "Generalizable neural decoding for clinically scalable brain-computer interfaces",
+    "authors": [
+      "Gu, Y.",
+      "Yin, H.",
+      "Wang, Y.",
+      "et al."
+    ],
+    "journal": "npj Biomedical Innovations",
+    "publish_date": "2026-10-23",
+    "url": "https://www.nature.com/articles/s44385-026-00119-0",
+    "abstract": "This paper explores generalizable neural decoding approaches to enable clinically scalable brain-computer interfaces.",
+    "keywords": [
+      "neural decoding",
+      "BCI",
+      "clinical translation"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "nature:s41593-026-02456-0",
+    "title": "A neural architecture for imagined and overt speech motor dynamics",
+    "authors": [
+      "Xiaowei Gao",
+      "Binke Yuan",
+      "Shelley Xiuli Tong",
+      "Xing Tian",
+      "Yuanning Li",
+      "et al."
+    ],
+    "journal": "Nature Neuroscience",
+    "publish_date": "2026-10-23",
+    "url": "https://www.nature.com/articles/s41593-026-02456-0",
+    "abstract": "Presents a neural architecture for decoding imagined and overt speech motor dynamics, with relevance for speech BCIs.",
+    "keywords": [
+      "speech BCI",
+      "neural decoding",
+      "motor dynamics"
+    ],
+    "source": "NatureNeuroscience",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "nature:s41597-026-07607-3",
+    "title": "A Multitasking EEG Dataset for Cognitive Workload",
+    "authors": [],
+    "journal": "Scientific Data",
+    "publish_date": "2026-10-08",
+    "url": "https://www.nature.com/articles/s41597-026-07607-3",
+    "abstract": "Freely available dataset supporting cognitive workload classification, signal quality assessment, and adaptive BCI development.",
+    "keywords": [
+      "EEG",
+      "cognitive workload",
+      "dataset",
+      "BCI"
+    ],
+    "source": "Nature",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "science:sciadv-aee1540",
+    "title": "Highly stretchable, hair-compatible multichannel neural interfaces for EEG monitoring and BCI applications",
+    "authors": [],
+    "journal": "Science Advances",
+    "publish_date": "2026-10-24",
+    "url": "https://www.science.org/doi/10.1126/sciadv.aee1540",
+    "abstract": "Introduces MindStretcH, a reusable platform for long-term EEG monitoring and BCI applications in laboratory, clinical, and home settings.",
+    "keywords": [
+      "EEG",
+      "neural interface",
+      "stretchable",
+      "BCI"
+    ],
+    "source": "Science",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "science:sciadv-adx5564",
+    "title": "Biophysically constrained learning from healthy neural architectures improves brain-computer interface decoding",
+    "authors": [],
+    "journal": "Science Advances",
+    "publish_date": "2026-10-24",
+    "url": "https://www.science.org/doi/10.1126/sciadv.adx5564",
+    "abstract": "Provides proof of concept for improving decoding in compromised networks by harnessing healthy neural dynamics, laying foundation for neuroprostheses.",
+    "keywords": [
+      "neural decoding",
+      "BCI",
+      "neuroprosthetics"
+    ],
+    "source": "Science",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "cell:tins-026-00185-2",
+    "title": "Brain-computer interfaces and the future of mental privacy",
+    "authors": [],
+    "journal": "Trends in Neurosciences",
+    "publish_date": "2026-10-19",
+    "url": "https://www.cell.com/trends/neurosciences/pdf/S0166-2236(26)00185-2.pdf",
+    "abstract": "Discusses rapid advances in brain-computer interface technologies and implications for mental privacy.",
+    "keywords": [
+      "BCI",
+      "mental privacy",
+      "neuroethics"
+    ],
+    "source": "Cell",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  },
+  {
+    "id": "cell:cell-reports-026-01092-2",
+    "title": "Theta synchronization coordinates ventral temporal and frontal regions during visual working memory",
+    "authors": [],
+    "journal": "Cell Reports",
+    "publish_date": "2026-10-24",
+    "url": "https://www.cell.com/cell-reports/fulltext/S2211-1247(26)01092-2",
+    "abstract": "Investigates theta synchronization in working memory, with relevance for cognitive BCIs.",
+    "keywords": [
+      "theta synchronization",
+      "working memory",
+      "BCI"
+    ],
+    "source": "Cell",
+    "fetched_at": "2026-10-26T02:00:00Z"
+  }
+]
