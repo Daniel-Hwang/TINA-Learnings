@@ -282,308 +282,10 @@ body::before {
 
 
 
-/* Featured Articles Styles */
-.featured-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.featured-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
-}
-.featured-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.featured-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.featured-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.featured-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-.featured-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.featured-card:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 8px 30px var(--glow-blue);
-    transform: translateY(-3px);
-}
-.featured-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    gap: 8px;
-}
-.featured-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(6, 182, 212, 0.25);
-}
-.featured-code-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.featured-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin-bottom: 10px;
-    flex-grow: 1;
-}
-.featured-summary {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 14px;
-}
-.featured-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.featured-source {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.featured-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-.featured-code-link {
-    font-size: 0.8rem;
-    color: #10b981;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-.featured-code-link:hover {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-}
-@media (max-width: 640px) {
-    .featured-section { padding: 20px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-header { flex-direction: column; }
-}
-/* Visitor Counter Styles */
-.stat-number-small { font-size: 1.4rem; }
 
 
-/* Featured Articles Styles */
-.featured-section {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.featured-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
-}
-.featured-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.featured-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.featured-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.featured-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-.featured-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.featured-card:hover {
-    border-color: var(--accent-blue);
-    box-shadow: 0 8px 30px var(--glow-blue);
-    transform: translateY(-3px);
-}
-.featured-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    gap: 8px;
-}
-.featured-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-    background: rgba(6, 182, 212, 0.12);
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid rgba(6, 182, 212, 0.25);
-}
-.featured-code-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.featured-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin-bottom: 10px;
-    flex-grow: 1;
-}
-.featured-summary {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 14px;
-}
-.featured-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.featured-source {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.featured-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-secondary);
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-.featured-code-link {
-    font-size: 0.8rem;
-    color: #10b981;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-.featured-code-link:hover {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-}
-@media (max-width: 640px) {
-    .featured-section { padding: 20px; }
-    .featured-grid { grid-template-columns: 1fr; }
-    .featured-header { flex-direction: column; }
-}
-/* Visitor Counter Styles */
-.stat-number-small { font-size: 1.4rem; }
+
+
 
 
 /* Featured Articles Styles */
@@ -903,153 +605,7 @@ body::before {
 }
 
 </style>
-<!-- GoatCounter Tracking -->
-<script async="" data-goatcounter="https://daniel-hwang.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
-<!-- End GoatCounter Tracking -->
-
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"2c90b08ed0a84405b8a3ecdb917a4ab7\"}'></script><!-- End Cloudflare Web Analytics -->
-
-/* Academic Section Styles */
-.academic-section {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(59, 130, 246, 0.08));
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-    position: relative;
-    overflow: hidden;
-}
-.academic-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, #10b981, var(--accent-cyan), var(--accent-blue));
-}
-.academic-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-.academic-section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #10b981, var(--accent-cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-}
-.academic-section-subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.academic-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-.academic-weekly-link {
-    color: var(--accent-cyan);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 6px 12px;
-    border: 1px solid var(--accent-cyan);
-    border-radius: 20px;
-    transition: all 0.2s ease;
-}
-.academic-weekly-link:hover {
-    background: rgba(6, 182, 212, 0.12);
-}
-.academic-update-time {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-}
-.paper-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-}
-.paper-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 18px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-.paper-card:hover {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 8px 30px var(--glow-cyan);
-    transform: translateY(-3px);
-}
-.paper-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 8px;
-}
-.paper-source {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #10b981;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.paper-date {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-.paper-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-.paper-title a {
-    color: var(--text-primary);
-    text-decoration: none;
-}
-.paper-title a:hover {
-    color: var(--accent-cyan);
-}
-.paper-authors {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-bottom: 4px;
-}
-.paper-journal {
-    font-size: 0.8rem;
-    color: var(--accent-cyan);
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-.paper-abstract {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    flex-grow: 1;
-}
-.paper-empty {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 20px;
-}
-
 </head>
 <body>
 <div class="container">
@@ -1057,108 +613,88 @@ body::before {
 <h1 class="hero-title">🧠 脑机接口热点新闻时间轴</h1>
 <p class="hero-subtitle">BCI News Timeline · 每日更新 · 增量积累</p>
 <div class="stats-grid">
-<div class="stat-item"><div class="stat-number">255</div><div class="stat-label">热点总数</div></div>
+<div class="stat-item"><div class="stat-number">243</div><div class="stat-label">热点总数</div></div>
 <div class="stat-item"><div class="stat-number">90</div><div class="stat-label">覆盖天数</div></div>
-<div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数<div class="stat-item">
-                <div class="stat-number stat-number-small" id="today-visits">-</div>
-                <div class="stat-label">今日访问</div>
-            </div>
+<div class="stat-item"><div class="stat-number">9</div><div class="stat-label">分类数</div></div>
+<div class="stat-item"><div class="stat-number"></div><div class="stat-label">最新更新</div></div>
+
             <div class="stat-item">
-                <div class="stat-number stat-number-small" id="total-visits">-</div>
-                <div class="stat-label">累计访问</div>
-            </div>
-        </div></div>
+<div class="stat-number stat-number-small" id="today-visits">-</div>
+<div class="stat-label">今日访问</div>
 </div>
+            <div class="stat-item">
+<div class="stat-number stat-number-small" id="total-visits">-</div>
+<div class="stat-label">累计访问</div>
+</div>
+        </div>
 </header>
 <!-- Featured Articles Section -->
-<!-- Featured Articles Section -->
-
-
-<!-- Featured Articles Section -->
 <section class="featured-section" id="featured">
-  <div class="featured-header">
-    <div class="featured-title-wrap">
-      <h2 class="featured-section-title">⭐ 精选推荐</h2>
-      <p class="featured-section-subtitle">每日精选 BCI 领域高热度资讯与优质论文（优先展示带开源代码项目）</p>
-    </div>
-    <span class="featured-update-time">更新于 2026-11-06</span>
-  </div>
-  <div class="featured-grid">
-    
-      <a href="https://hub.baai.ac.cn/view/58487" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">学术前沿</span>
-          
-        </div>
-        <h3 class="featured-title">2026诺贝尔生理学或医学奖授予光遗传学三位奠基人</h3>
-        <p class="featured-summary">瑞典卡罗琳医学院宣布，2026年诺贝尔生理学或医学奖授予美国科学家卡尔·戴塞罗思（Karl Deisseroth）、德国科学家彼得·黑格曼（Peter Hegemann）和格奥尔格·内格尔（Georg Nagel），以表彰他们在光门控离子通道和光遗传学方面的发现。光遗传学使科学家...</p>
-        <div class="featured-footer">
-          <span class="featured-source">来源：智源社区 / 新华社 / 搜狐网</span>
-          
-        </div>
-        
-      </a>
-
-      <a href="https://neuralink.com/updates/pretraining-on-50000-hours" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">技术突破</span>
-          
-        </div>
-        <h3 class="featured-title">Neuralink基于5万小时无标签神经数据预训练BCI编码器，刷新光标控制纪录</h3>
-        <p class="featured-summary">Neuralink发布技术更新，其临床试验参与者累计产生超过5万小时颅内神经数据。公司基于这些数据预训练Mamba2架构神经编码器，使解码器续航时间延长至数周甚至超过20个月，每周校准时间从平均55分钟降至约10分钟。6名参与者刷新个人纪录，其中一人达到11.32 bps（bit...</p>
-        <div class="featured-footer">
-          <span class="featured-source">来源：Neuralink / explainx.ai / TeslaNorth / Interesting Engineering</span>
-          
-        </div>
-        
-      </a>
-
-      <a href="https://timeline.sohu.com/news/q7EMgzgG0j" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">技术突破</span>
-          
-        </div>
-        <h3 class="featured-title">Neuralink发布5万小时脑数据预训练模型，光标控制创11.32比特/秒纪录</h3>
-        <p class="featured-summary">Neuralink发布技术更新，利用临床试验参与者累计超过5万小时的颅内神经记录，以自监督方式预训练神经编码器。据此训练的解码器可连续数周无需重新校准，光标控制成绩达到11.32比特/秒，高于此前约10.39比特/秒的纪录，标志着BCI基础模型从单次植入演示向跨人、长期、少标定能...</p>
-        <div class="featured-footer">
-          <span class="featured-source">来源：搜狐时间线 / Neuralink</span>
-          
-        </div>
-        
-      </a>
-
-      <a href="https://www.medtechdive.com/news/precision-neuroscience-raises-250m-for-brain-computer-interface-work/831344" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">资本动态</span>
-          
-        </div>
-        <h3 class="featured-title">Precision Neuroscience完成2.5亿美元D轮融资，总融资达4.3亿美元估值超10亿</h3>
-        <p class="featured-summary">美国脑机接口公司Precision Neuroscience宣布完成2.5亿美元D轮融资，由Pershing Square、Ackman Oxman Institute及一家知名生命科学基金联合领投，Duquesne Family Office、B Capital、ARK Inv...</p>
-        <div class="featured-footer">
-          <span class="featured-source">来源：MedTech Dive / MobiHealthNews / NYT</span>
-          
-        </div>
-        
-      </a>
-
-      <a href="https://finance.sina.com.cn/tech/discovery/2026-09-24/doc-inisxaff4961390.shtml" target="_blank" class="featured-card">
-        <div class="featured-card-header">
-          <span class="featured-category">技术突破</span>
-          
-        </div>
-        <h3 class="featured-title">马斯克：未来十年押注"生物增强"，Neuralink试图突破人类信息传递带宽瓶颈</h3>
-        <p class="featured-summary">9月23日，特斯拉CEO埃隆·马斯克接受央视财经专访时表示，未来十年他看好"生物增强"（Biological Enhancement），其参与创立的Neuralink正试图突破人类信息传递带宽的瓶颈。马斯克指出，人类输出信息的峰值速度仅约每秒100比特，而计算机之间却以万亿比特每...</p>
-        <div class="featured-footer">
-          <span class="featured-source">来源：快科技 / 新浪科技</span>
-          
-        </div>
-        
-      </a>
-
-  </div>
+<div class="featured-header">
+<div class="featured-title-wrap">
+<h2 class="featured-section-title">⭐ 精选推荐</h2>
+<p class="featured-section-subtitle">每日精选 BCI 领域高热度资讯与优质论文（优先展示带开源代码项目）</p>
+</div>
+<span class="featured-update-time">更新于 2026-11-07</span>
+</div>
+<div class="featured-grid">
+<a class="featured-card" href="https://arxiv.org/abs/2610.33058v1" target="_blank">
+<div class="featured-card-header">
+<span class="featured-category">开源论文</span>
+<span class="featured-code-badge">开源代码</span>
+</div>
+<h3 class="featured-title">KDHNet: A Knowledge-Driven Hybrid Network for Limited-Calibration SSVEP Decoding</h3>
+<p class="featured-summary">Steady-state visual evoked potential (SSVEP)-based brain-computer interfaces (BCIs) achieve high information transfer rates but often require sufficient subject...</p>
+<div class="featured-footer">
+<span class="featured-source">arXiv (Zhentao He, Ziwei Wang)</span>
+<span class="featured-date">2026-10-19</span>
+</div>
+<a class="featured-code-link" href="https://github.com/2665023991/KDHNet" onclick="event.stopPropagation();" target="_blank">📎 代码仓库</a>
+</a>
+<a class="featured-card" href="https://arxiv.org/abs/2611.05652v1" target="_blank">
+<div class="featured-card-header">
+<span class="featured-category">学术论文</span>
+</div>
+<h3 class="featured-title">Quantifying Trait-State Hierarchy in EEG Foundation Model and Signal Processing Embeddings</h3>
+<p class="featured-summary">Electroencephalography (EEG) measures brain activity through recording electrical potentials of the scalp. EEG recordings capture two distinct sets of character...</p>
+<div class="featured-footer">
+<span class="featured-source">arXiv (Anusha Madapura, Aditya Kommineni)</span>
+<span class="featured-date">2026-11-03</span>
+</div>
+</a>
+<a class="featured-card" href="https://hub.baai.ac.cn/view/58487" target="_blank">
+<div class="featured-card-header">
+<span class="featured-category">学术前沿</span>
+</div>
+<h3 class="featured-title">2026诺贝尔生理学或医学奖授予光遗传学三位奠基人</h3>
+<p class="featured-summary">瑞典卡罗琳医学院宣布，2026年诺贝尔生理学或医学奖授予美国科学家卡尔·戴塞罗思（Karl Deisseroth）、德国科学家彼得·黑格曼（Peter Hegemann）和格奥尔格·内格尔（Georg Nagel），以表彰他们在光门控离子通道和光遗传学方面的发现。光遗传学使科学家...</p>
+<div class="featured-footer">
+<span class="featured-source">来源：智源社区 / 新华社 / 搜狐网</span>
+</div>
+</a>
+<a class="featured-card" href="https://neuralink.com/updates/pretraining-on-50000-hours" target="_blank">
+<div class="featured-card-header">
+<span class="featured-category">技术突破</span>
+</div>
+<h3 class="featured-title">Neuralink基于5万小时无标签神经数据预训练BCI编码器，刷新光标控制纪录</h3>
+<p class="featured-summary">Neuralink发布技术更新，其临床试验参与者累计产生超过5万小时颅内神经数据。公司基于这些数据预训练Mamba2架构神经编码器，使解码器续航时间延长至数周甚至超过20个月，每周校准时间从平均55分钟降至约10分钟。6名参与者刷新个人纪录，其中一人达到11.32 bps（bit...</p>
+<div class="featured-footer">
+<span class="featured-source">来源：Neuralink / explainx.ai / TeslaNorth / Interesting Engineering</span>
+</div>
+</a>
+<a class="featured-card" href="https://timeline.sohu.com/news/q7EMgzgG0j" target="_blank">
+<div class="featured-card-header">
+<span class="featured-category">技术突破</span>
+</div>
+<h3 class="featured-title">Neuralink发布5万小时脑数据预训练模型，光标控制创11.32比特/秒纪录</h3>
+<p class="featured-summary">Neuralink发布技术更新，利用临床试验参与者累计超过5万小时的颅内神经记录，以自监督方式预训练神经编码器。据此训练的解码器可连续数周无需重新校准，光标控制成绩达到11.32比特/秒，高于此前约10.39比特/秒的纪录，标志着BCI基础模型从单次植入演示向跨人、长期、少标定能...</p>
+<div class="featured-footer">
+<span class="featured-source">来源：搜狐时间线 / Neuralink</span>
+</div>
+</a>
+</div>
 </section>
 
-  
 <!-- Academic Papers Section -->
 <section class="academic-section" id="academic">
   <div class="academic-header">
@@ -1166,137 +702,136 @@ body::before {
       <h2 class="academic-section-title">🎓 学术顶刊</h2>
       <p class="academic-section-subtitle">近期 BCI 领域顶刊论文与高质量预印本（PubMed / arXiv / Nature / Science / Cell 等）</p>
     </div>
-    <span class="academic-update-time">更新于 2026-11-06</span>
+    <span class="academic-update-time">更新于 2026-11-07</span>
   </div>
   <div class="academic-grid">
     
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" class="academic-card">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42993565/" target="_blank" class="academic-card">
         <div class="academic-card-header">
           <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">Advanced healthcare materials</span>
+          <span class="academic-journal-badge">Proceedings of the National Academy of Sciences of the United States of America</span>
         </div>
-        <h3 class="academic-title">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</h3>
-        <div class="academic-authors">Sun M, Ma X, Wang X et al.</div>
+        <h3 class="academic-title">Respiratory phase orchestrates human olfactory cortical dynamics.</h3>
+        <div class="academic-authors">Hathaway AY, Coleman TP</div>
         <p class="academic-abstract">No abstract available.</p>
         <div class="academic-footer">
-          <span class="academic-date">2026-10-25</span>
+          <span class="academic-date">2026-11-10</span>
           <span class="academic-link">查看原文 →</span>
         </div>
       </a>
 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42908451/" target="_blank" class="academic-card">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42994426/" target="_blank" class="academic-card">
         <div class="academic-card-header">
           <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">Zhen ci yan jiu = Acupuncture research</span>
+          <span class="academic-journal-badge">Cell stem cell</span>
         </div>
-        <h3 class="academic-title">[Discussion on the closed-loop regulation strategy for acupuncture "Deqi" based on brain-computer interface and its peripheral-central mechanisms].</h3>
-        <div class="academic-authors">Yin L, Ye Y, Li Y et al.</div>
+        <h3 class="academic-title">Neural interface instructs layer 4-appropriate circuit reconstruction with engrafted human brain organoids and improves visually guided behavior.</h3>
+        <div class="academic-authors">Chang ZH, Shi JX, Chen C et al.</div>
         <p class="academic-abstract">No abstract available.</p>
         <div class="academic-footer">
-          <span class="academic-date">2026-10-25</span>
+          <span class="academic-date">2026-11-06</span>
           <span class="academic-link">查看原文 →</span>
         </div>
       </a>
 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" class="academic-card">
-        <div class="academic-card-header">
-          <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">Advanced Healthcare Materials</span>
-        </div>
-        <h3 class="academic-title">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes</h3>
-        <div class="academic-authors">Sun M, Ma X, Wang X et al.</div>
-        <p class="academic-abstract">This study reviews fabrication strategies and performance optimization for flexible brain-computer interface electrodes, covering materials selection, structural design, and signal fidelity improvements.</p>
-        <div class="academic-footer">
-          <span class="academic-date">2026-10-25</span>
-          <span class="academic-link">查看原文 →</span>
-        </div>
-      </a>
-
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" class="academic-card">
-        <div class="academic-card-header">
-          <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">The journal of spinal cord medicine</span>
-        </div>
-        <h3 class="academic-title">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</h3>
-        <div class="academic-authors">Jiang X, Zhang L, Li S et al.</div>
-        <p class="academic-abstract">No abstract available.</p>
-        <div class="academic-footer">
-          <span class="academic-date">2026-10-23</span>
-          <span class="academic-link">查看原文 →</span>
-        </div>
-      </a>
-
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42919847/" target="_blank" class="academic-card">
-        <div class="academic-card-header">
-          <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">npj biomedical innovations</span>
-        </div>
-        <h3 class="academic-title">Generalizable neural decoding for clinically scalable brain-computer interfaces.</h3>
-        <div class="academic-authors">Gu Y, Yin H, Wang Y et al.</div>
-        <p class="academic-abstract">No abstract available.</p>
-        <div class="academic-footer">
-          <span class="academic-date">2026-10-23</span>
-          <span class="academic-link">查看原文 →</span>
-        </div>
-      </a>
-
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" class="academic-card">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42981416/" target="_blank" class="academic-card">
         <div class="academic-card-header">
           <span class="academic-source-badge">PubMed</span>
           <span class="academic-journal-badge">Science advances</span>
         </div>
-        <h3 class="academic-title">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</h3>
-        <div class="academic-authors">Wu Y, Chang T, Chen S et al.</div>
+        <h3 class="academic-title">Ultrasound neural interface enabling acute spinal cord monitoring and blood flow modulation.</h3>
+        <div class="academic-authors">Kerensky MJ, Krishnan S, Liang R et al.</div>
         <p class="academic-abstract">No abstract available.</p>
         <div class="academic-footer">
-          <span class="academic-date">2026-10-23</span>
+          <span class="academic-date">2026-11-06</span>
           <span class="academic-link">查看原文 →</span>
         </div>
       </a>
 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42805221/" target="_blank" class="academic-card">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42945585/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Biomedical physics & engineering express</span>
+        </div>
+        <h3 class="academic-title">NCEL: convolution-enhanced lightweight neural architecture for robust EEG signal decoding in noninvasive brain-computer interfaces.</h3>
+        <div class="academic-authors">Li Y, Huang Y, Chen W et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-11-06</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42933128/" target="_blank" class="academic-card">
         <div class="academic-card-header">
           <span class="academic-source-badge">PubMed</span>
           <span class="academic-journal-badge">Journal of neural engineering</span>
         </div>
-        <h3 class="academic-title">From confidence to caution: conformal gating for cross-session motor imagery brain-computer interfaces.</h3>
-        <div class="academic-authors">Xing S, Nagarajan A</div>
+        <h3 class="academic-title">REFS: robust EEG feature selection with incomplete labels for multi-dimensional emotion recognition.</h3>
+        <div class="academic-authors">Xu X, Dong W, Wei F et al.</div>
         <p class="academic-abstract">No abstract available.</p>
         <div class="academic-footer">
-          <span class="academic-date">2026-10-23</span>
+          <span class="academic-date">2026-11-06</span>
           <span class="academic-link">查看原文 →</span>
         </div>
       </a>
 
-      <a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" class="academic-card">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42906584/" target="_blank" class="academic-card">
         <div class="academic-card-header">
           <span class="academic-source-badge">PubMed</span>
-          <span class="academic-journal-badge">The Journal of Spinal Cord Medicine</span>
+          <span class="academic-journal-badge">Journal of neural engineering</span>
         </div>
-        <h3 class="academic-title">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report</h3>
-        <div class="academic-authors">Jiang X, Zhang L, Li S et al.</div>
-        <p class="academic-abstract">Case report demonstrating functional recovery from complete spinal cord injury using combined central-peripheral-central neuromodulation strategies.</p>
+        <h3 class="academic-title">ACF-Net: design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.</h3>
+        <div class="academic-authors">Yang T</div>
+        <p class="academic-abstract">No abstract available.</p>
         <div class="academic-footer">
-          <span class="academic-date">2026-10-23</span>
+          <span class="academic-date">2026-11-06</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42896567/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">Journal of neural engineering</span>
+        </div>
+        <h3 class="academic-title">The calibration-to-accuracy mapping in P300 spellers does not transport across cohorts and was not restored by tested alignment or local recalibration.</h3>
+        <div class="academic-authors">Gorenshtein A, Adiniaev Y, Liba T et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-11-06</span>
+          <span class="academic-link">查看原文 →</span>
+        </div>
+      </a>
+
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42986730/" target="_blank" class="academic-card">
+        <div class="academic-card-header">
+          <span class="academic-source-badge">PubMed</span>
+          <span class="academic-journal-badge">IEEE transactions on neural systems and rehabilitation engineering : a publication of the IEEE Engineering in Medicine and Biology Society</span>
+        </div>
+        <h3 class="academic-title">Mirror Neural System in Hands Motor Imagery with Pictures and Videos Guidance: An EEG-fNIRS Study.</h3>
+        <div class="academic-authors">Bian Y, Chen YH, Xu Y et al.</div>
+        <p class="academic-abstract">No abstract available.</p>
+        <div class="academic-footer">
+          <span class="academic-date">2026-11-05</span>
           <span class="academic-link">查看原文 →</span>
         </div>
       </a>
 
   </div>
-  
-<a href="weekly/2026-11-01.html" class="academic-weekly-link">📊 查看本周学术周报</a>
+  <a href="weekly/2026-11-01.html" class="academic-weekly-link">📊 查看本周学术周报</a>
 </section>
 
   <div class="filter-bar">
 <div class="tabs">
-<button class="tab-btn active" data-category="all"><span class="tab-name">全部</span><span class="tab-badge">253</span></button>
-<button class="tab-btn" data-category="临床应用"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-badge">36</span></button>
-<button class="tab-btn" data-category="技术突破"><span class="tab-dot" style="background: #4ecdc4;"></span><span class="tab-badge">26</span></button>
-<button class="tab-btn" data-category="产业落地"><span class="tab-dot" style="background: #feca57;"></span><span class="tab-badge">47</span></button>
-<button class="tab-btn" data-category="学术前沿"><span class="tab-dot" style="background: #dfe6e9;"></span><span class="tab-badge">28</span></button>
-<button class="tab-btn" data-category="产业政策"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-badge">44</span></button>
-<button class="tab-btn" data-category="产品落地"><span class="tab-dot" style="background: #96ceb4;"></span><span class="tab-badge">20</span></button>
-<button class="tab-btn" data-category="资本动态"><span class="tab-dot" style="background: #ff9ff3;"></span><span class="tab-badge">33</span></button>
+<button class="tab-btn active" data-category="all"><span class="tab-name">全部</span><span class="tab-badge">214</span></button>
+<button class="tab-btn" data-category="临床应用"><span class="tab-dot" style="background: #45b7d1;"></span><span class="tab-badge">32</span></button>
+<button class="tab-btn" data-category="技术突破"><span class="tab-dot" style="background: #4ecdc4;"></span><span class="tab-badge">24</span></button>
+<button class="tab-btn" data-category="产业落地"><span class="tab-dot" style="background: #feca57;"></span><span class="tab-badge">35</span></button>
+<button class="tab-btn" data-category="学术前沿"><span class="tab-dot" style="background: #dfe6e9;"></span><span class="tab-badge">23</span></button>
+<button class="tab-btn" data-category="产业政策"><span class="tab-dot" style="background: #ff6b6b;"></span><span class="tab-badge">36</span></button>
+<button class="tab-btn" data-category="产品落地"><span class="tab-dot" style="background: #96ceb4;"></span><span class="tab-badge">18</span></button>
+<button class="tab-btn" data-category="资本动态"><span class="tab-dot" style="background: #ff9ff3;"></span><span class="tab-badge">27</span></button>
 <button class="tab-btn" data-category="核心器件"><span class="tab-dot" style="background: #fd79a8;"></span><span class="tab-badge">6</span></button>
 <button class="tab-btn" data-category="技术路线"><span class="tab-dot" style="background: #a29bfe;"></span><span class="tab-badge">4</span></button>
 </div>
@@ -1307,112 +842,40 @@ body::before {
 <button class="time-btn" data-range="2026">2026年</button>
 </div>
 </div>
-
-<!-- Academic Top Journals Section -->
-<section class="academic-section" id="academic">
-  <div class="academic-header">
-    <div class="academic-title-wrap">
-      <h2 class="academic-section-title">🎓 学术顶刊</h2>
-      <p class="academic-section-subtitle">每日追踪 Nature、Science、Cell、Neuron、IEEE TBME、PubMed、arXiv 等顶刊的 BCI 最新论文</p>
-    </div>
-    <div class="academic-actions">
-      <a href="./weekly/index.html" class="academic-weekly-link">📚 每周综述 →</a>
-      <span class="academic-update-time">更新于 2026-11-06</span>
-    </div>
-  </div>
-  <div class="paper-grid">
-    
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42926359/" target="_blank" rel="noopener">Fabrication Strategies and Performance Optimization Strategies of Flexible Brain-Computer Interface Electrodes.</a></h3>
-        <p class="paper-authors">Sun M, Ma X, Wang X et al.</p>
-        <p class="paper-journal">Adv Healthc Mater</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42925109/" target="_blank" rel="noopener">Combined neuromodulation techniques via a central-peripheral-central strategy facilitate functional recovery from AIS A to AIS C in a patient with complete spinal cord injury: A case report.</a></h3>
-        <p class="paper-authors">Jiang X, Zhang L, Li S et al.</p>
-        <p class="paper-journal">J Spinal Cord Med</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42920124/" target="_blank" rel="noopener">Polygenicity shapes distinct brain patterns and clinical profiles of bipolar disorder.</a></h3>
-        <p class="paper-authors">Feng Y, Guo X, Huang P et al.</p>
-        <p class="paper-journal">BMC Med</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914707/" target="_blank" rel="noopener">DNA metabarcoding reveals the trophic ecology of Critically Endangered juvenile green sawfish (Pristis zijsron) and sympatric predators.</a></h3>
-        <p class="paper-authors">Dornan TN, Dantas PT, Morgan DL et al.</p>
-        <p class="paper-journal">Mar Environ Res</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42914132/" target="_blank" rel="noopener">Electrode-Modiolar Distance as a Determinant of Cochlear Implant Performance: A Systematic Review and Meta-Analysis.</a></h3>
-        <p class="paper-authors">Das K N, Sharma V, Manoj S et al.</p>
-        <p class="paper-journal">Clin Otolaryngol</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913687/" target="_blank" rel="noopener">Decoding attempted handwritten characters based on temporal endovascular neural features.</a></h3>
-        <p class="paper-authors">Kokorin K, Mu J, Grayden DB et al.</p>
-        <p class="paper-journal">J Neural Eng</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913685/" target="_blank" rel="noopener">Training Free Signal Enhancement by Random Sampling for Steady State Visual Evoked Potential BCI.</a></h3>
-        <p class="paper-authors">Washizawa Y</p>
-        <p class="paper-journal">Biomed Phys Eng Express</p>
-        <p class="paper-abstract"></p>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-header">
-          <span class="paper-source">PubMed</span>
-          <span class="paper-date">2026-10-26</span>
-        </div>
-        <h3 class="paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42913013/" target="_blank" rel="noopener">Biophysically constrained learning from healthy neural priors improves motor decoding in pathological cortical networks.</a></h3>
-        <p class="paper-authors">Wu Y, Chang T, Chen S et al.</p>
-        <p class="paper-journal">Sci Adv</p>
-        <p class="paper-abstract"></p>
-      </div>
-  </div>
-</section>
-
 <div class="timeline">
+<div class="timeline-day" data-date="2026-11-07">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年11月7日</span>
+<span class="date-weekday">周六</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="产品落地" data-date="2026-11-07" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">产品落地</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">美敦力全球首个脑机接口闭环生态系统亮相进博会</h3>
+<p class="card-summary">在第九届中国国际进口博览会上，全球医疗科技企业美敦力展出了其在脑机接口与神经调控领域的重磅成果——脑机接口闭环生态系统。该系统历时20余年研发，搭载于神经调控平台，体现从神经监测到闭环调控的整合方向。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>第九届中国国际进口博览会上美敦力展出脑机接口闭环生态系统</li>
+<li>该系统历时20余年研发</li>
+<li>体现脑机接口与神经调控领域从监测到闭环调控的整合趋势</li>
+<li>展示全球医疗科技巨头在BCI赛道的最新布局</li>
+<li>为神经疾病诊疗提供新的系统化解决方案方向</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：解放日报 / 上观新闻</span>
+<a class="source-link" href="https://www.jfdaily.com/news/detail?id=1209234" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
 <div class="timeline-day" data-date="2026-11-06">
 <div class="day-header">
 <div class="day-date">
@@ -1422,65 +885,118 @@ body::before {
 </div>
 </div>
 <div class="day-cards">
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="学术前沿" data-date="2026-11-06" data-hotness="4">
+<div class="news-card" data-category="学术前沿" data-date="2026-11-06" data-hotness="3">
 <div class="card-header">
 <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
 </div>
 <h3 class="card-title">中国科学院院士赵继宗：脑机接口稳定性需接受五年大考</h3>
-<p class="card-summary">科技日报专访中国科学院院士、首都医科大学神经外科学院院长赵继宗。他指出，国内外具备治疗作用的医疗级脑机接口基本仍处于临床试验阶段，核心难题是长期生物相容性与信号稳定性；建议“三年看效果，五年看结果”，并透露“北脑一号”已完成40例全国多中心临床观察，力争2027年初申报三类医疗器械注册证，“北脑二号”预计2028年申报。</p>
+<p class="card-summary">中国科学院院士赵继宗接受科技日报专访时表示，有创与无创脑机接口在监管门槛和应用定位上有显著差异。他介绍“北脑一号”128通道半侵入设备已完成40例全国多中心临床观察，力争2027年初申报三类医疗器械注册证。</p>
 <div class="card-keypoints">
 <div class="keypoints-title">核心要点</div>
 <ul>
-      <li>赵继宗强调要区分有创植入式与无创脑电帽两类脑机接口的监管门槛和应用定位</li>
-      <li>植入式BCI主要面向脑卒中偏瘫、脊髓损伤截瘫、渐冻症三类患者，实现运动功能代偿而非病因治疗</li>
-      <li>长期稳定性是全球共性挑战：电极可能被胶质瘢痕包裹导致信号衰减</li>
-      <li>“北脑一号”完成40例全国多中心临床观察，力争2027年初申报三类注册证</li>
-      <li>行业需补齐术后适配师人才缺口、统一数据规范、建立隐私与伦理保护机制</li>
+<li>赵继宗院士强调有创与无创脑机接口监管定位差异</li>
+<li>“北脑一号”128通道半侵入设备已完成40例全国多中心临床观察</li>
+<li>力争2027年初申报三类医疗器械注册证</li>
+<li>“北脑二号”1024通道完全侵入式设备预计2028年申报</li>
+<li>建议国家统筹规划，统一技术标准与数据规范，加强人才和康复服务体系建设</li>
 </ul>
 </div>
 <div class="card-footer">
-<span class="source">来源：科技日报 / 中国科技网</span>
-<a class="source-link" href="https://www.stdaily.com/web/gdxw/2026-11/06/content_609286.html" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
+<span class="source">来源：科技日报</span>
+<a class="source-link" href="https://www.stdaily.com/web/gdxw/2026-11/06/content_609286.html" target="_blank">查看原文 →</a>
 </div>
 </div>
-
-<div class="timeline-day" data-date="2026-11-02">
+</div>
+</div>
+<div class="timeline-day" data-date="2026-11-05">
 <div class="day-header">
 <div class="day-date">
-<span class="date-main">2026年11月2日</span>
-<span class="date-weekday">周一</span>
+<span class="date-main">2026年11月5日</span>
+<span class="date-weekday">周四</span>
 <span class="day-count">1 条</span>
 </div>
 </div>
 <div class="day-cards">
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业落地" data-date="2026-11-02" data-hotness="4">
+<div class="news-card" data-category="学术前沿" data-date="2026-11-05" data-hotness="3">
 <div class="card-header">
-<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
+<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
 </div>
-<h3 class="card-title">强脑科技多项创新成果亮相2026世界互联网大会乌镇峰会</h3>
-<p class="card-summary">11月2日，2026年世界互联网大会乌镇峰会在浙江乌镇拉开帷幕。BrainCo强脑科技携多项脑机接口创新成果亮相大会，创始人兼CEO韩璧丞受邀在大会主论坛发言，展示脑机接口从医疗康复走向真实生活场景的进展。</p>
+<h3 class="card-title">北京航空航天大学脑机接口研究院揭牌，院士领衔</h3>
+<p class="card-summary">北京航空航天大学脑机接口研究院正式揭牌，张广军院士出任院长。研究院依托航空航天、信息、医学等优势学科，整合10余个学院科研力量，聚焦神经信息感知、脑机融合智能、脑信息编解码与康复医疗应用等方向。</p>
 <div class="card-keypoints">
 <div class="keypoints-title">核心要点</div>
 <ul>
-      <li>11月2日，2026世界互联网大会乌镇峰会开幕</li>
-      <li>强脑科技携多项脑机接口创新成果参展</li>
-      <li>创始人兼CEO韩璧丞受邀在大会主论坛发言</li>
-      <li>展示脑机接口走进真实生活的应用进展</li>
-      <li>覆盖医疗康复、人机交互、智能假肢等方向</li>
+<li>北京航空航天大学脑机接口研究院正式揭牌</li>
+<li>张广军院士出任院长，多位院士专家参会</li>
+<li>依托航空航天、信息、医学等优势学科</li>
+<li>整合10余个学院科研力量，实行多学科交叉开放运行</li>
+<li>聚焦感知器件、神经调控、智能编解码与康复医疗应用</li>
 </ul>
 </div>
 <div class="card-footer">
-<span class="source">来源：ZAKER / 世界互联网大会</span>
-<a class="source-link" href="https://app.myzaker.com/news/article.php?pk=6aeabb82b15ec0393f639774" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
+<span class="source">来源：教育在线 / 北京航空航天大学</span>
+<a class="source-link" href="https://news.eol.cn/dongtai/202611/t20261105_2790480.shtml" target="_blank">查看原文 →</a>
 </div>
 </div>
-
+</div>
+</div>
+<div class="timeline-day" data-date="2026-11-04">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年11月4日</span>
+<span class="date-weekday">周三</span>
+<span class="day-count">2 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="产业落地" data-date="2026-11-04" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">2026脑机接口大会将于11月19日在北京昌平启幕</h3>
+<p class="card-summary">11月4日，2026脑机接口大会新闻发布会宣布，大会将于11月19日至22日在北京昌平石油科技交流中心举办，主题为“脑智芯联 机遇昌平”，将发布《脑机接口创新发展研究报告（2026）》，并举办创新大赛决赛和成果展览。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>2026脑机接口大会将于11月19日至22日在北京昌平举办</li>
+<li>主题为“脑智芯联 机遇昌平”，打造国家级产业交流平台</li>
+<li>主论坛将发布《脑机接口创新发展研究报告（2026）》</li>
+<li>创新大赛吸引419支队伍、超1000人参赛，覆盖23个省市</li>
+<li>同期创新成果展预计近百家企业参展，覆盖全产业链</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：21世纪经济报道 / 北京市政府</span>
+<a class="source-link" href="https://www.21jingji.com/article/20261104/herald/197e790a9cf87f7b1c9ed8539548c01a.html" target="_blank">查看原文 →</a>
+</div>
+</div>
+<div class="news-card" data-category="产品落地" data-date="2026-11-04" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">产品落地</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">世界互联网大会乌镇峰会展示脑机驱动智能仿生手</h3>
+<p class="card-summary">11月4日，2026年世界互联网大会乌镇峰会集中展示脑机接口、人工智能、具身智能等人机交互产业链成果。一款脑机驱动的智能仿生手受关注，使用者依靠脑机接口采集解析大脑运动信号，通过AI算法解码意图完成乐曲演奏。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>2026年世界互联网大会乌镇峰会展示人机交互产业链成果</li>
+<li>脑机驱动智能仿生手受与会者广泛关注</li>
+<li>依靠脑机接口采集并解析大脑运动信号</li>
+<li>通过人工智能算法解码意图，操控仿生手完成乐曲演奏</li>
+<li>直观展现科技在康复助残领域的实用价值</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：科技日报</span>
+<a class="source-link" href="https://www.stdaily.com/web/gdxw/2026-11/04/content_608514.html" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
 <div class="timeline-day" data-date="2026-11-03">
 <div class="day-header">
 <div class="day-date">
@@ -1490,597 +1006,239 @@ body::before {
 </div>
 </div>
 <div class="day-cards">
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="资本动态" data-date="2026-11-03" data-hotness="5">
+<div class="news-card" data-category="技术突破" data-date="2026-11-03" data-hotness="3">
 <div class="card-header">
-<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
-<span class="hotness"><span class="stars">★★★★★</span></span>
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
 </div>
-<h3 class="card-title">上海阶梯医疗启动IPO辅导，阿里腾讯共同押注</h3>
-<p class="card-summary">11月3日，证监会网站披露，国内脑机接口初创公司上海阶梯医疗科技股份有限公司已启动上市辅导，辅导券商为华泰联合证券。阶梯医疗成立5年累计融资达26亿元，罕见获得阿里巴巴和腾讯共同押注。今年以来，博睿康、术理创新已先后办理辅导备案，脑机接口赛道头部公司集体从融资竞赛转向上市冲刺。</p>
+<h3 class="card-title">鹰瞳科技发布无创光学脑机接口PBM大模型，开创眼脑结合神经调控</h3>
+<p class="card-summary">鹰瞳科技在Vision China 2026秋季会议发布PBM-LED®新一代大模型，将AI算法编码的光信号与PBM光生物调节、无创脑机接口相结合，首创以光为载体、眼脑结合的个性化近视治疗方案，已在300余家医疗机构开展14项研究。</p>
 <div class="card-keypoints">
 <div class="keypoints-title">核心要点</div>
 <ul>
-      <li>11月3日，上海阶梯医疗启动IPO辅导，华泰联合证券为辅导机构</li>
-      <li>公司成立5年累计融资26亿元，获阿里巴巴、腾讯共同押注</li>
-      <li>核心产品WRS 01为256通道微创植入式脑机接口系统</li>
-      <li>截至10月底累计完成42例长期植入</li>
-      <li>博睿康、术理创新今年已启动科创板IPO进程</li>
+<li>鹰瞳科技发布PBM-LED®新一代无创光学脑机接口专用脑科学大模型</li>
+<li>以AI算法编码光信号，结合PBM光生物调节与无创脑机接口</li>
+<li>首创以光为载体、眼脑结合的个性化近视治疗方案</li>
+<li>已在300余家医疗机构开展14项研究，入组300余名受试者</li>
+<li>计划依托大模型系统性提高十亿人视觉能力和神经健康水平</li>
 </ul>
 </div>
 <div class="card-footer">
-<span class="source">来源：e公司 / 21世纪经济报道 / 新浪财经</span>
-<a class="source-link" href="http://finance.sina.com.cn/roll/2026-11-3/doc-inixnitv8649593.shtml" target="_blank" rel="noopener">查看原文 →</a>
+<span class="source">来源：财中社</span>
+<a class="source-link" href="https://m.caizhongshe.cn/news-4703359346176013859.html" target="_blank">查看原文 →</a>
 </div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产品落地" data-date="2026-11-03" data-hotness="4">
+</div>
+<div class="news-card" data-category="资本动态" data-date="2026-11-03" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">阶梯医疗启动上市辅导，脑机接口“第一股”之争升温</h3>
+<p class="card-summary">上海阶梯医疗科技股份有限公司已启动上市辅导，核心方向为微创植入式脑机接口。公司WRS 01产品成为全球首个完成注册临床试验入组的全侵入式脑机接口产品，已累计完成42例长期植入，受试者在体时长超过5000天。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>上海阶梯医疗科技股份有限公司启动上市辅导，辅导机构为华泰联合证券</li>
+<li>专注于微创植入式脑机接口系统的研发、临床转化与产业化</li>
+<li>WRS 01成为全球首个完成注册临床试验入组的全侵入式脑机接口产品</li>
+<li>已累计完成42例长期植入，在体时长超过5000天</li>
+<li>国内博睿康、术理创新、强脑科技等多家企业同步冲刺资本市场</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：科创板日报</span>
+<a class="source-link" href="https://m.cls.cn/detail/2524265" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-day" data-date="2026-11-02">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年11月2日</span>
+<span class="date-weekday">周一</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="产品落地" data-date="2026-11-02" data-hotness="3">
+<div class="card-header">
+<span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">产品落地</span>
+<span class="hotness"><span class="stars">★★★☆☆</span></span>
+</div>
+<h3 class="card-title">傲意科技广交会展示从手指外骨骼到脑机接口平台全链条产品</h3>
+<p class="card-summary">在广交会第三期，傲意科技携手指外骨骼、下肢外骨骼、脑电头环CeRelax、仿生手、OB系列脑电图机等产品亮相，展示从“神经信号采集”到“肢体动作执行”的完整动线，获评第140届广交会设计创新银奖。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>傲意科技携手指外骨骼、下肢外骨骼、脑电头环、仿生手等产品亮相广交会</li>
+<li>基于“脑-肌-机”三级非侵入技术体系</li>
+<li>手指外骨骼面向脑卒中、臂丛神经损伤等手部运动功能受限人群</li>
+<li>消费级脑电头环CeRelax约一枚鸡蛋重量，帮助白领及高压人群放松</li>
+<li>公司连续四年参展并获第140届广交会设计创新银奖</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：经济参考网 / 新华社</span>
+<a class="source-link" href="http://jjckb.xinhuanet.com/20261102/3d62ae098def41258781b8185cb3dfef/c.html" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-day" data-date="2026-10-30">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月30日</span>
+<span class="date-weekday">周五</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="产业政策" data-date="2026-10-30" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
+<span class="hotness"><span class="stars">★★★★☆</span></span>
+</div>
+<h3 class="card-title">三项脑机接口国家科技重大专项在北京启动</h3>
+<p class="card-summary">近日，北京脑科学与类脑研究所承担的三项“脑科学与类脑研究”国家科技重大专项项目启动会召开，分别聚焦柔性高通量半侵入式脑机接口系统、植入式脑机接口高密度医用馈通与系统集成、多脑区联合运动编解码与长期稳定运动脑机接口系统。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>北京脑科学与类脑研究所承担三项国家科技重大专项</li>
+<li>“面向运动功能重建的柔性高通量半侵入式脑机接口系统研发与临床转化”</li>
+<li>“植入式脑机接口高密度医用馈通与系统集成技术研发及临床应用”</li>
+<li>“多脑区联合运动编解码与长期稳定的运动脑机接口系统研究”</li>
+<li>将推动我国在半侵入式系统、馈通技术及运动控制方向创新发展</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：科创板日报</span>
+<a class="source-link" href="https://m.cls.cn/detail/2520269" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-day" data-date="2026-10-29">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月29日</span>
+<span class="date-weekday">周四</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="技术突破" data-date="2026-10-29" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #4ecdc420; color: #4ecdc4; border-color: #4ecdc440;">技术突破</span>
+<span class="hotness"><span class="stars">★★★★☆</span></span>
+</div>
+<h3 class="card-title">超声修复大脑，我国无创超声脑机接口技术取得新进展</h3>
+<p class="card-summary">中国科学院深圳先进技术研究院等科研团队攻关的新一代无创超声脑机接口技术在大湾区脑机接口大会上亮相。该技术不开颅、不植入电极，通过聚焦超声波精准调控神经元，在慢性意识障碍、癫痫、抑郁症等疾病的干预研究中取得积极进展。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>中科院深圳先进院等研发新一代无创超声脑机接口技术</li>
+<li>不开颅、不植入电极，利用超声波穿过颅骨定点调控神经元</li>
+<li>已应用于癫痫、抑郁症、慢性意识障碍等疾病干预研究</li>
+<li>24名慢性意识障碍受试者中13名出现明确意识行为改善</li>
+<li>一例脑出血昏迷3个月患者经30天超声治疗后成功唤醒</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：央视新闻 / 北京日报</span>
+<a class="source-link" href="https://xinwen.bjd.com.cn/content/s6ae31b40e4b039a8e2f2f35f.html" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-day" data-date="2026-10-28">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月28日</span>
+<span class="date-weekday">周三</span>
+<span class="day-count">1 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="资本动态" data-date="2026-10-28" data-hotness="4">
+<div class="card-header">
+<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
+<span class="hotness"><span class="stars">★★★★☆</span></span>
+</div>
+<h3 class="card-title">脑虎科技完成7亿人民币B轮融资，加速「三全」脑机接口产业化</h3>
+<p class="card-summary">脑虎科技宣布完成7亿元人民币B轮融资，全链条自主研发“全植入、全无线、全功能”三全脑机接口系统。该产品为国内首款进入国家三类医疗器械注册临床阶段的硬膜下半侵入式脑机接口产品，已完成65例临床试验，并启动建设万套级产能的“超级工厂”。</p>
+<div class="card-keypoints">
+<div class="keypoints-title">核心要点</div>
+<ul>
+<li>脑虎科技完成7亿元人民币B轮融资</li>
+<li>全链条自主研发“三全”硬膜下半侵入式脑机接口系统</li>
+<li>国内首款进入国家三类医疗器械注册临床阶段同类产品</li>
+<li>已完成65例临床试验，联合全国近20家三甲医院开展GCP多中心临床</li>
+<li>启动建设1.43万平方米“超级工厂”，规划万套级产能</li>
+</ul>
+</div>
+<div class="card-footer">
+<span class="source">来源：投资界</span>
+<a class="source-link" href="https://news.pedaily.cn/202610/570968.shtml" target="_blank">查看原文 →</a>
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-day" data-date="2026-10-26">
+<div class="day-header">
+<div class="day-date">
+<span class="date-main">2026年10月26日</span>
+<span class="date-weekday">周一</span>
+<span class="day-count">2 条</span>
+</div>
+</div>
+<div class="day-cards">
+<div class="news-card" data-category="产品落地" data-date="2026-10-26" data-hotness="4">
 <div class="card-header">
 <span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">产品落地</span>
 <span class="hotness"><span class="stars">★★★★☆</span></span>
 </div>
-<h3 class="card-title">强脑科技研发可穿戴脑机设备，通过脑部电刺激抑制食欲减重</h3>
-<p class="card-summary">中国脑机科技企业强脑科技（BrainCo）正在研发一款可穿戴设备，据称能够通过脑部电刺激抑制食欲，有望成为GLP-1减重药物的非药物替代方案。公司创始合伙人何熙昱锦表示，计划未来两到三年内将产品推向市场，先在中国上市，再拓展至美国。强脑科技目标是把BCI技术应用到减重赛道。</p>
+<h3 class="card-title">中国首个植入式听觉神经接口产品“听觉脑干植入体”正式获批</h3>
+<p class="card-summary">10月20日，国家药品监督管理局批准“听觉脑干植入体”创新产品注册申请。该产品由上海交通大学医学院附属第九人民医院吴皓团队与浙江诺尔康合作研发，为国内首创有源III类植入器械，也是我国第一个在颅内中枢进行电刺激和神经信号提取的产品。</p>
 <div class="card-keypoints">
 <div class="keypoints-title">核心要点</div>
 <ul>
-      <li>强脑科技研发可穿戴脑机设备，通过脑部电刺激抑制食欲</li>
-      <li>产品被定位为“电子版本的GLP-1”减肥药</li>
-      <li>计划未来两到三年内推向市场，先中国后美国</li>
-      <li>公司现有头环设备用于干预自闭症、ADHD、失眠等</li>
-      <li>未来可能涉足侵入式脑机方案</li>
+<li>国家药监局批准“听觉脑干植入体”创新产品注册</li>
+<li>上海交大附属第九人民医院吴皓团队与诺尔康合作研发</li>
+<li>国内首创有源III类植入器械，绕过耳蜗和听神经直接刺激中枢听觉神经元</li>
+<li>适用于内耳严重畸形或蜗神经缺如的重度耳聋患者</li>
+<li>标志着我国在颅内中枢电刺激与神经信号提取领域实现零突破</li>
 </ul>
 </div>
 <div class="card-footer">
-<span class="source">来源：IT之家 / 新浪科技 / 彭博</span>
-<a class="source-link" href="http://finance.sina.com.cn/tech/digi/2026-11-03/doc-inixnpzt8536509.shtml" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
+<span class="source">来源：科学网 / 上海市科委</span>
+<a class="source-link" href="https://stcsm.sh.gov.cn/xwzx/mtjj/20261026/0e7104ca786140ef87f4f6eb9f6d2838.html" target="_blank">查看原文 →</a>
 </div>
 </div>
-
-<div class="timeline-day" data-date="2026-11-04">
-<div class="day-header">
-<div class="day-date">
-<span class="date-main">2026年11月4日</span>
-<span class="date-weekday">周三</span>
-<span class="day-count">3 条</span>
-</div>
-</div>
-<div class="day-cards">
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业政策" data-date="2026-11-04" data-hotness="4">
-<div class="card-header">
-<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
-</div>
-<h3 class="card-title">镇江市长张克调度推进脑机接口产业发展</h3>
-<p class="card-summary">11月3日，镇江市长张克主持召开专题会议，调度推进脑机接口产业发展。会上，慧创医疗、枫铧医疗、欣理医疗、纳实脑科学等重点企业汇报科技研发、市场拓展、项目投融资等情况。张克强调要在助企服务、产业集聚、场景应用、破解难题上协同发力，推动脑机接口产业加快发展。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-      <li>11月3日，镇江市长张克主持召开脑机接口产业发展专题会议</li>
-      <li>慧创医疗、枫铧医疗、欣理医疗、纳实脑科学等重点企业参会</li>
-      <li>建立统筹调度、每月上报、工作督办“三项机制”</li>
-      <li>用好“五图六清单”，常态化对接高校及科研院所</li>
-      <li>推动脑机接口产品在医疗、康养、教育等领域落地应用</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：金山网 / 镇江日报</span>
-<a class="source-link" href="https://www.jsw.com.cn/2026/1104/1972740.shtml" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="学术前沿" data-date="2026-11-04" data-hotness="3">
-<div class="card-header">
-<span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
-<span class="hotness"><span class="stars">★★★☆☆</span></span>
-</div>
-<h3 class="card-title">脑机接口先驱米格尔·尼科莱利斯做客天津大学</h3>
-<p class="card-summary">11月3日，全球脑机接口领域研究先驱、法国科学院外籍院士、巴西科学院院士米格尔·尼科莱利斯做客天津大学“北洋大讲堂”，作“脑机接口：从基础科学到神经康复突破”主题报告。其团队曾完成非人灵长类动物基于脑电信号的机械臂精准控制实验，并在2014年巴西世界杯开幕式上让瘫痪青年用脑控外骨骼完成开球。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-      <li>11月3日，米格尔·尼科莱利斯在天津大学作主题报告</li>
-      <li>报告主题：脑机接口从基础科学到神经康复突破</li>
-      <li>团队完成非人灵长类脑控机械臂精准控制实验</li>
-      <li>2014年巴西世界杯脑控外骨骼开球由其团队研发</li>
-      <li>提出技术价值取决于能否帮助患者重获行动能力</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：中国新闻网 / 天津大学</span>
-<a class="source-link" href="https://www.hi.chinanews.com.cn/hnnew/2026-11-04/748412.html" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="资本动态" data-date="2026-11-04" data-hotness="4">
-<div class="card-header">
-<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
-</div>
-<h3 class="card-title">暖芯迦完成5亿元C+轮融资，年内累计融资达8亿元</h3>
-<p class="card-summary">杭州暖芯迦电子科技有限公司近日完成5亿元C+轮融资，由高榕创投领投，人保股权、Monolith砺思资本、建发新兴投资、东方嘉富、丹合资本、杭州产投集团跟投，君联资本等老股东继续加注。算上今年5月的3亿元战略融资，暖芯迦年内两轮融资合计8亿元，累计融资规模达10亿元。公司主攻视觉脑机接口助盲方向。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-      <li>暖芯迦完成5亿元C+轮融资，高榕创投领投</li>
-      <li>年内两轮融资合计8亿元，累计融资规模达10亿元</li>
-      <li>公司布局神经接口、生物传感芯片及视觉脑机接口系统</li>
-      <li>320通道视网膜路径E-BCI已进入多中心注册临床试验</li>
-      <li>1280通道视皮层路径V-BCI已进入动物试验</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：财联社 / 新浪财经 / 科创板日报</span>
-<a class="source-link" href="http://finance.sina.com.cn/jjxw/2026-11-04/doc-inixnuik9714011.shtml" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-</div>
-</div>
-
-<div class="timeline-day" data-date="2026-10-29">
-    <div class="day-header">
-      <div class="day-date">
-        <span class="date-main">2026年10月29日</span>
-        <span class="date-weekday">周四</span>
-        <span class="day-count">3 条</span>
-      </div>
-    </div>
-    <div class="day-cards">
-<div class="news-card" data-category="临床应用" data-date="2026-10-29" data-hotness="4">
-  <div class="card-header">
-    <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
-    <span class="hotness"><span class="stars">★★★★☆</span></span>
-  </div>
-  <h3 class="card-title">阶梯医疗WRS 01完成42例长期植入并进入注册临床阶段</h3>
-  <p class="card-summary">10月29日，上海阶梯医疗科技有限公司披露其256通道微创植入式脑机接口系统WRS 01最新进展：已累计完成42例长期植入，受试者累计在体时长超5000天、脑控使用时长超10000小时。WRS 01多中心注册临床试验已完成全部受试者入组，进入面向注册上市的系统性验证阶段。</p>
-  <div class="card-keypoints">
-    <div class="keypoints-title">核心要点</div>
-    <ul>
-      <li>阶梯医疗累计完成42例侵入式脑机接口长期植入</li>
-      <li>受试者累计在体时长超5000天，脑控使用时长超10000小时</li>
-      <li>WRS 01已完成多中心注册临床试验全部受试者入组</li>
-      <li>光标测试延迟低于0.05秒，峰值信息传输速率达390 bits/min</li>
-      <li>公司正加速推进神经调控及语言功能重建产品研发</li>
-    </ul>
-  </div>
-  <div class="card-footer">
-    <span class="source">来源：人民网上海 / 上海证券报 / 解放日报</span>
-    <a href="http://sh.people.com.cn/n2/2026/1029/c138654-41735788.html" target="_blank" class="source-link">查看原文 →</a>
-  </div>
-</div>
-<div class="news-card" data-category="资本动态" data-date="2026-10-29" data-hotness="4">
-  <div class="card-header">
-    <span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
-    <span class="hotness"><span class="stars">★★★★☆</span></span>
-  </div>
-  <h3 class="card-title">脑虎科技完成7亿元B轮融资，推进脑机接口临床与量产</h3>
-  <p class="card-summary">脑虎科技（NeuroXess）宣布完成7亿元人民币B轮融资，由国投聚力、深创投、勤智资本联合领投，中芯聚源、黄浦投资、基石资本、IDG资本等多家机构跟投。资金将用于全植入、全无线、全功能“三全”脑机接口系统多中心临床试验及注册审批、超级工厂量产建设、下一代产品研发与BCI+AI融合探索。</p>
-  <div class="card-keypoints">
-    <div class="keypoints-title">核心要点</div>
-    <ul>
-      <li>脑虎科技完成7亿元B轮融资</li>
-      <li>国投聚力、深创投、勤智资本联合领投</li>
-      <li>资金投向“三全”系统临床试验、注册审批与量产</li>
-      <li>超级工厂规划面积1.43万平方米、年产能1万套</li>
-      <li>公司目标两年内推动产品在医疗市场规模化落地</li>
-    </ul>
-  </div>
-  <div class="card-footer">
-    <span class="source">来源：DailyBCI / 财联社 / 东方财富</span>
-    <a href="https://dailybci.cn/hot" target="_blank" class="source-link">查看原文 →</a>
-  </div>
-</div>
-<div class="news-card" data-category="产业落地" data-date="2026-10-29" data-hotness="3">
-  <div class="card-header">
-    <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-    <span class="hotness"><span class="stars">★★★☆☆</span></span>
-  </div>
-  <h3 class="card-title">广州脑谷·天河（筹）脑机接口产业园启动</h3>
-  <p class="card-summary">10月27日，广州脑谷·天河（筹）脑机接口产业园启动仪式暨战略合作签约、大学科技园揭牌活动在暨南大学举行。天河区与暨南大学、暨南大学附属第一医院签订战略合作协议，规划建设总面积2.7平方公里的粤港澳大湾区临床脑机接口产业集聚区，打造覆盖“基础研究—临床验证—产业转化—市场应用”的产业链条。</p>
-  <div class="card-keypoints">
-    <div class="keypoints-title">核心要点</div>
-    <ul>
-      <li>广州脑谷·天河（筹）脑机接口产业园正式启动</li>
-      <li>规划建设总面积2.7平方公里的产业集聚区</li>
-      <li>校地医携手共建脑机接口产业高地</li>
-      <li>暨南大学科技园（脑机接口）、科技成果转化基地揭牌</li>
-      <li>10家意向入驻企业代表参加产业园启动推杆仪式</li>
-    </ul>
-  </div>
-  <div class="card-footer">
-    <span class="source">来源：中国新闻网 / 搜狐</span>
-    <a href="https://www.sohu.com/a/1093952460_123753" target="_blank" class="source-link">查看原文 →</a>
-  </div>
-</div>
-    </div>
-<div class="timeline-day" data-date="2026-11-05">
-<div class="day-header">
-<div class="day-date">
-<span class="date-main">2026年11月5日</span>
-<span class="date-weekday">周四</span>
-<span class="day-count">6 条</span>
-</div>
-</div>
-<div class="day-cards">
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="资本动态" data-date="2026-11-05" data-hotness="5">
-<div class="card-header">
-<span class="category-tag" style="background: #ff9ff320; color: #ff9ff3; border-color: #ff9ff340;">资本动态</span>
-<span class="hotness"><span class="stars">★★★★★</span></span>
-</div>
-<h3 class="card-title">主动科技完成4.64亿元天使+轮融资，累计融资近8亿元</h3>
-<p class="card-summary">上海主动科技有限公司宣布完成4.64亿元人民币天使+轮融资，由高榕创投、国投先导、上海科创投联合领投，多家国资与产业资本跟投。加上8月完成的3.3亿元天使轮，公司成立仅9个月累计融资近8亿元，创国内脑机接口领域天使轮系列融资纪录。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-<li>上海主动科技完成4.64亿元天使+轮融资</li>
-<li>高榕创投、国投先导、上海科创投联合领投</li>
-<li>成立仅9个月，两轮累计融资近8亿元</li>
-<li>创国内脑机接口天使轮系列累计融资纪录</li>
-<li>资金用于侵入式脑机接口研发、临床转化与产业化</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：新浪财经 / 新浪科技 / 财联社</span>
-<a class="source-link" href="https://k.sina.com.cn/article_7857201856_1d45362c001908to0w.html?from=tech" target="_blank" rel="noopener">查看原文 →</a>
-
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="临床应用" data-date="2026-11-05" data-hotness="4">
-<div class="card-header">
-<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
-</div>
-<h3 class="card-title">山东省千佛山医院全省首例植入式BCI患者康复取得阶段进展</h3>
-<p class="card-summary">山东省千佛山医院披露的全省首例植入式脑机接口患者康复取得阶段进展。该高位颈髓损伤四肢瘫患者3个月前接受8根电极微创植入，术后一个月实现意念操控光标，目前已能纯意念玩“斗地主”“下象棋”。团队强调游戏化任务本质是神经康复训练载体，通过目标感与即时反馈提升依从性，持续运动意图输出促进皮层重塑。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-      <li>高位颈髓损伤四肢瘫患者接受全省首例植入式BCI手术，8根电极微创植入</li>
-      <li>术后一个月实现意念操控光标</li>
-      <li>目前已可纯意念完成“斗地主”“下象棋”等游戏化训练任务</li>
-      <li>游戏化康复被验证可提升患者依从性，促进皮层重塑</li>
-      <li>国内省级植入式BCI临床体系（手术→随访→康复训练）正快速复制成型</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：亿欧健谈 / 网易订阅</span>
-<a class="source-link" href="https://www.163.com/dy/article/LB0GO5HB05566ZHD.html" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业政策" data-date="2026-11-05" data-hotness="4">
-<div class="card-header">
-<span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
-</div>
-<h3 class="card-title">《脑机接口技术标准与产业应用参考规范（1.0）》正式发布</h3>
-<p class="card-summary">《脑机接口技术标准与产业应用参考规范（1.0）》近日正式发布上线。该规范由来自产品开发、产业投资、产业应用、学术研发四大维度的行业专家共同制定，从产品定义、技术路线、测试评价到应用场景形成行业共识，标志着我国脑机接口标准与规范建设迈出实质性一步。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-<li>《脑机接口技术标准与产业应用参考规范（1.0）》正式发布</li>
-<li>覆盖产品开发、产业投资、产业应用、学术研发四大维度</li>
-<li>从产品定义、技术路线、测试评价到应用场景形成参考框架</li>
-<li>为行业提供统一的技术语言与产业协作基准</li>
-<li>推动脑机接口从分散探索向规范化、规模化发展</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：每日经济新闻 / 每经AI快讯</span>
-<a class="source-link" href="https://k.sina.com.cn/article_7857201856_1d45362c001908to0w.html?from=tech" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业落地" data-date="2026-11-05" data-hotness="3">
+<div class="news-card" data-category="产业落地" data-date="2026-10-26" data-hotness="3">
 <div class="card-header">
 <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
 <span class="hotness"><span class="stars">★★★☆☆</span></span>
 </div>
-<h3 class="card-title">深圳信扬创智与北京工业大学共建脑机接口联合实验室</h3>
-<p class="card-summary">北京工业大学与深圳信扬创智科技有限公司举行脑机接口联合实验室签约仪式暨学术研讨会，双方联合实验室正式揭牌成立。星辉众悦（北京）科技有限公司与深圳信扬创智同期签署技术合作框架协议，推动产学研协同与脑机接口技术转化。</p>
+<h3 class="card-title">首届粤港澳大湾区国际脑机接口产业创新大会在深圳启幕</h3>
+<p class="card-summary">10月21日，首届粤港澳大湾区国际脑机接口产业创新大会暨第六届脑科学前沿与产业大会在深圳光明生命科学园启幕。大会发布《广东省脑机接口产业发展白皮书（2026版）》和产业图谱，揭牌成立粤港澳大湾区脑机接口新质生产力协同发展创新联合体。</p>
 <div class="card-keypoints">
 <div class="keypoints-title">核心要点</div>
 <ul>
-<li>北京工业大学与深圳信扬创智共建脑机接口联合实验室</li>
-<li>联合实验室揭牌并签署合作协议</li>
-<li>星辉众悦与信扬创智签署技术合作框架协议</li>
-<li>推动高校科研成果与企业产业资源对接</li>
-<li>加速脑机接口技术在医疗、康复等场景落地</li>
+<li>大会以“用‘脑’建设湾区 用‘芯’造福世界”为主题在深圳光明启幕</li>
+<li>发布《广东省脑机接口产业发展白皮书（2026版）》及产业图谱</li>
+<li>揭牌成立粤港澳大湾区脑机接口新质生产力协同发展创新联合体</li>
+<li>启动粤港澳大湾区脑机接口标准体系建设及应用验证项目</li>
+<li>同期举办“光明大脑科技周”和2026AI脑机接口全球挑战赛总决赛</li>
 </ul>
 </div>
 <div class="card-footer">
-<span class="source">来源：北京商报 / 新浪财经</span>
-<a class="source-link" href="https://k.sina.com.cn/article_7857201856_1d45362c001908to0w.html?from=tech" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="临床应用" data-date="2026-11-05" data-hotness="4">
-<div class="card-header">
-<span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
-<span class="hotness"><span class="stars">★★★★☆</span></span>
-</div>
-<h3 class="card-title">Cognixion启动NIH资助ALS可穿戴脑机接口通信设备研究</h3>
-<p class="card-summary">Cognixion公司宣布启动CHOICE研究，评估其可穿戴脑机接口（BCI）通信设备在肌萎缩侧索硬化症（ALS）患者中的使用效果。该研究由美国国立卫生研究院下属国家耳聋与其他交流障碍研究所（NIDCD）资助，并将Cognixion BCI与当前主流眼动追踪沟通设备进行长期对比。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-<li>Cognixion启动CHOICE研究，面向ALS患者</li>
-<li>评估可穿戴BCI通信设备与眼动追踪设备的沟通效果</li>
-<li>由美国NIH/NIDCD资助</li>
-<li>在ClinicalTrials.gov注册号为NCT07871071</li>
-<li>为首个同类纵向临床研究</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：BioSpace / PRNewswire</span>
-<a class="source-link" href="https://www.biospace.com/press-releases/cognixion-now-enrolling-nih-funded-study-of-wearable-brain-computer-interface-communication-device-for-people-with-als" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
-<!-- BEGIN_NEWS_CARD --><div class="news-card" data-category="产业落地" data-date="2026-11-05" data-hotness="3">
-<div class="card-header">
-<span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-<span class="hotness"><span class="stars">★★★☆☆</span></span>
-</div>
-<h3 class="card-title">成都春熙路脑机接口沉浸式成果展吸引超2.6万人次打卡</h3>
-<p class="card-summary">10月24日起在成都春熙路广场举行的“脑控潮涌 智汇锦江”脑机接口产业场景供需对接暨BCI脑机交互沉浸式成果展持续火热。截至11月4日，这座100平方米的“西部脑谷会展舱”已累计接待市民游客超2.6万人次，集中展示8家西部脑谷代表企业从底层系统到医疗、消费场景的全产业链成果。</p>
-<div class="card-keypoints">
-<div class="keypoints-title">核心要点</div>
-<ul>
-<li>成都春熙路脑机接口沉浸式成果展吸引超2.6万人次打卡</li>
-<li>展览自10月24日持续举行，集中展示BCI全产业链成果</li>
-<li>覆盖底层系统平台、前沿医疗、大众消费等场景</li>
-<li>8家西部脑谷代表企业参展</li>
-<li>推动脑机接口从产业圈走向公众体验</li>
-</ul>
-</div>
-<div class="card-footer">
-<span class="source">来源：封面新闻 / 凤凰新闻</span>
-<a class="source-link" href="https://feng.ifeng.com/c/8xmTtz6q7eI" target="_blank" rel="noopener">查看原文 →</a>
-</div>
-</div><!-- END_NEWS_CARD -->
+<span class="source">来源：深圳政府在线</span>
+<a class="source-link" href="https://www.sz.gov.cn/cn/xxgk/zfxxgj/gqdt/content/post_13041495.html" target="_blank">查看原文 →</a>
 </div>
 </div>
-
-  </div>
-      <div class="timeline-day" data-date="2026-10-28">
-    <div class="day-header">
-      <div class="day-date">
-        <span class="date-main">2026年10月28日</span>
-        <span class="date-weekday">周三</span>
-        <span class="day-count">3 条</span>
-      </div>
-    </div>
-    <div class="day-cards">
-    <div class="news-card" data-category="产业落地" data-date="2026-10-28" data-hotness="4">
-      <div class="card-header">
-        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-        <span class="hotness"><span class="stars">★★★★☆</span></span>
-      </div>
-      <h3 class="card-title">iCCD2026第二届脑机生态大会在深圳开幕</h3>
-      <p class="card-summary">10月28日，iCCD2026第二届脑机生态大会在深圳盛大开幕。大会以“共建脑机生态，助推产业落地”为主旨，聚焦运动控制、语言解码、视觉重建、神经调控四大核心赛道，设置八大平行论坛与全产业链展区，搭建临床医生、科研学者、创新企业与产业资本协同平台。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>10月28-29日在深圳举行，预计800+参会嘉宾</li>
-          <li>设置八大平行论坛，覆盖侵入式/非侵入式BCI、神经调控、超声BCI等</li>
-          <li>50+精品展位展示脑机接口全产业链成果</li>
-          <li>40+权威演讲嘉宾分享临床转化与产业落地经验</li>
-          <li>聚焦运动控制、语言解码、视觉重建、神经调控四大核心应用方向</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：IT Knowledge Zone / 雪球</span>
-        <a href="https://itknowledgezone.com/cn/event/iccd2026" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    <div class="news-card" data-category="学术前沿" data-date="2026-10-28" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #dfe6e920; color: #dfe6e9; border-color: #dfe6e940;">学术前沿</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">中德脑科学国际学术交流会在深圳光明举行</h3>
-      <p class="card-summary">10月28日，由德国研究联合会（DFG）与国家自然科学基金委共建的中德科学中心，组织20余名德国青年学者走进光明生命科学园，与深港脑院科研人员围绕神经科学前沿进展展开交流，为2026光明大脑科技周国际交流系列活动收官。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>中德科学中心组织德国青年学者访问光明生命科学园</li>
-          <li>20余名德国学者与深港脑院科研人员深入交流</li>
-          <li>聚焦神经科学前沿与脑机接口基础研究</li>
-          <li>2026光明大脑科技周国际交流系列活动之一</li>
-          <li>促进中外脑科学领域青年人才对话与合作</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：人民网深圳 / 凤凰网</span>
-        <a href="http://sz.people.com.cn/n2/2026/1020/c202846-41727321.html" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    <div class="news-card" data-category="产业落地" data-date="2026-10-28" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">2026光明大脑科技周系列活动圆满收官</h3>
-      <p class="card-summary">10月28日，2026光明大脑科技周迎来收官日。科技周以2026大湾区脑机接口大会为核心，串联技术培训、脑设施开放日、青少年科技教育及国际学术交流等系列活动，推动脑科学与脑机接口从产业圈走向公众。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>2026光明大脑科技周于10月21日至28日举行</li>
-          <li>脑设施开放日面向社会开放脑解析与脑模拟重大科技基础设施</li>
-          <li>青少年科技教育普及2026诺奖光遗传技术</li>
-          <li>中德学术交流促进脑科学国际合作</li>
-          <li>形成从前沿科学到科技教育、从严肃医疗到普惠民生的系列活动</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：人民网深圳 / 深圳商报</span>
-        <a href="http://sz.people.com.cn/n2/2026/1020/c202846-41727321.html" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    </div>
-  </div>
-<div class="timeline-day" data-date="2026-10-27">
-    <div class="day-header">
-      <div class="day-date">
-        <span class="date-main">2026年10月27日</span>
-        <span class="date-weekday">周二</span>
-        <span class="day-count">2 条</span>
-      </div>
-    </div>
-    <div class="day-cards">
-    <div class="news-card" data-category="产业落地" data-date="2026-10-27" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">脑机接口加速产业化，仍有难题待解</h3>
-      <p class="card-summary">《光明日报》深一度报道指出，脑机接口正从实验室加速走向病床和产业化，但产业化道路上仍面临高端装备工程化、脑科学基础原理突破以及伦理治理等多重挑战。专家在国家科技传播中心学术发展讲堂脑机接口专场上进行了解读。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>脑机接口首次写入2026年《政府工作报告》，被列为培育发展的六大未来产业之一</li>
-          <li>首款侵入式脑机接口医疗器械2026年3月获批，7月在上海完成全球首例植入手术</li>
-          <li>国内脑机接口企业近200家，2025年市场规模达38.3亿元</li>
-          <li>产业化卡点：高端装备工程化难题与脑科学基础原理突破需协同推进</li>
-          <li>伦理治理紧迫性凸显，神经数据归属、隐私保护和人的主体性成为关键议题</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：光明网 / 光明日报</span>
-        <a href="https://news.gmw.cn/2026-10/27/content_39067151.htm" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    <div class="news-card" data-category="产业政策" data-date="2026-10-27" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">脑机接口医疗器械临床试验设计思路与实施要点研讨会召开</h3>
-      <p class="card-summary">瑞旭集团于10月27日举办“脑机接口医疗器械临床试验设计思路、实施要点及案例分析”线上研讨会，聚焦脑机接口产品适应症与分类、临床试验设计类型、实施要点及康复类、睡眠类、抑郁类、侵入类案例剖析，助力企业把握监管要求。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>研讨会于2026年10月27日14:00-15:20以网络会议形式举行</li>
-          <li>议题覆盖脑机接口医疗器械适应症&分类、临床试验设计类型</li>
-          <li>重点解析样本量考量、对照设置、医院选择、随访周期等实施要点</li>
-          <li>案例涵盖康复类、睡眠类、抑郁类及侵入式产品临床试验</li>
-          <li>旨在帮助企业、临床机构和科研院所提升临床试验效率与成功率</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：瑞旭集团 / CIRS</span>
-        <a href="https://www.cirs-group.com/cn/md/nao-ji-jie-kou-yi-liao-qi-xie-lin-chuang-shi-yan-she-ji-si-lu-shi-shi-yao-dian-ji-an-li-fen-xi" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    </div>
-  </div>
-<div class="timeline-day" data-date="2026-10-26">
-    <div class="day-header">
-      <div class="day-date">
-        <span class="date-main">2026年10月26日</span>
-        <span class="date-weekday">周一</span>
-        <span class="day-count">2 条</span>
-      </div>
-    </div>
-    <div class="day-cards">
-    <div class="news-card" data-category="产业落地" data-date="2026-10-26" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #feca5720; color: #feca57; border-color: #feca5740;">产业落地</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">从“实验室”走向“临床”，脑机接口广州专场推动产医对接</h3>
-      <p class="card-summary">“广货行天下”智能穿戴产销对接城市联盟脑机接口专场在广州中山大学附属第三医院岭南医院举行，聚焦非侵入式脑机接口与智能穿戴融合应用，通过临床需求发布、企业产品推介、科研和市场服务介绍及供需洽谈，为产品落地寻找切实路径。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>脑机接口专场在广州中山大学附属第三医院岭南医院举行</li>
-          <li>聚焦非侵入式脑机接口与智能穿戴融合应用</li>
-          <li>通过临床需求发布、企业产品推介、供需洽谈推动产医对接</li>
-          <li>应用场景拓展至院外医疗康复、养老、助残、睡眠和心理健康</li>
-          <li>广东省工信厅将持续常态化开展场景对接，深化医企联动</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：新快报 / 新浪科技</span>
-        <a href="https://finance.sina.com.cn/tech/roll/2026-10-26/doc-iniwnkhm6071823.shtml" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    <div class="news-card" data-category="产业政策" data-date="2026-10-26" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #ff6b6b20; color: #ff6b6b; border-color: #ff6b6b40;">产业政策</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">成都以儿童脑健康为切口，推动脑机接口从实验室走进社区</h3>
-      <p class="card-summary">成都锦江区作为全国要素市场化配置综合改革试点城市，以儿童脑健康为小切口，推出“行为量表+脑机接口”双轨筛查体系，让脑机接口技术下沉至社区，累计为8700余名儿童提供免费精准脑健康筛查，并设立10亿元未来产业基金支持产业发展。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>成都锦江区推出“行为量表+脑机接口”双轨筛查体系</li>
-          <li>30秒采集脑功能数据，20分钟内完成初筛并同步复筛平台</li>
-          <li>累计为8700余名儿童提供免费精准脑健康筛查</li>
-          <li>建成全国首个脑机接口垂直产业链综合体</li>
-          <li>专项设立10亿元未来产业基金支持脑机接口产业发展</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：中国改革报 / 新浪财经</span>
-        <a href="https://finance.sina.com.cn/jjxw/2026-10-26/doc-iniwnqqf9497283.shtml" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="timeline-day" data-date="2026-10-25">
-    <div class="day-header">
-      <div class="day-date">
-        <span class="date-main">2026年10月25日</span>
-        <span class="date-weekday">周日</span>
-        <span class="day-count">2 条</span>
-      </div>
-    </div>
-    <div class="day-cards">
-    <div class="news-card" data-category="临床应用" data-date="2026-10-25" data-hotness="4">
-      <div class="card-header">
-        <span class="category-tag" style="background: #45b7d120; color: #45b7d1; border-color: #45b7d140;">临床应用</span>
-        <span class="hotness"><span class="stars">★★★★☆</span></span>
-      </div>
-      <h3 class="card-title">脑机接口植入三年后，他说：我的生活又有乐趣了！</h3>
-      <p class="card-summary">10月24日，全球首例半侵入式脑机接口患者老杨迎来术后三周年。在宣武医院与清华大学联合开展的临床试验中，瘫痪14年的老杨接受硬膜外脑机接口植入后，坚持康复训练，如今已能自主拿取水果进食、弹琴，甚至稳稳抱住孙女。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>2023年10月24日，老杨接受全球首例硬膜外脑机接口植入手术</li>
-          <li>术后三年坚持康复训练，右手重新实现主动抓握</li>
-          <li>可自主端杯喝水、拿取水果进食、弹琴，温度觉与刺痛觉逐步改善</li>
-          <li>能够稳稳抱住孙女，生活重新找回乐趣与自理能力</li>
-          <li>验证了微创脑机接口技术的长期安全性与有效性</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：北京新闻 / 新浪财经</span>
-        <a href="https://finance.sina.com.cn/wm/2026-10-25/doc-iniwmpas3047319.shtml" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    <div class="news-card" data-category="产品落地" data-date="2026-10-25" data-hotness="3">
-      <div class="card-header">
-        <span class="category-tag" style="background: #96ceb420; color: #96ceb4; border-color: #96ceb440;">产品落地</span>
-        <span class="hotness"><span class="stars">★★★☆☆</span></span>
-      </div>
-      <h3 class="card-title">数智健康现场｜脑机黑科技，解锁心理健康非药物干预</h3>
-      <p class="card-summary">在数智健康产业高端对话活动现场，一款脑机接口AI黑科技亮相，尝试不靠药物为焦虑、抑郁、失眠、认知障碍人群提供数字化干预新方案，拓展脑机接口在心理健康与消费健康场景的应用。</p>
-      <div class="card-keypoints">
-        <div class="keypoints-title">核心要点</div>
-        <ul>
-          <li>脑机接口AI黑科技亮相数智健康产业高端对话活动</li>
-          <li>聚焦焦虑、抑郁、失眠、认知障碍等心理健康问题</li>
-          <li>提供非药物的数字化干预新方案</li>
-          <li>拓展脑机接口在消费健康与心理健康领域的应用边界</li>
-          <li>代表脑机接口从医疗康复向普惠健康管理延伸</li>
-        </ul>
-      </div>
-      <div class="card-footer">
-        <span class="source">来源：封面新闻 / 新浪财经</span>
-        <a href="https://finance.sina.com.cn/stock/t/2026-10-25/doc-iniwmxsr6283158.shtml" target="_blank" class="source-link">查看原文 →</a>
-      </div>
-    </div>
-    </div>
-  </div>
-
+</div>
+</div>
 <div class="timeline-day" data-date="2026-10-24">
 <div class="day-header">
 <div class="day-date">
@@ -7635,30 +6793,11 @@ body::before {
 </div>
 <footer class="footer">
 <div class="footer-title">📋 更新记录</div>
-<div class="update-log"><div class="update-item">
-<span class="update-date">2026-11-05</span>
-<span class="update-desc">新增 5 条新闻：主动科技天使+轮融资、脑机接口技术标准参考规范1.0、信扬创智-北工大联合实验室、Cognixion ALS可穿戴BCI NIH研究、成都春熙路BCI成果展；累计 253 条，覆盖 89 天</span>
-</div>
-
+<div class="update-log">
 <div class="update-item">
-<span class="update-date">2026-11-04</span>
-<span class="update-desc">新增 6 条新闻（2026-11-04、2026-11-03、2026-11-02）</span>
+<span class="update-date">2026-11-07</span>
+<span class="update-desc">新增13条（截至2026-11-07）：中国首个植入式听觉神经接口产品“听觉脑干植入体”正式获批…、首届粤港澳大湾区国际脑机接口产业创新大会在深圳启幕…、脑虎科技完成7亿人民币B轮融资，加速「三全」脑机接口产业化…、超声修复大脑，我国无创超声脑机接口技术取得新进展…、三项脑机接口国家科技重大专项在北京启动…</span>
 </div>
-    <div class="update-item">
-      <span class="update-date">2026-10-29</span>
-      <span class="update-desc">新增3条（2026-10-29）：阶梯医疗WRS 01完成42例长期植入并进入注册临床、脑虎科技完成7亿元B轮融资、广州脑谷·天河脑机接口产业园启动；热点总数、覆盖天数与分类标签已同步刷新。</span>
-    </div>
-    <div class="update-item">
-      <span class="update-date">2026-10-28</span>
-      <span class="update-desc">新增3条（2026-10-28）：iCCD2026第二届脑机生态大会在深圳开幕…、中德脑科学国际学术交流会在深圳光明举行…、2026光明大脑科技周系列活动圆满收官…</span>
-    </div>
-
-<div class="update-item"><span class="update-date">2026-10-27</span><span class="update-desc">新增2条（2026-10-27）：脑机接口加速产业化仍有难题待解、脑机接口医疗器械临床试验设计线上研讨会召开；热点总数、覆盖天数与分类标签已同步刷新。</span></div>
-    <div class="update-item">
-      <span class="update-date">2026-10-26</span>
-      <span class="update-desc">新增4条（2026-10-26）：脑机接口植入三年后，他说：我的生活又有乐趣了！…、数智健康现场｜脑机黑科技，解锁心理健康非药物干预…、从“实验室”走向“临床”，脑机接口广州专场推动产医对接…、成都以儿童脑健康为切口，推动脑机接口从实验室走进社区…</span>
-    </div>
-
 <div class="update-item">
 <span class="update-date">2026-10-25</span>
 <span class="update-desc">新增6条（2026-10-24）：A股脑机接口概念股集体回调，多只个股跌超4%…、2026全国通用人工智能创新应用大赛开启报名…、逸超脑机接口平台启动，中法合作抢占无创BCI底层赛道…、2026青科会脑机智能论坛10月23日温州启幕…、全球脑机接口“最强大脑”汇聚南京，栖霞区打造BCI产业高地…、全国首个国家脑机接口高质量数据集建设项目在武汉启动…</span>
@@ -7789,10 +6928,8 @@ body::before {
 自动更新 · 增量积累 · 由 RINA 智能助手维护
 </p>
 </div>
-<!-- End GoatCounter Public Stats -->
 <!-- GoatCounter Public Stats Placeholder -->
 <!-- GoatCounter Public Stats Placeholder -->
-
 
 <!-- GoatCounter Public Stats Placeholder -->
 <section class="featured-section" id="analytics" style="margin-top: 40px;">
@@ -7818,7 +6955,7 @@ const timelineDays = document.querySelectorAll('.timeline-day');
 let currentCategory = 'all';
 let currentTimeRange = 'all';
 function applyFilters() {
-    const today = new Date('2026-11-05');
+    const today = new Date('2026-10-18');
     timelineDays.forEach(day => {
         const dayDate = new Date(day.dataset.date);
         const cards = day.querySelectorAll('.news-card');
@@ -7873,8 +7010,6 @@ timeBtns.forEach(btn => {
 <!-- Busuanzi Visitor Counter -->
 <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- End Busuanzi Visitor Counter -->
-
-
 
 <!-- Visitor Counter Script -->
 <script>
