@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BCI 学术周报 | 2026-11-02 ~ 2026-11-08</title>
+<style>
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #1a2332;
+    --bg-card-hover: #1f2b3d;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #2d3a4f;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-green: #10b981;
+    --accent-purple: #8b5cf6;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+}
+body::before {
+    content: '';
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom center, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+.hero { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+.hero-title {
+    font-size: 2rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan), var(--accent-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+.hero-subtitle { color: var(--text-secondary); font-size: 1rem; margin-bottom: 20px; }
+.week-range {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 8px 18px;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+}
+.stat-box-number { font-size: 1.6rem; font-weight: 700; color: var(--accent-green); margin-bottom: 4px; }
+.stat-box-label { font-size: 0.8rem; color: var(--text-muted); }
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.breakdown-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+}
+.breakdown-title {
+    font-size: 1rem; font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+}
+.breakdown-table { width: 100%; border-collapse: collapse; }
+.breakdown-table th {
+    text-align: left; font-size: 0.8rem; color: var(--text-muted);
+    padding: 8px 0; border-bottom: 1px solid var(--border-color);
+}
+.breakdown-table td {
+    font-size: 0.9rem; color: var(--text-secondary);
+    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.breakdown-table tr:last-child td { border-bottom: none; }
+.paper-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+.weekly-paper {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 22px;
+    transition: all 0.3s ease;
+}
+.weekly-paper:hover {
+    border-color: var(--accent-green);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);
+}
+.weekly-paper-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; line-height: 1.45; }
+.weekly-paper-title a { color: var(--text-primary); text-decoration: none; }
+.weekly-paper-title a:hover { color: var(--accent-cyan); }
+.weekly-paper-meta {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 12px; font-size: 0.8rem;
+}
+.weekly-paper-authors { color: var(--text-muted); }
+.weekly-paper-journal {
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    padding: 2px 8px; border-radius: 6px;
+}
+.weekly-paper-date { color: var(--text-muted); background: var(--bg-secondary); padding: 2px 8px; border-radius: 6px; }
+.weekly-paper-source {
+    color: var(--accent-green);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px; border-radius: 6px;
+}
+.weekly-paper-abstract { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+.weekly-paper-keywords { color: var(--text-muted); font-size: 0.8rem; margin-top: 10px; }
+.nav-bar {
+    display: flex; justify-content: center; gap: 16px;
+    flex-wrap: wrap; margin-bottom: 30px;
+}
+.weekly-nav-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.weekly-nav-link:hover { border-color: var(--accent-blue); color: var(--text-primary); }
+.footer {
+    margin-top: 40px; padding: 20px;
+    text-align: center; color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+@media (max-width: 640px) {
+    .container { padding: 20px 15px; }
+    .hero { padding: 20px 0; }
+    .hero-title { font-size: 1.5rem; }
+}
+</style>
+<!-- GoatCounter Tracking -->
+<script async="" data-goatcounter="https://daniel-hwang.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <h1 class="hero-title">📚 BCI 学术周报</h1>
+    <p class="hero-subtitle">每周精选脑机接口领域顶刊论文与高质量预印本</p>
+    <div class="week-range">2026-11-02 ~ 2026-11-08</div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="2026-11-01.html" class="weekly-nav-link">← 上一周</a><a href="../index.html" class="weekly-nav-link">🏠 返回 BCI News</a>
+  </nav>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-box-number">65</div>
+      <div class="stat-box-label">本周论文</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number">2</div>
+      <div class="stat-box-label">来源数</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-box-number">10</div>
+      <div class="stat-box-label">期刊数</div>
+    </div>
+  </div>
+
+  <div class="breakdown-grid">
+    <div class="breakdown-card">
+      <div class="breakdown-title">📊 来源分布</div>
+      <table class="breakdown-table">
+        <tr><th>来源</th><th>数量</th></tr>
+        <tr><td>arXiv</td><td>50</td></tr><tr><td>PubMed</td><td>15</td></tr>
+      </table>
+    </div>
+    <div class="breakdown-card">
+      <div class="breakdown-title">📰 期刊分布</div>
+      <table class="breakdown-table">
+        <tr><th>期刊</th><th>数量</th></tr>
+        <tr><td>arXiv</td><td>50</td></tr><tr><td>Journal of neural engineering</td><td>7</td></tr><tr><td>Cell stem cell</td><td>1</td></tr><tr><td>Science advances</td><td>1</td></tr><tr><td>Biomedical physics & engineering express</td><td>1</td></tr><tr><td>IEEE transactions on neural systems and rehabilitation engineering : a publication of the IEEE Engineering in Medicine and Biology Society</td><td>1</td></tr><tr><td>Neurourology and urodynamics</td><td>1</td></tr><tr><td>Nanoscale</td><td>1</td></tr><tr><td>Archives of physical medicine and rehabilitation</td><td>1</td></tr><tr><td>eLife</td><td>1</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+    📝 论文详情
+  </h2>
+  <div class="paper-list">
+    
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42994426/" target="_blank">Neural interface instructs layer 4-appropriate circuit reconstruction with engrafted human brain organoids and improves visually guided behavior.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Chang ZH, Shi JX, Chen C, Yang XG et al.</span>
+        <span class="weekly-paper-journal">Cell stem cell</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Repairing precise neural microcircuitry after cortical injury remains a pivotal challenge. Human brain organoids (hBOs) are a promising cell source, but disorganized integration limits their therapeutic potential. Here, we demonstrated that targeted neuromodulation, steered by endogenous narrowband gamma (NBG) rhythms, instructed structural and functional integration of hBO grafts in the injured...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42981416/" target="_blank">Ultrasound neural interface enabling acute spinal cord monitoring and blood flow modulation.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Kerensky MJ, Krishnan S, Liang R, Kempski Leadingham KM et al.</span>
+        <span class="weekly-paper-journal">Science advances</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">The days following decompression surgery for acute spinal cord injury (SCI) are a critical period for postoperative monitoring. After wound closure, clinicians lack on-demand access to local spinal cord morphology and hemodynamics, and care therefore remains guided largely by systemic surrogates rather than direct postoperative insight into the injured cord. We present the Multimodal Ultrasound...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42945585/" target="_blank">NCEL: convolution-enhanced lightweight neural architecture for robust EEG signal decoding in noninvasive brain-computer interfaces.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Li Y, Huang Y, Chen W, Jiao G et al.</span>
+        <span class="weekly-paper-journal">Biomedical physics & engineering express</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Electroencephalography (EEG) is a cornerstone of brain-computer interfaces and clinical neuro-diagnostics due to its non-invasiveness and high temporal resolution. However, robust EEG decoding remains challenging, particularly for resource-constrained deployments. While lightweight architectures like EEGNet offer favorable parameter efficiency, their reliance on fixed convolution kernels and...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42933128/" target="_blank">REFS: robust EEG feature selection with incomplete labels for multi-dimensional emotion recognition.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Xu X, Dong W, Wei F, Zhuo L</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906584/" target="_blank">ACF-Net: design of an adaptive cross-modal fusion network for cross-subject wearable EEG-EMG gesture recognition.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yang T</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42896567/" target="_blank">The calibration-to-accuracy mapping in P300 spellers does not transport across cohorts and was not restored by tested alignment or local recalibration.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Gorenshtein A, Adiniaev Y, Liba T, Barash Y et al.</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-06</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42986730/" target="_blank">Mirror Neural System in Hands Motor Imagery with Pictures and Videos Guidance: An EEG-fNIRS Study.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Bian Y, Chen YH, Xu Y, Zheng W et al.</span>
+        <span class="weekly-paper-journal">IEEE transactions on neural systems and rehabilitation engineering : a publication of the IEEE Engineering in Medicine and Biology Society</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Brain-computer interfaces (BCIs) achieved by motor imagery (MI) have been widely accepted as an effective tool in rehabilitative applications. Functional near-infrared spectroscopy (fNIRS) and electroencephalography (EEG) are two common implementation forms of BCIs, capable of monitoring neuronal potential changes and hemodynamic variations during different tasks. MI and action observation are...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42985742/" target="_blank">Letter to the Editor: "Bladder Contractility Classification Before Bladder Outlet Surgery: Do BCI, Wmax and the Maastricht-Hannover Nomogram Agree and Does It Matter for Outcome?".</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">R S, S A, M P, Inbakumari J</span>
+        <span class="weekly-paper-journal">Neurourology and urodynamics</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42886472/" target="_blank">Advanced biomaterial technologies for neural regeneration in central nervous system diseases: mechanisms and applications.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Anniwa D, Chen Z, Chen X, Yuan W et al.</span>
+        <span class="weekly-paper-journal">Nanoscale</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Effective repair of central nervous system (CNS) injuries remains highly challenging due to several formidable barriers, including severe structural disruption, hostile microenvironments, and limited intrinsic regenerative capacity. In response, biomaterials incorporated with therapeutic agents provide advanced interventional strategies for neural regeneration. This review systematically...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08487" target="_blank">User Embeddings are Superpositions of Interpretable Behavioral Modes</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Jonathan Kozaczuk, Zheng Dong, Noyan Evirgen, Keivan Majidi et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08486" target="_blank">Do You Miss the Nights We Spent Crafting Figures? Rethinking Teaser and Framework Figures in the Age of Generative AI</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Xiaoqi Zhao, Youwei Pang, Kailai Zhou</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Scientific figures give research ideas a visual form through choices of abstraction, composition, and emphasis. Generative AI offers new ways to realize these choices, raising questions about explanatory clarity and purposeful visual expression. We examine these questions through a visual retrospective of 371 motivation and framework figures from 200 papers. The corpus comprises a quota-based...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08485" target="_blank">Where and Why is Grounded Reasoning Useful?</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">David Yan, Le Xue, Forrest Huang, Qiuyi Zhang et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Grounded reasoning, where a model outputs text coordinates of relevant locations in chain-of-thought reasoning, is a common strategy for solving complex visual reasoning problems. However, the benefits and limitations of grounded reasoning are understudied. We study where and why grounded reasoning is most useful. To do so, we introduce a chain-of-thought analysis method to measure how much a...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08483" target="_blank">SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Qile Jiang, George Em Karniadakis</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI, cs.NE</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08478" target="_blank">Scientist World: Grow a Research World for AI-Scientists</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Taiming Lu, Sachin Konan, Zhuang Liu</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">AI-Scientists arrived, but a world for them to grow in did not. Human scientists take theirs for granted $-$ centuries of open problems and shared ideas, waiting in the scientific literature. To AI-Scientists, that world is readable but not runnable, so we build Scientist World for them: every research paper becomes an executable environment. Our autonomous pipeline extracts each paper's...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI, cs.CL, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08477" target="_blank">EgoGeneralist: Unifying Egocentric Action-Video Tasks through Video-Native Modeling</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yanlin Jin, Bowen Yang, Cheng Zhang, Yifan Yang et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Modern video models possess strong visual priors, yet do not natively represent human action in metric 3D space. We present EgoGeneralist, which adapts pretrained video generators to unify action-conditioned egocentric video generation, pose estimation, and joint action-video generation. Our role-adaptive action renderer provides video-native representations for multidirectional action-video...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08472" target="_blank">XStack: A Benchmark for ML Repo Migration</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Linrong Cai, Taiming Lu, Haozhe Chen, Zhuang Liu</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">ML code should run where researchers choose, not where it was first written. Today, machine learning code mainly lives in two ecosystems, PyTorch on NVIDIA GPUs and JAX on Google TPUs. Migrating repositories between them means building and testing across frameworks and hardware. This migration is (1) a practical need, since it unlocks different hardware for researchers, and (2) a natural...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08469" target="_blank">Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Linqian Wu, Diaoxuan He</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Interpretability, AI auditing and assessments of machine consciousness increasingly rest on mechanism-level quantities: functionals of a system's causal transition law that describe how it computes, not what it outputs. Experiments see that law only through finite, partial and noisy interventions. We ask when such a quantity is identifiable from an experiment's access, continuous in the mechanism...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.AI, q-bio.NC</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08465" target="_blank">Towards interpreting any residual stream direction by scaling activation inversion</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Celeste De Schamphelaere, Juan J. Vazquez, Ari Spiesberger, Tomáš Gavenčiak et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">To interpret a direction in a language model's residual stream, we can look for text that strongly activates it. But when such text is found by scanning a corpus, it is limited to what that corpus contains. We develop Maximally-Activating Example Metamodels (MAEMs), language models which map residual stream directions from a subject model to text exemplars that strongly activate those directions....</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08457" target="_blank">Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yi Feng, Andrea Paudice</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, math.OC</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08453" target="_blank">Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Zeyu Leo Liu, Yang Li, Bo Pang, Emre Can Acikgoz et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">On-policy distillation (OPD) trains a student on its own rollouts under a frozen teacher's per-token supervision. Does this dense signal reduce the training FLOPs needed to reach a target accuracy compared with reinforcement learning? We systematically compare vanilla reverse-KL OPD with Group Relative Policy Optimization (GRPO) across task difficulty, student and teacher size, domain, and...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.CL</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08452" target="_blank">ReproBridge: Building Reproducibility into ML Research Artifacts</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yubo Wang, Rui Meng, Jaehyun Nam, Tomas Pfister et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08449" target="_blank">VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yu-Cheng Chou, Shihao Wang, Jin Huang, Chi-Pin Huang et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08445" target="_blank">A Hidden Markov Preference Model for Online Prediction of Adversary Actions</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Angel Daruna, Michael Cogswell, Tixiao Shan, Yi Yao et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">A defender anticipating an attacker needs a probability distribution over the attacker's next action from information available before that action occurs. Two structures complicate this: the attacker's behavioral regime persists and can switch within an episode, and each action combines an operation with state-dependent arguments whose feasible values change over time. We capture both with a...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08441" target="_blank">Edge-Assisted Crowdsensing for Explainable Cyclist Safety Perception</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Hongsen Cao, Chia-Yen Chiang, Mona Jaber, Meihui Wang et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Cyclist fatality rates remain high despite policy support for active travel, and autonomous vehicles add complexity to mixed traffic. Neither crash statistics nor multi-model detection pipelines scale to continuous monitoring of perceived safety along a route. We present an edge-assisted crowdsensing system: handlebar cameras supply street-level frames, a vision-language model (VLM) turns each...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV, eess.IV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08439" target="_blank">Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Vladimir Beskorovainyi</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Typed-decision models score options that the caller supplies at request time, so their accuracy depends on label wording that the model's developer does not control. We compare two releases of a 307M-parameter multilingual cross-encoder, Ru-Jev, trained on thirteen Russian-language tasks; the later release adds an augmentation that presents labels in several surface forms. Holding questions fixed...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CL, cs.AI, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08438" target="_blank">Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Fazl Barez, Tung-Yu Wu, Hunar Batra, Gabriele Dominici et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Neural networks are likely to be among the most consequential artefacts in human history. As these systems become more capable and autonomous, their potential to cause societal harm also grows, making AI safety one of the defining challenges of our time. Yet we continue to build increasingly powerful systems without fully understanding how they work, how they will behave in unfamiliar situations,...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CL, cs.AI, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08436" target="_blank">SM4RT: Cascaded Feed-forward Model for 4D Reconstruction</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Pang-Chi Lo, Jhao-Syun Lai, Tsung-Wei Ke</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08433" target="_blank">MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Donghua Zhang, Zizheng Wang, Ze Dong, Yiding Feng et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">LLM-based medical assistants that follow a patient across visits need a memory that keeps the patient's clinical state correct as it changes. We examine the errors of five memory systems on longitudinal medical dialogue and find three recurring causes: the retrieved evidence gives an outdated state, includes another person's health facts, or lacks a safety fact the answer depends on. We present...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CL, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08428" target="_blank">The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Julian Kunkel, Ali Doosthosseini</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Chat remains the default surface for many large language model (LLM) tasks, even as agentic tools such as OpenCode excel at coding and automation. Yet the model sees the current dialogue but not the workspace around it. We explore meta access---giving the assistant a structured, permissioned view of the interface itself and propose a ladder of levels: feature tutoring; metadata, settings, and...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08425" target="_blank">Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Michal P. Podolinsky, Yunhao Yang, Daniel Little, Hong Lu et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people. Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge. Existing methods...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08421" target="_blank">Data-driven discovery of intrinsic Lie point symmetries of differential equation systems</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Ilker Gurcan, Kadir Ustun, Ramazan Gokberk Cinbis</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Discovering continuous symmetries directly from differential-equation data can reveal geometric structure for model reduction and scientific machine learning without symbolic determining equations or a closed-form representation of the governing system. We formulate intrinsic Lie point-symmetry discovery as an operator-theoretic problem on sampled jet-space data. Admissible generators are...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, math.DG, math.DS, math.GR, math.NA</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08420" target="_blank">On the limitations of molecular representations</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Acer Blake, Fergus Imrie, Charlotte M. Deane</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Molecular representations such as fingerprints and learned embeddings play a central role in cheminformatics and small-molecule machine learning. They serve as the primary input for a diverse array of tasks, including clustering, dataset splitting, and virtual screening, yet their evaluation is often limited to downstream model performance on narrow benchmark tasks. We carried out a systematic...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08417" target="_blank">Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">E. Kelly Buchanan, Crystal Zhou, Scott W. Linderman, Christopher Ré</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Coding agents are among the most economically consequential deployments of LLMs to date, making reliable evaluation increasingly important. Yet even benchmarks that are carefully validated at release can become stale. As models improve, they can discover valid solutions that existing verifiers reject, while changes to evaluation infrastructure can invalidate assumptions embedded in tasks and...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08414" target="_blank">Spectral and Subspace Dynamics of LoRA in Supervised Fine-Tuning and Reinforcement Learning</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Chenruo Liu, Zihan Wang, Yijun Dong, Qi Lei</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Low-rank adaptation (LoRA) is commonly used in both supervised fine-tuning (SFT) and reinforcement learning (RL), often under similar optimizer settings. Yet, how the different dynamics of the two stages manifest in the low-rank increment that LoRA optimizes remains unclear. Tracking the singular spectrum and subspaces of LoRA updates on mathematical reasoning tasks, we find that RL concentrates...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, stat.ML</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08413" target="_blank">T3R: Training-Free Two-Stage Token Refinement Towards Efficient and Robust VLA Models</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Mohammed Hassan, Zhenyang Chen, Zheng Wang, Zhixin Zhu et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Vision-Language-Action (VLA) models enable end-to-end robot control, but inference is increasingly expensive. Each decision processes hundreds of visual tokens, often across multiple cameras, leading to substantial computation while allowing irrelevant background content to distract action prediction under distribution shift. We argue that these issues stem from two complementary forms of...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08412" target="_blank">The Gold Rush in AI4Math, II: What are signatures of AI-assisted Proofs?</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yuanchuan Guo, Jiashun Jin, Zheng Tracy Ke, Bingcheng Sui</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">The growing use of AI in mathematics raises a question: can we detect AI involvement in proofs, separately from AI assistance with writing? Historical arXiv papers, recent papers disclosing substantive AI use, and manuscripts released by OpenAI provide a rich empirical basis for studying this question. However, several challenges remain: lack of matched case-control pairs; potential...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI, stat.AP</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08409" target="_blank">Conformal Prediction for Time-Dependent PDEs</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Joshua Stiller, Annika Schneider, Eyke Hüllermeier</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Uncertainty quantification is crucial in scientific machine learning, where models inform safety-critical tasks such as flood forecasting, financial risk management, and thermal control in machines. Conformal prediction provides distribution-free coverage guarantees, but in time-dependent settings common to physics and engineering, these guarantees can break down, leading to systematic...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, stat.ML</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08407" target="_blank">Social Humanoid: Socially Responsive Human-Humanoid Interaction</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Vongani H. Maluleke, James Ni, Kie Horiuchi, Lea Wilken et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.CV, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08403" target="_blank">StepBack: Step-Level Error-Localized Resampling for Efficient Test-Time Reasoning</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yang Ouyang, Jung-Eun Kim</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Self-consistency (SC) is a widely used decoding strategy for improving chain-of-thought reasoning, but it requires sampling many complete reasoning trajectories with a preset budget. Its efficient variants reduce the cost mainly by stopping full-trajectory sampling early or distributing the number of samples across questions. In this paper, we propose StepBack, a step-level error-localized...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI, cs.CL, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08394" target="_blank">Synthesis of Ovarian Cancer Multi-Omics Datasets: A Biology-Informed Evaluation Framework</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Déborah Boyenval, Alina Malyutina, Jaana Oikkonen, Sammeli Liikkanen et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Paired multi-omic cancer cohorts are costly to assemble and difficult to share, motivating synthetic cohorts as a complementary resource. As generative model development accelerates, we shift the focus from proposing yet another architecture to defining evaluation criteria that determine whether synthetic data preserve biologically relevant structure. We introduce a biology-informed and...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08393" target="_blank">Adaptive Low-Light Enhancement for Road Anomaly Detection: A Multi-Architecture Benchmark and Edge Deployment Study</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Obed Honour Eje, Oluwatosin Kolade, Glory Bagai, Taliha Abiodun Folorunso</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Road anomaly detection systems on autonomous vehicles must function reliably under degraded visual conditions including darkness, rain, and Harmattan dust haze. This paper benchmarks four object detection architectures, YOLOv8n, YOLOv12n, RT-DETR, and Faster R-CNN, under physically grounded lighting and weather degradation, and shows that uniform application of the SCI low-light enhancement...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08392" target="_blank">Learning a patient world model for health system simulation in intensive care</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Yingtai Li, Ruoyan Wang, Yu Li, Shaohua Kevin Zhou</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Designing healthcare strategies requires anticipating their clinical and operational consequences before implementation, a task that often relies on health system simulation. Such a simulation necessitates modeling how patient states evolve and generate care demands. However, conventional approaches typically tailor compact state transitions to a single policy question and omit history-dependent...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08386" target="_blank">Hybrid Machine Learning for Imbalanced Landing-Phase Safety Event Prediction from Flight Data</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Taha Asghar, Bilal Mufti, Syed Qasim Zaheer, Luqman Ahmed</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Landing-phase safety-event prediction requires the detection of rare abnormal approaches within strongly imbalanced multivariate flight data. Capturing coupled temporal behavior while distinguishing event-specific signatures across airport operating contexts remains a central modeling challenge. This study proposes an interpretable hybrid feature-fusion framework for multiclass landing-phase...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08383" target="_blank">FedReason: Large Language Models as Weight-Space Meta-Aggregators for Heterogeneous Federated Learning</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Ali Mohammadi Ruzbahani, Abbas Yazdinejad, Hadis Karimipour</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Federated learning servers combine client models with a fixed aggregation rule, and each rule in common use is designed for one kind of heterogeneity. We study whether a large language model (LLM) that inspects the client models can choose the rule itself, without any training on the server. In FedReason, the LLM is called every ten rounds. It analyses the weights by running code in a restricted...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CR, cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08379" target="_blank">Module-Aware Optimization for Graph Neural Networks</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Guy Hadad, Haggai Roitman, Moshe Eliasof, Bracha Shapira</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Different optimizers impose different geometries on parameter updates. Adaptive methods such as Adam and AdamW use coordinate-wise updates, while matrix-aware optimizers such as Muon utilize weight-matrix structure through orthogonalized updates. For Graph Neural Networks (GNNs), however, the effective geometry of its weight matrices is shaped not only by its learned channel-mixing weights, but...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08376" target="_blank">Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Tushaar Gangavarapu, Gil Tabak, Clemens JS Schaefer</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Linear attention compresses context into a fixed-size key-value state for linear-time training and constant-memory inference. Gated delta-rule models decay this state and erase its prediction for an incoming key before writing a new value; Gated DeltaNet-2 (GDN-2) generalizes this with channel-wise decay and decoupled, full-rank erase and write gates. However, we show that state updates are far...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08372" target="_blank">MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Sateesh Kumar, Arnav Balaji, Arpit Bahety, Skand Peri et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.AI, cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08369" target="_blank">NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Pengkai Wang, Wei-Wei Zhang, Yan Li, Min Tang et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Current medical benchmarks typically break down clinical competence into isolated factual questions, single-image tasks, or static case vignettes. These tests score individual answers, but reveal less about whether a model can integrate subspecialty knowledge with multimodal evidence and track a patient's condition throughout a course of care. To close this gap, we introduce NPCBench, a clinical...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08368" target="_blank">VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Sacha Jungerman, Kaustubh Sadekar, Avery Gump, Sriram Narayanan et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Robotic perception increasingly relies on heterogeneous sensor suites combining cameras with emerging modalities (event, SPAD, iToF/dToF, and thermal). Yet existing simulators idealize these sensors, hiding critical modality-specific failure modes that limit real-world deployment. We present VisionSIM, a unified, physically grounded simulation platform that elevates sensor realism to a...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.AI, cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08364" target="_blank">SHORE: Stability-Hybrid On-Policy Reinforcement Learning for Online Bin Packing</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Chang Shi, Ann Majewicz Fey</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Online 3D bin packing with a processing buffer requires choosing which box to pack, its orientation, and its placement while keeping the stack stable under unknown future arrivals. A collapse ends the episode and forfeits the remaining volume. Existing methods use geometric rules or hard stability masks, limiting how risk can influence the joint choice of box, orientation, and placement. We...</p>
+      <div class="weekly-paper-keywords">关键词: cs.RO, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08363" target="_blank">StrataFlux: Memory-Hierarchy-Native Low-Bit LLM Inference</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Jake Hyun, Ziyu Zhao, Jae-sun Seo, Mohamed S. Abdelfattah</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Quantization reduces the memory and bandwidth demands of large language model (LLM) inference but can degrade accuracy; offloading higher-precision data can instead stall generation. We introduce StrataFlux, a framework that challenges this tradeoff by recovering accuracy lost to low-bit weight and key-value (KV) cache quantization while retaining quantization's memory and speed advantages....</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG, cs.DC</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08360" target="_blank">OraRefer: Segmentation-Guided Multi-Photograph Fusion for Oral Cancer Screening with Guaranteed Patient-Level Sensitivity</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Rupam Mukherjee, Mehakdeep Singh, Shirin Dasgupta, Subhamoy Mandal</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Oral cancer and the oral potentially malignant disorders (OPMD) that can precede it are visible on the oral mucosa, which makes smartphone photographs a promising tool for screening. Deep learning models for this task classify individual photographs. However, screening refers patients, not photographs: a patient is usually photographed several times, and the referral decision must miss no more...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV, eess.IV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08359" target="_blank">A Theoretical Analysis of a Bilevel Optimization Formulation for Combined Local-Global Optical Flow Models</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">El Mostafa Kalmoun</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">This paper analyzes a bilevel formulation for learning the regularization parameter of combined local-global (CLG) optical flow models. The lower-level problem computes the flow from a Lucas--Kanade data term and a quadratic or total variation (TV) regularizer, and the upper-level problem selects the parameter that minimizes the squared distance to a ground-truth flow. The setting is...</p>
+      <div class="weekly-paper-keywords">关键词: math.OC, cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08358" target="_blank">Unifying Central Flow, Rod Flow, and the Edge Coupling</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Eric Regis, Sinho Chewi</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">At the edge of stability, the iterates of gradient descent oscillate along the sharp directions of the Hessian. This poses a significant challenge for continuous-time models as the usual continuous-time approximation -- the gradient flow -- admits no oscillations. Several continuous-time models have been proposed to capture the behavior at the edge of stability, among them central flow and rod...</p>
+      <div class="weekly-paper-keywords">关键词: stat.ML, cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08352" target="_blank">USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Thanapong Intharah, Zhichao Gao, Yiliang Liu, Hao Dong</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough.   Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV, cs.LG, cs.RO</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08342" target="_blank">4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Adnan Armouti, Guanyue Qian, Rajalakshmi Nandakumar</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Millimeter-wave radar resolves the micrometer displacements of a moving body as micro-Doppler, enabling gait, gesture, activity, pose and vital-sign sensing. Each task relies on a downstream model trained on real data, yet radar datasets lag orders of magnitude behind vision and language. Brute-force collection will not close that gap, and existing synthesis methods (forward-only simulators,...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV, cs.GR, cs.LG, eess.SP</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08341" target="_blank">Enhancing Local and Global Structure in Compressed AI Agent Memory</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Henry Han</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">AI agents store text as embedding vectors and compress them at scale. A compression is accepted when each item's nearest neighbors survive, but agents also consolidate, delete, and compare memories, tasks that depend on which items lie far apart. We evaluate both ends with two label-free fidelities from our prior work: the local fidelity $L$ at 10 neighbors and the global fidelity $G$ at 30 to 50...</p>
+      <div class="weekly-paper-keywords">关键词: cs.AI</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08335" target="_blank">Discovering Learning Rules that Shape Others</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Hong Jun Lee, Ziyan Wang, Jun Wang, Stefanos Leonardos et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">In general-sum games, self-interested learners can reach outcomes that are poor for everyone, which has motivated methods that shape the opponent's learning. Methods like Learning with Opponent-Learning Awareness (LOLA), which differentiates through the opponent's learning process, and Model-Free Opponent Shaping (M-FOS), which uses model-free optimisation methods for long-horizon opponent...</p>
+      <div class="weekly-paper-keywords">关键词: cs.LG</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://arxiv.org/abs/2611.08330" target="_blank">InstantHand: Feed-Forward 3D Gaussian Splatting for Animatable Hand Avatar Reconstruction from a Single Image</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Chanho Kim, Muhammad Salman Ali, Kyeonghwan Gwak, Muhammad Shaheryar et al.</span>
+        <span class="weekly-paper-journal">arXiv</span>
+        <span class="weekly-paper-date">2026-11-05</span>
+        <span class="weekly-paper-source">arXiv</span>
+      </div>
+      <p class="weekly-paper-abstract">Hand avatar reconstruction typically relies on multi-view capture or per-subject optimization, limiting its scalability. We introduce InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization. Image-averaged losses provide insufficient supervision for alpha...</p>
+      <div class="weekly-paper-keywords">关键词: cs.CV</div>
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42981608/" target="_blank">Augmented reality paradigm and EA-DGCNN decoding algorithm for motor imagery in stroke patients.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Xu F, Yan D, Zhu C, Yu M et al.</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-04</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Stroke represents one of the leading causes of long-term motor dysfunction on a global scale. Existing motor imagery (MI) brain-computer interface (BCI) rehabilitation training systems face critical challenges of suboptimal patient engagement and limited electroencephalography (EEG) feature decoding capacity. To overcome these challenges, this study presents two primary original contributions: an...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42906586/" target="_blank">Towards semantic brain-computer interfacing: the graded inventory of semantic triggers (GIST) paradigm.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Podmore JJ, Radman M, Poli R, Paulmann S et al.</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-04</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42977063/" target="_blank">Comparative Effects of Neurostimulation- and Technology-Augmented Robot-Assisted Training on Upper-Limb Motor Recovery After Stroke: A Systematic Review and Network Meta-Analysis.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Wang L, Zhu Z, Liu Y, Qu J et al.</span>
+        <span class="weekly-paper-journal">Archives of physical medicine and rehabilitation</span>
+        <span class="weekly-paper-date">2026-11-03</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">To compare robot-assisted training (RAT) alone with neurostimulation- or technology-augmented RAT for poststroke upper-limb recovery.</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42976382/" target="_blank">A comprehensive review of biosignal foundation models.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Lee NKK, Barmpas K, Koliousis A, Panagakis Y et al.</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-03</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Foundation models are emerging as a promising approach to biosignal analysis, offering solutions to common challenges in learning from biosignal data, such as high variability, noise or limited annotations. This survey provides a comprehensive review of the state-of-the-art in this rapidly advancing field. We introduce commonly used biosignal modalities (including EEG, ECG, EMG, EOG and PPG) and...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42976053/" target="_blank">Spyglass is a framework for reproducible and shareable neuroscience research.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Lee KH, Denovellis EL, Ly R, Magland J et al.</span>
+        <span class="weekly-paper-journal">eLife</span>
+        <span class="weekly-paper-date">2026-11-03</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract">Scientific progress depends on reliable and reproducible results. Progress can be accelerated when data are shared and re-analyzed to address new questions. Current approaches to storing and analyzing neural data involve bespoke formats and software that make replication and reuse of data difficult. To address these challenges, we created Spyglass, an open-source data management and analysis...</p>
+      
+    </div>
+
+    <div class="weekly-paper">
+      <h3 class="weekly-paper-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42880317/" target="_blank">Peripheral physiological decoding of arousal in a boundary-avoidance task: signal validity and individualized control.</a></h3>
+      <div class="weekly-paper-meta">
+        <span class="weekly-paper-authors">Natarajan A, Sajda P</span>
+        <span class="weekly-paper-journal">Journal of neural engineering</span>
+        <span class="weekly-paper-date">2026-11-03</span>
+        <span class="weekly-paper-source">PubMed</span>
+      </div>
+      <p class="weekly-paper-abstract"></p>
+      
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>BCI News Academic Weekly · Generated on 2026-11-08 13:49</p>
+    <p><a href="../index.html" style="color: var(--accent-blue); text-decoration: none;">← 返回 BCI News 主页</a></p>
+  </div>
+</div>
+</body>
+</html>
