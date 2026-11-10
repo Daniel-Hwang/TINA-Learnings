@@ -16,6 +16,1111 @@
     "added_date": "2026-11-07"
   },
   {
+    "id": "pubmed-43002378",
+    "title": "Constructing Neurorights in the Era of Clinical Brain-Computer Interfaces : China's Emerging Governance Pathway.",
+    "authors": [
+      "Zhao Y",
+      "Lin Y"
+    ],
+    "journal": "Journal of bioethical inquiry",
+    "publish_date": "2026-11-09",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43002378/",
+    "abstract": "In March 2026, China approved the world's first implantable brain-computer interface (BCI) medical device for clinical use outside clinical trials, a milestone that raises urgent questions about how legal and ethical systems should protect the brain and mind. This article examines China's emerging neurorights governance pathway, which combines the interpretive expansion of civil law personality...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-10T14:55:41.581380",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12564",
+    "title": "GHiML: VLM-Guided Hierarchical Multi-Label Learning with Applications to Benthic Imagery",
+    "authors": [
+      "Isaac Xu",
+      "Devi Ayyagari",
+      "Martin Gillis",
+      "Benjamin Misiuk",
+      "Craig J. Brown",
+      "Thomas Trappenberg"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12564",
+    "abstract": "Vision language models (VLMs) encode substantial expert knowledge within their weights, yet their direct application to specialised classification domains such as benthic imagery remains limited. Meanwhile, vision transformers trained on these tasks rely predominantly on low-level visual latents (colours, textures, and shapes) that lack the higher-level reasoning humans employ for identification....",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779059",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12557",
+    "title": "WanderBench: Can World Models Explore Dynamic Worlds from Video?",
+    "authors": [
+      "Yuhang Chen",
+      "Jiheng Li",
+      "Jiale Wang",
+      "Zai Wang",
+      "Guangyue Liu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12557",
+    "abstract": "Video world models conditioned on an input video make it possible to explore real, recorded dynamic scenes, enabling re-shooting of footage, free-viewpoint replay, and real-to-sim environments for embodied agents. Such uses require the generated rollout to stay faithful to the recorded world, yet existing benchmarks start from a single image or a text prompt, and video-conditioned generation is...",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779206",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12552",
+    "title": "SciMARS: Multi-Agent Recursive Self-Improvement for Closed-Loop Scientific Discovery",
+    "authors": [
+      "Weimin Wu",
+      "Han Liu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12552",
+    "abstract": "We propose SciMARS, a framework for recursive task-local adaptation of multi-agent harnesses in closed-loop scientific discovery. Multi-agent systems coordinate analysis, experimental design, and verification as scientific evidence evolves. However, two problems limit their effectiveness: (i) without shared memory, agents lose observations and repeat work; (ii) fixed role procedures, handoffs,...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779307",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12550",
+    "title": "A Strict Upper Bound for Three-Point Weighted Selection in Planar Vector-Valued Regression",
+    "authors": [
+      "Sergey Volkov"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12550",
+    "abstract": "We prove $F_{\\mathrm{weighted}}(2,2,3)<11/6$ for minimum-Frobenius-norm least-squares regression with two input and two output coordinates, improving the upper bound $15/8$. More precisely, a universal $\\varepsilon_0>0$ satisfies $\\mathcal T_3\\le(5/6-\\varepsilon_0)E$ for every finite residual frame. The proof combines an exact scalar certificate, rigidity of equality in planar selection, and a...",
+    "keywords": [
+      "math.ST",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779406",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12544",
+    "title": "Learning inexact alternating minimization for convex problems with quadratic coupling",
+    "authors": [
+      "Paul Häusner",
+      "Jevgenija Rudzusika",
+      "Jens Sjölund",
+      "Ozan Öktem"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12544",
+    "abstract": "Alternating minimization is a standard tool for optimization problems with two coupled variable blocks. Its cost is dominated by the inner subproblem solvers, which rarely have a closed-form solution. In this paper, we propose to learn an inexact alternating scheme in which neural networks approximate the subproblem solution at each iteration. For convex problems with quadratic couplings between...",
+    "keywords": [
+      "math.OC",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779507",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12530",
+    "title": "K-prop: Deep Online Learning by Backpropagating Temporal Kernels",
+    "authors": [
+      "Bingkun Liu",
+      "Paul Haider",
+      "Federico Benitez",
+      "Mihai A. Petrovici",
+      "Walter Senn"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12530",
+    "abstract": "Self-recurrence represents an important component for temporal processing in neural networks, both artificial and biological, where it appears naturally in the form of leaky integration. However, due to the complex temporal dependencies of the gradient, an efficient and effective method of online training is still lacking. Here we propose K-prop, a novel online learning method for leaky neural...",
+    "keywords": [
+      "cs.LG",
+      "q-bio.NC"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779596",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12529",
+    "title": "Perceived Agency During Agent-Avatar Control Transitions in Virtual Reality",
+    "authors": [
+      "Jingyi Zhang",
+      "Anthony Steed"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12529",
+    "abstract": "Prior beliefs about whether a virtual human (VH) is controlled by a human or a computer can shape how users interpret and respond to its behaviour. As emerging hybrid VH systems allow control to transfer between human operators and computer programs during an ongoing interaction, it remains unclear whether perceived agency updates with the actual controller or continues to reflect users' prior...",
+    "keywords": [
+      "cs.HC",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779694",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12527",
+    "title": "WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning",
+    "authors": [
+      "Sang-Hoon Lee",
+      "Ha-Yeong Choi"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12527",
+    "abstract": "This work proposes WaveGen, a fully end-to-end diffusion-based text-to-waveform framework based on Spectral Forcing, which jointly learns an internal spectral trajectory and the target waveform trajectory within a single model, enabling direct end-to-end text-to-waveform generation. Unlike recent TTS pipelines, WaveGen does not rely on separately trained or externally decoded intermediate...",
+    "keywords": [
+      "cs.SD",
+      "cs.AI",
+      "eess.AS",
+      "eess.SP"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779787",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12524",
+    "title": "EditJudge-Bench: Auditing VLM Image-Edit Judges with Synthetic Ground Truth",
+    "authors": [
+      "Jens Parslov",
+      "Marco Schouten",
+      "Dim P. Papadopoulos"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12524",
+    "abstract": "Vision-language models (VLMs) are increasingly used as automated judges for image-editing benchmarks, yet their reliability is poorly understood. Auditing these judges is difficult because real edited images lack controlled ground truth and entangle the requested changes with model artefacts, unintended side effects, and ambiguous degrees of success. In this paper, we introduce EditJudge-Bench, a...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779880",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12521",
+    "title": "Can the Confidence and Decisions of System 1 Models Be Trusted? An Explainability and Perturbation Audit of Jev-Style Decision Models",
+    "authors": [
+      "Julien Delaunay"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12521",
+    "abstract": "\"System 1\" decision models (pioneered by TypeSafe AI's Jev) replace autoregressive text generation with a single forward pass returning typed probability distributions over declared schemas (Choice, Score, Noul). While deployed for low-latency routing and automated triage, their statistical calibration and post-hoc explainability remain uncharacterized. We introduce an open, deterministic audit...",
+    "keywords": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.779944",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12509",
+    "title": "UniHam: A Large-Scale SOC-Complete Dataset and Benchmark for Hamiltonian Learning in Materials",
+    "authors": [
+      "Yuewen Huang",
+      "Pin Chen",
+      "Yutong Lu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12509",
+    "abstract": "Accurate prediction of electronic Hamiltonians would enable broad property inference while avoiding the high computational cost of Density Functional Theory (DFT). However, progress toward general-purpose materials foundation models is limited by a data bottleneck: existing Hamiltonian datasets are typically small, lack structural diversity, and often omit essential relativistic physics such as...",
+    "keywords": [
+      "cs.LG",
+      "cond-mat.mtrl-sci"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780027",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12508",
+    "title": "MARS: Multiscale Appearance-Residual Streams for Video Forgery Detection",
+    "authors": [
+      "Ahmed Y. Radwan",
+      "Shaina Raza"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12508",
+    "abstract": "Generalizing deepfake detection across facial manipulation and fully generated video remains challenging due to forgery traces varying with the manipulation method and scene content. Explicit spatial and temporal feature differences offer a way to capture this variation, but also respond to natural texture and motion, motivating their joint interpretation with appearance features. We investigate...",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780098",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12501",
+    "title": "Text Grouping Changes Completion-Time Comparisons in Long-Form Simultaneous Speech Translation",
+    "authors": [
+      "Hieu Minh Truong",
+      "Dung D. Le"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12501",
+    "abstract": "Does grouping translation updates before speech synthesis change the measured completion gap between two translators? We compare StreamAtt with its fixed-audio-history baseline on ten English-German talks. For each translation, we keep the intended text and its availability times fixed and vary how updates are grouped for synthesis. Four-second grouping increases StreamAtt's mean completion lead...",
+    "keywords": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780152",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12491",
+    "title": "Out-of-the-Box Tabular Foundation Models for Bayesian Optimization in Materials Discovery",
+    "authors": [
+      "Klemens Flöge",
+      "Simon Bing",
+      "Leo Grinsztajn",
+      "Eliott Kalfon",
+      "Lennart Purucker",
+      "Noah Hollmann",
+      "Frank Hutter"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12491",
+    "abstract": "Bayesian optimization is widely used in active learning loops for materials science. Gaussian processes serve as the de-facto surrogate model family, but require task-dependent kernel choices and can lack the modeling capacity for complex relationships. Tabular foundation models (TFMs) have recently emerged as the state-of-the-art for predictive tasks on structured data, without requiring bespoke...",
+    "keywords": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780217",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12478",
+    "title": "AuDiR: Diagnosing Audio Reasoning with Rule and Percept Interventions",
+    "authors": [
+      "Chengwei Wei",
+      "Yi Ma",
+      "Nancy F. Chen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12478",
+    "abstract": "Answer accuracy alone does not distinguish failures in acoustic perception, rule knowledge, and rule application. AuDiR (Audio Diagnostic Reasoning) examines these distinctions through controlled input interventions. Each item contains an audio clip, a multiple-choice question, a task-general rule, and a textual description of the acoustic observations needed to answer. Three conditions...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780273",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12477",
+    "title": "Perturb, Aggregate then Reconstruct: Consensus Aggregation and Fourier-Attended Multi-Decoders for Reconstruction-based Multi-View Anomaly Detection",
+    "authors": [
+      "Yongho Son",
+      "Junyeong Yun",
+      "Je Hyeong Hong"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12477",
+    "abstract": "Multi-view anomaly detection is crucial for industrial inspection to identify defects hidden from single viewpoints. Yet, despite their strong success in single-view applications, reconstruction-based methods remain largely underexplored in multi-view settings. A key challenge in extending these methods lies in generating view-consistent pseudo-anomalies. To address this, we propose PAR, a...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780327",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12475",
+    "title": "Learning to Select Sparse Linear Solvers with Convolutional Neural Networks",
+    "authors": [
+      "Artemis Pados",
+      "Alan Edelman",
+      "Emmanuel Lujan",
+      "Daniel Pickard",
+      "Felipe Tome",
+      "Christopher Rackauckas"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12475",
+    "abstract": "We investigate convolutional-neural-network (CNN) based automatic solver selection for sparse linear systems, a problem of practical importance where solver performance varies dramatically with matrix sparsity structure. A CNN is trained to regress log timing ratios between candidate solvers using spy plot images of matrix nonzero structure as input, achieving strong prediction accuracy on both...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780417",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12466",
+    "title": "Prediction with Foundation Models under Deployment Budgets",
+    "authors": [
+      "Zhaohui Xu",
+      "Xiaofei Xu",
+      "Doudou Zhou"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12466",
+    "abstract": "Foundation models can supply predictions for a downstream task that draw on knowledge from extensive pretraining, but they differ in task-specific accuracy and query cost. We develop a framework that improves prediction for the task under a budget on the average query cost per input, using training data to learn which models to query and how to combine their outputs with features available...",
+    "keywords": [
+      "stat.ML",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780475",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12464",
+    "title": "Phrase-Level Speculative Decoding on a Frozen Target",
+    "authors": [
+      "Madhusudhana Naidu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12464",
+    "abstract": "Speculative decoders raise throughput by banking more target tokens per forward pass, and Medusa, EAGLE-3, DFlash and DSpark all do it the same way: more candidates that survive verification. All of them draft in the target's own vocabulary, so one node of the candidate tree is one target token, and the tokenizer makes that unit look like a constant. It is not. BPE's pretokenizer splits on...",
+    "keywords": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780531",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12458",
+    "title": "Causal discovery from Bayesian symbolic regression",
+    "authors": [
+      "Roger Guimerà",
+      "Kai-Hendrik Cohrs",
+      "Sergio Pedreira",
+      "Marta Sales-Pardo",
+      "Gustau Camps-Valls"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12458",
+    "abstract": "Causal discovery from observational data is central to scientific reasoning, yet established constraint-based and score-based methods often recover only a Markov equivalence class and provide no signal in bivariate or strongly autocorrelated regimes typical in some areas of science. Here, we recast causal discovery as a Bayesian symbolic regression problem. Given a set of candidate parents for...",
+    "keywords": [
+      "stat.ML",
+      "cs.LG",
+      "physics.comp-ph",
+      "physics.data-an"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780591",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12452",
+    "title": "V3DSAM: Semantic-Geometric Loop Verification and Geometry-Anchored Persistent Instance Mapping for Feed-Forward Dense SLAM",
+    "authors": [
+      "Maolin Ye",
+      "Dongqing Zhao",
+      "Linyang Li",
+      "Shuai Xue",
+      "Yuan Liu",
+      "Yiyuan Wang",
+      "Wen Li"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12452",
+    "abstract": "To address unreliable cross-view association in long-sequence feed-forward dense SLAM, this letter presents V3DSAM, an open-vocabulary semantic dense SLAM system that establishes physical correspondences at both the scene and object levels. The system combines feed-forward geometric estimates from VGGT-SLAM 2.0 with open-vocabulary semantic observations from SAM3. We introduce semantic-geometric...",
+    "keywords": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780657",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12446",
+    "title": "Pricing Symbolic Rules by What GNNs Leave Unlearned",
+    "authors": [
+      "Satabarto Sarkar",
+      "Prithwineel Paul"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12446",
+    "abstract": "Symbolic knowledge (motif counts, ring counts, label constraints) is routinely added to graph neural networks (GNNs) and justified by their limited expressivity. We replace this yardstick with an exact one. The largest log-loss reduction a rule $S$ can give a model family is $I(Y;S\\midσ)$ given what the family computes; every realised gain splits exactly into this term plus repaid neural debt;...",
+    "keywords": [
+      "cs.NE",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780717",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12445",
+    "title": "LongSCOP: Semantically Consistent Long Video Outpainting",
+    "authors": [
+      "Yu Tang",
+      "Zhiyuan You",
+      "Zhixiao Wang",
+      "Fanghua Yu",
+      "Qingyu Zhang",
+      "Xiang Yin",
+      "Chao Dong",
+      "Jinjin Gu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12445",
+    "abstract": "Video out-painting is an important problem, yet existing research focuses primarily on short clips, leaving long video out-painting largely underexplored. Extending video out-painting to long videos poses substantial challenges. A natural solution is iterative out-painting, i.e., generating videos chunk by chunk, but this introduces two major issues: generation instability or even failure caused...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780814",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12443",
+    "title": "MoSTE: Mixture of Spatio-Temporal Experts for Deepfake Detection in Videos",
+    "authors": [
+      "Charbel Yahchouchi",
+      "Nabyl Quignon",
+      "Noemi Roggero",
+      "Laurent Saroul",
+      "Antitza Dantcheva"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12443",
+    "abstract": "Generalizable deepfake video detection remains challenging because forgery artifacts vary substantially across manipulation types and often combine diverse spatial and temporal inconsistencies. Existing parameter-efficient adaptation methods typically rely on a single shared representation, rendering them prone to manipulation-specific bias and limiting transfer to unseen forgeries. To address...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780884",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12437",
+    "title": "Occupancy Modelling of Biased Landslide Inventories: When Does Separating Occurrence from Recording Improve on Neutralisation?",
+    "authors": [
+      "Abdirashid Omar",
+      "Abdikadir Ugaas"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12437",
+    "abstract": "Landslide susceptibility models are trained on inventories that record where landslides were seen, not where they occurred. The established remedy fits bias-describing variables and neutralises them when mapping. We adapt occupancy-detection modelling from ecology, treating several inventories as imperfect observers of one event and separating occurrence from recording, and ask when this improves...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.780940",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12436",
+    "title": "Patching Up Circuit Learning via Parameter Sharing",
+    "authors": [
+      "Charles Bricout",
+      "Gennaro Gala",
+      "Viacheslav Borovitskiy",
+      "Antonio Vergari"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12436",
+    "abstract": "Probabilistic circuits (PCs) have emerged as generative models guaranteeing tractable probabilistic inference. However, tractability comes at the price of larger model sizes than in other generative models. As such, to scale PCs to high-dimensional data such as images, previous work has devised several parameter sharing techniques as well as fast evaluation protocols that consider learning PCs on...",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781010",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12435",
+    "title": "To SIMD or Not to SIMD: Comparing RVV vs. CGRA SoCs for Non-Linear Functions in AI",
+    "authors": [
+      "Sameer Deshmukh",
+      "Naoya Mizuki",
+      "Takumi Honda"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12435",
+    "abstract": "Non-linear functions are an important class of operations in modern large language models. However, chip vendors building for AI have so far relied on traditional vector or scalar processing units for non-linear functions. The performance of these units has not kept pace with matrix multiplication units (MMUs), which can be found in both high-performance and edge-computing devices from almost...",
+    "keywords": [
+      "cs.AR",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781073",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12427",
+    "title": "UCB-min: Combining Bandits Under Variance Heterogeneity (Extended Version)",
+    "authors": [
+      "Lilia Izri",
+      "Benoit Groz",
+      "Silviu Maniu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12427",
+    "abstract": "Multi-armed bandits are a natural framework for many real-world sequential decision problems, from recommender systems and clinical trials to educational test recommendation and online advertising. The performance of these algorithms depends on how they explore different arms, and exploration strategies range from variance-independent (e.g., UCB1) to variance-aware (e.g., UCB-V). In practice the...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781158",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12426",
+    "title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
+    "authors": [
+      "Xiaotong Li",
+      "Zhengrong Yue",
+      "Xu Huang",
+      "Jialv Zou",
+      "Minhao Jing",
+      "Wenhao Yan",
+      "Haodong Li",
+      "Hai Huang",
+      "Bo Zhao",
+      "Yan Feng",
+      "Peng Pei",
+      "Xunliang Cai"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12426",
+    "abstract": "Discrete autoregressive modeling, notably through next-token prediction, has become a cornerstone of modern language models. Extending this paradigm to vision allows visual and language models to converge on a unified framework, thereby fostering shared methodology and infrastructure. This work investigates a central question: how far can a finite discrete vocabulary go in representing the...",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781239",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12424",
+    "title": "Physics-informed neural networks in the small-data regime: A controlled comparison with classical PDE surrogates",
+    "authors": [
+      "Kirill Katsuba",
+      "Oleg Rudenko",
+      "Egor Bugaev",
+      "Alexander Tarakanov"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12424",
+    "abstract": "Neural surrogates for engineering models are often trained on large collections of simulated solutions. We investigate whether physics-informed neural networks (PINNs) can achieve accurate predictions from scarce labelled observations by incorporating governing equations and prescribed initial and boundary conditions. We introduce hierarchical loss weighting (H-PINN) and its...",
+    "keywords": [
+      "cs.CE",
+      "cs.AI",
+      "math.NA"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781297",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12422",
+    "title": "Two-Phase Rapid Simulation-Based Inference with Differentiable Simulators",
+    "authors": [
+      "Uros Zivanovic",
+      "Rahul Srinivasan",
+      "Roberto Trotta",
+      "Andre Scaffidi"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12422",
+    "abstract": "We introduce Rapid Simulation Based Inference (RSBI), a diffusion-based variational approach to likelihood-free Bayesian inference that achieves high sampling efficiency under large prior-to-posterior volumes. RSBI builds on advances in Schrödinger Bridge (SB) diffusion sampling to handle multi-modal posteriors, with an initial likelihood supplied by a distance measure via a differentiable...",
+    "keywords": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781592",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12419",
+    "title": "Optimal Rates for Adaptive Private $k$-PCA",
+    "authors": [
+      "Johanna Düngler",
+      "Amartya Sanyal"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12419",
+    "abstract": "Given $n$ i.i.d. random matrices $A_i \\in \\mathbb{R}^{d \\times d}$ with common expectation $Σ$, the goal of \\emph{Differentially Private Stochastic PCA} is to identify a $k$-dimensional subspace capturing the leading variance directions of $Σ$, while preserving differential privacy~(DP) for each individual sample $A_i$. \\citet{dungler2025iterative} introduced \\kdppca, the first algorithm to...",
+    "keywords": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781704",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12411",
+    "title": "PhysOPSD: Code as Privilege for Physically Plausible Video Generation",
+    "authors": [
+      "Harold Haodong Chen",
+      "Rui Peng",
+      "Lingteng Qiu",
+      "Kejie Qiu",
+      "Chao Xu",
+      "Zilong Dong"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12411",
+    "abstract": "While modern video generative models achieve remarkable visual fidelity, they remain noticeably brittle when generating physically plausible dynamics and complex interactions. Targeted post-training is crucial, yet supervised fine-tuning suffers from offline state mismatch, and reinforcement learning is hindered by sparse, ill-defined physical reward functions. On-Policy (Self-)Distillation...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781814",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12409",
+    "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
+    "authors": [
+      "Emanuele Cuzzocrea",
+      "Giuseppina Iannotti",
+      "Luca Rossini",
+      "Arturo Laurenzi",
+      "Nikos Tsagarakis"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12409",
+    "abstract": "Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional...",
+    "keywords": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781885",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12405",
+    "title": "PTC-IoU: CPU-Friendly Detection Quality Estimation for Edge Video Analytics",
+    "authors": [
+      "Wei Geng",
+      "Hyerin Kim",
+      "Chang Lu",
+      "Zhenghao Lu",
+      "Joerg Ott"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12405",
+    "abstract": "An edge video analytics system must estimate the quality of local detections since there are no ground-truth labels available during runtime. Detectors usually provide confidence scores for their results, but these scores can not reveal every missed object or misplaced bounding box. So a quality estimator is necessary to provide a decision signal indicating which frame has potential detection...",
+    "keywords": [
+      "cs.CV",
+      "cs.PF"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.781953",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12393",
+    "title": "AutoBuddy: Evaluating Proactive, Always-On Agents on Task Discovery and Execution in a Simulated Workplace",
+    "authors": [
+      "Shiqi Chen",
+      "Daniel Madrigal Diaz",
+      "Wei-Ning Chen",
+      "Gbola Afonja",
+      "Fangkai Yang",
+      "Rujia Wang",
+      "Chetan Bansal",
+      "Victor Rühle",
+      "Saravan Rajmohan",
+      "Dongge Han"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12393",
+    "abstract": "As LLM agents become more autonomous, they are increasingly expected to run as always-on assistants on a user's behalf, identifying work to be done and completing it without being asked. Yet existing benchmarks usually give the agent its task, whereas in knowledge work the requests sit in the user's workspace and the agent must first recognise which obligations exist. We study proactive task...",
+    "keywords": [
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782027",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12386",
+    "title": "Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks",
+    "authors": [
+      "Dario Pasquini",
+      " Reworr",
+      "Giuseppe Ateniese",
+      "Manish Bhatt",
+      "Sergej Epp"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12386",
+    "abstract": "We study the fingerprinting of agentic cyberattacks. Our objective is to reliably infer information about the attacker's configuration, such as LLM version and harness, from telemetry. To achieve this, we introduce a technique we call shibboleth traps: modular honeypot services designed to elicit discriminative behaviors from agentic attackers. The traps make informative interactions a condition...",
+    "keywords": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782092",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12385",
+    "title": "Clinical predictions using artificial intelligence in neurosurgery and its subspecialties: a systematic review and meta-analysis",
+    "authors": [
+      "Prajwal Ghimire",
+      "Aswin Chari",
+      "Jonathan Shapey",
+      "Keyoumars Ashkan"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12385",
+    "abstract": "Artificial intelligence models for clinical prediction are proliferating across neurosurgery, but their aggregate discriminative performance, distribution along the care pathway and methodological quality are unclear. We systematically reviewed and meta-analysed these studies in neurosurgery and its subspecialities along with their risk of bias appraisal. We performed a PRISMA search for...",
+    "keywords": [
+      "q-bio.TO",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782151",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12382",
+    "title": "AutoVLA-D: Learn a Trajectory-Geometric Condition from Reasoning for Autonomous Driving VLA",
+    "authors": [
+      "Yuguang Yang",
+      "Zhewen Tan",
+      "Canyu Chen",
+      "Linlin Yang",
+      "Cheng Chi",
+      "Chunyang Liu",
+      "Kehua Sheng",
+      "Jinyu Yang",
+      "Baochang Zhan",
+      "Bo Zhang",
+      "Yan Wang",
+      "Xianbin Cao"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12382",
+    "abstract": "Autoregressive VLA planning usually predicts continuous trajectories as the final output, but driving instructions often describe actions rather than ego states, which weakens direct conditioning on the final continuous trajectory. We address this gap with TrajCond, which introduces a discrete trajectory-geometric condition for VLA planning. Specifically, we represent TrajCond as a 1D-Brohan...",
+    "keywords": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782229",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12379",
+    "title": "Reconstructing hourly traffic on every street of a capital from a sparse counting network: a graph neural network applied to Paris",
+    "authors": [
+      "Xavier Jurado",
+      "C{é}dric Wemmert",
+      "Nicolas Reiminger"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12379",
+    "abstract": "Micro-scale air quality models require hourly traffic data on every road segment, whereas permanent counters cover only a small part of the network. A graph neural network (GNN) was developed to reconstruct hourly traffic flows on the 32,163 road segments of Paris intra-muros from the 1,573 segments equipped with a counter (4.9%). The model adapts the Graph Neural Network for Urban Interpolation...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782284",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12377",
+    "title": "Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation",
+    "authors": [
+      "Jeremy Canale",
+      "Fabien Soulis"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12377",
+    "abstract": "Shadow IT, the use of technology that the IT organisation has not approved, is a long-standing governance problem. We argue that autonomous AI agents can make it grow much faster: agents make building tools nearly free, act with their user's privileges, and leave behind scripts, automations and MCP servers that are themselves unsanctioned. A simple compounding model shows that, under its...",
+    "keywords": [
+      "cs.AI",
+      "cs.CR"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782337",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12375",
+    "title": "AudioCodex: Streaming Autoencoders for Live Audio",
+    "authors": [
+      "Marco Pasini",
+      "Javier Nistal",
+      "Cyran Aouameur",
+      "Stefan Lattner",
+      "George Fazekas"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12375",
+    "abstract": "We introduce AudioCodex, a fully causal autoencoder for live generative audio applications that compresses stereo audio into compact continuous latent sequences at ~10 Hz. It combines a Mean Flow magnitude autoencoder with latent hypersphere projection, bounded-noise augmentation, representation alignment, and adversarial phase recovery to learn representations that support both efficient...",
+    "keywords": [
+      "cs.SD",
+      "cs.LG",
+      "eess.AS"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782400",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12374",
+    "title": "TANSAR: Editable and Attributable Correlation Matrix Memories under Correlated Keys, with Rule-Constrained Multi-Hop Knowledge Editing",
+    "authors": [
+      "Abdulhady Abas Abdulla",
+      "Jiyan Salim Mahmud",
+      "Fatemeh Daneshfar",
+      "Hussein Mohammed Ali",
+      "Mourad Oussalah",
+      "Muhammad Bilal"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12374",
+    "abstract": "Correlation Matrix Memories (CMMs) store associations as sums of rank-one outer products, providing closed-form addressability, exact deletion, and linear attribution. While classical analyses assume random, orthogonal keys, semantic encoders produce correlated representations. We analyse CMMs under correlated keys using frame-theoretic coherence: (i) capacity bounds yielding an...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782461",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12364",
+    "title": "TRIAD: Multimodal Retrieval across Abstraction, Constraints, and State",
+    "authors": [
+      "Xiangyang Wu",
+      "Chen Ju",
+      "Xu Chen",
+      "Likang Peng",
+      "Jinsong Lan",
+      "Haihong Tang",
+      "Yang Hu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12364",
+    "abstract": "Multimodal retrieval increasingly supports agentic systems, where user requests can involve cross-level relations, combine multiple constraints, and evolve across dialogue turns. In these settings, a highly similar result may still violate the user's requirements, while retrieved content may directly inform downstream actions without human screening. We introduce TRIAD, a multimodal retrieval...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782574",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12356",
+    "title": "DForkTree: Accelerating Speculative Decoding with Fork-Aware Block Diffusion Draft Trees",
+    "authors": [
+      "Zhicheng Zheng",
+      "Cheng Zhang",
+      "Chenkai Tang"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12356",
+    "abstract": "Speculative decoding speeds up language models by letting a lightweight drafter propose several future tokens that the target model verifies in parallel. Block diffusion drafters such as DFlash draft a whole block in one forward pass, and DDTree builds a draft tree from their per-position distributions. Each of these distributions assumes that the drafter's own most likely continuation is...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782641",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12353",
+    "title": "QCC-WM: Linking Macro-State Dynamics and Visual Generation via Quotient Causal Construction",
+    "authors": [
+      "Zhizhong Fu",
+      "Wei Zhou",
+      "Zhaoyang Jiang",
+      "Yudong Lin",
+      "Songlun Li",
+      "Zhi Li",
+      "Feifan Chen",
+      "Gaoming Li",
+      "Xiaorong Ding",
+      "Yifan Chen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12353",
+    "abstract": "A key challenge in action-conditioned world modeling is to construct macro-states from high-dimensional observations that support recursive prediction under actions, while keeping their predicted evolution consistent with visual changes in generated observations. We propose QCC-WM, a visual world model based on Quotient-based Causal Construction. QCC-WM uses action responses to guide...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782720",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12351",
+    "title": "UniOMA: Unified Optimal-Transport Multi-Modal Structural Alignment for Robot Perception",
+    "authors": [
+      "Xinrui Zu",
+      "Mark Hoogendoorn",
+      "Kevin Sebastian Luck",
+      "Shujian Yu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12351",
+    "abstract": "Achieving generalizable and well-aligned multimodal representations remains a core challenge in robot learning. While recent approaches have attempted to align modalities by modeling conditional or higher-order statistical dependencies, they do not explicitly consider the structural coherence across modalities. In this work, we propose a novel multimodal alignment method that augments existing...",
+    "keywords": [
+      "cs.RO",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782779",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12346",
+    "title": "ReVMap: Vectorized Global Mapping via Connectivity-Aware Local Map Fusion",
+    "authors": [
+      "Hongjae Shin",
+      "Jungho Kim",
+      "Donghyuk Kwak",
+      "Myeongjun Kim",
+      "Seunghoon Yu",
+      "Jiyong Oh",
+      "Jun Won Choi"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12346",
+    "abstract": "Large-scale annotation of vectorized high-definition (HD) maps is labor-intensive and costly, motivating local-to-global auto-labeling approaches that incrementally construct global maps from local vectorized predictions. However, existing approaches often overlook prediction uncertainty and rely on heuristic map integration, potentially propagating errors and introducing topological...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782842",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12345",
+    "title": "TMT: Adapting CLIP to Infrared Imagery via Text-Derived Modality Knowledge Transfer",
+    "authors": [
+      "Ruofan Wang",
+      "Puzuo Wang",
+      "Xin Chen",
+      "Zibo Yu",
+      "Jungang Yang",
+      "Yi Hou"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12345",
+    "abstract": "Vision-language models such as CLIP achieve strong performance across computer vision tasks, yet their image-text alignment is less reliable for infrared (IR) imagery because large-scale pre-training is dominated by visible-spectrum data. Due to the high cost of the infrared-text labeling, we investigate adapting CLIP to IR through only paired infrared-visible images, which requires considering...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.782932",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "arxiv-2611.12339",
+    "title": "Evidence or Marginal? What Moment-Vector Propagation Computes in Polynomial Density Neurons",
+    "authors": [
+      "Przemysław Spyra"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-09",
+    "url": "https://arxiv.org/abs/2611.12339",
+    "abstract": "When a neuron's input is lost, or known through a belief $q$, what should it output? For a neuron storing a joint polynomial density $N$ with input density $D$, two formulas compete. $p_\\mathrm{CD}=E_q[N]/E_q[D]$ costs one matrix-vector product; Hierarchical Correlation Reconstruction introduces it as a constant-denominator approximation to $p_\\mathrm{EU}=E_q[N/D]$. For a density model both are...",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-10T14:55:44.783020",
+    "added_date": "2026-11-10"
+  },
+  {
+    "id": "pubmed-43000541",
+    "title": "Auditory rehabilitation in mixed hearing loss due to chronic otitis media sequelae: passive versus active transcutaneous bone conduction implant.",
+    "authors": [
+      "Ordóñez Ordóñez LE",
+      "Rojas Serrano ML",
+      "Caraballo Arias JA",
+      "González Eslait FJ",
+      "Monroy Barreneche JF",
+      "Guzmán Durán JE",
+      "Jaramillo R",
+      "Izquierdo JC",
+      "Cagnacci Buzo B",
+      "Rincón Nossa LA",
+      "Angulo Martínez ES"
+    ],
+    "journal": "European archives of oto-rhino-laryngology : official journal of the European Federation of Oto-Rhino-Laryngological Societies (EUFOS) : affiliated with the German Society for Oto-Rhino-Laryngology - Head and Neck Surgery",
+    "publish_date": "2026-11-08",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43000541/",
+    "abstract": "To compare audiological outcomes and self‑perceived benefits in patients with sequelae of chronic otitis media (COM) and mixed hearing loss (MHL) undergoing rehabilitation with either a passive transcutaneous bone conduction implant (PT-BCI) or an active transcutaneous bone conduction implant (AT-BCI).",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-10T14:55:41.581445",
+    "added_date": "2026-11-10"
+  },
+  {
     "id": "pubmed-42994426",
     "title": "Neural interface instructs layer 4-appropriate circuit reconstruction with engrafted human brain organoids and improves visually guided behavior.",
     "authors": [
