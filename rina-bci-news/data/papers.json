@@ -1,5 +1,100 @@
 [
   {
+    "id": "pubmed-43008331",
+    "title": "Lower frequency ECoG features improve longitudinal stability of speech and hand-grasp detection in a patient with progressive ALS.",
+    "authors": [
+      "Wallner J",
+      "Angrick M",
+      "Luo S",
+      "Candrea D",
+      "Crone N",
+      "Krusienski DJ"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43008331/",
+    "abstract": "Achieving long-term decoding stability is a critical challenge for chronic&#xD;intracranial brain-computer interfaces (BCIs). High-gamma (HG) activity from&#xD;intracranial recordings is the standard signal for BCI control, and lower-frequency features&#xD;can enhance HG decoding performance. This study evaluated the longitudinal stability of&#xD;speech and hand-grasp detection models using...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141369",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-43008329",
+    "title": "Detection of linear dependencies in EEG oscillatory sources via PARALIND and block-term decomposition: A comparative study.",
+    "authors": [
+      "Rošťáková Z",
+      "Rosipal R",
+      "Evetović N",
+      "Trejo LJ"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43008329/",
+    "abstract": "Narrowband oscillatory rhythms in electroencephalogram (EEG) signals are fundamental signatures of neural dynamics, crucial for brain-computer interfaces (BCIs) and monitoring neurological disorders. While traditionally detected and analyzed via Independent or Principal Component Analysis in the time-space domain, tensor decomposition in the time-space-frequency domain offers superior resolution....",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141393",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-43008323",
+    "title": "MSTA-CNN an ultra-lightweight multi-scale temporal-spatial attention convolutional neural network for high-performance P300 spellers.",
+    "authors": [
+      "Fatemi SA",
+      "Shamsi M"
+    ],
+    "journal": "Biomedical physics & engineering express",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43008323/",
+    "abstract": "Efficient P300 detection in brain-computer interfaces (BCIs) remains a challenge due to low signal-to-noise ratio (SNR) and the high computational cost of existing deep learning models, which limits their deployment in real-time applications. To address these issues, we propose MSTA-CNN, an ultra-lightweight multi-scale temporal-spatial attention convolutional neural network with only 3,153...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141413",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-43007862",
+    "title": "Bayesian Adaptive Stimulus Optimization in P300 Brain Computer Interfaces.",
+    "authors": [
+      "Chen XJ",
+      "Kalika D",
+      "Throckmorton CS",
+      "Collins LM",
+      "Mainsah BO"
+    ],
+    "journal": "IEEE transactions on bio-medical engineering",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43007862/",
+    "abstract": "Stimulus-driven brain-computer interfaces (BCIs) present stimuli to users in order to evoke neural responses that are used as control signals for external devices. The stimulus presentation schedules for these BCIs are typically designed pseudo-randomly. However, a data-driven approach enables stimulus selection to be informed by recently recorded neural activity from the BCI user. We seek to...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141433",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-43007753",
+    "title": "Fast-Gelling, Adhesive, and Conductive Epidermal Electrode for Accurate Physiological Signal Monitoring and Real-Time Brain-Controlled Drone Flight.",
+    "authors": [
+      "Kong S",
+      "Yin J",
+      "Lin R",
+      "Xu Z",
+      "Xue J",
+      "Xiao M",
+      "Chen X",
+      "Li Z"
+    ],
+    "journal": "ACS nano",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43007753/",
+    "abstract": "Conductive hydrogel electrodes are vital components for achieving human-machine interfaces. However, the inherent trade-off between high conductivity and favorable mechanical/adhesive properties remains a significant challenge for hydrogel-based epidermal electrodes. Here, we developed a multifunctional MXene/WPU/PAA (MWA) hydrogel electrode that combines robust mechanical properties, strong...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141451",
+    "added_date": "2026-11-12"
+  },
+  {
     "id": "pubmed-42993565",
     "title": "Respiratory phase orchestrates human olfactory cortical dynamics.",
     "authors": [
@@ -12,8 +107,1120 @@
     "abstract": "Olfaction is fundamental to perception, memory, and emotion, yet the neural basis of human odor processing remains poorly understood. We demonstrate that odor-evoked brain activity is organized by respiratory phase-not absolute time-revealing that natural breathing structures olfactory cortical dynamics. Using simultaneous nasal respiration and electroencephalography recordings in [Formula: see...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701556",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141524",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-42956410",
+    "title": "Motor cortex-based intracortical BCI performance is robust to changes in attentional load during dual-tasking.",
+    "authors": [
+      "Canario E",
+      "Shearer C",
+      "Akcakaya M",
+      "Weber D",
+      "Chase S",
+      "Collinger JL"
+    ],
+    "journal": "Journal of neural engineering",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42956410/",
+    "abstract": "",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141594",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-42866037",
+    "title": "Terahertz liquid networks: a mesoscopic passive architecture for circumventing physical deadlocks in brain-computer interfaces.",
+    "authors": [
+      "Zhou C",
+      "Ding X",
+      "Zhao J",
+      "Gu X",
+      "Xu Z"
+    ],
+    "journal": "Nanoscale advances",
+    "publish_date": "2026-11-10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42866037/",
+    "abstract": "Brain-computer interfaces (BCIs) for major neurological disorders face physical and physiological limitations. Mechanical mismatch in rigid microelectrode arrays precipitates chronic immune rejection and irreversible central nervous system damage, whereas bandwidth scaling in traditional wireless links inevitably breaches the 1 °C tissue thermal safety threshold. To circumvent this deadlock among...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141695",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14519",
+    "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+    "authors": [
+      "Emre Kutlusan",
+      "Yongmin Li"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14519",
+    "abstract": "Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, use data from the training distribution and a single task-specific baseline whose configuration is rarely justified, and therefore provide limited evidence of performance at new...",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945735",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14518",
+    "title": "Toward Foundation Detection Models via Example-Based Grounding in EM-DETR",
+    "authors": [
+      "Sheethal Bhat",
+      "Bogdan Georgescu",
+      "Awais Mansoor",
+      "Florin C. Ghesu",
+      "Sasa Grbic",
+      "Andreas Maier"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14518",
+    "abstract": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this...",
+    "keywords": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945798",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14516",
+    "title": "TorchCurves: Differentiable Parametric Curves",
+    "authors": [
+      "Alex Shtoff"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14516",
+    "abstract": "We present TorchCurves, a PyTorch library that treats vector-valued parametric curves as learnable primitives. Its central operation maps batches of scalar inputs to points on curves represented in B-spline or Legendre polynomial bases, with differentiation through both inputs and coefficients. Curve coefficients can be optimized jointly with the surrounding model or produced by another network....",
+    "keywords": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945837",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14515",
+    "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
+    "authors": [
+      "Zijian Zhang",
+      "Rizhen Hu",
+      "Jiangweizhi Peng",
+      "Shiyang Li",
+      "Sujay Bhatt",
+      "Sihan Zeng",
+      "Mingyi Hong"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14515",
+    "abstract": "Reinforcement learning with verifiable rewards (RLVR) produces rich training experience, yet outcome rewards reduce each attempt to a single number and leave most of this information unused. Training-time scaffolds, such as strategies or hints added to the prompt during training, offer a natural way to turn this information into guidance, but their design and adaptation are largely left to humans...",
+    "keywords": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945879",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14514",
+    "title": "Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations",
+    "authors": [
+      "Ziang Liu",
+      "James J. Kim",
+      "Yijia Dai",
+      "Jennifer J. Sun"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14514",
+    "abstract": "LLM agents are increasingly used for open-ended, data-driven scientific discovery, yet most of them evaluate hypotheses pointwise, testing an empirical claim $h$ only against its complement $\\neg h$. When evidence rejects $h$, the agent learns that one explanation is unlikely but not which alternative the evidence supports. To recover that alternative, we introduce Contrastive Discovery, which...",
+    "keywords": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945915",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14511",
+    "title": "Pyrite: Building and Benchmarking Protein-Ligand Pose Ranking Agents",
+    "authors": [
+      "Megha Srivastava",
+      "Michael H. Lim",
+      "Allison M. Keys",
+      "Pranav Murugan",
+      "Nate Gruver"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14511",
+    "abstract": "Predicting how a ligand binds to its target is central to small-molecule drug discovery. Modern cofolding models can generate diverse candidate poses, but reliably ranking these candidates remains challenging. We introduce Pyrite, a pairwise pose-ranking benchmark comprising 1,500 pose pairs across diverse protein-ligand complexes. Expert chemists equipped with 3D visualization tools and...",
+    "keywords": [
+      "cs.LG",
+      "q-bio.QM"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945952",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14508",
+    "title": "When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology",
+    "authors": [
+      "Yeyuan Liu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14508",
+    "abstract": "Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the models are tuned: a connectome fixes who connects to whom, not the excitability, gains or plasticity rates the model also needs, and modellers often tune these until the real-wiring...",
+    "keywords": [
+      "cs.LG",
+      "q-bio.NC"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.945982",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14505",
+    "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
+    "authors": [
+      "Daniel Lenton"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14505",
+    "abstract": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946013",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14504",
+    "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
+    "authors": [
+      "Adi Mashiach"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14504",
+    "abstract": "Foundation models trained on large unlabeled corpora develop emergent capabilities, tasks that go beyond the training objective. We extend this paradigm to multimodal biology with Bonbon, a foundation model for molecular interactions trained on approximately 3.2 trillion tokens of paired protein-ligand sequences. From a single representation space, Bonbon exhibits three zero-shot emergent...",
+    "keywords": [
+      "cs.LG",
+      "q-bio.BM"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946042",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14498",
+    "title": "Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion",
+    "authors": [
+      "Alexandre Garcia-Duran",
+      "Alejandro Rodriguez-Garcia",
+      "Manuel Molano-Mazón",
+      "Alexandre Hyafil",
+      "Srikanth Ramaswamy",
+      "Janne K. Lappalainen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14498",
+    "abstract": "Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with brain-like wiring are more robust at lower computational cost is unclear. We address this by benchmarking a task-optimized, continuous-time recurrent neural network of the fly...",
+    "keywords": [
+      "cs.CV",
+      "q-bio.NC"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946077",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14496",
+    "title": "RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval",
+    "authors": [
+      "Tanishq Rachamalla",
+      "Srishti Kaushik",
+      "Muhammad Attique Khan",
+      "Gustau Camps-Valls",
+      "Swalpa Kumar Roy"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14496",
+    "abstract": "Cross-sensor remote sensing image retrieval aims to find scenes with the same content across heterogeneous sensors, such as SAR and optical or panchromatic (PAN) and multispectral (MS) imagery, without manual labels. Existing self-supervised methods either reconstruct sensor-specific pixel detail, align each image only with its co-registered twin, or rely on large transformers with 118-173M...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946111",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14493",
+    "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
+    "authors": [
+      "Howard Zhang",
+      "Chuck Arvin",
+      "Logan Brown",
+      "Mihir Bhatia",
+      "Neelu Choudhary",
+      "Lily Miao"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14493",
+    "abstract": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks that can reliably detect failures across complex, multi-tool workflows. We present a three-phase comparative study of three evaluation frameworks, each representing a distinct evaluation paradigm (trace-based LLM judging, text-only LLM judging with red-teaming, and deterministic heuristics), applied to two...",
+    "keywords": [
+      "cs.AI",
+      "cs.CL",
+      "cs.LG",
+      "cs.SE"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946148",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14492",
+    "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
+    "authors": [
+      "Kaiyuan Hou",
+      "Yang Ping Kuo",
+      "Indranil Bhattacharya",
+      "Rohith Nama",
+      "Arushi Gupta",
+      "Carlos D. Castillo",
+      "Prathap Ramachandra",
+      "Xiaofan Jiang",
+      "Francesco Carbone"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14492",
+    "abstract": "Business process automation runs the same Standard Operating Procedure (SOP) again and again on new inputs. Large Language Model (LLM) agents can follow an SOP written in natural language, but they call an LLM to choose every step of every run, which adds latency and cost at scale. We present ReTrace, which turns an SOP and a few logged agent runs into a reusable workflow in which code, not an...",
+    "keywords": [
+      "cs.AI",
+      "cs.LG",
+      "cs.MA"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946190",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14491",
+    "title": "TimeSeek: Multi-Task and Multi-Domain Pretraining for Generalized Time Series Analytics",
+    "authors": [
+      "Peng Chen",
+      "Yihang Wang",
+      "Zhongwen Rao",
+      "Yang Shu",
+      "Yuying Qiu",
+      "Yuxuan Chen",
+      "Lujia Pan",
+      "Bin Yang",
+      "Chenjuan Guo"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14491",
+    "abstract": "Time series analytics has been widely applied across various domains. While existing time series foundation models (TSFMs) have demonstrated promising results, they still face two major challenges: 1) Most TSFMs mainly rely on stacking Transformer layers to increase parameter size, lacking the ability to adaptively model complex time series patterns from multi-domain data. 2) Current TSFMs are...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946229",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14487",
+    "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
+    "authors": [
+      "Muhan Gao",
+      "Hangxiao Zhu",
+      "Xinqi Su",
+      "Yu Zhang",
+      "Daniel Khashabi",
+      "Kuan-Hao Huang"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14487",
+    "abstract": "Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of research ideas and what limits their progress. We introduce Re-Search, which adapts the format of Twenty Questions to research ideation: given only the research problem of a published...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946264",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14483",
+    "title": "Mechanistic Interpretability Needs a Logic of Inference",
+    "authors": [
+      "Zhimin Hu",
+      "Chen Jiang",
+      "Hanbo Xie",
+      "N. Apurva Ratan Murty",
+      "Sashank Varma"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14483",
+    "abstract": "Neural networks are increasingly studied not merely as predictive systems, but as complex systems whose internal computations are themselves objects of scientific inquiry. Recent progress in mechanistic interpretability (MI) has made it possible to identify neurons, features, circuits, population structures, and dynamical patterns associated with model behavior. As these tools improve, attention...",
+    "keywords": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946295",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14476",
+    "title": "BoviShift: A Six-Year Multi-Attribute Audit of Visual Cattle Phenotyping Across Animals and Time",
+    "authors": [
+      "Mobasshir Bhuiya Shagor",
+      "Nilambar Halder Tonmoy",
+      "Md Saef Ullah Miah"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14476",
+    "abstract": "Computer vision offers a scalable, non-contact means of estimating livestock traits, but correlated images and video frames make reliable evaluation difficult. Image-random splitting can place views of the same animal in both training and test sets, while deployment further requires transfer to animals captured in future years. We introduce BoviShift, a corpus reconstructed from six consecutive...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946324",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14470",
+    "title": "TanCRAFT: Context-Reasoned Anticipatory Feedback for Assembly Tasks",
+    "authors": [
+      "Sassan Mokhtar",
+      "Lars Doorenbos",
+      "Marius Bock",
+      "Sina Mokhtar",
+      "Katharina Beckh",
+      "Dominik Bach",
+      "Juergen Gall"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14470",
+    "abstract": "Preventing human error in physical assembly tasks requires assistance systems that can intervene before mistakes are made. This is especially challenging in settings where users are free to choose the construction order and correctness depends on the evolving assembly rather than a fixed next step. We present TanCRAFT, a four-stage real-time predictive assistance system that tracks the scene...",
+    "keywords": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946359",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14469",
+    "title": "C$^2$-Routing: Complementary Cropping and Compression for Efficient Vision-Language Inference",
+    "authors": [
+      "Guorui Lu",
+      "Qinyu Chen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14469",
+    "abstract": "Visual Question Answering (VQA) imposes substantial computational overhead on vision-language models (VLMs), motivating model-agnostic input reduction methods that can be readily applied across diverse VLMs, including in black-box settings. Simply enforcing a visual-token cap reduces computation, but it can discard information needed to answer the question. A single reduction strategy also...",
+    "keywords": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946387",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14468",
+    "title": "Bayesian inverse problems and epidemic-threshold uncertainty for a heterogeneous SIS reaction-diffusion model",
+    "authors": [
+      "Duc-Lam Duong"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14468",
+    "abstract": "We study Bayesian inference of persistence from early observations of a heterogeneous susceptible--infected--susceptible (SIS) reaction--diffusion model with standard incidence. We show that the leading prevalence dynamics depend on the unknown coefficients only through the difference between the transmission and recovery rates and the infected diffusivity. The same pair determines the principal...",
+    "keywords": [
+      "math.AP",
+      "cs.LG",
+      "math.NT",
+      "math.ST",
+      "q-bio.PE"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946415",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14467",
+    "title": "A Theory of Policy Optimization in Post-Training: Coverage Collapse and Reference Resets",
+    "authors": [
+      "Audrey Huang",
+      "Nan Jiang",
+      "Sham M. Kakade",
+      "Sadhika Malladi",
+      "Akshay Krishnamurthy",
+      "Dylan J. Foster"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14467",
+    "abstract": "Policy optimization is central to language model post-training, yet principled guidance remains limited. We revisit its theoretical foundations to identify algorithms that learn near-optimal policies using total samples and gradient steps governed by the base model's response coverage, a measure of how readily it generates optimal responses. We call such algorithms coverage-preserving. This...",
+    "keywords": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946453",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14463",
+    "title": "A Theory of Cross-Validation Variance",
+    "authors": [
+      "Nathaniel S. O'Connell",
+      "Jaime L. Speiser"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14463",
+    "abstract": "Cross-validation estimates predictive performance by repeatedly splitting the data into training and validation sets, fitting the model on the first and evaluating it on the second. Every observation influences the estimate in two roles, through its own evaluation when it is held out and through the models it helps fit when it trains. The random splits determine its weight in each role. From this...",
+    "keywords": [
+      "stat.ML",
+      "cs.LG",
+      "math.ST"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946483",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14462",
+    "title": "Accurate predictions of properties of energetic materials with tabular foundation models",
+    "authors": [
+      "Vagn Krister Nes Glomsrud",
+      "Mathias Bynke",
+      "Lars Henry Berge Olsen",
+      "Dennis Christensen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14462",
+    "abstract": "We use TabPFN, a recently developed tabular foundation model, to predict three properties of energetic materials: impact sensitivity, decomposition temperature and crystal density. Without any hyperparameter tuning, TabPFN outperforms the best published models for all three properties. It also substantially outperforms a wide range of established machine-learning models, including tuned gradient...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946514",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14451",
+    "title": "A Lightweight Differentiable Method for Real-Time Skin Rendering and Digitization",
+    "authors": [
+      "Mario Marquez-Balduque",
+      "Carlos Rodriguez-Pardo",
+      "Jorge Lopez-Moreno"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14451",
+    "abstract": "Inverse rendering for skin typically relies on offline path tracing to estimate physical properties, which fail to map directly to the approximate shaders utilized in interactive applications, such as game engines. We bridge this gap by directly estimating subsurface scattering parameters tailored for real-time rendering pipelines. We introduce a differentiable Screen-Space Subsurface Scattering...",
+    "keywords": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946545",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14440",
+    "title": "UGG: Unified Generative Geometry Model",
+    "authors": [
+      "Amani Kiruga",
+      "Zhiyi Li",
+      "Ruojin Cai",
+      "Hansen Lillemark",
+      "Xiaoshan Wu",
+      "Ayush Tewari",
+      "Yilun Du"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14440",
+    "abstract": "Understanding 4D scenes is a core challenge in visual intelligence, requiring models to jointly capture scene geometry, appearance, and dynamics from partial observations. However, existing approaches are subdivided into feedforward models for direct geometric prediction, and generative models for visual synthesis. We introduce UGG, a unified framework for 4D scene understanding that jointly...",
+    "keywords": [
+      "cs.CV",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946596",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14436",
+    "title": "Metric-Aligned Group Relative Policy Optimization for Explainable Deepfake Detection",
+    "authors": [
+      "Luka Dragar",
+      "Peter Peer",
+      "Vitomir Štruc",
+      "Borut Batagelj"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14436",
+    "abstract": "Deepfake detectors are commonly evaluated on real/fake classification alone, but real-world applications require explanations of the visual evidence behind each prediction. Joint vision-language models struggle with authenticity assessment, producing \"real\" narratives for manipulated images. To address this, we propose a decoupled predict-then-explain pipeline as our submission to the ACM...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946632",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14432",
+    "title": "One Policy for 100 Household Tasks: Our Solution for the 2026 BEHAVIOR Challenge",
+    "authors": [
+      "Ilia Larchenko",
+      "Gleb Zarin",
+      "Atindra Nair",
+      "Keerti Manney",
+      "Vitaly Kleban",
+      "Mirko Kiefer",
+      "Anjana Yodaiken"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14432",
+    "abstract": "We describe our solution for the 2026 BEHAVIOR Challenge: 100 long-horizon household tasks in the OmniGibson simulator. We placed 9th on the final leaderboard, the only independent team in the top 10. The core of the solution is a single vision-language-action (VLA) model, one checkpoint for all 100 tasks, built on our 1st-place 2025 solution, which is based on $π_{0.5}$. On the 50 tasks shared...",
+    "keywords": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946673",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14426",
+    "title": "Two Communities, One Problem: Branch-and-Bound vs. A* for Resource-Constrained Project Scheduling",
+    "authors": [
+      "Izack Cohen",
+      "Dominik Kress",
+      "Lara Nehrke",
+      "Erwin Pesch",
+      "Shimrit Shtern"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14426",
+    "abstract": "Branch-and-Bound (B&B) and $A^*$ are popular exact search methods originating from Operations Research and Artificial Intelligence, respectively. Although the two methods share fundamental search principles, their different ways of exploring the search space can lead to substantially different computational performance. We investigate these differences using the Resource-Constrained Project...",
+    "keywords": [
+      "math.OC",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946709",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14425",
+    "title": "Quantifying the Sampling Frequency Invariance of Time-Series Foundation Models for Sensor Data Applications",
+    "authors": [
+      "Sourish Gunesh Dhekane",
+      "Abinaya Kumar",
+      "Torsten Woertwein",
+      "Yan-Bo Lin",
+      "Thomas Ploetz",
+      "Shabnam Ghaffarzadegan"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14425",
+    "abstract": "Time-Series Foundation Models (TSFMs) are increasingly used in sensor applications, where sampling frequency (SF) varies across sensors, devices, and operating modes (e.g., power saving). Ideally, TSFMs must remain effective during such SF changes, provided the SF retains task-critical bandwidth. In this paper, we stress-test 4 prominent TSFMs: MOMENT, Chronos-2, Moirai-MoE, and TimesFM, to...",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946744",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14424",
+    "title": "DnNP: Denoising Input Uncertainty in Neural Processes",
+    "authors": [
+      "Fatemeh Tohidian",
+      "Chengzhi Shi",
+      "Soomi Lee",
+      "Matthew Elia",
+      "Amy Mueller",
+      "Stratis Ioannidis",
+      "Jennifer Dy"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14424",
+    "abstract": "Neural Processes (NPs) are flexible meta-learning models capable of uncertainty quantification across diverse applications. However, the standard NP framework assumes access to noise-free inputs. This is unrealistic in many practical settings, where sensor noise or measurement errors are unavoidable. This discrepancy between model assumptions and real-world data can significantly degrade...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946779",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14420",
+    "title": "OnlyAct: Extracting Action Representations from Foundation Models for World Models",
+    "authors": [
+      "Runjia Li",
+      "Minghao Chen",
+      "Junyu Xie",
+      "Philip Torr",
+      "Andrea Vedaldi",
+      "Tomas Jakab"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14420",
+    "abstract": "Video world models promise general-purpose interactive simulators, but their training is limited by action supervision: action labels are scarce, fragmented across incompatible specifications, and do not scale with the unlabeled video pretraining corpus. A common workaround jointly trains an action encoder to compress consecutive frames into a latent action and a decoder to reconstruct the next...",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946814",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14419",
+    "title": "Evaluating LLM-Generated World Models for Neuro-Symbolic Reasoning",
+    "authors": [
+      "Souhaila Djaffal",
+      "Amna Jamal",
+      "Gagana Madhugiri Devaraja",
+      "Anidipta Pal",
+      "Jobst Heitzig"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14419",
+    "abstract": "Formal world models can support planning, verification, and safety reasoning, but constructing them from open-ended natural-language situations is difficult, particularly in multi-agent settings where several formalizations may be plausible. We study whether five LLMs can generate such world models as partially observable stochastic games and whether mechanical validity is sufficient to establish...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946846",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14418",
+    "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
+    "authors": [
+      "Mohammed Nayeem Khan",
+      "Logesh L",
+      "Aliyas Ahmad Misri"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14418",
+    "abstract": "Local decoding usually fixes one weight precision for the whole generation. We study a different allocation: store 8-bit weights, decode with their top 4 bits, and redo a step at 8 bits only when the low-precision output distribution looks uncertain (entropy above a threshold or a small top-two margin). Quantization is simulated, the model is Qwen3-0.6B, and the benchmark is GSM8K. Cost is...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946876",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14415",
+    "title": "Exploring Post-Hoc Disentanglement of Audio Foundation Models for Music Similarity",
+    "authors": [
+      "Lucas de Souza Brandão",
+      "Gabriel da Costa Merlin",
+      "Diego Furtado Silva"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14415",
+    "abstract": "Audio foundation models like CLAP, MuQ, and MERT excel at capturing general musical similarity. On the other hand, their entangled latent spaces limit interpretability and fine-grained attribute control. Conditional Similarity Networks (CSN) address this by pairing a backbone representation model with learned masks that gate the embedding space into attribute-specific subspaces. However, existing...",
+    "keywords": [
+      "cs.SD",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946906",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14413",
+    "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
+    "authors": [
+      "Mohammed Nayeem Khan",
+      "Logesh L",
+      "Aliyas Ahmad Misri"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14413",
+    "abstract": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and which is the cheaper way to spend a fixed budget. On Qwen3-0.6B and Qwen3-1.7B with simulated round-to-nearest weight quantization (8, 6, 4 and 3 bits, fp16 reference), read from...",
+    "keywords": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946935",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14407",
+    "title": "Causal Concept Explanations for Deep Neural Models",
+    "authors": [
+      "Josh Rountree",
+      "Pulkit Verma",
+      "Oswin So",
+      "Chuchu Fan",
+      "Julie A. Shah"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14407",
+    "abstract": "Concept-based explanations in neural models are important for the development, certification, and adoption of autonomous systems. Yet, interpretability remains correlational. Without methods to guide and quantify causal relationships between explanations, a concept explanation can be provided without being necessary or sufficient for the observed output thereby appearing correct while misleading....",
+    "keywords": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946967",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14401",
+    "title": "Discovering Equations for the Thermodynamics of South Asian Monsoon Precipitation",
+    "authors": [
+      "Savannah L. Ferretti",
+      "Jane W. Baldwin",
+      "Michael S. Pritchard",
+      "Tom Beucler"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14401",
+    "abstract": "South Asian monsoon precipitation depends on the thermodynamic structure of the lower troposphere, but how its ingredients combine to shape precipitation remains unclear, partly because this dependence is nonlocal in the vertical. We use symbolic distillation, which combines neural networks and symbolic regression, to discover interpretable precipitation equations from 21 years of June-August...",
+    "keywords": [
+      "cs.LG",
+      "physics.ao-ph"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.946999",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14399",
+    "title": "REAL Loss: Optimizing Real Expected Acceptance Length for Speculative Decoding",
+    "authors": [
+      "Yu Tian"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14399",
+    "abstract": "Speculative decoding accelerates LLM inference by having a draft model propose multiple tokens for the target model to verify in one pass. The speedup is governed by the expected acceptance length (EAL), yet standard training objectives such as cross-entropy, KL divergence, and total variation focus only on distribution matching or single-step overlap. Recent studies instead propose block-level...",
+    "keywords": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947026",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14397",
+    "title": "A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging (MaLoRA)",
+    "authors": [
+      "Ziqing Xu",
+      "Hancheng Min",
+      "Lachlan Ewen MacDonald",
+      "Salma Tarmoun",
+      "Enrique Mallada",
+      "Weijie Su",
+      "Rene Vidal"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14397",
+    "abstract": "Low-rank adaptation (LoRA) is the de facto method for parameter-efficient fine-tuning of large neural networks, achieving strong task adaptation with minimal trainable parameters and low optimization cost. Beyond this efficiency, practitioners have observed two striking properties: \\textit{robustness to catastrophic forgetting} and the ability to \\textit{merge independently trained adapters} into...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947061",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14387",
+    "title": "Blurring the Block Boundaries: Overlapping Block Denoising for Efficient Diffusion Language Models",
+    "authors": [
+      "Amir Mann",
+      "Jonathan Fhima",
+      "Shaked Brody",
+      "Or Avitan",
+      "Asif Zamir",
+      "Shahar Tsiper",
+      "Niv Nayman"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14387",
+    "abstract": "Diffusion Language Models (DLMs) have emerged as effective alternatives to autoregressive models for latency-critical tasks, enabling faster token generation. Recent advances employ block diffusion with self-editing capabilities, where each block refines tokens iteratively before advancing to the next one. Yet each block is only as fast as its slowest token, and the next block cannot start before...",
+    "keywords": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947095",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14383",
+    "title": "An Energy-Based Perspective on Machine Learning",
+    "authors": [
+      "Bo Dai",
+      "Yilun Du"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14383",
+    "abstract": "Energy-based models (EBMs) define a distribution through a scalar energy, $p_θ(x)\\propto\\exp(-E_θ(x))$, and are usually presented as one model family among many. This tutorial has a broader goal: beyond introducing EBMs, it uses them as a single lens that connects the different aspects of machine learning. Any EBM is specified by three choices, the energy, which determines what the model...",
+    "keywords": [
+      "cs.AI",
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947126",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14382",
+    "title": "Cognitive Mapping of Learning by Thinking Mechanisms in Large Language Models",
+    "authors": [
+      "Dong Han",
+      "Jin Zhang",
+      "Kunyue Yang"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14382",
+    "abstract": "Large language models (LLMs) increasingly exhibit capabilities that resemble human Learning by Thinking (LbT), the acquisition of new insight through internal processes such as explanation and reasoning, without new external input. A systematic account of the cognitive mechanisms behind these capabilities, and of their limits, remains underdeveloped. This paper proposes a Cognitive LbT Framework...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947155",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14381",
+    "title": "Optimization principles, revisited",
+    "authors": [
+      "William Bialek"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14381",
+    "abstract": "The brain solves a wide range of problems, and some of these solutions are very good indeed. It is an old idea that, in some cases, these solutions may be as good as possible given the relevant constraints. If this is true we can promote this notion of optimization to a principle from which aspects of function and mechanism can be derived, ideally with no free parameters. Optimization principles...",
+    "keywords": [
+      "q-bio.NC",
+      "physics.bio-ph"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947183",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14380",
+    "title": "What Factors Matter for Collection-Level Counting with Human-AI Collaboration?",
+    "authors": [
+      "Seoyun Jeong",
+      "Logan Lawrence",
+      "Owen L. Martin",
+      "Benjamin Koger",
+      "Daniel Sheldon",
+      "Subhransu Maji"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14380",
+    "abstract": "Many scientific and policy decisions require estimating the total number of target objects across a large image collection. Exhaustive human labeling is often infeasible, while raw model predictions can be biased, especially under domain shift. Recent human-AI estimation methods combine imperfect model predictions with limited human verification to obtain reliable collection-level estimates....",
+    "keywords": [
+      "cs.CV"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947216",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14374",
+    "title": "Uncertainty-Aware Hybrid Offline Reinforcement Learning with Online Action Selection Enabled by Sparse Gaussian-Process Critics",
+    "authors": [
+      "Marco Chan",
+      "Christos Evripidou",
+      "Liqiu Dong",
+      "Benoit Chachuat",
+      "Mehmet Mercangöz"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14374",
+    "abstract": "Start-ups and grade changes remain largely operator-driven, while developing and maintaining dynamic models for model-based control requires substantial engineering effort. Hybrid Offline Learning and Online Optimisation (HOFLON) uses one-step offline reinforcement learning to select actions from historical transition data. In its original implementation, the online objective combines the...",
+    "keywords": [
+      "cs.LG",
+      "eess.SY"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947249",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14365",
+    "title": "From Video Frames to Robot Meta-Frames: A Unified Latent Interface for World Action Models",
+    "authors": [
+      "Guoqiang Liang",
+      "Yiqi Lin",
+      "Yanzhe Chen",
+      "Kevin Yuchen Ma",
+      "Mike Zheng Shou"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14365",
+    "abstract": "Pretrained video diffusion models (VDMs) offer a powerful foundation for World Action Models (WAMs), which jointly predict robot actions and future observations. Building such models requires injecting low-dimensional robot signals (e.g. proprioception, actions, and values) into a latent space shaped by natural videos, and a key design choice is the interface through which these signals enter:...",
+    "keywords": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947281",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14357",
+    "title": "The Unused Input: The Initial State as a Conditioning Interface for Recurrent TSFMs",
+    "authors": [
+      "Bernhard Voggenberger",
+      "Christian Ganhör",
+      "Levente Zólyomi",
+      "Sebastian Böck",
+      "Sepp Hochreiter"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14357",
+    "abstract": "Time series foundation models (TSFMs) forecast unseen series without task-specific training. Increasingly they are built on recurrent backbones, whose constant per-step cost makes long-context inference cheap, and which, unlike transformers, carry a state. A recurrent backbone computes its prediction from two inputs: the observed context window and the initial recurrent state. In practice only...",
+    "keywords": [
+      "cs.LG"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947312",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14356",
+    "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy Awareness and Hardware Abilities",
+    "authors": [
+      "Zhengxiang Huang",
+      "Yujie Sun",
+      "Shengheng Chen",
+      "Zhaode Wang",
+      "Chaoyue Niu",
+      "Zeyu Zhao",
+      "Chengfei Lv",
+      "Fan Wu",
+      "Guihai Chen"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14356",
+    "abstract": "Rapidly evolving LLM architectures and heterogeneous mobile hardware make supporting new models in on-device inference engines a recurring and costly system challenge. Each model may require coordinated changes across conversion, graph construction, operators, and hardware backends. Existing coding agents often miss these cross-layer dependencies and struggle to diagnose failures across...",
+    "keywords": [
+      "cs.OS",
+      "cs.AI",
+      "cs.CL",
+      "cs.SE"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947349",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14355",
+    "title": "CLADE: Category-Level Answering from Deficient Evidence in Retrieval-Augmented Language Models",
+    "authors": [
+      "S M Rayeed",
+      "Charles V. Stewart",
+      "Yao Ma"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14355",
+    "abstract": "Retrieval-augmented systems often retrieve passages that are accurate and relevant but state the answer at a coarser level of granularity than the question requires. For example, a question may ask which specific disease a drug treats (familial hyperlipidemia), while the retrieved passage mentions the broader disease family (hyperlipidemia). Prior work on context sufficiency treats such coarse...",
+    "keywords": [
+      "cs.AI"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947380",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "arxiv-2611.14333",
+    "title": "AI Isn't Getting Dumber, We're Getting Pickier: Rising Standards in Human Evaluation of Large Language Models",
+    "authors": [
+      "Zihan Chen",
+      "Lei Nico Zheng",
+      "Di Zhu"
+    ],
+    "journal": "arXiv",
+    "publish_date": "2026-11-10",
+    "url": "https://arxiv.org/abs/2611.14333",
+    "abstract": "Users often complain that AI assistants such as ChatGPT are getting worse. Some versions do change, but human evaluation leaves a second possibility untested: the people judging may change. We separate the two on Chatbot Arena, a public platform where people compare answers from two anonymous large language models (LLMs) and pick the better one or say both are bad. We study 1,260,967 blind votes...",
+    "keywords": [
+      "cs.HC",
+      "cs.AI",
+      "cs.CL",
+      "cs.CY"
+    ],
+    "source": "arXiv",
+    "fetched_at": "2026-11-12T11:40:56.947409",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-43002378",
@@ -28,1072 +1235,8 @@
     "abstract": "In March 2026, China approved the world's first implantable brain-computer interface (BCI) medical device for clinical use outside clinical trials, a milestone that raises urgent questions about how legal and ethical systems should protect the brain and mind. This article examines China's emerging neurorights governance pathway, which combines the interpretive expansion of civil law personality...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-10T14:55:41.581380",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12564",
-    "title": "GHiML: VLM-Guided Hierarchical Multi-Label Learning with Applications to Benthic Imagery",
-    "authors": [
-      "Isaac Xu",
-      "Devi Ayyagari",
-      "Martin Gillis",
-      "Benjamin Misiuk",
-      "Craig J. Brown",
-      "Thomas Trappenberg"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12564",
-    "abstract": "Vision language models (VLMs) encode substantial expert knowledge within their weights, yet their direct application to specialised classification domains such as benthic imagery remains limited. Meanwhile, vision transformers trained on these tasks rely predominantly on low-level visual latents (colours, textures, and shapes) that lack the higher-level reasoning humans employ for identification....",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779059",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12557",
-    "title": "WanderBench: Can World Models Explore Dynamic Worlds from Video?",
-    "authors": [
-      "Yuhang Chen",
-      "Jiheng Li",
-      "Jiale Wang",
-      "Zai Wang",
-      "Guangyue Liu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12557",
-    "abstract": "Video world models conditioned on an input video make it possible to explore real, recorded dynamic scenes, enabling re-shooting of footage, free-viewpoint replay, and real-to-sim environments for embodied agents. Such uses require the generated rollout to stay faithful to the recorded world, yet existing benchmarks start from a single image or a text prompt, and video-conditioned generation is...",
-    "keywords": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779206",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12552",
-    "title": "SciMARS: Multi-Agent Recursive Self-Improvement for Closed-Loop Scientific Discovery",
-    "authors": [
-      "Weimin Wu",
-      "Han Liu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12552",
-    "abstract": "We propose SciMARS, a framework for recursive task-local adaptation of multi-agent harnesses in closed-loop scientific discovery. Multi-agent systems coordinate analysis, experimental design, and verification as scientific evidence evolves. However, two problems limit their effectiveness: (i) without shared memory, agents lose observations and repeat work; (ii) fixed role procedures, handoffs,...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779307",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12550",
-    "title": "A Strict Upper Bound for Three-Point Weighted Selection in Planar Vector-Valued Regression",
-    "authors": [
-      "Sergey Volkov"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12550",
-    "abstract": "We prove $F_{\\mathrm{weighted}}(2,2,3)<11/6$ for minimum-Frobenius-norm least-squares regression with two input and two output coordinates, improving the upper bound $15/8$. More precisely, a universal $\\varepsilon_0>0$ satisfies $\\mathcal T_3\\le(5/6-\\varepsilon_0)E$ for every finite residual frame. The proof combines an exact scalar certificate, rigidity of equality in planar selection, and a...",
-    "keywords": [
-      "math.ST",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779406",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12544",
-    "title": "Learning inexact alternating minimization for convex problems with quadratic coupling",
-    "authors": [
-      "Paul Häusner",
-      "Jevgenija Rudzusika",
-      "Jens Sjölund",
-      "Ozan Öktem"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12544",
-    "abstract": "Alternating minimization is a standard tool for optimization problems with two coupled variable blocks. Its cost is dominated by the inner subproblem solvers, which rarely have a closed-form solution. In this paper, we propose to learn an inexact alternating scheme in which neural networks approximate the subproblem solution at each iteration. For convex problems with quadratic couplings between...",
-    "keywords": [
-      "math.OC",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779507",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12530",
-    "title": "K-prop: Deep Online Learning by Backpropagating Temporal Kernels",
-    "authors": [
-      "Bingkun Liu",
-      "Paul Haider",
-      "Federico Benitez",
-      "Mihai A. Petrovici",
-      "Walter Senn"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12530",
-    "abstract": "Self-recurrence represents an important component for temporal processing in neural networks, both artificial and biological, where it appears naturally in the form of leaky integration. However, due to the complex temporal dependencies of the gradient, an efficient and effective method of online training is still lacking. Here we propose K-prop, a novel online learning method for leaky neural...",
-    "keywords": [
-      "cs.LG",
-      "q-bio.NC"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779596",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12529",
-    "title": "Perceived Agency During Agent-Avatar Control Transitions in Virtual Reality",
-    "authors": [
-      "Jingyi Zhang",
-      "Anthony Steed"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12529",
-    "abstract": "Prior beliefs about whether a virtual human (VH) is controlled by a human or a computer can shape how users interpret and respond to its behaviour. As emerging hybrid VH systems allow control to transfer between human operators and computer programs during an ongoing interaction, it remains unclear whether perceived agency updates with the actual controller or continues to reflect users' prior...",
-    "keywords": [
-      "cs.HC",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779694",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12527",
-    "title": "WaveGen: Truly End-to-End Waveform Generation via Internal Spectral Trajectory Learning",
-    "authors": [
-      "Sang-Hoon Lee",
-      "Ha-Yeong Choi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12527",
-    "abstract": "This work proposes WaveGen, a fully end-to-end diffusion-based text-to-waveform framework based on Spectral Forcing, which jointly learns an internal spectral trajectory and the target waveform trajectory within a single model, enabling direct end-to-end text-to-waveform generation. Unlike recent TTS pipelines, WaveGen does not rely on separately trained or externally decoded intermediate...",
-    "keywords": [
-      "cs.SD",
-      "cs.AI",
-      "eess.AS",
-      "eess.SP"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779787",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12524",
-    "title": "EditJudge-Bench: Auditing VLM Image-Edit Judges with Synthetic Ground Truth",
-    "authors": [
-      "Jens Parslov",
-      "Marco Schouten",
-      "Dim P. Papadopoulos"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12524",
-    "abstract": "Vision-language models (VLMs) are increasingly used as automated judges for image-editing benchmarks, yet their reliability is poorly understood. Auditing these judges is difficult because real edited images lack controlled ground truth and entangle the requested changes with model artefacts, unintended side effects, and ambiguous degrees of success. In this paper, we introduce EditJudge-Bench, a...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779880",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12521",
-    "title": "Can the Confidence and Decisions of System 1 Models Be Trusted? An Explainability and Perturbation Audit of Jev-Style Decision Models",
-    "authors": [
-      "Julien Delaunay"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12521",
-    "abstract": "\"System 1\" decision models (pioneered by TypeSafe AI's Jev) replace autoregressive text generation with a single forward pass returning typed probability distributions over declared schemas (Choice, Score, Noul). While deployed for low-latency routing and automated triage, their statistical calibration and post-hoc explainability remain uncharacterized. We introduce an open, deterministic audit...",
-    "keywords": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.779944",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12509",
-    "title": "UniHam: A Large-Scale SOC-Complete Dataset and Benchmark for Hamiltonian Learning in Materials",
-    "authors": [
-      "Yuewen Huang",
-      "Pin Chen",
-      "Yutong Lu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12509",
-    "abstract": "Accurate prediction of electronic Hamiltonians would enable broad property inference while avoiding the high computational cost of Density Functional Theory (DFT). However, progress toward general-purpose materials foundation models is limited by a data bottleneck: existing Hamiltonian datasets are typically small, lack structural diversity, and often omit essential relativistic physics such as...",
-    "keywords": [
-      "cs.LG",
-      "cond-mat.mtrl-sci"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780027",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12508",
-    "title": "MARS: Multiscale Appearance-Residual Streams for Video Forgery Detection",
-    "authors": [
-      "Ahmed Y. Radwan",
-      "Shaina Raza"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12508",
-    "abstract": "Generalizing deepfake detection across facial manipulation and fully generated video remains challenging due to forgery traces varying with the manipulation method and scene content. Explicit spatial and temporal feature differences offer a way to capture this variation, but also respond to natural texture and motion, motivating their joint interpretation with appearance features. We investigate...",
-    "keywords": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780098",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12501",
-    "title": "Text Grouping Changes Completion-Time Comparisons in Long-Form Simultaneous Speech Translation",
-    "authors": [
-      "Hieu Minh Truong",
-      "Dung D. Le"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12501",
-    "abstract": "Does grouping translation updates before speech synthesis change the measured completion gap between two translators? We compare StreamAtt with its fixed-audio-history baseline on ten English-German talks. For each translation, we keep the intended text and its availability times fixed and vary how updates are grouped for synthesis. Four-second grouping increases StreamAtt's mean completion lead...",
-    "keywords": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780152",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12491",
-    "title": "Out-of-the-Box Tabular Foundation Models for Bayesian Optimization in Materials Discovery",
-    "authors": [
-      "Klemens Flöge",
-      "Simon Bing",
-      "Leo Grinsztajn",
-      "Eliott Kalfon",
-      "Lennart Purucker",
-      "Noah Hollmann",
-      "Frank Hutter"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12491",
-    "abstract": "Bayesian optimization is widely used in active learning loops for materials science. Gaussian processes serve as the de-facto surrogate model family, but require task-dependent kernel choices and can lack the modeling capacity for complex relationships. Tabular foundation models (TFMs) have recently emerged as the state-of-the-art for predictive tasks on structured data, without requiring bespoke...",
-    "keywords": [
-      "cs.LG",
-      "stat.ML"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780217",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12478",
-    "title": "AuDiR: Diagnosing Audio Reasoning with Rule and Percept Interventions",
-    "authors": [
-      "Chengwei Wei",
-      "Yi Ma",
-      "Nancy F. Chen"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12478",
-    "abstract": "Answer accuracy alone does not distinguish failures in acoustic perception, rule knowledge, and rule application. AuDiR (Audio Diagnostic Reasoning) examines these distinctions through controlled input interventions. Each item contains an audio clip, a multiple-choice question, a task-general rule, and a textual description of the acoustic observations needed to answer. Three conditions...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780273",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12477",
-    "title": "Perturb, Aggregate then Reconstruct: Consensus Aggregation and Fourier-Attended Multi-Decoders for Reconstruction-based Multi-View Anomaly Detection",
-    "authors": [
-      "Yongho Son",
-      "Junyeong Yun",
-      "Je Hyeong Hong"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12477",
-    "abstract": "Multi-view anomaly detection is crucial for industrial inspection to identify defects hidden from single viewpoints. Yet, despite their strong success in single-view applications, reconstruction-based methods remain largely underexplored in multi-view settings. A key challenge in extending these methods lies in generating view-consistent pseudo-anomalies. To address this, we propose PAR, a...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780327",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12475",
-    "title": "Learning to Select Sparse Linear Solvers with Convolutional Neural Networks",
-    "authors": [
-      "Artemis Pados",
-      "Alan Edelman",
-      "Emmanuel Lujan",
-      "Daniel Pickard",
-      "Felipe Tome",
-      "Christopher Rackauckas"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12475",
-    "abstract": "We investigate convolutional-neural-network (CNN) based automatic solver selection for sparse linear systems, a problem of practical importance where solver performance varies dramatically with matrix sparsity structure. A CNN is trained to regress log timing ratios between candidate solvers using spy plot images of matrix nonzero structure as input, achieving strong prediction accuracy on both...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780417",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12466",
-    "title": "Prediction with Foundation Models under Deployment Budgets",
-    "authors": [
-      "Zhaohui Xu",
-      "Xiaofei Xu",
-      "Doudou Zhou"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12466",
-    "abstract": "Foundation models can supply predictions for a downstream task that draw on knowledge from extensive pretraining, but they differ in task-specific accuracy and query cost. We develop a framework that improves prediction for the task under a budget on the average query cost per input, using training data to learn which models to query and how to combine their outputs with features available...",
-    "keywords": [
-      "stat.ML",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780475",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12464",
-    "title": "Phrase-Level Speculative Decoding on a Frozen Target",
-    "authors": [
-      "Madhusudhana Naidu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12464",
-    "abstract": "Speculative decoders raise throughput by banking more target tokens per forward pass, and Medusa, EAGLE-3, DFlash and DSpark all do it the same way: more candidates that survive verification. All of them draft in the target's own vocabulary, so one node of the candidate tree is one target token, and the tokenizer makes that unit look like a constant. It is not. BPE's pretokenizer splits on...",
-    "keywords": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780531",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12458",
-    "title": "Causal discovery from Bayesian symbolic regression",
-    "authors": [
-      "Roger Guimerà",
-      "Kai-Hendrik Cohrs",
-      "Sergio Pedreira",
-      "Marta Sales-Pardo",
-      "Gustau Camps-Valls"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12458",
-    "abstract": "Causal discovery from observational data is central to scientific reasoning, yet established constraint-based and score-based methods often recover only a Markov equivalence class and provide no signal in bivariate or strongly autocorrelated regimes typical in some areas of science. Here, we recast causal discovery as a Bayesian symbolic regression problem. Given a set of candidate parents for...",
-    "keywords": [
-      "stat.ML",
-      "cs.LG",
-      "physics.comp-ph",
-      "physics.data-an"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780591",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12452",
-    "title": "V3DSAM: Semantic-Geometric Loop Verification and Geometry-Anchored Persistent Instance Mapping for Feed-Forward Dense SLAM",
-    "authors": [
-      "Maolin Ye",
-      "Dongqing Zhao",
-      "Linyang Li",
-      "Shuai Xue",
-      "Yuan Liu",
-      "Yiyuan Wang",
-      "Wen Li"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12452",
-    "abstract": "To address unreliable cross-view association in long-sequence feed-forward dense SLAM, this letter presents V3DSAM, an open-vocabulary semantic dense SLAM system that establishes physical correspondences at both the scene and object levels. The system combines feed-forward geometric estimates from VGGT-SLAM 2.0 with open-vocabulary semantic observations from SAM3. We introduce semantic-geometric...",
-    "keywords": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780657",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12446",
-    "title": "Pricing Symbolic Rules by What GNNs Leave Unlearned",
-    "authors": [
-      "Satabarto Sarkar",
-      "Prithwineel Paul"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12446",
-    "abstract": "Symbolic knowledge (motif counts, ring counts, label constraints) is routinely added to graph neural networks (GNNs) and justified by their limited expressivity. We replace this yardstick with an exact one. The largest log-loss reduction a rule $S$ can give a model family is $I(Y;S\\midσ)$ given what the family computes; every realised gain splits exactly into this term plus repaid neural debt;...",
-    "keywords": [
-      "cs.NE",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780717",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12445",
-    "title": "LongSCOP: Semantically Consistent Long Video Outpainting",
-    "authors": [
-      "Yu Tang",
-      "Zhiyuan You",
-      "Zhixiao Wang",
-      "Fanghua Yu",
-      "Qingyu Zhang",
-      "Xiang Yin",
-      "Chao Dong",
-      "Jinjin Gu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12445",
-    "abstract": "Video out-painting is an important problem, yet existing research focuses primarily on short clips, leaving long video out-painting largely underexplored. Extending video out-painting to long videos poses substantial challenges. A natural solution is iterative out-painting, i.e., generating videos chunk by chunk, but this introduces two major issues: generation instability or even failure caused...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780814",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12443",
-    "title": "MoSTE: Mixture of Spatio-Temporal Experts for Deepfake Detection in Videos",
-    "authors": [
-      "Charbel Yahchouchi",
-      "Nabyl Quignon",
-      "Noemi Roggero",
-      "Laurent Saroul",
-      "Antitza Dantcheva"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12443",
-    "abstract": "Generalizable deepfake video detection remains challenging because forgery artifacts vary substantially across manipulation types and often combine diverse spatial and temporal inconsistencies. Existing parameter-efficient adaptation methods typically rely on a single shared representation, rendering them prone to manipulation-specific bias and limiting transfer to unseen forgeries. To address...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780884",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12437",
-    "title": "Occupancy Modelling of Biased Landslide Inventories: When Does Separating Occurrence from Recording Improve on Neutralisation?",
-    "authors": [
-      "Abdirashid Omar",
-      "Abdikadir Ugaas"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12437",
-    "abstract": "Landslide susceptibility models are trained on inventories that record where landslides were seen, not where they occurred. The established remedy fits bias-describing variables and neutralises them when mapping. We adapt occupancy-detection modelling from ecology, treating several inventories as imperfect observers of one event and separating occurrence from recording, and ask when this improves...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.780940",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12436",
-    "title": "Patching Up Circuit Learning via Parameter Sharing",
-    "authors": [
-      "Charles Bricout",
-      "Gennaro Gala",
-      "Viacheslav Borovitskiy",
-      "Antonio Vergari"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12436",
-    "abstract": "Probabilistic circuits (PCs) have emerged as generative models guaranteeing tractable probabilistic inference. However, tractability comes at the price of larger model sizes than in other generative models. As such, to scale PCs to high-dimensional data such as images, previous work has devised several parameter sharing techniques as well as fast evaluation protocols that consider learning PCs on...",
-    "keywords": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781010",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12435",
-    "title": "To SIMD or Not to SIMD: Comparing RVV vs. CGRA SoCs for Non-Linear Functions in AI",
-    "authors": [
-      "Sameer Deshmukh",
-      "Naoya Mizuki",
-      "Takumi Honda"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12435",
-    "abstract": "Non-linear functions are an important class of operations in modern large language models. However, chip vendors building for AI have so far relied on traditional vector or scalar processing units for non-linear functions. The performance of these units has not kept pace with matrix multiplication units (MMUs), which can be found in both high-performance and edge-computing devices from almost...",
-    "keywords": [
-      "cs.AR",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781073",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12427",
-    "title": "UCB-min: Combining Bandits Under Variance Heterogeneity (Extended Version)",
-    "authors": [
-      "Lilia Izri",
-      "Benoit Groz",
-      "Silviu Maniu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12427",
-    "abstract": "Multi-armed bandits are a natural framework for many real-world sequential decision problems, from recommender systems and clinical trials to educational test recommendation and online advertising. The performance of these algorithms depends on how they explore different arms, and exploration strategies range from variance-independent (e.g., UCB1) to variance-aware (e.g., UCB-V). In practice the...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781158",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12426",
-    "title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
-    "authors": [
-      "Xiaotong Li",
-      "Zhengrong Yue",
-      "Xu Huang",
-      "Jialv Zou",
-      "Minhao Jing",
-      "Wenhao Yan",
-      "Haodong Li",
-      "Hai Huang",
-      "Bo Zhao",
-      "Yan Feng",
-      "Peng Pei",
-      "Xunliang Cai"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12426",
-    "abstract": "Discrete autoregressive modeling, notably through next-token prediction, has become a cornerstone of modern language models. Extending this paradigm to vision allows visual and language models to converge on a unified framework, thereby fostering shared methodology and infrastructure. This work investigates a central question: how far can a finite discrete vocabulary go in representing the...",
-    "keywords": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781239",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12424",
-    "title": "Physics-informed neural networks in the small-data regime: A controlled comparison with classical PDE surrogates",
-    "authors": [
-      "Kirill Katsuba",
-      "Oleg Rudenko",
-      "Egor Bugaev",
-      "Alexander Tarakanov"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12424",
-    "abstract": "Neural surrogates for engineering models are often trained on large collections of simulated solutions. We investigate whether physics-informed neural networks (PINNs) can achieve accurate predictions from scarce labelled observations by incorporating governing equations and prescribed initial and boundary conditions. We introduce hierarchical loss weighting (H-PINN) and its...",
-    "keywords": [
-      "cs.CE",
-      "cs.AI",
-      "math.NA"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781297",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12422",
-    "title": "Two-Phase Rapid Simulation-Based Inference with Differentiable Simulators",
-    "authors": [
-      "Uros Zivanovic",
-      "Rahul Srinivasan",
-      "Roberto Trotta",
-      "Andre Scaffidi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12422",
-    "abstract": "We introduce Rapid Simulation Based Inference (RSBI), a diffusion-based variational approach to likelihood-free Bayesian inference that achieves high sampling efficiency under large prior-to-posterior volumes. RSBI builds on advances in Schrödinger Bridge (SB) diffusion sampling to handle multi-modal posteriors, with an initial likelihood supplied by a distance measure via a differentiable...",
-    "keywords": [
-      "cs.LG",
-      "stat.ML"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781592",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12419",
-    "title": "Optimal Rates for Adaptive Private $k$-PCA",
-    "authors": [
-      "Johanna Düngler",
-      "Amartya Sanyal"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12419",
-    "abstract": "Given $n$ i.i.d. random matrices $A_i \\in \\mathbb{R}^{d \\times d}$ with common expectation $Σ$, the goal of \\emph{Differentially Private Stochastic PCA} is to identify a $k$-dimensional subspace capturing the leading variance directions of $Σ$, while preserving differential privacy~(DP) for each individual sample $A_i$. \\citet{dungler2025iterative} introduced \\kdppca, the first algorithm to...",
-    "keywords": [
-      "cs.LG",
-      "stat.ML"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781704",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12411",
-    "title": "PhysOPSD: Code as Privilege for Physically Plausible Video Generation",
-    "authors": [
-      "Harold Haodong Chen",
-      "Rui Peng",
-      "Lingteng Qiu",
-      "Kejie Qiu",
-      "Chao Xu",
-      "Zilong Dong"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12411",
-    "abstract": "While modern video generative models achieve remarkable visual fidelity, they remain noticeably brittle when generating physically plausible dynamics and complex interactions. Targeted post-training is crucial, yet supervised fine-tuning suffers from offline state mismatch, and reinforcement learning is hindered by sparse, ill-defined physical reward functions. On-Policy (Self-)Distillation...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781814",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12409",
-    "title": "Bridging Task Planning and Execution for Language-Conditioned Bimanual Manipulation",
-    "authors": [
-      "Emanuele Cuzzocrea",
-      "Giuseppina Iannotti",
-      "Luca Rossini",
-      "Arturo Laurenzi",
-      "Nikos Tsagarakis"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12409",
-    "abstract": "Robots are increasingly expected to execute natural-language manipulation tasks in real-world environments. This is particularly relevant in household assistance and logistics, where clutter requires reasoning about both task objectives and execution feasibility. This challenge becomes even more pronounced for bimanual humanoid platforms, where coordinating two manipulators introduces additional...",
-    "keywords": [
-      "cs.RO",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781885",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12405",
-    "title": "PTC-IoU: CPU-Friendly Detection Quality Estimation for Edge Video Analytics",
-    "authors": [
-      "Wei Geng",
-      "Hyerin Kim",
-      "Chang Lu",
-      "Zhenghao Lu",
-      "Joerg Ott"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12405",
-    "abstract": "An edge video analytics system must estimate the quality of local detections since there are no ground-truth labels available during runtime. Detectors usually provide confidence scores for their results, but these scores can not reveal every missed object or misplaced bounding box. So a quality estimator is necessary to provide a decision signal indicating which frame has potential detection...",
-    "keywords": [
-      "cs.CV",
-      "cs.PF"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.781953",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12393",
-    "title": "AutoBuddy: Evaluating Proactive, Always-On Agents on Task Discovery and Execution in a Simulated Workplace",
-    "authors": [
-      "Shiqi Chen",
-      "Daniel Madrigal Diaz",
-      "Wei-Ning Chen",
-      "Gbola Afonja",
-      "Fangkai Yang",
-      "Rujia Wang",
-      "Chetan Bansal",
-      "Victor Rühle",
-      "Saravan Rajmohan",
-      "Dongge Han"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12393",
-    "abstract": "As LLM agents become more autonomous, they are increasingly expected to run as always-on assistants on a user's behalf, identifying work to be done and completing it without being asked. Yet existing benchmarks usually give the agent its task, whereas in knowledge work the requests sit in the user's workspace and the agent must first recognise which obligations exist. We study proactive task...",
-    "keywords": [
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782027",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12386",
-    "title": "Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks",
-    "authors": [
-      "Dario Pasquini",
-      " Reworr",
-      "Giuseppe Ateniese",
-      "Manish Bhatt",
-      "Sergej Epp"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12386",
-    "abstract": "We study the fingerprinting of agentic cyberattacks. Our objective is to reliably infer information about the attacker's configuration, such as LLM version and harness, from telemetry. To achieve this, we introduce a technique we call shibboleth traps: modular honeypot services designed to elicit discriminative behaviors from agentic attackers. The traps make informative interactions a condition...",
-    "keywords": [
-      "cs.CR",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782092",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12385",
-    "title": "Clinical predictions using artificial intelligence in neurosurgery and its subspecialties: a systematic review and meta-analysis",
-    "authors": [
-      "Prajwal Ghimire",
-      "Aswin Chari",
-      "Jonathan Shapey",
-      "Keyoumars Ashkan"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12385",
-    "abstract": "Artificial intelligence models for clinical prediction are proliferating across neurosurgery, but their aggregate discriminative performance, distribution along the care pathway and methodological quality are unclear. We systematically reviewed and meta-analysed these studies in neurosurgery and its subspecialities along with their risk of bias appraisal. We performed a PRISMA search for...",
-    "keywords": [
-      "q-bio.TO",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782151",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12382",
-    "title": "AutoVLA-D: Learn a Trajectory-Geometric Condition from Reasoning for Autonomous Driving VLA",
-    "authors": [
-      "Yuguang Yang",
-      "Zhewen Tan",
-      "Canyu Chen",
-      "Linlin Yang",
-      "Cheng Chi",
-      "Chunyang Liu",
-      "Kehua Sheng",
-      "Jinyu Yang",
-      "Baochang Zhan",
-      "Bo Zhang",
-      "Yan Wang",
-      "Xianbin Cao"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12382",
-    "abstract": "Autoregressive VLA planning usually predicts continuous trajectories as the final output, but driving instructions often describe actions rather than ego states, which weakens direct conditioning on the final continuous trajectory. We address this gap with TrajCond, which introduces a discrete trajectory-geometric condition for VLA planning. Specifically, we represent TrajCond as a 1D-Brohan...",
-    "keywords": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782229",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12379",
-    "title": "Reconstructing hourly traffic on every street of a capital from a sparse counting network: a graph neural network applied to Paris",
-    "authors": [
-      "Xavier Jurado",
-      "C{é}dric Wemmert",
-      "Nicolas Reiminger"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12379",
-    "abstract": "Micro-scale air quality models require hourly traffic data on every road segment, whereas permanent counters cover only a small part of the network. A graph neural network (GNN) was developed to reconstruct hourly traffic flows on the 32,163 road segments of Paris intra-muros from the 1,573 segments equipped with a counter (4.9%). The model adapts the Graph Neural Network for Urban Interpolation...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782284",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12377",
-    "title": "Detecting Shadow AI: Unsanctioned LLM Agents on Enterprise Endpoints: A Taxonomy, an Open Detector and a Controlled Evaluation",
-    "authors": [
-      "Jeremy Canale",
-      "Fabien Soulis"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12377",
-    "abstract": "Shadow IT, the use of technology that the IT organisation has not approved, is a long-standing governance problem. We argue that autonomous AI agents can make it grow much faster: agents make building tools nearly free, act with their user's privileges, and leave behind scripts, automations and MCP servers that are themselves unsanctioned. A simple compounding model shows that, under its...",
-    "keywords": [
-      "cs.AI",
-      "cs.CR"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782337",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12375",
-    "title": "AudioCodex: Streaming Autoencoders for Live Audio",
-    "authors": [
-      "Marco Pasini",
-      "Javier Nistal",
-      "Cyran Aouameur",
-      "Stefan Lattner",
-      "George Fazekas"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12375",
-    "abstract": "We introduce AudioCodex, a fully causal autoencoder for live generative audio applications that compresses stereo audio into compact continuous latent sequences at ~10 Hz. It combines a Mean Flow magnitude autoencoder with latent hypersphere projection, bounded-noise augmentation, representation alignment, and adversarial phase recovery to learn representations that support both efficient...",
-    "keywords": [
-      "cs.SD",
-      "cs.LG",
-      "eess.AS"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782400",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12374",
-    "title": "TANSAR: Editable and Attributable Correlation Matrix Memories under Correlated Keys, with Rule-Constrained Multi-Hop Knowledge Editing",
-    "authors": [
-      "Abdulhady Abas Abdulla",
-      "Jiyan Salim Mahmud",
-      "Fatemeh Daneshfar",
-      "Hussein Mohammed Ali",
-      "Mourad Oussalah",
-      "Muhammad Bilal"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12374",
-    "abstract": "Correlation Matrix Memories (CMMs) store associations as sums of rank-one outer products, providing closed-form addressability, exact deletion, and linear attribution. While classical analyses assume random, orthogonal keys, semantic encoders produce correlated representations. We analyse CMMs under correlated keys using frame-theoretic coherence: (i) capacity bounds yielding an...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782461",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12364",
-    "title": "TRIAD: Multimodal Retrieval across Abstraction, Constraints, and State",
-    "authors": [
-      "Xiangyang Wu",
-      "Chen Ju",
-      "Xu Chen",
-      "Likang Peng",
-      "Jinsong Lan",
-      "Haihong Tang",
-      "Yang Hu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12364",
-    "abstract": "Multimodal retrieval increasingly supports agentic systems, where user requests can involve cross-level relations, combine multiple constraints, and evolve across dialogue turns. In these settings, a highly similar result may still violate the user's requirements, while retrieved content may directly inform downstream actions without human screening. We introduce TRIAD, a multimodal retrieval...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782574",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12356",
-    "title": "DForkTree: Accelerating Speculative Decoding with Fork-Aware Block Diffusion Draft Trees",
-    "authors": [
-      "Zhicheng Zheng",
-      "Cheng Zhang",
-      "Chenkai Tang"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12356",
-    "abstract": "Speculative decoding speeds up language models by letting a lightweight drafter propose several future tokens that the target model verifies in parallel. Block diffusion drafters such as DFlash draft a whole block in one forward pass, and DDTree builds a draft tree from their per-position distributions. Each of these distributions assumes that the drafter's own most likely continuation is...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782641",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12353",
-    "title": "QCC-WM: Linking Macro-State Dynamics and Visual Generation via Quotient Causal Construction",
-    "authors": [
-      "Zhizhong Fu",
-      "Wei Zhou",
-      "Zhaoyang Jiang",
-      "Yudong Lin",
-      "Songlun Li",
-      "Zhi Li",
-      "Feifan Chen",
-      "Gaoming Li",
-      "Xiaorong Ding",
-      "Yifan Chen"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12353",
-    "abstract": "A key challenge in action-conditioned world modeling is to construct macro-states from high-dimensional observations that support recursive prediction under actions, while keeping their predicted evolution consistent with visual changes in generated observations. We propose QCC-WM, a visual world model based on Quotient-based Causal Construction. QCC-WM uses action responses to guide...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782720",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12351",
-    "title": "UniOMA: Unified Optimal-Transport Multi-Modal Structural Alignment for Robot Perception",
-    "authors": [
-      "Xinrui Zu",
-      "Mark Hoogendoorn",
-      "Kevin Sebastian Luck",
-      "Shujian Yu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12351",
-    "abstract": "Achieving generalizable and well-aligned multimodal representations remains a core challenge in robot learning. While recent approaches have attempted to align modalities by modeling conditional or higher-order statistical dependencies, they do not explicitly consider the structural coherence across modalities. In this work, we propose a novel multimodal alignment method that augments existing...",
-    "keywords": [
-      "cs.RO",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782779",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12346",
-    "title": "ReVMap: Vectorized Global Mapping via Connectivity-Aware Local Map Fusion",
-    "authors": [
-      "Hongjae Shin",
-      "Jungho Kim",
-      "Donghyuk Kwak",
-      "Myeongjun Kim",
-      "Seunghoon Yu",
-      "Jiyong Oh",
-      "Jun Won Choi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12346",
-    "abstract": "Large-scale annotation of vectorized high-definition (HD) maps is labor-intensive and costly, motivating local-to-global auto-labeling approaches that incrementally construct global maps from local vectorized predictions. However, existing approaches often overlook prediction uncertainty and rely on heuristic map integration, potentially propagating errors and introducing topological...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782842",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12345",
-    "title": "TMT: Adapting CLIP to Infrared Imagery via Text-Derived Modality Knowledge Transfer",
-    "authors": [
-      "Ruofan Wang",
-      "Puzuo Wang",
-      "Xin Chen",
-      "Zibo Yu",
-      "Jungang Yang",
-      "Yi Hou"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12345",
-    "abstract": "Vision-language models such as CLIP achieve strong performance across computer vision tasks, yet their image-text alignment is less reliable for infrared (IR) imagery because large-scale pre-training is dominated by visible-spectrum data. Due to the high cost of the infrared-text labeling, we investigate adapting CLIP to IR through only paired infrared-visible images, which requires considering...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.782932",
-    "added_date": "2026-11-10"
-  },
-  {
-    "id": "arxiv-2611.12339",
-    "title": "Evidence or Marginal? What Moment-Vector Propagation Computes in Polynomial Density Neurons",
-    "authors": [
-      "Przemysław Spyra"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-09",
-    "url": "https://arxiv.org/abs/2611.12339",
-    "abstract": "When a neuron's input is lost, or known through a belief $q$, what should it output? For a neuron storing a joint polynomial density $N$ with input density $D$, two formulas compete. $p_\\mathrm{CD}=E_q[N]/E_q[D]$ costs one matrix-vector product; Hierarchical Correlation Reconstruction introduces it as a constant-denominator approximation to $p_\\mathrm{EU}=E_q[N/D]$. For a density model both are...",
-    "keywords": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-10T14:55:44.783020",
-    "added_date": "2026-11-10"
+    "fetched_at": "2026-11-12T11:39:57.141469",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-43000541",
@@ -1117,8 +1260,24 @@
     "abstract": "To compare audiological outcomes and self‑perceived benefits in patients with sequelae of chronic otitis media (COM) and mixed hearing loss (MHL) undergoing rehabilitation with either a passive transcutaneous bone conduction implant (PT-BCI) or an active transcutaneous bone conduction implant (AT-BCI).",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-10T14:55:41.581445",
-    "added_date": "2026-11-10"
+    "fetched_at": "2026-11-12T11:39:57.141487",
+    "added_date": "2026-11-12"
+  },
+  {
+    "id": "pubmed-43008505",
+    "title": "A collaborative network of bi-Mamba and CAFS for multi-task classification of unilateral lower limb.",
+    "authors": [
+      "Chen Z",
+      "Li J"
+    ],
+    "journal": "Neural networks : the official journal of the International Neural Network Society",
+    "publish_date": "2026-11-06",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/43008505/",
+    "abstract": "Accurate decoding of motor-related electroencephalography signals remains challenging in brain-computer interface research. To date, motor imagery of the upper limbs has been extensively investigated, while research on the lower limbs remains limited. Meanwhile, multiple tasks involving the unilateral lower limb (including motor imagery, motor execution, and motor observation for both the left...",
+    "keywords": [],
+    "source": "PubMed",
+    "fetched_at": "2026-11-12T11:39:57.141324",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42994426",
@@ -1145,8 +1304,8 @@
     "abstract": "Repairing precise neural microcircuitry after cortical injury remains a pivotal challenge. Human brain organoids (hBOs) are a promising cell source, but disorganized integration limits their therapeutic potential. Here, we demonstrated that targeted neuromodulation, steered by endogenous narrowband gamma (NBG) rhythms, instructed structural and functional integration of hBO grafts in the injured...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701443",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141507",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42981416",
@@ -1201,8 +1360,8 @@
     "abstract": "The days following decompression surgery for acute spinal cord injury (SCI) are a critical period for postoperative monitoring. After wound closure, clinicians lack on-demand access to local spinal cord morphology and hemodynamics, and care therefore remains guided largely by systemic surrogates rather than direct postoperative insight into the injured cord. We present the Multimodal Ultrasound...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701661",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141579",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42945585",
@@ -1220,8 +1379,8 @@
     "abstract": "Electroencephalography (EEG) is a cornerstone of brain-computer interfaces and clinical neuro-diagnostics due to its non-invasiveness and high temporal resolution. However, robust EEG decoding remains challenging, particularly for resource-constrained deployments. While lightweight architectures like EEGNet offer favorable parameter efficiency, their reliance on fixed convolution kernels and...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701795",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141610",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42933128",
@@ -1238,8 +1397,8 @@
     "abstract": "",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701815",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141627",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42906584",
@@ -1253,8 +1412,8 @@
     "abstract": "",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701869",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141644",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42896567",
@@ -1273,8 +1432,8 @@
     "abstract": "",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701890",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141661",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42986730",
@@ -1292,8 +1451,8 @@
     "abstract": "Brain-computer interfaces (BCIs) achieved by motor imagery (MI) have been widely accepted as an effective tool in rehabilitative applications. Functional near-infrared spectroscopy (fNIRS) and electroencephalography (EEG) are two common implementation forms of BCIs, capable of monitoring neuronal potential changes and hemodynamic variations during different tasks. MI and action observation are...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701597",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141542",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42985742",
@@ -1310,8 +1469,8 @@
     "abstract": "",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701619",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141559",
+    "added_date": "2026-11-12"
   },
   {
     "id": "pubmed-42886472",
@@ -1332,1374 +1491,8 @@
     "abstract": "Effective repair of central nervous system (CNS) injuries remains highly challenging due to several formidable barriers, including severe structural disruption, hostile microenvironments, and limited intrinsic regenerative capacity. In response, biomaterials incorporated with therapeutic agents provide advanced interventional strategies for neural regeneration. This review systematically...",
     "keywords": [],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701908",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08487",
-    "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
-    "authors": [
-      "Jonathan Kozaczuk",
-      "Zheng Dong",
-      "Noyan Evirgen",
-      "Keivan Majidi",
-      "Eddie K. H. Ng",
-      "Chris Porter",
-      "Qi Zhao",
-      "Jia Geng",
-      "Changmao Li",
-      "Brandon R. Feng"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08487",
-    "abstract": "User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.190677",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08486",
-    "title": "Do You Miss the Nights We Spent Crafting Figures? Rethinking Teaser and Framework Figures in the Age of Generative AI",
-    "authors": [
-      "Xiaoqi Zhao",
-      "Youwei Pang",
-      "Kailai Zhou"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08486",
-    "abstract": "Scientific figures give research ideas a visual form through choices of abstraction, composition, and emphasis. Generative AI offers new ways to realize these choices, raising questions about explanatory clarity and purposeful visual expression. We examine these questions through a visual retrospective of 371 motivation and framework figures from 200 papers. The corpus comprises a quota-based...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.190771",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08485",
-    "title": "Where and Why is Grounded Reasoning Useful?",
-    "authors": [
-      "David Yan",
-      "Le Xue",
-      "Forrest Huang",
-      "Qiuyi Zhang",
-      "Dustin Tran",
-      "Andrew M. Dai",
-      "Yinfei Yang"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08485",
-    "abstract": "Grounded reasoning, where a model outputs text coordinates of relevant locations in chain-of-thought reasoning, is a common strategy for solving complex visual reasoning problems. However, the benefits and limitations of grounded reasoning are understudied. We study where and why grounded reasoning is most useful. To do so, we introduce a chain-of-thought analysis method to measure how much a...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.190846",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08483",
-    "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
-    "authors": [
-      "Qile Jiang",
-      "George Em Karniadakis"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08483",
-    "abstract": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a...",
-    "keywords": [
-      "cs.AI",
-      "cs.NE"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.190903",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08478",
-    "title": "Scientist World: Grow a Research World for AI-Scientists",
-    "authors": [
-      "Taiming Lu",
-      "Sachin Konan",
-      "Zhuang Liu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08478",
-    "abstract": "AI-Scientists arrived, but a world for them to grow in did not. Human scientists take theirs for granted $-$ centuries of open problems and shared ideas, waiting in the scientific literature. To AI-Scientists, that world is readable but not runnable, so we build Scientist World for them: every research paper becomes an executable environment. Our autonomous pipeline extracts each paper's...",
-    "keywords": [
-      "cs.AI",
-      "cs.CL",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.190962",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08477",
-    "title": "EgoGeneralist: Unifying Egocentric Action-Video Tasks through Video-Native Modeling",
-    "authors": [
-      "Yanlin Jin",
-      "Bowen Yang",
-      "Cheng Zhang",
-      "Yifan Yang",
-      "Zhe Li",
-      "Jianfei Cai",
-      "Kai Zhu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08477",
-    "abstract": "Modern video models possess strong visual priors, yet do not natively represent human action in metric 3D space. We present EgoGeneralist, which adapts pretrained video generators to unify action-conditioned egocentric video generation, pose estimation, and joint action-video generation. Our role-adaptive action renderer provides video-native representations for multidirectional action-video...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191071",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08472",
-    "title": "XStack: A Benchmark for ML Repo Migration",
-    "authors": [
-      "Linrong Cai",
-      "Taiming Lu",
-      "Haozhe Chen",
-      "Zhuang Liu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08472",
-    "abstract": "ML code should run where researchers choose, not where it was first written. Today, machine learning code mainly lives in two ecosystems, PyTorch on NVIDIA GPUs and JAX on Google TPUs. Migrating repositories between them means building and testing across frameworks and hardware. This migration is (1) a practical need, since it unlocks different hardware for researchers, and (2) a natural...",
-    "keywords": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191165",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08469",
-    "title": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
-    "authors": [
-      "Linqian Wu",
-      "Diaoxuan He"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08469",
-    "abstract": "Interpretability, AI auditing and assessments of machine consciousness increasingly rest on mechanism-level quantities: functionals of a system's causal transition law that describe how it computes, not what it outputs. Experiments see that law only through finite, partial and noisy interventions. We ask when such a quantity is identifiable from an experiment's access, continuous in the mechanism...",
-    "keywords": [
-      "cs.LG",
-      "cs.AI",
-      "q-bio.NC"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191240",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08465",
-    "title": "Towards interpreting any residual stream direction by scaling activation inversion",
-    "authors": [
-      "Celeste De Schamphelaere",
-      "Juan J. Vazquez",
-      "Ari Spiesberger",
-      "Tomáš Gavenčiak",
-      "Gavin Leech",
-      "Euan Ong",
-      "Jiahai Feng"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08465",
-    "abstract": "To interpret a direction in a language model's residual stream, we can look for text that strongly activates it. But when such text is found by scanning a corpus, it is limited to what that corpus contains. We develop Maximally-Activating Example Metamodels (MAEMs), language models which map residual stream directions from a subject model to text exemplars that strongly activate those directions....",
-    "keywords": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191313",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08457",
-    "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
-    "authors": [
-      "Yi Feng",
-      "Andrea Paudice"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08457",
-    "abstract": "Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT...",
-    "keywords": [
-      "cs.LG",
-      "math.OC"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191368",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08453",
-    "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
-    "authors": [
-      "Zeyu Leo Liu",
-      "Yang Li",
-      "Bo Pang",
-      "Emre Can Acikgoz",
-      "Xuan-Phi Nguyen",
-      "Anurag Koul",
-      "Srijan Bansal",
-      "Erik Nijkamp",
-      "Shafiq Joty",
-      "Semih Yavuz"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08453",
-    "abstract": "On-policy distillation (OPD) trains a student on its own rollouts under a frozen teacher's per-token supervision. Does this dense signal reduce the training FLOPs needed to reach a target accuracy compared with reinforcement learning? We systematically compare vanilla reverse-KL OPD with Group Relative Policy Optimization (GRPO) across task difficulty, student and teacher size, domain, and...",
-    "keywords": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191452",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08452",
-    "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
-    "authors": [
-      "Yubo Wang",
-      "Rui Meng",
-      "Jaehyun Nam",
-      "Tomas Pfister",
-      "Jinsung Yoon"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08452",
-    "abstract": "Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191536",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08449",
-    "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
-    "authors": [
-      "Yu-Cheng Chou",
-      "Shihao Wang",
-      "Jin Huang",
-      "Chi-Pin Huang",
-      "Chiao-An Yang",
-      "Xianzhe Fan",
-      "Jing Wang",
-      "Zhiqi Li",
-      "Yuanguo Kuang",
-      "Ruijie Zheng",
-      "Johan Bjorck",
-      "Sifei Liu",
-      "Hang Su",
-      "Abhishek Badki",
-      "Lei Zhang",
-      "Alan Yuille",
-      "Linxi \"Jim'' Fan",
-      "Jan Kautz",
-      "Zhiding Yu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08449",
-    "abstract": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a...",
-    "keywords": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191673",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08445",
-    "title": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
-    "authors": [
-      "Angel Daruna",
-      "Michael Cogswell",
-      "Tixiao Shan",
-      "Yi Yao",
-      "Han-Pang Chiu",
-      "Ajay Divakaran"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08445",
-    "abstract": "A defender anticipating an attacker needs a probability distribution over the attacker's next action from information available before that action occurs. Two structures complicate this: the attacker's behavioral regime persists and can switch within an episode, and each action combines an operation with state-dependent arguments whose feasible values change over time. We capture both with a...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191776",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08441",
-    "title": "Edge-Assisted Crowdsensing for Explainable Cyclist Safety Perception",
-    "authors": [
-      "Hongsen Cao",
-      "Chia-Yen Chiang",
-      "Mona Jaber",
-      "Meihui Wang",
-      "Yasmin Fathy"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08441",
-    "abstract": "Cyclist fatality rates remain high despite policy support for active travel, and autonomous vehicles add complexity to mixed traffic. Neither crash statistics nor multi-model detection pipelines scale to continuous monitoring of perceived safety along a route. We present an edge-assisted crowdsensing system: handlebar cameras supply street-level frames, a vision-language model (VLM) turns each...",
-    "keywords": [
-      "cs.CV",
-      "eess.IV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191867",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08439",
-    "title": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
-    "authors": [
-      "Vladimir Beskorovainyi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08439",
-    "abstract": "Typed-decision models score options that the caller supplies at request time, so their accuracy depends on label wording that the model's developer does not control. We compare two releases of a 307M-parameter multilingual cross-encoder, Ru-Jev, trained on thirteen Russian-language tasks; the later release adds an augmentation that presents labels in several surface forms. Holding questions fixed...",
-    "keywords": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.191926",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08438",
-    "title": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
-    "authors": [
-      "Fazl Barez",
-      "Tung-Yu Wu",
-      "Hunar Batra",
-      "Gabriele Dominici",
-      "Florent Draye",
-      "Yanai Elazar",
-      "Damiano Fornasiere",
-      "Antía García",
-      "Abir Harrasse",
-      "Riley Harris",
-      "Sara Hooker",
-      "Michael Lan",
-      "Belinda Z. Li",
-      "Aaron Maiwald",
-      "Narmeen Fatimah Oozeer",
-      "Naomi Saphra",
-      "Or David Shafran",
-      "Adi Simhi",
-      "Robert Trager",
-      "Shriyash Kaustubh Upadhyay",
-      "Ziyu Yao",
-      "Yu Zhao",
-      "Shay B. Cohen",
-      "Mor Geva",
-      "Yoshua Bengio",
-      "Stella Biderman",
-      "Hassan Sajjad"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08438",
-    "abstract": "Neural networks are likely to be among the most consequential artefacts in human history. As these systems become more capable and autonomous, their potential to cause societal harm also grows, making AI safety one of the defining challenges of our time. Yet we continue to build increasingly powerful systems without fully understanding how they work, how they will behave in unfamiliar situations,...",
-    "keywords": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192046",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08436",
-    "title": "SM4RT: Cascaded Feed-forward Model for 4D Reconstruction",
-    "authors": [
-      "Pang-Chi Lo",
-      "Jhao-Syun Lai",
-      "Tsung-Wei Ke"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08436",
-    "abstract": "We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192104",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08433",
-    "title": "MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue",
-    "authors": [
-      "Donghua Zhang",
-      "Zizheng Wang",
-      "Ze Dong",
-      "Yiding Feng",
-      "Siyu Qian"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08433",
-    "abstract": "LLM-based medical assistants that follow a patient across visits need a memory that keeps the patient's clinical state correct as it changes. We examine the errors of five memory systems on longitudinal medical dialogue and find three recurring causes: the retrieved evidence gives an outdated state, includes another person's health facts, or lacks a safety fact the answer depends on. We present...",
-    "keywords": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192165",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08428",
-    "title": "The Power of Meta Access in the Software of the Future --- Demonstrated on LLM Chat UIs and Chat AI",
-    "authors": [
-      "Julian Kunkel",
-      "Ali Doosthosseini"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08428",
-    "abstract": "Chat remains the default surface for many large language model (LLM) tasks, even as agentic tools such as OpenCode excel at coding and automation. Yet the model sees the current dialogue but not the workspace around it. We explore meta access---giving the assistant a structured, permissioned view of the interface itself and propose a ladder of levels: feature tutoring; metadata, settings, and...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192217",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08425",
-    "title": "Failure Prediction and Classification in Vision-Language-Action Models Via Calibrated Latent Probing",
-    "authors": [
-      "Michal P. Podolinsky",
-      "Yunhao Yang",
-      "Daniel Little",
-      "Hong Lu",
-      "Rohan Siva",
-      "Olin Goudey",
-      "Neel P. Bhatt",
-      "Matthias Scheutz",
-      "Ufuk Topcu"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08425",
-    "abstract": "Vision-Language-Action models (VLAs) enable general-purpose embodied intelligence, but their performance is brittle under distribution shift, where unanticipated failures can damage equipment or endanger people. Deploying VLAs in real-world systems therefore requires a runtime monitor that is timely, calibrated, and informative while being efficient enough to run on the edge. Existing methods...",
-    "keywords": [
-      "cs.RO",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192291",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08421",
-    "title": "Data-driven discovery of intrinsic Lie point symmetries of differential equation systems",
-    "authors": [
-      "Ilker Gurcan",
-      "Kadir Ustun",
-      "Ramazan Gokberk Cinbis"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08421",
-    "abstract": "Discovering continuous symmetries directly from differential-equation data can reveal geometric structure for model reduction and scientific machine learning without symbolic determining equations or a closed-form representation of the governing system. We formulate intrinsic Lie point-symmetry discovery as an operator-theoretic problem on sampled jet-space data. Admissible generators are...",
-    "keywords": [
-      "cs.LG",
-      "math.DG",
-      "math.DS",
-      "math.GR",
-      "math.NA"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192354",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08420",
-    "title": "On the limitations of molecular representations",
-    "authors": [
-      "Acer Blake",
-      "Fergus Imrie",
-      "Charlotte M. Deane"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08420",
-    "abstract": "Molecular representations such as fingerprints and learned embeddings play a central role in cheminformatics and small-molecule machine learning. They serve as the primary input for a diverse array of tasks, including clustering, dataset splitting, and virtual screening, yet their evaluation is often limited to downstream model performance on narrow benchmark tasks. We carried out a systematic...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192446",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08417",
-    "title": "Benchmarks as Software: Terminal-Bench and the Case for Continuous Benchmarks",
-    "authors": [
-      "E. Kelly Buchanan",
-      "Crystal Zhou",
-      "Scott W. Linderman",
-      "Christopher Ré"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08417",
-    "abstract": "Coding agents are among the most economically consequential deployments of LLMs to date, making reliable evaluation increasingly important. Yet even benchmarks that are carefully validated at release can become stale. As models improve, they can discover valid solutions that existing verifiers reject, while changes to evaluation infrastructure can invalidate assumptions embedded in tasks and...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192511",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08414",
-    "title": "Spectral and Subspace Dynamics of LoRA in Supervised Fine-Tuning and Reinforcement Learning",
-    "authors": [
-      "Chenruo Liu",
-      "Zihan Wang",
-      "Yijun Dong",
-      "Qi Lei"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08414",
-    "abstract": "Low-rank adaptation (LoRA) is commonly used in both supervised fine-tuning (SFT) and reinforcement learning (RL), often under similar optimizer settings. Yet, how the different dynamics of the two stages manifest in the low-rank increment that LoRA optimizes remains unclear. Tracking the singular spectrum and subspaces of LoRA updates on mathematical reasoning tasks, we find that RL concentrates...",
-    "keywords": [
-      "cs.LG",
-      "stat.ML"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192571",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08413",
-    "title": "T3R: Training-Free Two-Stage Token Refinement Towards Efficient and Robust VLA Models",
-    "authors": [
-      "Mohammed Hassan",
-      "Zhenyang Chen",
-      "Zheng Wang",
-      "Zhixin Zhu",
-      "Tianlong Chen",
-      " Yingyan",
-      " Lin",
-      "Chaojian Li"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08413",
-    "abstract": "Vision-Language-Action (VLA) models enable end-to-end robot control, but inference is increasingly expensive. Each decision processes hundreds of visual tokens, often across multiple cameras, leading to substantial computation while allowing irrelevant background content to distract action prediction under distribution shift. We argue that these issues stem from two complementary forms of...",
-    "keywords": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192642",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08412",
-    "title": "The Gold Rush in AI4Math, II: What are signatures of AI-assisted Proofs?",
-    "authors": [
-      "Yuanchuan Guo",
-      "Jiashun Jin",
-      "Zheng Tracy Ke",
-      "Bingcheng Sui"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08412",
-    "abstract": "The growing use of AI in mathematics raises a question: can we detect AI involvement in proofs, separately from AI assistance with writing? Historical arXiv papers, recent papers disclosing substantive AI use, and manuscripts released by OpenAI provide a rich empirical basis for studying this question. However, several challenges remain: lack of matched case-control pairs; potential...",
-    "keywords": [
-      "cs.AI",
-      "stat.AP"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192707",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08409",
-    "title": "Conformal Prediction for Time-Dependent PDEs",
-    "authors": [
-      "Joshua Stiller",
-      "Annika Schneider",
-      "Eyke Hüllermeier"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08409",
-    "abstract": "Uncertainty quantification is crucial in scientific machine learning, where models inform safety-critical tasks such as flood forecasting, financial risk management, and thermal control in machines. Conformal prediction provides distribution-free coverage guarantees, but in time-dependent settings common to physics and engineering, these guarantees can break down, leading to systematic...",
-    "keywords": [
-      "cs.LG",
-      "stat.ML"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192764",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08407",
-    "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
-    "authors": [
-      "Vongani H. Maluleke",
-      "James Ni",
-      "Kie Horiuchi",
-      "Lea Wilken",
-      "Jiahui Lei",
-      "Evonne Ng",
-      "Roei Herzig",
-      "Jitendra Malik",
-      "Trevor Darrell",
-      "Angjoo Kanazawa"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08407",
-    "abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy...",
-    "keywords": [
-      "cs.RO",
-      "cs.CV",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192842",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08403",
-    "title": "StepBack: Step-Level Error-Localized Resampling for Efficient Test-Time Reasoning",
-    "authors": [
-      "Yang Ouyang",
-      "Jung-Eun Kim"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08403",
-    "abstract": "Self-consistency (SC) is a widely used decoding strategy for improving chain-of-thought reasoning, but it requires sampling many complete reasoning trajectories with a preset budget. Its efficient variants reduce the cost mainly by stopping full-trajectory sampling early or distributing the number of samples across questions. In this paper, we propose StepBack, a step-level error-localized...",
-    "keywords": [
-      "cs.AI",
-      "cs.CL",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192898",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08394",
-    "title": "Synthesis of Ovarian Cancer Multi-Omics Datasets: A Biology-Informed Evaluation Framework",
-    "authors": [
-      "Déborah Boyenval",
-      "Alina Malyutina",
-      "Jaana Oikkonen",
-      "Sammeli Liikkanen",
-      "Sampsa Hautaniemi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08394",
-    "abstract": "Paired multi-omic cancer cohorts are costly to assemble and difficult to share, motivating synthetic cohorts as a complementary resource. As generative model development accelerates, we shift the focus from proposing yet another architecture to defining evaluation criteria that determine whether synthetic data preserve biologically relevant structure. We introduce a biology-informed and...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.192991",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08393",
-    "title": "Adaptive Low-Light Enhancement for Road Anomaly Detection: A Multi-Architecture Benchmark and Edge Deployment Study",
-    "authors": [
-      "Obed Honour Eje",
-      "Oluwatosin Kolade",
-      "Glory Bagai",
-      "Taliha Abiodun Folorunso"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08393",
-    "abstract": "Road anomaly detection systems on autonomous vehicles must function reliably under degraded visual conditions including darkness, rain, and Harmattan dust haze. This paper benchmarks four object detection architectures, YOLOv8n, YOLOv12n, RT-DETR, and Faster R-CNN, under physically grounded lighting and weather degradation, and shows that uniform application of the SCI low-light enhancement...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193072",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08392",
-    "title": "Learning a patient world model for health system simulation in intensive care",
-    "authors": [
-      "Yingtai Li",
-      "Ruoyan Wang",
-      "Yu Li",
-      "Shaohua Kevin Zhou"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08392",
-    "abstract": "Designing healthcare strategies requires anticipating their clinical and operational consequences before implementation, a task that often relies on health system simulation. Such a simulation necessitates modeling how patient states evolve and generate care demands. However, conventional approaches typically tailor compact state transitions to a single policy question and omit history-dependent...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193131",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08386",
-    "title": "Hybrid Machine Learning for Imbalanced Landing-Phase Safety Event Prediction from Flight Data",
-    "authors": [
-      "Taha Asghar",
-      "Bilal Mufti",
-      "Syed Qasim Zaheer",
-      "Luqman Ahmed"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08386",
-    "abstract": "Landing-phase safety-event prediction requires the detection of rare abnormal approaches within strongly imbalanced multivariate flight data. Capturing coupled temporal behavior while distinguishing event-specific signatures across airport operating contexts remains a central modeling challenge. This study proposes an interpretable hybrid feature-fusion framework for multiclass landing-phase...",
-    "keywords": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193189",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08383",
-    "title": "FedReason: Large Language Models as Weight-Space Meta-Aggregators for Heterogeneous Federated Learning",
-    "authors": [
-      "Ali Mohammadi Ruzbahani",
-      "Abbas Yazdinejad",
-      "Hadis Karimipour"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08383",
-    "abstract": "Federated learning servers combine client models with a fixed aggregation rule, and each rule in common use is designed for one kind of heterogeneity. We study whether a large language model (LLM) that inspects the client models can choose the rule itself, without any training on the server. In FedReason, the LLM is called every ten rounds. It analyses the weights by running code in a restricted...",
-    "keywords": [
-      "cs.CR",
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193245",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08379",
-    "title": "Module-Aware Optimization for Graph Neural Networks",
-    "authors": [
-      "Guy Hadad",
-      "Haggai Roitman",
-      "Moshe Eliasof",
-      "Bracha Shapira"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08379",
-    "abstract": "Different optimizers impose different geometries on parameter updates. Adaptive methods such as Adam and AdamW use coordinate-wise updates, while matrix-aware optimizers such as Muon utilize weight-matrix structure through orthogonalized updates. For Graph Neural Networks (GNNs), however, the effective geometry of its weight matrices is shaped not only by its learned channel-mixing weights, but...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193305",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08376",
-    "title": "Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout",
-    "authors": [
-      "Tushaar Gangavarapu",
-      "Gil Tabak",
-      "Clemens JS Schaefer"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08376",
-    "abstract": "Linear attention compresses context into a fixed-size key-value state for linear-time training and constant-memory inference. Gated delta-rule models decay this state and erase its prediction for an incoming key before writing a new value; Gated DeltaNet-2 (GDN-2) generalizes this with channel-wise decay and decoupled, full-rank erase and write gates. However, we show that state updates are far...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193370",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08372",
-    "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
-    "authors": [
-      "Sateesh Kumar",
-      "Arnav Balaji",
-      "Arpit Bahety",
-      "Skand Peri",
-      "Georgios Pavlakos",
-      "Roberto Martín-Martín"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08372",
-    "abstract": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view...",
-    "keywords": [
-      "cs.RO",
-      "cs.AI",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193441",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08369",
-    "title": "NPCBench: A Clinical Apprenticeship Benchmark for Multimodal Care-Pathway Reasoning in Nasopharyngeal Carcinoma",
-    "authors": [
-      "Pengkai Wang",
-      "Wei-Wei Zhang",
-      "Yan Li",
-      "Min Tang",
-      "Zhitian Hou",
-      "Zeyu Liu",
-      "Guanghao Zhu",
-      "Yuanyi Wang",
-      "Yanggan Gu",
-      "Wenjun Wang",
-      "Minheng Ni",
-      "Congkai Xie",
-      "Zhijie Sang",
-      "Jianmin Wu",
-      "Ying Sun",
-      "Hongxia Yang"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08369",
-    "abstract": "Current medical benchmarks typically break down clinical competence into isolated factual questions, single-image tasks, or static case vignettes. These tests score individual answers, but reveal less about whether a model can integrate subspecialty knowledge with multimodal evidence and track a patient's condition throughout a course of care. To close this gap, we introduce NPCBench, a clinical...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193547",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08368",
-    "title": "VisionSIM: Beyond Idealized Sensors - A Multi-Modal Simulator for Robot Perception",
-    "authors": [
-      "Sacha Jungerman",
-      "Kaustubh Sadekar",
-      "Avery Gump",
-      "Sriram Narayanan",
-      "Shantanu Gupta",
-      "Bhuyashi Deka",
-      "Srinivasa Narasimhan",
-      "Atul Ingle",
-      "Mohit Gupta"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08368",
-    "abstract": "Robotic perception increasingly relies on heterogeneous sensor suites combining cameras with emerging modalities (event, SPAD, iToF/dToF, and thermal). Yet existing simulators idealize these sensors, hiding critical modality-specific failure modes that limit real-world deployment. We present VisionSIM, a unified, physically grounded simulation platform that elevates sensor realism to a...",
-    "keywords": [
-      "cs.RO",
-      "cs.AI",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193621",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08364",
-    "title": "SHORE: Stability-Hybrid On-Policy Reinforcement Learning for Online Bin Packing",
-    "authors": [
-      "Chang Shi",
-      "Ann Majewicz Fey"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08364",
-    "abstract": "Online 3D bin packing with a processing buffer requires choosing which box to pack, its orientation, and its placement while keeping the stack stable under unknown future arrivals. A collapse ends the episode and forfeits the remaining volume. Existing methods use geometric rules or hard stability masks, limiting how risk can influence the joint choice of box, orientation, and placement. We...",
-    "keywords": [
-      "cs.RO",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193677",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08363",
-    "title": "StrataFlux: Memory-Hierarchy-Native Low-Bit LLM Inference",
-    "authors": [
-      "Jake Hyun",
-      "Ziyu Zhao",
-      "Jae-sun Seo",
-      "Mohamed S. Abdelfattah"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08363",
-    "abstract": "Quantization reduces the memory and bandwidth demands of large language model (LLM) inference but can degrade accuracy; offloading higher-precision data can instead stall generation. We introduce StrataFlux, a framework that challenges this tradeoff by recovering accuracy lost to low-bit weight and key-value (KV) cache quantization while retaining quantization's memory and speed advantages....",
-    "keywords": [
-      "cs.LG",
-      "cs.DC"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193736",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08360",
-    "title": "OraRefer: Segmentation-Guided Multi-Photograph Fusion for Oral Cancer Screening with Guaranteed Patient-Level Sensitivity",
-    "authors": [
-      "Rupam Mukherjee",
-      "Mehakdeep Singh",
-      "Shirin Dasgupta",
-      "Subhamoy Mandal"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08360",
-    "abstract": "Oral cancer and the oral potentially malignant disorders (OPMD) that can precede it are visible on the oral mucosa, which makes smartphone photographs a promising tool for screening. Deep learning models for this task classify individual photographs. However, screening refers patients, not photographs: a patient is usually photographed several times, and the referral decision must miss no more...",
-    "keywords": [
-      "cs.CV",
-      "eess.IV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193796",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08359",
-    "title": "A Theoretical Analysis of a Bilevel Optimization Formulation for Combined Local-Global Optical Flow Models",
-    "authors": [
-      "El Mostafa Kalmoun"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08359",
-    "abstract": "This paper analyzes a bilevel formulation for learning the regularization parameter of combined local-global (CLG) optical flow models. The lower-level problem computes the flow from a Lucas--Kanade data term and a quadratic or total variation (TV) regularizer, and the upper-level problem selects the parameter that minimizes the squared distance to a ground-truth flow. The setting is...",
-    "keywords": [
-      "math.OC",
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193847",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08358",
-    "title": "Unifying Central Flow, Rod Flow, and the Edge Coupling",
-    "authors": [
-      "Eric Regis",
-      "Sinho Chewi"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08358",
-    "abstract": "At the edge of stability, the iterates of gradient descent oscillate along the sharp directions of the Hessian. This poses a significant challenge for continuous-time models as the usual continuous-time approximation -- the gradient flow -- admits no oscillations. Several continuous-time models have been proposed to capture the behavior at the edge of stability, among them central flow and rod...",
-    "keywords": [
-      "stat.ML",
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193900",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08352",
-    "title": "USB Gym: A Gymnasium Testbed for Closed-Loop Ultrasound View Matching",
-    "authors": [
-      "Thanapong Intharah",
-      "Zhichao Gao",
-      "Yiliang Liu",
-      "Hao Dong"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08352",
-    "abstract": "Background and Objective: Our main goal is ultrasound guidance: moving a probe until its image matches a target view. Published methods for each part of a guide are evaluated in separate simulators. We asked whether these methods, combined into one guide, are good enough.   Methods: We built USB Gym, a testbed whose standard engine simulates ultrasound from public patient CT, with a network...",
-    "keywords": [
-      "cs.CV",
-      "cs.LG",
-      "cs.RO"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.193965",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08342",
-    "title": "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
-    "authors": [
-      "Adnan Armouti",
-      "Guanyue Qian",
-      "Rajalakshmi Nandakumar"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08342",
-    "abstract": "Millimeter-wave radar resolves the micrometer displacements of a moving body as micro-Doppler, enabling gait, gesture, activity, pose and vital-sign sensing. Each task relies on a downstream model trained on real data, yet radar datasets lag orders of magnitude behind vision and language. Brute-force collection will not close that gap, and existing synthesis methods (forward-only simulators,...",
-    "keywords": [
-      "cs.CV",
-      "cs.GR",
-      "cs.LG",
-      "eess.SP"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.194022",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08341",
-    "title": "Enhancing Local and Global Structure in Compressed AI Agent Memory",
-    "authors": [
-      "Henry Han"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08341",
-    "abstract": "AI agents store text as embedding vectors and compress them at scale. A compression is accepted when each item's nearest neighbors survive, but agents also consolidate, delete, and compare memories, tasks that depend on which items lie far apart. We evaluate both ends with two label-free fidelities from our prior work: the local fidelity $L$ at 10 neighbors and the global fidelity $G$ at 30 to 50...",
-    "keywords": [
-      "cs.AI"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.194072",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08335",
-    "title": "Discovering Learning Rules that Shape Others",
-    "authors": [
-      "Hong Jun Lee",
-      "Ziyan Wang",
-      "Jun Wang",
-      "Stefanos Leonardos",
-      "Yali Du"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08335",
-    "abstract": "In general-sum games, self-interested learners can reach outcomes that are poor for everyone, which has motivated methods that shape the opponent's learning. Methods like Learning with Opponent-Learning Awareness (LOLA), which differentiates through the opponent's learning process, and Model-Free Opponent Shaping (M-FOS), which uses model-free optimisation methods for long-horizon opponent...",
-    "keywords": [
-      "cs.LG"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.194131",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "arxiv-2611.08330",
-    "title": "InstantHand: Feed-Forward 3D Gaussian Splatting for Animatable Hand Avatar Reconstruction from a Single Image",
-    "authors": [
-      "Chanho Kim",
-      "Muhammad Salman Ali",
-      "Kyeonghwan Gwak",
-      "Muhammad Shaheryar",
-      "Incheol Park",
-      "Jeongwan On",
-      "Seungryul Baek"
-    ],
-    "journal": "arXiv",
-    "publish_date": "2026-11-05",
-    "url": "https://arxiv.org/abs/2611.08330",
-    "abstract": "Hand avatar reconstruction typically relies on multi-view capture or per-subject optimization, limiting its scalability. We introduce InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization. Image-averaged losses provide insufficient supervision for alpha...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "source": "arXiv",
-    "fetched_at": "2026-11-07T16:38:51.194198",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42981608",
-    "title": "Augmented reality paradigm and EA-DGCNN decoding algorithm for motor imagery in stroke patients.",
-    "authors": [
-      "Xu F",
-      "Yan D",
-      "Zhu C",
-      "Yu M",
-      "Huang S",
-      "Wang Y",
-      "Liu R",
-      "Hu K",
-      "Leng J",
-      "Zhang Y",
-      "Chao F",
-      "Jung TP"
-    ],
-    "journal": "Journal of neural engineering",
-    "publish_date": "2026-11-04",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42981608/",
-    "abstract": "Stroke represents one of the leading causes of long-term motor dysfunction on a global scale. Existing motor imagery (MI) brain-computer interface (BCI) rehabilitation training systems face critical challenges of suboptimal patient engagement and limited electroencephalography (EEG) feature decoding capacity. To overcome these challenges, this study presents two primary original contributions: an...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701640",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42906586",
-    "title": "Towards semantic brain-computer interfacing: the graded inventory of semantic triggers (GIST) paradigm.",
-    "authors": [
-      "Podmore JJ",
-      "Radman M",
-      "Poli R",
-      "Paulmann S",
-      "Daly I"
-    ],
-    "journal": "Journal of neural engineering",
-    "publish_date": "2026-11-04",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42906586/",
-    "abstract": "",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701851",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42977063",
-    "title": "Comparative Effects of Neurostimulation- and Technology-Augmented Robot-Assisted Training on Upper-Limb Motor Recovery After Stroke: A Systematic Review and Network Meta-Analysis.",
-    "authors": [
-      "Wang L",
-      "Zhu Z",
-      "Liu Y",
-      "Qu J",
-      "Li N",
-      "Liu H",
-      "Cao L",
-      "Ma Z",
-      "Wu H",
-      "Wang J"
-    ],
-    "journal": "Archives of physical medicine and rehabilitation",
-    "publish_date": "2026-11-03",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42977063/",
-    "abstract": "To compare robot-assisted training (RAT) alone with neurostimulation- or technology-augmented RAT for poststroke upper-limb recovery.",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701689",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42976382",
-    "title": "A comprehensive review of biosignal foundation models.",
-    "authors": [
-      "Lee NKK",
-      "Barmpas K",
-      "Koliousis A",
-      "Panagakis Y",
-      "Adamos DA",
-      "Laskaris N",
-      "Zafeiriou S"
-    ],
-    "journal": "Journal of neural engineering",
-    "publish_date": "2026-11-03",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42976382/",
-    "abstract": "Foundation models are emerging as a promising approach to biosignal analysis, offering solutions to common challenges in learning from biosignal data, such as high variability, noise or limited annotations. This survey provides a comprehensive review of the state-of-the-art in this rapidly advancing field. We introduce commonly used biosignal modalities (including EEG, ECG, EMG, EOG and PPG) and...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701711",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42976053",
-    "title": "Spyglass is a framework for reproducible and shareable neuroscience research.",
-    "authors": [
-      "Lee KH",
-      "Denovellis EL",
-      "Ly R",
-      "Magland J",
-      "Soules J",
-      "Comrie AE",
-      "Gramling DP",
-      "Guidera JA",
-      "Nevers R",
-      "Adenekan P",
-      "Brozdowski C",
-      "Bray SR",
-      "Monroe E",
-      "Bak JH",
-      "Coulter ME",
-      "Sun X",
-      "Broyles E",
-      "Shin D",
-      "Chiang S",
-      "Holobetz C",
-      "Tritt A",
-      "Rübel O",
-      "Nguyen T",
-      "Yatsenko D",
-      "Chu J",
-      "Kemere C",
-      "Garcia S",
-      "Buccino AP",
-      "Frank L"
-    ],
-    "journal": "eLife",
-    "publish_date": "2026-11-03",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42976053/",
-    "abstract": "Scientific progress depends on reliable and reproducible results. Progress can be accelerated when data are shared and re-analyzed to address new questions. Current approaches to storing and analyzing neural data involve bespoke formats and software that make replication and reuse of data difficult. To address these challenges, we created Spyglass, an open-source data management and analysis...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701734",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42880317",
-    "title": "Peripheral physiological decoding of arousal in a boundary-avoidance task: signal validity and individualized control.",
-    "authors": [
-      "Natarajan A",
-      "Sajda P"
-    ],
-    "journal": "Journal of neural engineering",
-    "publish_date": "2026-11-03",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42880317/",
-    "abstract": "",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701924",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42970649",
-    "title": "A Wireless Neural-Interface SoC with Multimodal Chemical and Electrical Recording Capabilities.",
-    "authors": [
-      "Chen M",
-      "Zhu G",
-      "Liao H",
-      "Li Y",
-      "Huang J",
-      "Tan Y",
-      "Wang B",
-      "Fang Y",
-      "Zhang Z",
-      "Meng M"
-    ],
-    "journal": "IEEE transactions on biomedical circuits and systems",
-    "publish_date": "2026-11-02",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42970649/",
-    "abstract": "This article presents a wirelessly powered implantable System-on-Chip (SoC) for multimodal chemical and electrical neural signal monitoring. This is accomplished by: 1) proposing a low-power proportional-integral (PI) feedback loop that controls a background subtraction digital-to-analog converter (DAC) to track rapidly varying backgrounds and accelerate dynamic range (DR) extension; 2) employing...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701774",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42913685",
-    "title": "Training free signal enhancement by random sampling for steady state visual evoked potential BCI.",
-    "authors": [
-      "Washizawa Y"
-    ],
-    "journal": "Biomedical physics & engineering express",
-    "publish_date": "2026-11-02",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42913685/",
-    "abstract": "The steady-state visual evoked potential (SSVEP) is widely used for electroencephalography (EEG) based brain computer interfaces (BCIs). In order to determine the target commands for SSVEP-BCIs, deep neural networks have been widely used. However, learning-based approaches require training data, and the upfront costs are high. This study proposes a training-free signal enhancement method for...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701833",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42815657",
-    "title": "DeID-Aligner: fine-grained brain-vision semantic alignment for cross-subject visual decoding from limited fMRI data.",
-    "authors": [
-      "Yin X",
-      "Gan JQ",
-      "Yang M",
-      "Wang H",
-      "Wang Z"
-    ],
-    "journal": "NeuroImage",
-    "publish_date": "2026-11-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42815657/",
-    "abstract": "Recent advances in fMRI-based semantic decoding and visual reconstruction have achieved remarkable progress. However, severe inter-subject variability and the scarcity of paired fMRI-image data remain major obstacles to cross-subject generalization. To overcome these challenges, we propose DeID-Aligner, a brain functional alignment framework that enables multi-task visual decoding across subjects...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701952",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42608765",
-    "title": "Post-stroke limb motor dysfunction and functional recovery: A bibliometric analysis of research trends and hotspots.",
-    "authors": [
-      "Zhao D",
-      "Xie H",
-      "Zhang H",
-      "Han Q",
-      "Yang Y",
-      "Li Q",
-      "Liu X",
-      "Zhang L",
-      "Huang X",
-      "Yang H"
-    ],
-    "journal": "Neural regeneration research",
-    "publish_date": "2026-11-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42608765/",
-    "abstract": "",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701989",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42407243",
-    "title": "A real-time 5-hydroxytryptamine monitoring system applicable both in vitro and in vivo.",
-    "authors": [
-      "Yang LH",
-      "Ren SC",
-      "Wang JF",
-      "Dai G",
-      "Mo FF"
-    ],
-    "journal": "Biosensors & bioelectronics",
-    "publish_date": "2026-11-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42407243/",
-    "abstract": "This research addresses the challenge of real-time monitoring of the neurotransmitter serotonin (5-HT), a key chemical messenger in the brain whose dynamics are important for understanding neurological disorders. While electrochemical methods are promising for such real-time detection, existing approaches face limitations in maintaining stable performance in physiological settings and achieving...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702050",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.141678",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-42926359",
@@ -2725,8 +1518,8 @@
       "neural interface"
     ],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702724",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142129",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-42925109",
@@ -2752,8 +1545,8 @@
       "BCI"
     ],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702742",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142143",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-42919847",
@@ -2779,8 +1572,8 @@
       "clinical BCI"
     ],
     "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702749",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142150",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-2026-implant",
@@ -2799,8 +1592,8 @@
       "neuroprosthesis"
     ],
     "source": "Nature",
-    "fetched_at": "2026-11-07T16:35:11.702764",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142163",
+    "added_date": "2026-11-12"
   },
   {
     "id": "bmef-20260917",
@@ -2818,8 +1611,8 @@
       "functional ultrasound"
     ],
     "source": "Science",
-    "fetched_at": "2026-11-07T16:35:11.702786",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142184",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-ecog-20260908",
@@ -2838,8 +1631,8 @@
       "neural interface"
     ],
     "source": "Nature",
-    "fetched_at": "2026-11-07T16:35:11.702776",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142175",
+    "added_date": "2026-11-12"
   },
   {
     "id": "science-adv-2026-nav",
@@ -2858,8 +1651,8 @@
       "paralysis"
     ],
     "source": "Science",
-    "fetched_at": "2026-11-07T16:35:11.702782",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142179",
+    "added_date": "2026-11-12"
   },
   {
     "id": "arxiv-2609.01767",
@@ -2877,8 +1670,8 @@
       "neuroadaptive"
     ],
     "source": "arXiv",
-    "fetched_at": "2026-11-07T16:35:11.702805",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142200",
+    "added_date": "2026-11-12"
   },
   {
     "id": "npj-biomed-20260820",
@@ -2898,8 +1691,8 @@
       "BCI"
     ],
     "source": "Nature",
-    "fetched_at": "2026-11-07T16:35:11.702772",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142171",
+    "added_date": "2026-11-12"
   },
   {
     "id": "cell-trends-cog-20260717",
@@ -2917,8 +1710,8 @@
       "cognitive function"
     ],
     "source": "Cell",
-    "fetched_at": "2026-11-07T16:35:11.702792",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142188",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-comms-20260715",
@@ -2936,8 +1729,8 @@
       "latent representations"
     ],
     "source": "NatureCommunications",
-    "fetched_at": "2026-11-07T16:35:11.702754",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142154",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-comms-20260715b",
@@ -2959,8 +1752,8 @@
       "BCI acquisition"
     ],
     "source": "NatureCommunications",
-    "fetched_at": "2026-11-07T16:35:11.702759",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142159",
+    "added_date": "2026-11-12"
   },
   {
     "id": "arxiv-2607.24023",
@@ -2979,8 +1772,8 @@
       "BMI"
     ],
     "source": "arXiv",
-    "fetched_at": "2026-11-07T16:35:11.702818",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142211",
+    "added_date": "2026-11-12"
   },
   {
     "id": "nature-med-20260615",
@@ -3002,8 +1795,8 @@
       "long-term"
     ],
     "source": "Nature",
-    "fetched_at": "2026-11-07T16:35:11.702768",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142167",
+    "added_date": "2026-11-12"
   },
   {
     "id": "cell-neuron-20260615",
@@ -3021,8 +1814,8 @@
       "reinforcement"
     ],
     "source": "Neuron",
-    "fetched_at": "2026-11-07T16:35:11.702796",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142192",
+    "added_date": "2026-11-12"
   },
   {
     "id": "arxiv-2606.15091",
@@ -3040,8 +1833,8 @@
       "clinical translation"
     ],
     "source": "arXiv",
-    "fetched_at": "2026-11-07T16:35:11.702813",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142207",
+    "added_date": "2026-11-12"
   },
   {
     "id": "arxiv-2605.20939",
@@ -3060,8 +1853,8 @@
       "multi-brain"
     ],
     "source": "arXiv",
-    "fetched_at": "2026-11-07T16:35:11.702809",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142203",
+    "added_date": "2026-11-12"
   },
   {
     "id": "ieee-tbme-202603",
@@ -3080,355 +1873,7 @@
       "review"
     ],
     "source": "IEEETBME",
-    "fetched_at": "2026-11-07T16:35:11.702800",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42993585",
-    "title": "A ciliated epithelial cell line as a model for respiratory syncytial virus research.",
-    "authors": [
-      "Blouquit-Laye S",
-      "Cosentino G",
-      "Sitterlin D",
-      "Rameix-Welti MA"
-    ],
-    "journal": "The Journal of general virology",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42993585/",
-    "abstract": "Respiratory syncytial virus (RSV) is the leading cause of severe respiratory infection in infants and an increasingly recognized pathogen in the elderly. Conventional",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701516",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42992332",
-    "title": "Conformal Mechanics of Serpentine Meshes for Millimeter-Scale Neural Probes.",
-    "authors": [
-      "Batay S",
-      "Zhou Y",
-      "Pathirana PV",
-      "Seymour JP",
-      "Avila R"
-    ],
-    "journal": "Mechanics of materials : an international journal",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42992332/",
-    "abstract": "The mechanical reliability of implantable neural probes depends on their ability to accommodate large deformations during implantation and chronic operation while limiting stress concentrations within conductive interconnects. Despite extensive studies of serpentine interconnects in stretchable electronics, their mechanics under loading conditions relevant to cylindrical neural probes remain...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701573",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42978770",
-    "title": "Engineering Neural Interface Materials for Brain-Computer Interfaces: Toward Reliable Neural Information and Functional Recovery.",
-    "authors": [
-      "Xu K",
-      "Li Q",
-      "Dong Y",
-      "Zhong M",
-      "Shi W",
-      "Lu B",
-      "Mo Z",
-      "Park J",
-      "Wu J"
-    ],
-    "journal": "Biomaterials research",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42978770/",
-    "abstract": "Motor dysfunction is a major disabling outcome of neurological disorders, including stroke, spinal cord injury, and cerebral palsy. By establishing direct communication between neural activity and external effectors, brain-computer interfaces (BCIs) offer a promising strategy for neural functional reconstruction, enabling motor intention decoding, assistive control, and rehabilitation feedback....",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701671",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42975207",
-    "title": "Mapping Brain-Computer Interface Research in Depression (1995-2026): A Bibliometric Analysis.",
-    "authors": [
-      "Jiang Y",
-      "Duan X"
-    ],
-    "journal": "Brain and behavior",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42975207/",
-    "abstract": "Brain-computer interfaces (BCIs) have emerged as promising tools for neuromodulation and emotion regulation in depression. This study aimed to systematically map the global research landscape, thematic evolution, and emerging trends of BCI applications in depressive disorders through bibliometric analysis.",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701747",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42855610",
-    "title": "Changes in Bladder Outlet Obstruction After Photoselective Vaporization of the Prostate in Men With and Without Detrusor Underactivity: A Retrospective Propensity Score-Matched Study.",
-    "authors": [
-      "Shibuya J",
-      "Kyoda Y",
-      "Hashimoto K",
-      "Kobayashi K",
-      "Tanaka T",
-      "Masumori N"
-    ],
-    "journal": "Lower urinary tract symptoms",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42855610/",
-    "abstract": "To compare symptomatic improvement after photoselective vaporization of the prostate (PVP) between patients with and without detrusor underactivity (DU), together with objective changes in urodynamic parameters assessed by pressure-flow study (PFS).",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701935",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42721596",
-    "title": "EEG signatures for tactile object individuation on a finger tip.",
-    "authors": [
-      "Lou C",
-      "Lei Y",
-      "Noppeney U",
-      "Chen L"
-    ],
-    "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42721596/",
-    "abstract": "Object individuation (OI), i.e., segmenting sensory signals into individual objects based on spatial or temporal cues, has been studied predominantly in vision but remained largely unexplored in touch. Using EEG we studied the neural activity associated with OI in touch. In two experiments, participants (Experiment 1: n=28; Experiment 2: n=27) were presented with one to eight pins on their index...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701963",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42659768",
-    "title": "Neural processing of natural speech by adults with and without dyslexia: Evidence for atypical temporal sampling of speech information in the delta and theta EEG bands.",
-    "authors": [
-      "Keshavarzi M",
-      "Moore BCJ",
-      "Goswami U"
-    ],
-    "journal": "Cortex; a journal devoted to the study of the nervous system and behavior",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42659768/",
-    "abstract": "Neural oscillations in the delta (.5-4 Hz) and theta (4-8 Hz) bands play a key role in tracking the temporal structure of speech. According to Temporal Sampling (TS) theory, dyslexia arises from atypical oscillatory sampling of the speech signal in these bands during infancy and childhood, which is particularly disruptive regarding phonological encoding. However, studies of adults with dyslexia...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.701972",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42580195",
-    "title": "Structural control and resilience in the oxytocin molecular graph: A graph-theoretic framework for critical atom and bond identification with comparative validation across cyclic peptides.",
-    "authors": [
-      "K ND",
-      "G S"
-    ],
-    "journal": "Journal of molecular graphics & modelling",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42580195/",
-    "abstract": "Graph-theoretic analysis provides a rigorous mathematical framework for investigating molecular architecture; however most existing studies primarily rely on conventional topological indices and centrality measures that characterize connectivity without explicitly quantifying structural control, redundancy, vulnerability or resilience. This study develops a unified graph-theoretic framework for...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702001",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42537358",
-    "title": "Adaptive graph convolutional neural network incorporating ECG for individualized motor imagery EEG classification.",
-    "authors": [
-      "Li S",
-      "Luo G",
-      "Zhou L",
-      "Zhang Y",
-      "Ma L",
-      "Wang C"
-    ],
-    "journal": "Computer methods and programs in biomedicine",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42537358/",
-    "abstract": "The recognition of motor imagery electroencephalogram (EEG) signals, which non-invasively capture the macroscopic electrical activity of the brain, is critical for medical rehabilitation and intelligent control. In these applications, reliable prediction is essential due to the safety risks associated with misclassification. However, existing methods often suffer from limited generalization in...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702012",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42520418",
-    "title": "Combined effects of an ointment comprising Eisenia fetida oil, Valeriana officinalis, and zinc oxide nanoparticles on healing in a rat model of second-degree burns.",
-    "authors": [
-      "Tabatabai TS",
-      "Tabatabai TS",
-      "Vaez A",
-      "Ehterami A",
-      "Atashi A",
-      "Semyari H",
-      "Salehi M"
-    ],
-    "journal": "Burns : journal of the International Society for Burn Injuries",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42520418/",
-    "abstract": "Burns are one of the most devastating traumatic injuries, and in cases of advanced burns, patients require urgent and specialized care to minimize mortality. Studies have shown that a variety of herbal medicines and nanoparticles can be used to treat burn wounds. Among them mixture of Eisenia fetida oil, valerian, and zinc oxide (ZnO) nanoparticles can be a good choice due to their healing...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702022",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42435777",
-    "title": "Event-related potential dynamics of unilateral lower limb movement with functional connectivity analysis.",
-    "authors": [
-      "Gu L",
-      "Han H",
-      "Wang H",
-      "Xiong X"
-    ],
-    "journal": "Journal of neuroscience methods",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42435777/",
-    "abstract": "Locomotor lateralization represents a general evolutionary trait in primates and is particularly well documented in human upper limb movements. Whether a corresponding lateralization pattern exists in lower limb movements, however, has remained largely unexplored.",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702032",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42333730",
-    "title": "Urodynamic Voiding Patterns in Multiple Sclerosis.",
-    "authors": [
-      "Chesnel C",
-      "Turmel N",
-      "Teng M",
-      "Blouet E",
-      "Amarenco G",
-      "Hentzen C"
-    ],
-    "journal": "Neurourology and urodynamics",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42333730/",
-    "abstract": "This study aimed to describe urodynamic voiding patterns in patients with MS (PwMS) using standardized assessments, and to compare the performance of the available nomograms and indices for obstruction and bladder contractility.",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702060",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42325017",
-    "title": "Differences in Urodynamic Findings of Robot-Assisted Radical Prostatectomy Before and 2 Years After Surgery.",
-    "authors": [
-      "Shibamori K",
-      "Kyoda Y",
-      "Shinkai N",
-      "Nofuji S",
-      "Yorozuya W",
-      "Okabe K",
-      "Hashimoto K",
-      "Kobayashi K",
-      "Tanaka T",
-      "Masumori N"
-    ],
-    "journal": "Neurourology and urodynamics",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42325017/",
-    "abstract": "Numerous studies have investigated changes in urinary function following robot-assisted radical prostatectomy (RARP); however, most studies have primarily focused on identifying predictors of postoperative urinary incontinence. This study aimed to evaluate bladder function and lower urinary tract symptoms through urodynamics examined before and 2 years after RARP.",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702070",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-42250530",
-    "title": "Efficient FPGA accelerator for low-power high-speed BCI motor imagery classification using novel deep learning.",
-    "authors": [
-      "C S",
-      "C S",
-      "S IJ"
-    ],
-    "journal": "Neural networks : the official journal of the International Neural Network Society",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/42250530/",
-    "abstract": "A brain-computer interface (BCI) is an advanced technology that enables direct communication between the human brain and external systems, eliminating the need for intermediaries. Electroencephalography (EEG) is a commonly used signal for developing BCIs. However, EEG signals have challenges such as a poor signal-to-noise ratio, high dimensionality, nonlinearity, and instability. This...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702081",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-41983993",
-    "title": "Brain-Computer Interface Combined with Functional Electrical Stimulation for Post-Stroke Upper Limb Motor Recovery: A Systematic Review and Meta-Analysis.",
-    "authors": [
-      "Liang F",
-      "Chen X",
-      "Li B",
-      "Yang B"
-    ],
-    "journal": "Clinical EEG and neuroscience",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/41983993/",
-    "abstract": "BackgroundBrain-computer interface-driven functional electrical stimulation (BCI-FES) is a promising approach for post-stroke upper limb rehabilitation. However, considerable variability exists in stimulation parameters and task designs across studies, and evidence remains insufficient to support definitive protocol recommendations.MethodsWe searched PubMed, Embase, Web of Science, and the...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702090",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-41632672",
-    "title": "Disentangled Multimodal Spatiotemporal Learning for Hybrid EEG-fNIRS Brain-Computer Interface.",
-    "authors": [
-      "Xu Y",
-      "Vong CM",
-      "Xu Z",
-      "Fu J",
-      "Li J",
-      "Chen C"
-    ],
-    "journal": "IEEE transactions on bio-medical engineering",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/41632672/",
-    "abstract": "The hybrid EEG-fNIRS Brain-computer interface (BCI) combines the high temporal resolution of electroencephalography (EEG) with the high spatial resolution of functional near-infrared spectroscopy (fNIRS) to enable comprehensive brain activity detection. However, integrating these modalities to obtain highly discriminative features remains challenging. Most existing methods fail to effectively...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702099",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-40483616",
-    "title": "Decoding EEG-based cognitive load using fusion of temporal and functional connectivity features.",
-    "authors": [
-      "Han J",
-      "Zhan G",
-      "Wang L",
-      "Liang D",
-      "Zhang H",
-      "Zhang L",
-      "Kang X"
-    ],
-    "journal": "Computer methods in biomechanics and biomedical engineering",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/40483616/",
-    "abstract": "Evaluating cognitive load using electroencephalogram (EEG) signals is a crucial research area in the field of Brain-Computer Interfaces (BCI). However, achieving high accuracy and generalization in feature extraction and classification for cognitive load assessment remains a challenge, primarily due to the low signal-to-noise ratio of EEG signals and the inter-individual variability in EEG data....",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702109",
-    "added_date": "2026-11-07"
-  },
-  {
-    "id": "pubmed-40462746",
-    "title": "HEGNet: EEG and EMG fusion decoding method in motor imagery and actual movement.",
-    "authors": [
-      "Song J",
-      "Chai X",
-      "Zhang X",
-      "Lv Z",
-      "Wan F",
-      "Yang Y",
-      "Shan X",
-      "Liu J"
-    ],
-    "journal": "Computer methods in biomechanics and biomedical engineering",
-    "publish_date": "2026-01-01",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/40462746/",
-    "abstract": "The widespread adoption od brain-computer interface (BCI) has been hindered by the limited classification accuracy of electroencephalography (EEG) signals alone. This study proposes a novel BCI model, HEGNet, that addresses this challenge by fusing EEG and electromyography (EMG) signals. HEGNet incorporates an EMG feature extraction component to mitigate the inherent instability and low...",
-    "keywords": [],
-    "source": "PubMed",
-    "fetched_at": "2026-11-07T16:35:11.702118",
-    "added_date": "2026-11-07"
+    "fetched_at": "2026-11-12T11:39:57.142196",
+    "added_date": "2026-11-12"
   }
 ]
